@@ -1,0 +1,2909 @@
+Python – Full Stack Assignment
+
+Module 1 – Overview of IT Industry
+ 
+What is a Program?
+
+The definition of a program at its most basic is a sequence of Python statements that have been crafted to do something. 
+Even our simple hello.py script is a program. It is a one-line program and is not particularly useful, but in the strictest 
+definition, it is a Python program.
+
+LAB EXERCISE: Write a simple "Hello World" program in two different programming languages of your choice. Compare the 
+structure and syntax.
+
+1. C Language
+C is a procedural programming language. It was initially developed by Dennis Ritchie as a system programming language to 
+write an operating system. 
+
+Features:
+
+Include low-level access to memory, a simple set of keywords, and a clean style, these features make C language suitable 
+for system programmings like operating system or compiler development.
+Fast and Efficient.
+
+Hello World Program in C Language:
+
+#include <stdio.h>
+
+int main() {
+printf("Hello World");
+return 0;
+}
+
+
+2. C++ Language
+
+C++, high-level computer programming language. Developed by Bjarne Stroustrup of Bell Laboratories in the early 1980s, 
+it is based on the traditional C language but with added object-oriented programming and other capabilities. 
+
+Features:
+
+Machine Independent or Portable.
+Mid-level programming language. 
+
+Hello World Program in C++:
+
+#include <iostream>
+
+int main() {
+	std::cout << "Hello World";
+	return 0;
+}
+
+THEORY EXERCISE: Explain in your own words what a program is and how it functions.
+What is Programming?
+
+1. Program :
+Program, as name suggest, are set or collection of instructions used by computer to execute specific task and these are 
+created using particular programming languages such as C++, Python, Ruby, etc.
+
+2. Function :
+Function, as name suggests, is basic concept in computer programming that one calls to control flow of program as well as 
+perform a specific task, returns a value and resumes program where it was called.
+
+What is Programming?
+
+Programming refers to a technological process for telling a computer which tasks to perform in order to solve problems. 
+You can think of programming as a collaboration between humans and computers, in which humans create instructions for a 
+computer to follow (code) in a language computers can understand.
+
+THEORY EXERCISE: What are the key steps involved in the programming process?
+Types of Programming Languages
+
+Steps Involved in Programming:
+
+1) Analyzing the Problem
+2) Algorithm design / Pseudo Code
+3) Flowchart
+   4. Coding
+4) Debugging
+5) Testing
+6) Final output
+7) Documentation
+
+5 major types of programming languages
+
+1. Procedural programming languages
+A procedural language follows a sequence of statements or commands in order to achieve a desired output. Each series of 
+steps is called a procedure, and a program written in one of these languages will have one or more procedures within it. 
+Common examples of procedural languages include:
+
+C and C++
+
+Java
+
+Pascal
+
+BASIC
+
+C++ is a great programming language to learn if you're also interested in learning more about how computers function. 
+While it may not be as readable as other high-level programming languages like Python, it can still be beginner-friendly. 
+You can give it a try for free by enrolling in Codio's introductory online program, Programming in C++: A Hands-on 
+Introduction Specialization. After a month, you'll have created and ran your first program in C++.
+
+2. Functional programming languages
+Rather than focusing on the execution of statements, functional languages focus on the output of mathematical functions and
+evaluations. Each function–a reusable module of code–performs a specific task and returns a result. The result will vary 
+depending on what data you input into the function. Some popular functional programming languages include:
+
+Scala
+
+Erlang
+
+Haskell
+
+Elixir
+
+F#
+
+3. Object-oriented programming languages (OOP)
+This type of language treats a program as a group of objects composed of data and program elements, known as attributes 
+and methods. Objects can be reused within a program or in other programs. This makes it a popular language type for 
+complex programs, as code is easier to reuse and scale. Some common object-oriented languages include:
+
+Java
+
+Python
+
+PHP
+
+C++
+
+Ruby
+
+4. Scripting languages
+Programmers use scripting languages to automate repetitive tasks, manage dynamic web content, or support processes in 
+larger applications. Some common scripting languages include:
+
+PHP
+
+Ruby
+
+Python
+
+bash
+
+Perl
+
+Node.js
+
+5. Logic programming languages
+Instead of telling a computer what to do, a logic programming language expresses a series of facts and rules to instruct 
+the computer on how to make decisions. Some examples of logic languages include:
+
+Prolog
+
+Absys
+
+Datalog
+
+Alma-0
+
+THEORY EXERCISE: What are the main differences between high-level and low-level programming languages?
+World Wide Web & How Internet Works
+
+What is a low-level programming language?
+A low-level programming language directly instructs the computer, usually in binary, decimal, or hexadecimal form. 
+Low-level programming languages, like machine code or assembly language, are difficult for humans to read and comprehend. 
+Every command given to the computer has to be completely written out. 
+
+Low-level language examples include:
+
+Machine language: Uses 1s and 0s to produce binary code to represent data and program instructions
+
+Assembly language: Uses mnemonic codes to represent commands and data, such as A for Add, MP for multiply, and IFIRST and 
+ILAST to input first and last name data
+
+What is a high-level programming language?
+High-level programming languages are easier for humans to learn, read, and comprehend. They are compiled or translated into
+a low-level language for computers to execute. This action allows programmers to skip many tedious and time-consuming steps 
+within coding to build more complex code. 
+
+High-level programming features abstraction, which is also referred to as information hiding. Abstraction involves eliminating
+extraneous details. High-level programming languages are designed to be easily understood by humans, allowing developers 
+to write instructions that computers can interpret and execute.
+
+High-level language examples include:
+
+Python
+
+JavaScript
+
+Perl
+
+PHP
+
+C++
+
+FORTRAN
+
+Ruby
+
+C#
+
+R
+
+SQL
+
+World Wide Web & How Internet Works
+
+The Internet is a global system of computer networks interconnected through telecommunications and optical networking. 
+In contrast, the World Wide Web is a global collection of documents and other resources, linked by hyperlinks and URIs.
+
+LAB EXERCISE: Research and create a diagram of how data is transmitted from a client to a server over the internet.
+
+THEORY EXERCISE: Describe the roles of the client and server in web communication.
+Network Layers on Client and Server
+
+Client and server role
+The server component provides a function or service to one or many clients, which initiate requests for such services. 
+Servers are classified by the services they provide. For example, a web server serves web pages and a file server serves 
+computer files. A shared resource may be any of the server computer's software and electronic components, from programs 
+and data to processors and storage devices. The sharing of resources of a server constitutes a service.
+
+Whether a computer is a client, a server, or both, is determined by the nature of the application that requires the service 
+functions. For example, a single computer can run a web server and file server software at the same time to serve different 
+data to clients making different kinds of requests. The client software can also communicate with server software within 
+the same computer.[2] Communication between servers, such as to synchronize data, is sometimes called inter-server or 
+server-to-server communication.
+
+Client and server communication
+Generally, a service is an abstraction of computer resources and a client does not have to be concerned with how the server 
+performs while fulfilling the request and delivering the response. The client only has to understand the response based on 
+the relevant application protocol, i.e. the content and the formatting of the data for the requested service.
+
+Clients and servers exchange messages in a request–response messaging pattern. The client sends a request, and the server 
+returns a response. This exchange of messages is an example of inter-process communication. To communicate, the computers 
+must have a common language, and they must follow rules so that both the client and the server know what to expect. The 
+language and rules of communication are defined in a communications protocol. All protocols operate in the application 
+layer. The application layer protocol defines the basic patterns of the dialogue. To formalize the data exchange even 
+further, the server may implement an application programming interface (API).[3] The API is an abstraction layer for 
+accessing a service. By restricting communication to a specific content format, it facilitates parsing. By abstracting 
+access, it facilitates cross-platform data exchange.[4]
+
+A server may receive requests from many distinct clients in a short period. A computer can only perform a limited number of
+tasks at any moment, and relies on a scheduling system to prioritize incoming requests from clients to accommodate them. 
+To prevent abuse and maximize availability, the server software may limit the availability to clients. Denial of service 
+attacks are designed to exploit a server's obligation to process requests by overloading it with excessive request rates. 
+Encryption should be applied if sensitive information is to be communicated between the client and the server.
+
+LAB EXERCISE: Design a simple HTTP client-server communication in any language.
+
+THEORY EXERCISE: Explain the function of the TCP/IP model and its layers.
+Client and Servers
+
+The TCP/IP model is a part of the Internet Protocol Suite. This model acts as a communication protocol for computer networks 
+and connects hosts on the Internet. It is a concise version of the OSI Model and comprises four layers in its structure.
+
+Layers of the TCP/IP Model
+Unlike the OSI model which comprises seven layers, the TCP/IP model is structured with four different layers. These four 
+layers are:
+
+Network Access Layer
+Internet Layer
+Host to Host Layer
+Application Layer
+
+1. Network Access Layer
+This is the bottom-most layer of the TCP/IP model architecture
+It is a combination of the Data Link and Physical Layer of the OSI model
+The physical transmission of data takes place at this layer
+Once the frames are transmitted by a network, encapsulating the IP datagram into these frames is done in this layer
+Also, the mapping of IP address into physical address is done here
+Mainly, the function of this layer is to transmit the data between two devices, connected in a network
+
+2. Internet Layer
+It is the second layer of the TCP/IP model and this layer is parallel to the Network Layer of the OSI Model, in terms of 
+the structure
+Sending the data packets to their destination network is the main function of the Internet layer
+The logical transmission of data takes place at this level
+There are three different protocols used in this layer. These include:
+IP: One of the most important protocols as it detects the IP address of a device which is later used for internetwork 
+connections. It is using this protocol that the path with which the data shall be transmitted is decided. There are two 
+common IP versions which are used, To know the difference between IPv4 and IPv6, visit the linked article.
+ARP: It stands for Address Resolution Protocol. The physical address from the IP address can be determined using ARP. 
+ICMP: It stands for Internet Control Message Protocol and notification regarding datagram problems can be sent back to 
+the user using this. Any issue with the network is immediately notified to the user by ICMP. It can only inform the user 
+about the errors and cannot rectify the problem.
+
+3. Host-To-Host Layer
+This layer is parallel to the transport layer of the OSI Model
+The error-free delivery of data is the main function of this layer
+There are two main protocols present in this layer:
+TCP: Another integral part, the Transmission Control Protocol is a reliable communication protocol. It manager the flow 
+of data, i.e. the sequence and segmentation of the data
+UDP: It is a connection-free protocol which makes it cost-effective but less reliable.
+
+4. Application Layer
+The topic three layers of the OSI Model: Application, Presentation and Sessions, when combined together, they perform 
+similar functions as the Application Layer of the TCP/IP model
+node-to-node communication based on the user-interface occurs here
+Multiple protocols are present in this layer, a few common ones have been mentioned below in brief:
+HTTP: Hypertext Transfer Protocol is used to manage the communication between the server and web browsers
+NTP: Network Time Protocol can set one standard time source in our computer, which enables sync between the server and the 
+user
+TELNET: Telecommunication Network is used to have access to files present of the Telnet network and manage them on internet
+FTP: File Transfer Protocol, as the name suggests allows easy transferring of files
+
+THEORY EXERCISE: Explain Client Server Communication
+Types of Internet Connections
+
+In an Operating System, Client Server Communication refers to the exchange of data and Services among multiple machines 
+or processes. In Client client-server communication System one process or machine acts as a client requesting a service 
+or data, and Another machine or process acts like a server for providing those Services or Data to the client machine. 
+This Communication model is widely used for exchanging data among various computing environments like Distributed Systems, 
+Internet Applications, and Networking Application communication. The communication between Server and Client takes place 
+with different Protocols and mechanisms.
+
+Different Ways of Client-Server Communication
+In Client Server Communication we can use different ways.
+Sockets Mechanism
+Remote Procedure Call
+Message Passing
+Inter-process Communication
+Distributed File Systems
+
+Types of Internet Connection
+
+1. Dial-Up Connection
+A dial-up connection is established between your computer and the ISP server using a modem. A dial-up Connection is a cheap 
+and traditional connection that is not preferred these days as this type of connection is very slow.
+To access the internet connection in the dial-up connection we need to dial a phone number on the computer and that’s why 
+it requires a telephone connection. It requires a modem to set up a dial-up connection, which works as interference between 
+your computer and the telephone line. In this connection, we can use either an internet connection or a telephone at a time.
+
+2. Broadband Connection
+Broadband refers to high-speed internet access that is faster than traditional dial-up access. It is provided through either 
+cable or telephone composition. It does not require any telephone connection that’s why here we can use telephone and internet 
+connection simultaneously. In this connection, more than one person can access the internet connection simultaneously. 
+It is a wide bandwidth data transmission that transports several signals and traffic types. In this connection, the medium 
+used is coaxial cable, optical fiber cable, radio, or twisted pair cable.
+
+3. DSL (Digital Subscriber Line)
+DSL stands for Digital Subscriber Line. It provides an internet connection through the telephone line(network). DSL is a 
+form of broadband communication that is always on, there is no need to dial a phone number to connect. DSL connection uses a 
+router to transport data and the speed of this connection range between 128k to 8Mbps depending on the service offered. 
+A DSL connection can translate data at 5 million bytes per second, or 5mbps. 
+DSL service can be delivered simultaneously with wired telephone service on the same telephone line due to high-frequency 
+bands for data.
+
+4. Cable 
+It is a form of broadband access cable modem that can provide extremely fast access to the internet. The speed of this 
+connection varies which can be different for uploading data transmission or downloading. 
+It uses a cable modem to provide an internet connection and operates over cable TV lines. The speed of cable connection 
+ranges from 512k to 20Mbps.h
+
+5. Satellite Connection
+This type of connection is provided mainly in rural areas where a broadband connection is not yet offered. It accesses the
+internet via a satellite that is in Earth’s orbit. 
+The signal travels from a long distance that is from earth to satellite and back again which provides a delayed connection. 
+Satellite connection speeds range from 512k to 2.0Mbps.
+
+6. Wireless Connection
+As the name suggests wireless connection does not use telephone lines or cables to connect to the internet. The wireless 
+connection uses a radio frequency band to connect to the internet. It is also an always-on connection and this connection 
+can be accessed from anywhere and speed may vary for different locations. It ranges from 5Mbps to 20Mbps.
+
+7. Cellular
+Cellular technology provides wireless Internet access through cell phones. Speed may vary depending on the service provider. 
+The most common are 3G and 4G which means from 3rd generation and 4th generation respectively. The speed of the 3G cellular 
+network is around 2.0Mbps and the 4G cellular network is around 21Mbps the goal of the 4G network is to achieve peak mobile 
+speeds of 100Mbps but the current speed of the 4G network is about 21Mbps.
+
+8. ISDN (Integrated Service Digital Network)
+ISDN stands for Integrated Service Digital Network and it is a circuit-switched telephone network system, but it also 
+provides access to packet-switched networks that transmits both voice and data over a digital line. It provides a 
+packet-switched connection for data in increments of 64 kilobit/s. 
+ISDN connection provides better speeds and higher quality than traditional connections. It provided a maximum of 128kbit/s 
+bandwidth in both upstream and downstream directions.
+
+LAB EXERCISE: Research different types of internet connections (e.g., broadband, fiber, satellite) and list their pros 
+and cons
+
+The main types of internet connections that are available are:
+
+Shared network 
+
+Pros: 
+
+Highly cost-effective as you won't have to pay for the whole connection.
+
+The security will be just as good if you have your dedicated line if you have your firewall.
+
+Cons: 
+
+Speeds will vary depending on how many people are using the connection at once.
+
+If a problem arises, it can take longer to fix if you can't contact tech support directly.
+
+dependability and downtime issues
+
+VOIP, video, and cloud apps, among other important applications, are all affected.
+
+Large email transmissions, file transfers, streaming, and data backups can all be significantly hindered or made almost 
+impossible.
+
+Prone to power outages, which may linger for hours or days.
+
+
+Dedicated Internet Access (DIA)
+
+Pros:
+
+Robust Network Security
+
+Get the bandwidth you paid for
+
+High internet speed
+
+High-speed downloads and uploads
+
+Guarantees the quality of the internet traffic by Service Level Agreement 
+
+24x7 Customer Support
+
+Cons:
+
+DIA is significantly more expensive than regular broadband.
+
+Installation might take additional time and effort (depending on your ISP)
+
+Requires equipment installation, network provisioning, and truck rolls.
+
+
+DSL Internet connection
+
+Pros: 
+
+Widely accessible because it was established on pre-existing phone lines.
+
+Compared to satellite or broadband Internet connections, DSL services are less expensive.
+
+Similar to phone service, each Internet subscriber to DSL has a dedicated circuit.
+
+Having multiple users online at once has little impact on how busy DSL connections are.
+
+Cons:
+
+The quality of a DSL connection is distance-sensitive, meaning that the closer you are to the central office, the better 
+the connection. The speed slows down and the signal weakens as you move away, though.
+
+
+Fiber Internet
+
+Pros:
+
+High-speed internet
+
+Fast download and upload speed
+
+Delivers a remarkable user experience on all internet-connected devices and platforms.
+
+Cons:
+
+Expensive
+
+Not available everywhere
+
+Cable Internet
+
+Pros:
+
+Fast and reliable
+
+Simple to set up
+
+Widely available 
+
+The connection won't be affected by proximity to ISP
+
+Cons:
+
+slower speed during congested hours
+
+Expensive if looking for better plans
+
+Fixed Wireless
+
+Pros:
+
+Hassle-free option, as it is easy to install
+
+Cost-effective
+
+Quick installations
+
+High-speed internet
+
+Cons:
+
+If there is a poor line of sight between your location and the PoP, connecting to the internet could be difficult.
+
+Depending on what alternative connection types are offered in your location, getting fixed wireless internet may not be 
+the most affordable choice.
+
+Satellite Networks
+
+Pros:
+
+Low installation cost
+
+Available everywhere
+
+Cons:
+
+Slow Speed
+
+High latency
+
+Signals can be disrupted by the weather and even immobile objects like mountains.
+
+Very expensive due to less competition
+
+THEORY EXERCISE: How does broadband differ from fiber-optic internet?
+Protocols
+
+1.     Reliability is the first factor that users should consider when choosing an internet service. In today's internet 
+time, both broadband and fiber are considered reliable connections that provide high-speed internet. Fibre optic connections
+are more reliable than other alternatives, such as broadband connections, because local conditions can affect the 
+reliability of broadband connections, thus affecting the reliability on broadband internet connections. The designs for 
+both connection types are passive as there were no dropouts, but fibre optic makes a good option in terms of reliability 
+out of the two internet connections.
+
+2.     Organizations using Internet services should consider bandwidth as an important comparison factor. Like any organization, 
+high-speed internet was needed for business activities such as video conferencing, meetings, online presentations, and 
+uploading or downloading large numbers of large files. With all these requirements, the company focuses on high bandwidth 
+requirements. Broadband connections get affected because the same internet bandwidth is shared by many people at the same 
+time. Fiber optic, on the other hand, is a dedicated service used only by the company that installed it, so the speed is 
+not affected, and users get maximum bandwidth for a period of time. As a result, fiber optic internet offers higher 
+bandwidth compared to broadband services.
+
+3.     In order to do business all over the world, the main requirement of all companies is to offer their services on a 
+cloud platform. In addition to this, businesses cannot afford delays when uploading or downloading files to cloud storage. 
+And it is likely that companies are interacting directly with their customers as well as clients, for the same you need 
+high-speed internet all the time. Fiber optics are a better option than broadband when it comes to providing high speed 
+internet. Because fiber is a dedicated service that provides Internet service directly to corporate organizations, meaning
+the entire allocated internet bandwidth is available to a particular organization. This ensures that no other person or 
+company shares the internet bandwidth, which is just the opposite of a broadband connection, in which multiple users share
+the bandwidth, resulting into slow speed. When an organization is doing business, they don't want their users to experience
+slow connections or lag, so most of them opt for fibre optic connection.
+
+4.     Whenever a person uses Internet services, their primary concern is network security and whether there are any potential
+risks while using Internet services. Also, comparing broadband services with fiber connections, broadband is more convenient 
+for attackers to attack networks and carry out malicious activities. Having access to a broadband connection makes it much 
+easier for attackers to attack & damage your network. Attackers, on the other hand, have to expend more effort to attack 
+dedicated fiber connections. So when an organization has to choose between broadband and fiber internet and based on 
+security, they always choose fiber connectivity over broadband.
+
+5.     Another important difference between broadband and fiber optic internet is the price of the connection. Fiber optic 
+Internet connections are relatively expensive compared to broadband connections. Organizations are working to make fiber 
+optic connectivity affordable for their users. The average person cannot afford to have a fiber optic connection in their 
+home due to the price, but a regular broadband connection is cheap and affordable. Opting for fiber optic connections is 
+usually done by companies who need to perform large-scale operations, and they can easily install fiber optic connections 
+in their company premises easily. Fiber optics have some advantages over broadband connections in terms of speed, reliability, 
+and security, but when compared based on price, broadband connections win the battle over fiber optic connections. But 
+fiber optic connections offer value for money internet services. 
+
+LAB EXERCISE: Simulate HTTP and FTP requests using command line tools (e.g., curl).
+
+THEORY EXERCISE: What are the differences between HTTP and HTTPS protocols?
+Application Security
+
+HTTP
+The full form of HTTP is Hypertext Transfer Protocol.
+URL begins with http://
+It uses port number 80.
+HTTP is an application layer protocol.
+Less secure and vulnerable to hacking attacks.
+It does not contain an SSL certificate.
+HTTP websites do not use data encryption.	
+It is fast.	
+HTTP does not help in improving search rankings.
+
+HTTPS
+The full form of HTTPS is Hypertext Transfer Protocol Secure
+URL begins with https://
+It sends the data over port number 443.
+HTTPS is a transport layer protocol.
+It is highly secure.
+HTTPS contains an SSL certificate.
+HTTPS websites use data encryption.
+It is slower than HTTP.
+HTTPS provides SEO advantages as Google gives the preferences to websites that use HTTPS.
+
+LAB EXERCISE: Identify and explain three common application security vulnerabilities. Suggest possible solutions.
+
+1. Structured Query Language (SQL)/Database Queries
+This is the most common area of application vulnerability specifically due to the use of multiple databases in conjunction 
+with multiple applications. SQL Injection attacks take place due to a flaw in the code of applications where the attacker 
+successfully retrieves, alters, deletes data, executes SQL commands, or alters server configurations. In the reconnaissance
+stage, the hacker looks for spots in the application where they can inject undesired values to SQL commands 
+
+For example, the attacker may use a string value for server queries to inject an escape sequence. The following is a potential
+SQL query for searching customers in a database:
+
+SELECT * FROM customer WHERE name='” + strName + “‘; DROP TABLE customer;”
+
+If the above SQL string input is not validated, it can execute a command to delete the customer table with the string name.
+
+2. Broken Authentication
+URL rewriting, application timeout not set properly, passwords not properly salted and hashed, or predictable login credentials 
+are just a few causes of a broken authentication, in most cases of breaches at least. The prevalence of broken authentication 
+in application (in)security is widespread. It is due to the weak implementation of identity and access controls. Certainly, 
+session management forms the bedrock of the modern-day applications, but they are also not positioned well for many 
+applications.
+
+The landscape of broken authentication in applications as we see it
+The logic behind this approach is uncomplicated and best illustrated with an example. Most authentication-based attacks 
+take place due to the consistent use of plain passwords as the only credentials for an application. Once considered a best 
+practice for application security, password complexity requirements and regular rotation have become obsolete for the new 
+age cyberattacks. Fortunately, the PCI DSS standard (and other similar regulatory standards) have mandated the use of 
+multi-factor authentication as an application security control.
+
+Application security team action
+To think like a hacker, the testing teams must understand that “what password the user knows” or “who the user is” isn’t 
+enough for the authentication of applications. “Where the user is located” and “what the user is performing” are relevant 
+for the authentication too. Identification of personal patterns including contextual evaluations of user behaviour, 
+geolocations, biometrics and tokens are equally important. Risk-based authentication is relevant.
+
+Some of the application security best practices for testing broken authentication are:
+
+Check the existence of multi-factor authentication for credential stuffing, brute force, etc.
+Admin users are allocated specific deployment credentials.
+Check that credential recovery and API pathways are hardened.
+Limit the number of failed login credentials.
+Session IDs are not recorded or stored in public interfaces.
+
+3. Cross-Site Scripting (CSS)
+Cross-site scripting, CSS, or commonly abbreviated XSS, is the concept that gives attackers the ability to push malicious 
+scripts into dynamic webpages. In many cases, these malicious programs inserted by hackers are disguised as legitimate 
+data. Part of the problem is that the validity of scripts is not checked before execution – and can be programmed to 
+steam passwords or reformat databases.
+
+Particularly, it is a concern for many banking and financial services applications as they are accessed on web browsers. 
+In a hypothetical example, an attacker may send a trojan URL with client-side scripts that if, clicked by a user, gives 
+the data back to the client.
+
+To avoid XSS attempts, application security testers must explicitly filter user-supplied data before it turns into an 
+output on the user’s web browser. Therefore, what follows is the step to ensuring that HTML tags are not returned to the 
+client. Following functions can be checked by application security experts:
+
+C/C++: Calls to printf(), fprintf(), and output streams.
+Perl: Calls to print, printf, syswrite, or variables holding user-supplied data.
+PHP: Calls to print, printf, and echo or variables holding user-supplied data.
+
+THEORY EXERCISE: What is the role of encryption in securing applications?
+Software Applications and Its Types
+
+In Brief
+Web applications have been the torchbearers of online business presence for a lot of companies for a long time now. 
+These applications are an important contributor to the outreach of all kinds of businesses.
+This vitality makes them critical for business organizations and a lucrative target for malicious threat actors sitting 
+online. Tightening your web application security measures is the only way to maintain the immunity of such applications 
+against prevailing threats.
+The most valuable commodity to protect with regard to web applications is the critical data they hold in them. Encryption 
+is an effective way to protect sensitive data and critical information that your applications withhold.
+In this blog, we will discuss the role of encryption in web application security and a few important aspects related to it.
+
+How Does Encryption Work?
+Encryption is the systematic way to secure your sensitive data and information. The process involved a method that converts
+the data into a secret code hiding the information’s correct meaning. This ensures that data cannot be used against you 
+even if it falls into the hands of hackers. The process is known as cryptography where the unencrypted data is called 
+plaintext and the encrypted data is called ciphertext. The data is coded using advanced encryption algorithms also known 
+as ciphers. There is a ‘key’ to every cipher which is a unique output variable. You need that decryption key to decode 
+the encrypted data for getting access to the information. If an attacker gets its hands on your data, he/she needs to put 
+in the correct ‘unique decryption key’ to access the information. Guessing or breaching the encryption code is quite 
+unlikely. This is what makes encryption a trustworthy security tool for your data.
+
+Types Of Encryption
+
+Symmetric encryption
+Asymmetric encryption
+Data Encryption Standard (DES)
+Triple Data Encryption Standard (3DES)
+RSA
+Advanced Encryption Standard (AES)
+Encryption in the cloud
+End-to-End encryption
+
+LAB EXERCISE: Identify and classify 5 applications you use daily as either system software or application software.
+
+What is System Software?
+System Software is the type of software that is the interface between application software and the system. Low-level 
+languages are used to write the system software. System Software maintains the system resources and gives the path for 
+application software to run. An important thing is that without system software, the system can not run. It is 
+general-purpose software.
+
+Functions of System Software
+Memory Management
+Processor Management
+File Management
+Security
+Error-detecting Aids
+Scheduling
+
+Features of System Software
+System software is written in a low-level language.
+The size of the system Software is smaller.
+System software is complex to understand.
+System software is present near hardware components.
+
+Types of System Software
+
+1. Operating System
+2. Language Processor
+3. Device Driver
+
+What is Application Software?
+Application Software is the type of software that runs as per user request. It runs on the platform which is provided by 
+system software. High-level languages are used to write the application software. It’s a specific purpose software. 
+The main difference between System Software and Application Software is that without system software, the system can not 
+run on the other hand without application software, the Low-level maintenance system always runs.
+
+Functions of Application Software
+Information and data management
+Management of documents (document exchange systems)
+Development of visuals and video
+Emails, text messaging, audio, and video conferencing, and cooperation are all options.
+Management of accounting, finance, and payroll
+Management of resources (ERP and CRM systems)
+
+Features of Application Software
+Application software is written in a high-level language.
+Application software requires more storage space than system software.
+Only a single task is performed by each application software.
+Application Software is easy to build in comparison to system software.
+
+Types of Application Software
+
+1. General Purpose Software 
+2. Customized Software
+3. Utility Software
+
+THEORY EXERCISE: What is the difference between system software and application software?
+Software Architecture
+
+System Software
+
+System Software maintains the system resources and gives the path for application software to run.
+Low-level languages are used to write the system software.
+It is general-purpose software.
+Without system software, the system stops and can’t run.
+System software runs when the system is turned on and stops when the system is turned off.
+Example: System software is an operating system, etc.
+System Software programming is more complex than application software.
+The Software that is designed to control, integrate and manage the individual 
+hardware components and application software is known as system software.
+A system software operates the system in the background until the shutdown of the computer.
+The system software has no interaction with users. It serves as an interface between hardware and the end user.
+System software runs independently.
+
+Application Software
+
+Application software is built for specific tasks.
+While high-level languages are used to write the application software.
+While it’s a specific purpose software.
+While Without application software system always runs.
+While application software runs as per the user’s request.
+Example: Application software is Photoshop, VLC player, etc.
+Application software programming is simpler in comparison to system software.
+A set of computer programs installed in the user’s system and designed to perform a specific task is known as application 
+software.
+Application software runs in the front end according to the user’s request.
+Application software connects an intermediary between the user and the computer.
+Application software is dependent on system software because they need a set platform for its functioning.
+
+LAB EXERCISE: Design a basic three-tier software architecture diagram for a web application.
+
+The Three-Tier Client-Server Architecture divides systems into presentation, application, and data layers, increasing 
+scalability, maintainability, and efficiency. By separating the concerns, this model optimizes resource management and 
+allows for independent scaling and updates, making it a popular choice for complex distributed systems.
+
+What is Three-Tier Client Server Architecture in Distributed Systems?
+In distributed systems, applications are divided into three distinct tiers using the Three-Tier Client-Server Architecture 
+design model:
+
+Presentation Tier: The user interface layer, where interactions occur. It handles data display and user input.
+Application Tier: The business logic layer, which processes user requests, performs computations, and makes decisions. 
+It acts as a mediator between the presentation and data tiers.
+Data Tier: The storage layer, is responsible for managing and storing data. It handles database operations and data 
+retrieval.
+This separation helps improve scalability, manageability, and flexibility by isolating each layer’s responsibilities.
+
+Importance of Three-Tier Client Server Architecture in Distributed Systems
+The Three-Tier Client-Server Architecture is crucial in distributed systems for several reasons:
+
+Scalability: Each tier can be scaled independently. For example, the application tier can be scaled to handle increased 
+business logic load without affecting the presentation or data tiers.
+Maintainability: Developers can update or change one layer without affecting others when there is a clear separation of 
+responsibilities, which makes maintenance easier and lowers the possibility of system-wide problems.
+Flexibility: Upgrading the user interface, for example, can be done without affecting the data management or business 
+logic below, making upgrades and modifications simpler.
+Performance: Distributing tasks across different tiers can optimize resource use and performance. For instance, caching 
+strategies can be implemented at the application tier to enhance response times.
+Security: Each tier can have distinct security measures. For example, sensitive data can be securely managed at the data 
+tier, while the presentation tier focuses on user interaction.
+
+THEORY EXERCISE: What is the significance of modularity in software architecture?
+Layers in Software Architecture
+
+What is software architecture?
+Software architecture is the foundation of any software system.
+
+It is a conceptual framework defining the "what" (the system's high-level structure, components, and relationships) and 
+the "why" (the strategic decisions) to translate functional and non-functional requirements into a roadmap to "how" we 
+should successfully build the system.
+
+How Does Modular Software Architecture Improve Scalability?
+Modular software architecture enhances scalability by breaking down the application into distinct, reusable modules. However, 
+when it comes to improving scalability, modular monolith architecture deserves special attention.
+
+In a modular monolith, the application maintains a single codebase, making it easier to manage and deploy. While it doesn't 
+provide the same level of scalability as a full microservices architecture, it offers a middle-ground solution. Dividing 
+the application into manageable modules within a single codebase, it allows for some level of modularity and flexibility 
+without the added complexity of distributed architecture.
+
+The key advantage of modular monolith architecture is its ability to adapt and expand to meet growing demands.
+
+This approach facilitates the addition of new modules as needed, ensuring the modular system can evolve without the 
+constraints of a monolithic architecture.
+
+It strikes a balance between simplicity and scalability, making it a pragmatic choice for organizations looking to improve 
+their systems' scalability while maintaining control and reducing operational overhead.
+
+What is Software Modularity?
+Software modularity is measured by how well software is decomposed into smaller pieces with standardized interfaces. 
+It is analogous to modularity for hardware. We want to create products by combining reusable chunks of code, so you only 
+implement a feature or functionality once and then maximize reuse.
+
+A software module exposes its interface to other modules, both internally within the module system but also externally 
+towards other systems. Externally exposed interfaces belong to the module system's external Application Program Interface 
+(API). They should be carefully designed since changes in APIs will impact other applications. There are plenty of APIs 
+freely available today for cloud services, for example, SkyScanner API (to build your own travel app) or Open Weather API 
+(to build your own weather app). If any of these services suddenly change their API, many apps across the globe will be 
+broken, generating a lot of frustration and extra work. To have a stable modular software system, careful design and 
+governance of interfaces must also be implemented for interfaces between modules for internal use.
+
+The intent of software modularity is different depending on the strategic targets of the software author. Here are some 
+examples of strategy and intent:
+
+When software and hardware are combined, software portability might be a key target of modularity. Software portability 
+is defined as software that is independent of the hardware it runs on. This autonomy can be achieved with carefully 
+designed interfaces that abstract the hardware level from the application level.
+Automated testing is typically a major concern for software that is changed often. By being able to test faster and spot 
+issues earlier, less time and resources can be spent on integrating the changes. Automated testing is something that can 
+be achieved better with smart software modularity. By isolating changing parts with interfaces, we can test smaller 
+chunks which is faster both in testing and in finding bugs.
+
+For software where updates and features are implemented on an installed base, Over-the-Air (OTA) update capability is the 
+tale of the century. To push software updates in a controlled and efficient matter, it is essential to separate frequently 
+updated modules from fundamental critical modules where changes are high risk. Updating small chunks of the software is 
+also faster and less resource consuming.
+To achieve the intent of the software modularity requires a solid approach. It starts with a clear definition of the goals 
+and trying to determine what parts of the system you need to apply the modular strategy on, i.e. determining which parts 
+belong together in a software module.
+
+1. Layered Architecture (N-Tier Architecture)
+Layered Architecture (N-Tier Architecture) is a software design pattern that structures an application into multiple 
+distinct layers, each responsible for specific tasks or concerns. This approach helps in separating different aspects of 
+the application into modular, manageable, and reusable components. Each layer interacts with the one directly above or 
+below it, but layers typically don’t interact with each other directly, promoting a clear separation of concerns.
+
+Presentation Layer (UI) : This is where the user interacts with the application. It handles user input and displays 
+information.
+Application Layer (Business Logic) : This layer contains the core logic of the application, such as processing user 
+requests and managing business rules.
+Data Access Layer (Database) :Data is retrieved and stored. It interacts with the database, ensuring separation of data 
+concerns.
+
+LAB EXERCISE: Create a case study on the functionality of the presentation, business logic, and data access layers of a 
+given software system.
+
+In this article, we are going to learn about the Business Logic Layer in Database Management systems. The Business Logic 
+Layer also known as BLL act as an intermediate between the Presentation Layer and the Data Access Layer (DAL). This layer 
+handles the business logic, business rules as well as calculations. It tells how the data from the database can be used, 
+what it can perform, and what can not within its application.
+
+The Business-Logic Layer (BLL) is a component of a software architecture that is responsible for implementing the business 
+logic of an application. It sits between the presentation layer (e.g., the user interface) and the data access layer 
+(e.g., the database), and is responsible for processing and manipulating data before it is presented to the user or 
+stored in the database.
+
+The BLL is responsible for performing tasks such as:
+-Validating input data to ensure that it meets the necessary business rules and constraints.
+-Performing calculations and transformations on data, as required by the business logic.
+-Enforcing business rules and policies, such as access control and security.
+-Communicating with the data access layer to retrieve and store data.
+-Handling errors and exceptions.
+
+The BLL is designed to be reusable and independent of the user interface and data storage implementation. This allows 
+the application to be easily modified or extended without affecting the underlying business logic.
+
+The BLL is also responsible for managing the workflows and the use cases of the application, by handling the communication 
+between the different layers, and by implementing the rules and constraints of the business.
+
+In summary, The Business-Logic Layer (BLL) is a component of a software architecture that is responsible for implementing 
+the business logic of an application. It sits between the presentation layer and the data access layer, and is responsible
+for processing and manipulating data before it is presented to the user or stored in the database. It also manages the 
+workflows and the use cases of the application, and it is designed to be reusable and independent of the user interface 
+and data storage implementation.
+
+Presentation Layer: The layer at which users interact with the application and the final data will be visible to the 
+users at this interface. It acts as an interface between the user and the application.
+Business Logic Layer: It acts as an intermediate between the Presentation and the Data Access Layer.
+Data Access Layer: The layer at which the data is managed.
+
+All the three layers above play an important role in building an application
+The business logic layer manages the communication between the database and the presentation layer.
+Example: In an application, when the user access it or write queries in it with the help of a presentation or user 
+interface layer the business logic layer helps the user to get a response to the asked queries by transferring it to the 
+Data Access layer which further processes the query and give the suitable result to a business logic layer which is 
+further transferred to the presentation layer which makes it visible to the user.
+
+Due to the less clarity in defining the Business logic layer, some business domains like Microsoft and Apple excluded the 
+BLL from their applications which leads to difficulty in code maintenance. A better approach is to build an application 
+that supports multiple different user Interfaces.
+
+THEORY EXERCISE: Why are layers important in software architecture?
+Software Environments
+
+Advantages of Layered Architecture
+Layered architecture offers several advantages that make it a popular choice for large and complex software systems.
+
+Modular structure: By dividing the application into different layers, developers can isolate specific functionalities and 
+easily modify or replace them without affecting other parts of the system. This allows for more agile development and 
+easier maintenance.
+
+Separation of concerns: Each layer is responsible for a specific set of tasks, and there is limited communication between 
+the layers. This helps to ensure that the code is organized and easy to understand, making it easier to test and debug. 
+This ensures a clear separation of the application's functionality and the underlying technology, allowing for better 
+scalability, as additional layers can be added to handle increased functionality without affecting the existing layers.
+
+For example, the presentation layer can be implemented using different technologies, such as a web-based user interface 
+or a mobile app, without affecting the business or data access layers. This flexibility makes it easier to adapt the 
+application to different environments or requirements.
+
+Code reusability: Because each layer has a well-defined interface, it is possible to reuse code across different 
+applications or even different layers of the same application. This can save developers time and effort by reducing the 
+amount of code they need to write and maintain.
+In large and complex software systems, layered architecture is particularly important. These systems often involve 
+multiple teams of developers working on different parts of the system simultaneously. Layered architecture helps to 
+promote modularity and separation of concerns, making it easier for teams to work independently without stepping on each 
+other's toes. It also makes it easier to manage and maintain the codebase over time, as the structure of the system is 
+well-defined and easy to understand.
+
+Additionally, layered architecture helps to ensure that the system remains robust and reliable. By dividing the application
+into different layers, developers can focus on specific functionalities and ensure that they are working correctly. This 
+helps to reduce the likelihood of bugs or errors that could cause the system to fail. It also makes it easier to identify 
+and fix issues when they do occur, as the problem is likely to be isolated to a specific layer rather than affecting the 
+entire system.
+
+LAB EXERCISE: Explore different types of software environments (development, testing, production). Set up a basic environment
+in a virtual machine.
+
+There 4 different environments in a software development team are shown below:
+
+Development environment
+Testing environment
+Staging environment
+Production environment
+Development environment:
+
+The development environment is the first environment in software development which acts as the workspace for developers 
+to do programming and other operations related to the creation of software and/or systems.
+
+An integrated development environment (IDE) — a software package with extensive functions for authoring, building, testing,
+and debugging a program which is commonly used by software developers. Some programming software tools such as Microsoft 
+Visual Studio, Eclipse, NetBeans, and other integrated development environments.
+
+Testing environment:
+
+The test environment is where testing teams evaluate the application/quality. program’s This also allows computer 
+programmers to find out and solve any defects that may interfere with the application’s smooth operation or degrade the 
+user experience.
+
+The test environment is created by allocating storage, computing, and other resources needed for testing. This could 
+include new physical/virtual devices set up for testing use cases defined by developers. For example, Selenium tests 
+cannot run for the whole set of browsers through which you want your application to be accessible at the same time. 
+This means that you either run tests sequentially or generate multiple test environments.
+
+Staging environment:
+
+When you generate the staging instance of an application, you are confident sufficient to reveal it to the immediate 
+owner but not to users. You should run more tests before exposing to the latter group. The staging environment is similar 
+to the pre-production in use.
+
+The staging environment is frequently restricted to a small group of people. The only groups that can access the 
+application in staging are those with whitelisted emails and IP addresses, as well as your developer team. The goal of a 
+staging environment is to simulate production as much as possible.
+
+Production environment:
+
+When the end-user use a web/mobile application, the program is operating on a production server. It’s been created in the 
+production environment.
+
+Tests can be carried out while the product is in production, and new features can be introduced safely at the same time. 
+Feature flags allow you to show a future version of an app to a select few users while the rest continue to utilize the 
+current version.
+
+THEORY EXERCISE: Explain the importance of a development environment in software production.
+Source Code
+
+Development Environment
+The development environment is the first environment in software development that serves as a workspace for developers to
+perform programming and other processes around software and/or systems development. Techopedia defines a development 
+environment as “a set of procedures and tools for developing, testing and debugging an application or a program.”
+
+Types of Environments
+
+Development Environment: This is where application/system development tasks, such as designing, programming, debugging, 
+etc., take place.
+Test Environment: As the name implies, this is where application testing is conducted to find and fix errors.
+Staging Environment: Here, all the work done in the development environment is merged into the built system (often used to
+automate the process of software compilation) before it is moved into the production environment.
+Production Environment: The last environment in software development, this is where new builds/updates are moved into 
+production for end users. 
+
+What Is a Development Environment Used For?
+A development environment is where changes to software code are made. This environment allows developers to work freely 
+on the program without worrying about the impact on end users. Typically, a development environment may exist on an 
+individual’s workstation or “local.” In more complex environments, or where multiple developers are involved, development 
+may be hosted on a server where developers have a working copy of the source code on their machine(s), and any changes 
+are submitted to the repository.
+
+Software developers often use an integrated development environment (IDE) — a software suite with comprehensive 
+functionalities for writing, compiling, testing and debugging a program. Some examples of integrated development 
+environments include Microsoft Visual Studio, Adobe Flex Builder, Eclipse, Netbeans, etc.
+
+LAB EXERCISE: Write and upload your first source code file to Github.
+
+THEORY EXERCISE: What is the difference between source code and machine code?
+Github and Introductions
+
+SOURCE CODE
+
+Source code is generated by human or programmer.
+Source code is high level code.
+Source code is written in plain text by using some high level programming language.
+Source code is human understandable.
+Source code is not directly understandable by machine
+It is written in a high-level language like C, C++, Java, Python, etc., or assembly language.
+It can be easily modified.
+It contains comments for better understanding by programmer
+It contains less number of statements than object code.
+It is less close. towards machine
+Performance of source code is less than object code as it is less close towards machine
+Source code is input to compiler or any other translator.
+Source code is not system specific
+It can be changed over time.
+Language translators like compiler, assembler, interpreter are used to translate source code to object code.
+The source lines of code gives the readability and understandability to the user. Use of fewer lines of code 
+gives better performance by giving same results in most cases.
+
+OBJECT CODE
+
+Object code is generated by compiler or other translator.
+Object code is low level code.
+Object code is translated code of source code. It is in binary format.
+Object code is not human understandable.
+Object code is machine understandable and executable.
+It is written in machine language through compiler or assembler or other translator.
+It can not be modified.
+It does not contain comments for understanding by machine.
+It contains more number of statements than source code.
+It is more close towards machine.
+Performance of object code is more than source code as it is more close towards machine.
+Object code is output of compiler or any other translator.
+Object code is system specific.
+Source code needs to be compiled or translated by any other translator to get modified object code.
+Object code is machine code so it does not require any translation.
+This is not the case with object code.
+
+LAB EXERCISE: Create a Github repository and document how to commit and push code changes.
+
+Push Commits To a Git Repository
+By following the below steps we can push the commit to the git repository.
+
+Step 1: Make sure that your local and  Git repositories are up.
+
+Step 2: Stage the modified files using the command line below.
+
+git add .
+(.) represents all the untracked files. If you want to move a specific file then you can the following command.
+
+git add <name of the file>
+Step 3: Commit the staged files into the local repository using the following command. Provide a commit message that details 
+the changes you made and is descriptive.
+
+git commit -m "message"
+Step 4: Push the commit to the remote repository from there other developers can access the code. Use the following 
+command.
+
+git push <Renote URL>
+In the event that conflicts arise during the push, resolve them manually before going through steps 2 and 4 again to push 
+the modifications.
+
+Note: You must have the required access and permissions before you can push your commits to a Git repository.
+
+Push Commits To a CodeCommit In Amazon Web Services (AWS)
+Follow the steps mentioned below to push the commit to CodeCommit in Amazon Web Services (AWS):
+
+Step 1: Make sure that you have permission to access the CodeCommit in Amazon Web Services(AWS).
+
+Step 2: Use the below command you can clone the repository needed to your local repository.
+
+git clone <HTTPS or SSH URL>
+Step 3: Stage the modified files using the command below (git add).
+
+git add .
+(.) represents all the untracked files. If you want to move a specific file then you can the following command.
+
+git add <name of the file>
+Step 4: Commit the staged files into the local repository using the following command. Provide a commit message that 
+details the changes you made and is descriptive.
+
+git commit -m "message"
+Step 5: To push changes to code commit us the following command. 
+
+git push <Remote URL> 
+The remote URL should be in the format shown below.
+
+https://git-codecommit.[region].amazonaws.com/v1/repos/[repository-name].
+Example: To push commits to the CodeCommit repository.
+
+git push <AWS Code Commit URL>
+Step 6: Repeat the above 3rd and 5th step if you face any problems like merge conflicts.
+
+If you encounter any conflicts during the push, resolve them manually, and then repeat steps 3 to 5 to push the changes 
+again.
+
+THEORY EXERCISE: Why is version control important in software development?
+Student Account in Github
+
+As the name Version Control suggests, it is a system that records changes made to a file or a set of files. The system 
+refers to the category of software tools that make it possible for the software team to look after the source code changes
+whenever needed. The system records all the made changes to a file so a specific version may be rolled if required in the 
+future.
+
+The responsibility of the Version control system is to keep all the team members on the same page. It makes sure that 
+everyone on the team is working on the latest version of the file and, most importantly, makes sure that all these people 
+can work simultaneously on the same project.
+
+Let's try to understand the process with the help of this diagram:
+
+There are 3 workstations or three different developers at three other locations, and there's one repository acting as a 
+server. The work stations are using that repository either for the process of committing or updating the tasks.
+
+LAB EXERCISE: Create a student account on Github and collaborate on a small project with a classmate.
+
+THEORY EXERCISE: What are the benefits of using Github for students?
+Types of Software
+
+What is GitHub used for?
+GitHub allows you to create, store, change, merge, and collaborate on files or code. Any member of a team can access the 
+GitHub repository (think of this as a folder for files) and see the most recent version in real-time. Then, they can make 
+edits or changes that the other collaborators also see. GitHub also lets users make requests of one another and internally
+discuss the iterations along the way. It’s even been called “a social coding platform” because it invites people to 
+coordinate, share, and collaborate code across distributed and asynchronous environments
+
+How to use GitHub as a portfolio 
+Using GitHub for your e-portfolio demonstrates a technological savvy, which can help you stand out in this digital world. 
+Follow these steps to use GitHub for your portfolio:
+
+Sign up for a free GitHub account.
+
+Create your content first in a separate platform (e.g., Google Docs or Word) to ensure you have a master copy.
+
+Add your work to a GitHub project board by creating a new repository. Keep in mind that GitHub repositories are publicly 
+visible by default. You may want to set it to private if it’s a work in progress.
+
+Share with others and ask for input.
+
+Edit and revise in the collaborative interface.
+
+Publish your work to a GitHub page open to the public.
+
+Share your final portfolio with your network of potential employers. You could also put it on your resume and LinkedIn 
+profile.
+
+Types of software:
+
+System Software
+
+Operating System
+Language Processor
+Device Driver
+
+Application Software
+
+General Purpose Software
+Customize Software
+Utility Software
+
+LAB EXERCISE: Create a list of software you use regularly and classify them into the following categories: system, 
+application, and utility software.
+
+Utility Software
+
+The Utility Software is system software that helps to maintain the proper and smooth functioning of a Computer System. 
+It assists the Operating System to manage, organize, maintain, and optimize the functioning of the computer system.
+
+Utility Software performs certain tasks like virus detection, installation, and uninstallation, data backup, deletion of 
+unwanted files, etc. Some examples are antivirus software, file management tools, compression tools, disk management tools,
+etc.
+
+1. Antivirus
+A virus is a malicious software that enters the system along with a host program. Moreover, it multiplies with time and 
+makes several copies which in turn slows down and corrupts the system. 
+
+An antivirus is a utility software that helps to keep the computer virus-free. Moreover, it notifies when any malicious 
+file is detected and removes such files. In addition, it scans any new device attached to the computer and discards any 
+virus if there. Moreover, it also scans the system from time to time for any threats and disposes of them. Examples of 
+antivirus are McAfee Antivirus, Quickheal Antivirus, Windows Defender, etc.
+
+2. File Management System
+These utility software are used to manage files of the computer system. Since files are an important part of the system as
+all the data is stored in the files. Therefore, this utility software help to browse, search, arrange, find information, 
+and quickly preview the files of the system.
+
+Windows Explorer is a default file management tool present in the system. Some other examples of file management tools are
+Google Desktop, Double Commander, Directory Opus, etc.
+
+3. Compression Tools
+An important part of a computer is storage space, it is very important to maintain this storage. Therefore, we use certain
+utility software to compress big files and decrease their size, these are compression tools.The format of the files 
+changes while compressing and we cannot access or edit them directly. In addition, we can easily decompress the file and 
+get the original file back. Examples of compression tools are WinZip, WinRAR, WinAce, PeaZip, 7-Zip, etc.
+
+4. Disk Management Tools
+These utility software are used to manage data on disks. Moreover, they perform functions like partitioning devices, manage 
+drives, etc.Examples of disk management tools are MiniTool Partition Wizard, Paragon Partition Manager, etc.
+
+5. Disk Cleanup Tool
+This utility software helps to free up the disk space. In addition, the files which are no longer in use are removed from 
+the disk. Examples are Razer Cortex, Piriform CCleaner, etc.
+
+6. Disk Defragmenter
+This utility software helps to reduce the fragmentation and hence, reduces the access speed. Defragmenting refers to 
+rearranging files and storing them in contiguous memory locations. Moreover, saves time in reading from files and writing 
+files to disk. Examples of disk defragmenters are Perfect disk, Deflaggler, etc.
+
+7. Backup Utility
+This utility software helps to back up the files, folders, databases, or complete disks. Moreover, backup refers to 
+duplicating the disk information so that the data can be restored if any data loss happens.
+
+Application Software
+Application Software, also known as end-user programs or productivity programs, help the user in completing tasks such as 
+doing online research, jotting down notes, setting the alarm, designing graphics, keeping an account log, doing calculations,
+or even playing games. They lie above the system software. 
+
+End users them for a specific purpose or task. For example, a browser is an application designed specifically for browsing 
+the internet and MS Powerpoint is used for creating presentations. 
+
+Application Software or simply apps can also be referred to as non-essential software as their requirement is highly 
+subjective, and their absence does not affect the system's functioning. The apps we see on our mobile phones are also 
+examples of Application Software.
+
+Types of Application Software
+Word Processors
+These applications help you create documents where you can write and edit anything. Along with that, it also helps in 
+storing, formatting, and printing documents. 
+
+Some examples of word processors are:
+
+Abiword
+Apple iWork- Pages
+Corel WordPerfect
+Google Docs
+MS Word
+Database Software
+A database management system is an application software to create and manage databases. They help with the organization 
+of data. Some examples of DBMS are:
+
+Clipper
+dBase
+FileMaker
+FoxPro
+MS Access
+MySQL
+Multimedia Software
+It is the software that is able to play, create or record images, audio or video files. They are used for video editing, 
+animation, graphics, and image editing, Some examples of Multimedia Software are:
+
+Adobe Photoshop
+Inkscape
+Media Monkey
+Picasa
+VLC Media Player
+Windows Media Player
+Windows Movie Maker
+Education and Reference Software
+These types of software are specifically designed to facilitate learning on a particular subject. There are various kinds 
+of tutorial software that fall under this category. They are also termed as an academic software. Some examples are:
+
+Delta Drawing
+GCompris
+Jumpstart titles
+KidPix
+MindPlay
+Tux Paint
+Graphics Software
+As the name suggests, Graphics Software has been devised to work with graphics as it helps the user to edit or make changes 
+in visual data or images. It comprises of picture editors and illustration software. Some examples are:
+
+Adobe Photoshop
+Autodesk Maya
+Blender
+Carrara
+CorelDRAW
+GIMP
+Modo
+PaintShop Pro
+Web Browsers
+Web browsers help us browse the internet. They help the user retrieve data across the web. Some examples of web browsers 
+are:
+
+Google Chrome
+Internet Explorer
+Microsoft Edge
+Mozilla Firefox
+Opera
+Safari
+UC Browser 
+
+Certain software is exclusively made for app development, like Meteor and Flutter. These are examples of Application 
+software too.
+
+THEORY EXERCISE: What are the differences between open-source and proprietary software?
+GIT and GITHUB Training
+
+OPEN-SOURCE SOFTWARE
+
+Open-source software is computer software whose source code is available openly on the internet and programmers can modify
+it to add new features and capabilities without any cost.
+
+Here the software is developed and tested through open collaboration.
+
+In open-source software the source code is public.
+
+Open-source software can be installed on any computer.
+
+Users do not need to have any authenticated license to use this software.
+
+Open-source software is managed by an open-source community of developers.
+
+It is more flexible and provides more freedom which encourages innovation.
+
+Users can get open software free of charge.
+
+In open-source software faster fixes of bugs and better security are availed due to the community.
+
+Limited Intellectual Property Protections
+
+Usually Developed and Maintained by non-profit organizations.
+
+Examples are Android, Linux, Firefox, Open Office, GIMP, VLC Media player, etc.
+
+PROPRIETARY SOFTWARE
+
+Proprietary software is computer software where the source codes are publicly not available only the company which has 
+created can modify it.
+
+Here the software is developed and tested by the individual or organization by which it is owned not by the public.
+
+In proprietary software, the source code is protected.
+
+Proprietary software can not be installed into any computer without a valid license.
+
+Users need to have a valid and authenticated license to use this software.
+
+Proprietary software is managed by a closed team of individuals or groups that developed it.
+
+It is not much flexible so there is a very limited innovation scope with the restrictions.
+
+Users must have to pay to get the proprietary software.
+
+In proprietary software, the vendor is completely responsible for fixing malfunctions.
+
+Full Intellectual Property Protections
+
+Usually Developed and Maintained by for-profit entities.
+
+Examples are Windows, macOS, Internet Explorer, Google Earth, Microsoft Office, Adobe Flash Player, Skype, etc.
+
+LAB EXERCISE: Follow a GIT tutorial to practice cloning, branching, and merging repositories.
+
+THEORY EXERCISE: How does GIT improve collaboration in a software development team?
+Application Software
+
+Are you eager to collaborate on projects, contribute to open-source software, or streamline your development workflow? 
+Harnessing the power of Git and GitHub can make these aspirations a reality. In this guide, we’ll explore the essential 
+steps to not only connect your local project to a GitHub repository but also to create new repositories, clone existing 
+projects, create branches, forks, and initiate pull requests for seamless collaboration.
+
+Creating a New Repository on GitHub
+Let’s kickstart our collaborative journey by creating a new repository on GitHub. Follow these simple steps to get started.
+
+Step 1 : Visit GitHub and Log In
+Head over to GitHub and sign in to your account.
+
+Step 2 : Create a New Repository
+Click on the “+” icon in the top-right corner of the page and select “New repository”.
+
+Step 3 : Set Up Your Repository
+Choose a name for your repository. While it doesn’t have to match your local project name exactly, it’s helpful to keep 
+them similar for clarity.
+
+You can also add a description, choose between public and private visibility, and include a README file or a .gitignore 
+file if needed.
+
+Step 4 : Create the Repository
+Click on the “Create repository” button, and your new repository will be created!
+
+Step 5 : Copy the Repository URL
+Once the repository is created, you’ll be redirected to its page on GitHub. Copy the URL from the address bar of your 
+browser or from the location indicated below. It will look something like https://github.com/username/repository-name.git.
+
+Connecting Your Local Project to a GitHub Repository
+Step 1 : Navigate to Your Project Directory
+First, open your command prompt or terminal and navigate to the directory where your local project is located.
+
+Step 2 : Initialize a Git Repository
+Run git init to initialize a new Git repository in the current directory.
+
+Step 3 : Create the Main Branch
+When you create the project in the GitHub repository, you might have noticed that the default branch is set to “main”. 
+However, git init puts you on the unborn "master" branch instead of "main". To resolve this, create the "main" branch 
+locally if it doesn't exist already.
+
+git branch -M main
+Step 4 : Add Your Files
+Now, use git add . to add all files in your project directory to the staging area. If you only want to add specific files, 
+you can specify them individually.
+
+git add .
+Step 5 : Commit Your Changes
+After adding files to the staging area, commit them to the repository with a descriptive commit message.
+
+git commit -m "Initial commit"
+Step 6 : Connect to the Remote Repository
+Use the following command to connect your local repository to the remote repository on GitHub. Replace <repository-url> 
+with the URL you copied earlier.
+
+git remote add origin <repository-url>
+For Example :
+
+git remote add origin https://github.com/username/repository-name.git
+If you created your project with a README file, you need to follow two additional steps.
+
+git pull
+This command fetches changes from the remote repository and merges them into the current local branch.
+
+git branch --set-upstream-to=origin/main main
+This command links your local branch to the “main” branch on the remote repository named “origin”, allowing your local 
+branch to stay updated with changes made to the remote “main” branch.
+
+Step 7 : Verify the Connection
+You can use git remote -v to verify that the remote repository has been added. You should see the URL of your remote 
+repository listed as origin.
+
+git remote -v
+Step 8 : Push Your Changes
+Finally, push your local commits to the remote repository using the following command.
+
+git push -u origin main
+If you encounter any errors, you can use the following command to push the code forcefully.
+
+git push -u origin main -f
+When you visit your project on GitHub, you can see that the main branch contains the code you pushed as shown below.
+
+LAB EXERCISE: Write a report on the various types of application software and how they improve productivity.
+
+Application software (App) is a kind of software that performs specific functions for the end user by interacting directly 
+with it. The sole purpose of application software is to aid the user in doing specified tasks. 
+
+Web browsers like Firefox, and Google Chrome, as well as Microsoft Word and Excel, are examples of application software 
+that is used on a personal computer or laptop. It also includes smartphone apps such as WhatsApp and Telegram, as well as 
+games such as Candy Crush Saga and Ludo. There are also app versions of popular services that people rely on every day, 
+such as weather or transportation information, as well as apps that connect end users with their businesses.
+
+Types of Application Software
+Application software can also be classified depending on how much it costs and how easily it can be accessed. Here are 
+some examples of application software:
+
+1. Word Processing Software
+Word Processing refers to the act of using a personal computer (PC) or laptop to create, edit, save and print documents 
+which can be performed only with specialized software known as a Word Processor. One example of a Word Processor is 
+Microsoft Word which is widely used by all professionals. 
+
+2. Spreadsheet Software
+Spreadsheet software is a type of computer program that enables a user to perform numerical functions and explore numbers 
+through an automated version of an accounting worksheet. Best example of spreadsheet software is Microsoft Excel.
+
+3. Presentation Software
+Presentation software also commonly known as presentation graphics is a particular category of application program used 
+to construct sequences of words and a series of pictures that tell a story or help support a speech or public presentation
+of any type of information or a launch of new products or services.
+
+4. Multimedia Software
+Multimedia software can be described as the combination of text, audio, images, animation, or video to produce a wide 
+scope of interactive content for both professional and personal use. You can easily learn about media players, file 
+formats, and how to operate audio and video software on the whole.
+
+5. Web Browsers
+A web browser can take you all over the internet. It retrieves data from other parts of the web and shows it on your 
+desktop or mobile device for your viewing. The data is transmitted using the Hypertext Transfer Protocol, which describes 
+how text, images, and video are shared on the World Wide Web.
+
+6. Educational Software
+Educational software refers to any computer software designed solely for educational reasons. It includes a wide range of 
+software, including language learning software, classroom management software (CMS), and reference software for students 
+and other professionals.
+
+7. Graphics Software
+Graphics software can rework with bitmap and/or vector graphics and can be utilized to create label templates. Graphics 
+software generally includes Canva, Adobe Illustrator, Photoshop, InDesign, CorelDraw, Inkscape, Microsoft Paint, and Paint.
+Net.
+
+8. Freeware
+Freeware is typically marketed for profit but might be allocated specifically for a business or commercial purpose with the aim to expand the market share of any newly launched premium product. Some of the widespread examples of closed-source freeware include Adobe Reader, Free Studio, and Skype.
+
+9. Shareware
+Shareware is software that is supplied for free on a trial basis in order for the user to test or use the programme for a 
+specific amount of days with the understanding that the user may need or want to pay for it later if they are satisfied 
+with the product usage. Some software manufacturers provide a shareware edition of their product with an expiration date 
+built in, such that after 30 days, the user or customer will no longer be able to access the application for further use.
+
+10. Simulation Software
+Simulation software authorizes engineers to evaluate, optimize, and compare product designs with other similar software 
+by modeling real-world events in a computer-generated environment.
+
+11. Open Source
+Open source software is a specific code designed to be publicly accessible so that anyone can see, modify, and distribute 
+the code as they see which fits the purpose. It is designed in a decentralized and coordinated way, depending on peer 
+assessment and community production.
+
+12. Closed Source
+Closed source software is where the source code is not freely accessible. It is developed and delivered to the customer 
+as a fully compiled, executable set of files. The developer often provides aid to users after purchase and ensures that 
+the software works as foreseen by the creator.
+
+Productivity Software
+Productivity software is a specific sort of application program that allows end users to produce something such as documents, 
+databases, graphs, spreadsheets, and presentations. Productivity software increases the organization's efficiency by 
+relieving people's tasks largely.
+
+THEORY EXERCISE: What is the role of application software in businesses?
+Software Development Process
+
+In the fast-paced world of business, software applications play a critical role in enhancing productivity, streamlining 
+operations, and facilitating decision-making processes. One of the key components of these business software applications 
+is application functions, which determine how the software operates and what it can accomplish.
+
+What are Application Functions?
+Application functions refer to the specific tasks or operations that a software application can perform. These functions 
+can range from basic operations such as data entry and storage to more complex activities like data analysis, reporting, 
+and automation of business processes. In essence, application functions define the capabilities and features of the 
+software, enabling users to carry out various tasks to support their business activities.
+
+Where do Application Functions Take Place?
+Application functions are embedded within the software application itself. They are the building blocks that enable users 
+to interact with the software and perform specific actions. Whether it’s a customer relationship management (CRM) system, 
+an enterprise resource planning (ERP) solution, or a project management tool, application functions are present in all 
+types of business software applications.
+
+When are Application Functions Relevant?
+The relevance of application functions is constant in the realm of business software applications. As businesses continue 
+to rely on technology for their operations, the need for software applications with diverse and efficient functions 
+becomes increasingly crucial. Whether it’s in the past, present, or future, understanding and implementing relevant 
+application functions are vital for business success.
+
+How Do Application Functions Work?
+Application functions are implemented through coding and programming within the software application. They are designed 
+to respond to user input, process data, and produce the desired output. For example, in an accounting software application, 
+the functions may include invoicing, financial reporting, and budgeting. These functions work together to provide users 
+with the tools they need to manage their financial activities effectively.
+
+Why are Application Functions Important?
+The importance of application functions lies in their ability to meet the unique needs of businesses. By offering a range 
+of functions, software applications can address diverse business requirements, from sales and marketing to finance and 
+operations. This versatility enables businesses to optimize their processes, make informed decisions, and gain a 
+competitive edge in their respective industries. As technology continues to evolve, the role of application functions in 
+driving business efficiency and innovation will only become more significant.
+
+Key Terms:
+1. Application Functions
+2. Software Applications
+3. Data Analysis
+4. Business Processes
+5. Enterprise Resource Planning (ERP)
+6. Customer Relationship Management (CRM)
+
+Experts in this field include software developers, IT consultants, and business analysts who possess extensive knowledge 
+about software application design and functionality. These professionals can provide valuable insights into the best 
+practices for integrating application functions into business software applications, as well as the latest trends in 
+software development and enterprise technology solutions.
+
+LAB EXERCISE: Create a flowchart representing the Software Development Life Cycle (SDLC).
+
+What is the Software Development Life Cycle (SDLC)?
+SDLC is a process followed for software building within a software organization. SDLC consists of a precise plan that 
+describes how to develop, maintain, replace, and enhance specific software. The life cycle defines a method for improving 
+the quality of software and the all-around development process.
+
+Stages of the Software Development Life Cycle
+SDLC specifies the task(s) to be performed at various stages by a software engineer or developer. It ensures that the end 
+product is able to meet the customer’s expectations and fits within the overall budget. Hence, it’s vital for a software 
+developer to have prior knowledge of this software development process. SDLC is a collection of these six stages, and the 
+stages of SDLC are as follows:
+
+Stage-1: Planning and Requirement Analysis
+Stage-2: Defining Requirements
+Stage-3: Designing Architecture
+Stage-4: Developing Product
+Stage-5: Product Testing and Integration
+Stage-6: Deployment and Maintenance of Products
+
+Software Development Life Cycle Models
+
+1. Waterfall Model
+2. Agile Model
+3. Iterative Model
+4. Spiral Model
+5. V-Shaped Model
+6. Big Bang Model
+
+THEORY EXERCISE: What are the main stages of the software development process?
+Software Requirement
+
+Phase 1: Planning
+The initial stage of software development, Planning, involves defining the software's purpose and scope, much like pinpointing 
+our destination and plotting the best route. We uncover the tasks at hand during this phase and strategize for efficient 
+execution.
+
+The team collaborates to understand the end-users' needs and the goals the software should meet. Essentially, we ask, 
+"What problem will this software solve?" and "What value will it offer to the user?"
+
+A feasibility study also takes place during the Planning phase. Developers and product teams evaluate technical and 
+financial challenges that might affect the software's development or success.
+
+So, what transpires in this phase? Key documents such as the Project Plan and Software Requirement Specification (SRS) 
+are created. These guides detail the software's functions, necessary resources, possible risks, and a project timeline.
+
+The Planning phase fosters effective communication and collaboration within the team. By defining clear roles, 
+responsibilities, and expectations, it lays a solid foundation for an efficient software development process.
+
+Phase 2: Requirements Analysis
+Phase 2 of the SDLC, Requirements Analysis, seeks to identify and record the precise requirements of the final users. In 
+this phase, the team is looking to answer, "What are the expectations of our users from our software?" This is called 
+requirements gathering.
+
+The project team collects information from stakeholders, including analysts, users, and clients. They conduct interviews, 
+surveys, and focus groups to understand the user's expectations and needs. The process involves not only asking the right 
+questions but also accurately interpreting the responses.
+
+After collecting the data, the team analyzes it, distinguishing the essential features from the desirable ones. This 
+analysis helps the team understand the software's functionality, performance, security, and interface needs.
+
+These efforts result in a Requirements Specification Document. It outlines the software's purpose, features, and 
+functionalities, acting as a guide for the development team and providing cost estimates if needed. To ensure its 
+reliability, the document is validated for accuracy, comprehensiveness, and feasibility.
+
+The success of the Requirements Analysis phase is pivotal for the entire project. Done right, it leads to a software 
+solution that meets users' needs and exceeds their expectations.
+
+Phase 3: Design
+The Design phase is all about building the framework. The development team is responsible for software engineering and 
+outlines the software's functionality and aesthetic. This ultimately results in the software product. The emphasis lies 
+on outlining the software's structure, navigation, user interfaces, and database design. This phase ensures that the 
+software is user-friendly and performs its tasks efficiently.
+
+So, what tasks does the team undertake? Key activities include crafting data flow diagrams, constructing entity-relationship 
+diagrams, and designing user interface mock-ups. The team also identifies system dependencies and integration points. 
+They also set the software's limitations, such as hardware constraints, performance requirements, and other system-related 
+factors.
+
+The culmination of these tasks is an exhaustive Software Design Document (SDD). This document serves as the roadmap for 
+the team during the coding phase. It meticulously details the software's design, from system architecture to data design, 
+and even user interface specifics.
+
+The Design phase is the link between the software's purpose (established in the Planning and Requirements Analysis phases) 
+and its execution (defined in the coding phase). It's an essential step in creating software that works efficiently and 
+provides an excellent user experience.
+
+Phase 4: Coding
+The Coding phase in the Software Development Life Cycle (SDLC) is when engineers and developers get down to business and 
+start converting the software design into tangible code.
+
+This development phase aims to develop software that is functional, efficient, and user-friendly. Developers use an 
+appropriate programming language, Java or otherwise, to write the code, guided by the SDD and coding guidelines. This 
+document, acting as a roadmap, ensures the software aligns with the vision set in earlier phases.
+
+Another key aspect of this phase is regular code reviews. Team members carefully examine each other's work to identify 
+any bugs or inconsistencies. These meticulous assessments uphold high code standards, ensuring the software's reliability 
+and robustness. This phase also includes preliminary internal testing to confirm the software's basic functionality.
+
+At the end of this phase, a functional piece of software comes to life. It embodies the planning, analyzing, and 
+designing efforts of the preceding stages. Though it may not be flawless, it represents a significant stride towards a 
+valuable software solution.
+
+Phase 5: Testing
+Consider the Testing phase of the SDLC as a stringent quality inspection on a production line. It is when vulnerabilities 
+are uncovered. Software testing involves a thorough examination of the software for any bugs or glitches that might have 
+slipped through during coding. The aim is to ensure flawless software operation before it reaches the end-users. 
+And even identify opportunities for enhancement.
+
+The testing process begins by setting clear parameters in line with the software's requirements. This includes 
+identifying the necessary software conditions, and outlining diverse scenarios to examine these conditions. This step 
+aids in creating an efficient testing strategy.
+
+After establishing test cases, developers and engineers should rigorously test the software. They should conduct various 
+types of tests, including unit testing, security testing, integration testing, system testing, and acceptance testing. 
+These tests range from scrutinizing individual components to ensuring the seamless operation of the entire system.
+
+When a test reveals a bug, it is documented in detail, noting its symptoms, reproduction method, and its influence on the 
+software. These bugs are then sent back to the developers for rectification. Once the required fixes are implemented, 
+the software re-enters the testing phase for validation. This process is a cycle of persistent refinement until the 
+software complies with all predetermined parameters.
+
+The Testing phase is instrumental in ensuring the software's robustness and reliability.
+
+Phase 6: Deployment
+After crafting a product with precision, it's time to present it to the users by pushing to the production environment. 
+The Deployment phase involves rolling out the meticulously tested and fine-tuned software to its end-users.
+
+A specific strategy is executed for the software's deployment to ensure minimal disruption to the user experience. 
+Depending on the software and its audience, we might use different methods such as Big Bang, Blue-Green, or Canary 
+deployments.
+
+However, deployment isn't just about launching the software. It's about ensuring users can operate it with ease. This 
+responsibility might involve creating user manuals, conducting training sessions, or offering on-site support. 
+
+The Deployment phase doesn't signal the end, but rather a notable milestone. It signifies the shift from a project 
+phase to a product phase, where the software begins to fulfill its purpose.
+
+Phase 7: Maintenance
+In the Software Development Life Cycle, the maintenance phase is characterized by constant assistance and improvement, 
+which guarantees the software's best possible functioning and longevity and ensures it meets customer expectations.
+
+The primary focus is to adapt to the software's changing needs. This adaptation involves responding to user feedback, 
+resolving unexpected issues, and upgrading the software based on users' evolving requirements. It's a continuous 
+process of refining and adapting, much like a gardener tending to their garden.
+
+Maintenance tasks encompass frequent software updates, implementing patches, and fixing bugs. User support is also a 
+crucial component, offering help and guidance to users facing difficulties with the software.
+
+The maintenance phase also considers long-term strategies, for instance, upgrading or replacing the software. This 
+decision depends on the software's lifecycle and technological progress. Similar to a homeowner contemplating a 
+renovation or selling their house, the software might require a complete revamp or phase-out to stay relevant and valuable.
+
+LAB EXERCISE: Write a requirement specification for a simple library management system.
+
+How to create a Library Management System Project?
+Table of Content
+
+How to create a Library Management System Project?
+Step 1- Team Formation Phase: Creating a Dynamic Team
+Step 2- Topic Selection
+Step 3- Project Synopsys for Library Management System
+Step 4- Requirement Gathering (Creating SRS for Library Mangement System)
+Software Requirement Specification (SRS) Document Template
+4.1 SRS (Library Mangement System) | Introduction:
+4.2 SRS (Library Mangement System) | Overall Description:
+4.3 SRS (Library Mangement System) | Designing Library Management System :
+4.3.1 Use case Diagram for Library Management System:
+4.3.2 ER Model of Library Management System:
+4.3.3 Data Flow Diagram of Library Management System:
+4.4 Functional Requirements | SRS (Library Mangement System)
+4.5 Non Functional Requirements | SRS (Library Mangement System)
+4.6 SRS (Library Mangement System) | Appendices:
+5. Coding or Implementation of Library Mangement System
+5.1 Implementing Library Mangement System | Environment Creation:
+5.2 Implementing Library Mangement System | Database Creation:
+5.3 Implementing Library Mangement System | Frontend and Backend Development:
+5.3.1 Step 1: Creation of Login page Module:
+5.3.2 Step 2: Creation of User Dashboard Module:
+5.3.3 Step 3: Creation of Admin Dashboard Module:
+5.3.4 Step 4: Creation of Add/Manage Book Module:
+5.3.5 Step 5: Creation of Add/Manage Book Category Module:
+5.3.6 Step 6: Creation of Issue Book Module:
+Step 6- Testing Library Mangement System
+Step 7- Creating Project Presentation on Library Management System:
+Step 8- Writing a Research Paper on Library Management System:
+Future Enhancements for Library Management System
+A Project Development is a multiphase process in which each and every process are equally important. Here in this post we 
+are also going to develop our Library Management System Project in multiple phases, such as:
+
+Team Formation
+Topic Selection
+Creating Project Synopsys
+Requirement Gathering
+Coding or Implementation
+Testing
+Project Presentation
+Writing a Research Paper
+
+Step 1- Team Formation Phase: Creating a Dynamic Team
+Team formation for a final year project is a crucial aspect that can significantly impact the success and efficiency of 
+the project. In the final year, students often have diverse academic backgrounds, skills, and interests. Therefore, 
+forming a well-balanced team becomes essential to leverage the strengths of each member and address any potential 
+weaknesses.
+
+In Our project as we will be exploring about web application for Library Management system project so we will be required 
+below skill sets.
+
+Front end Developer
+Back end Developer
+Tester
+Devops Developer
+
+Step 2- Topic Selection
+While making our library management system project this will be our second step in which we will find an interesting 
+problem statement and try to generate an idea to solve that problem using our knowledge.
+
+Choose a topic related to your field of study that is of great interest to you. It is advised that you pick a topic that 
+has a powerful motive. For instance, a project that helps humankind will truly be unmatched. Another factor to keep in 
+mind is to choose topics that aren't very common.
+
+Topic Planning: In this phase team will gather and try to search a topic or problem statement by brainstorming , reverse 
+thinking or any other strategy and select a problem which is challenging in nature and solvable by using their combined 
+knowledge of tech.
+Defining & Set Objective: After planning the problem statement we will define clear problem statement and its objectives. 
+
+Step 3- Synopsys for Library Management System Project
+A project synopsis serves as a concise overview or summary of a proposed project, offering a brief but comprehensive 
+insight into its objectives, scope, methodology, and expected outcomes. It typically acts as a preliminary document, 
+providing supervisors, or evaluators with a quick understanding of the project before they delve into more detailed 
+documentation.
+
+The project synopsis usually includes key elements such as the project title, problem statement or context, objectives, 
+scope and limitations, methodology or approach, expected outcomes, and the significance of the project in the broader 
+context. It serves as a roadmap, guiding readers through the fundamental aspects of the project and helping them grasp 
+its purpose and potential impact.
+
+Step 4- Requirement Gathering (Creating SRS for Library Management System)
+This is the next phase after the submission of the synopsis report. We can do this process before the Synopsys report 
+creation as well , It is all depends upon the project and their requirements. Here after getting an overview about the 
+project now we can easily do the requirement gathering for our project.
+
+We develop a detailed Software Requirement Specification for Library Management System Project , in this process which 
+will have all the details about the project from Technical to Non Technical Requirements.
+
+
+5. Coding or Implementation of Library Management System
+At this stage, the fundamental development of the product starts. For this, developers use a specific programming code as 
+per the design. Hence, it is important for the coders to follow the protocols set by the association. Conventional 
+programming tools like compilers, interpreters, debuggers, etc. are also put into use at this stage.
+
+Step 6- Testing Library Mangement System
+Testing is a crucial phase in the development of a library management system (LMS) to ensure that it meets its intended 
+requirements, functions correctly, and is free of bugs. Below are some key steps and considerations for the testing phase 
+of a library management system:
+
+Unit Testing:
+Test individual modules or components of the system in isolation to ensure they function as intended.
+Identify and fix any bugs or issues found at the module level.
+Integration Testing:
+Verify that different modules and components of the LMS work together seamlessly.
+Test data flow and interactions between various parts of the system.
+Functional Testing:
+Validate that the LMS performs its intended functions accurately and efficiently.
+Test basic functionalities such as adding, updating, and deleting books, managing user accounts, and generating reports.
+User Interface (UI) Testing:
+Ensure that the user interface is user-friendly, intuitive, and visually appealing.
+Check for consistency in design elements and responsiveness across different devices.
+Performance Testing:
+Assess the system's performance under normal and peak load conditions.
+Check response times, scalability, and overall system stability.
+Security Testing:
+Identify and rectify any security vulnerabilities in the system.
+Ensure that user data is handled securely, and unauthorized access is prevented.
+Usability Testing:
+Evaluate the LMS from an end-user perspective to ensure ease of use.
+Gather feedback on user interfaces, navigation, and overall user experience.
+Compatibility Testing:
+Test the LMS on various browsers, operating systems, and devices to ensure cross-platform compatibility.
+Regression Testing:
+Conduct tests to ensure that new changes or fixes do not negatively impact existing functionalities.
+Re-run previously executed test cases to verify the overall system stability.
+Deployment Testing:
+Conduct tests in the production environment to ensure a smooth transition from the testing phase to live operation.
+
+
+Step 7- Creating Project Presentation on Library Management System:
+In this phase of software development, Team will have to present their work in front of authorities and they will 
+judge your work and give suggestions on the improvement areas. Please make sure to host your web project before this 
+step to make a good impression on the judges and authorities.
+
+Project Name and Team Details
+Introduction
+Purpose
+Project Scope
+Problem Statement
+Proposed Solution
+Product Functionalities
+Flow chart of the project
+Analysis of model
+Summary
+
+Step 8- Writing a Research Paper on Library Management System Project:
+You can also write a research paper on the basis of your work . The Research paper will explore the significance of 
+implementing an Integrated Library Management System Project (LMS) to enhance the efficiency, accessibility, and overall 
+functionality of libraries.
+
+Key points for this paper includes:
+
+Abstract
+Introduction
+Related Work
+Methodologies Used
+Features
+Result and Discussion
+Acknowledgement
+
+THEORY EXERCISE: Why is the requirement analysis phase critical in software development?
+Software Analysis
+
+Software requirement means requirement that is needed by software to increase quality of software product. These 
+requirements are generally a type of expectation of user from software product that is important and need to be 
+fulfilled by software. Analysis means to examine something in an organized and specific manner to know complete details 
+about it. 
+
+Therefore, Software requirement analysis simply means complete study, analyzing, describing software requirements so 
+that requirements that are genuine and needed can be fulfilled to solve problem. There are several activities involved 
+in analyzing Software requirements.
+
+Problem Recognition : 
+The main aim of requirement analysis is to fully understand main objective of requirement that includes why it is needed, 
+does it add value to product, will it be beneficial, does it increase quality of the project, does it will have any other 
+effect. All these points are fully recognized in problem recognition so that requirements that are essential can be 
+fulfilled to solve business problems. 
+ 
+Evaluation and Synthesis : 
+Evaluation means judgement about something whether it is worth or not and synthesis means to create or form something. 
+Here are some tasks are given that is important in the evaluation and synthesis of software requirement : 
+To define all functions of software that necessary.
+To define all data objects that are present externally and are easily observable.
+To evaluate that flow of data is worth or not.
+To fully understand overall behavior of system that means overall working of system.
+To identify and discover constraints that are designed.
+To define and establish character of system interface to fully understand how system interacts with two or more components
+or with one another.
+Modeling : 
+After complete gathering of information from above tasks, functional and behavioral models are established after checking 
+function and behavior of system using a domain model that also known as the conceptual model. 
+ 
+Specification : 
+The software requirement specification (SRS) which means to specify the requirement whether it is functional or 
+non-functional should be developed. 
+ 
+Review : 
+After developing the SRS, it must be reviewed to check whether it can be improved or not and must be refined to make it 
+better and increase the quality. 
+
+LAB EXERCISE: Perform a functional analysis for an online shopping system
+
+Functional requirements (FRs) are the what of your website. It is all about the functions and core operations of your 
+e-store that enable a user to take action on the website. They can be implemented as a single website feature and form 
+the basis of the whole software development process. 
+
+Functional requirements for a website examples: Add the following product filtering features to our home improvement 
+webstore: price, popularity, power rate (Watt), heating area (m2), and usage (bathroom, kitchen, etc).
+
+Third-party integrations
+List all third-party software to be integrated via API that should be included in ecommerce website. These might be the 
+new systems you wish to add or the existing ones you’re satisfied with and using now.
+
+This requirement concerns both systems streamlining business operations (like ERP, CRM, PIM) and flexible payment 
+gateways for your customers. Specifying the number of third-party integrations will make your ecommerce architecture 
+structured and ready for your business scaling in the future.
+
+examples: 
+
+The website shall be integrated with Odoo ERP system and Svea payment solutions.
+PayPal Direct, PayPal Plus, and Amazon Pay will be the priority payment in the store.
+
+Mobile-friendliness
+It’s no secret that mobile responsive apps bring more traffic to the website. According to Statista, the number of 
+customer conversions on mobile devices has also reached those on desktops in the US. So investing into a mobile-responsive
+feature of your website can earn you more than a few bucks, plus loyal customers shopping from the comfort of their sofas.
+
+examples:
+
+PDP should be adapted to the screens of the Apple iPhone 6s and above.
+My store shall support voice search of products on mobile via Alexa Mobile Accessory (AMA) Kit (note: this is one of Amazon
+functional requirements).
+
+ Product attributes
+Your PDP will include various product characteristics, and the development agency should know about them to implement 
+the corresponding features. Will the customer be able to choose a product size and color only? Do you use videos on a PDP?
+Will some product attributes appear in a menu (as in the mega-menu)? If possible, write out a list of all product 
+attributes your website should have and hand it over to your developers.
+
+examples: 
+
+The website shall support simple and bundle product types.
+Product Images on the product detail page should have the option to zoom in.
+
+Order and checkout flow
+Your functional requirements for an online shopping system should specify how the orders are processed in your store and 
+whether this functionality should be optimized. In particular, indicate whether you want the customer to register to make 
+a purchase or enable guest checkout. List the order statuses you wish to have (visible both to the customer and the 
+store admin). Explain how you want to manage B2B orders. In short, try to be as detailed about your order and checkout 
+flow functionalities as possible. 
+
+This is also the part where you mention your discount policy and the promo codes you provide in your shopping store, if 
+any. Whether they are to be handled at checkout or directly on the PDP, you should include a separate functional 
+requirement for them.
+
+examples: 
+
+The website shall show the following order statuses: confirmed, processing, shipped, returned.
+After the customer is registered on the website, they should receive one extra year of warranty on the purchased order.
+
+ Social sharing
+In ecommerce, online presence goes alongside that of social media. Allowing a user to share your website’s content on 
+socials leads to higher brand awareness and brings you closer to your existing and potential customers. Research your 
+target audience and identify their favorite social media networks. Let your consumers share products, blog posts, and 
+inspirational pictures by adding a corresponding button to your website.
+
+examples
+
+Our product info should be shared on Facebook, Instagram, Pinterest, and Linkedin.
+User comments from Facebook should appear on the product detail page on the “Customer Reviews” page.
+
+THEORY EXERCISE: What is the role of software analysis in the development process?
+System Design
+
+Software engineering involves the application of a disciplined and systematic approach (IEEE, 1990) to produce high-quality,
+functional software. As a part of this systematic approach, software development is done using a pre-defined software 
+development process, which is a set of connected activities, later broken down into tasks, which are geared towards 
+producing a software product or system (Sommerville, 2016). Although software development processes may differ in terms 
+of the order and naming of their activities, all processes in some way include the following activities:
+
+System Analysis
+System Design
+Programming
+Testing
+Maintenance; and
+Project Management.
+System analysis is the first of these activities and forms the foundation for the rest of the software development process.
+System analysis outlines a proposed solution to a defined problem. Analysis means “to take apart” (Boehm, 2003), and so 
+system analysis involves breaking down a system to identify its functions, roles, and the environment in which it will be 
+expected to operate. Within this activity are the tasks of performing a feasibility study and requirements engineering. 
+System analysis is therefore very important throughout any software development process as it plays a significant 
+determining factor in the success of any software project in terms of usefulness and delivery within established 
+constraints; and based on how well it is performed, it can make the difference between software products which are 
+maintainable and those which quickly become obsolete.
+
+Whether software is developed sequentially or iteratively, system analysis is performed in some way. The output of system 
+analysis is a system specification document which becomes a major input into other software development process activities
+such as system design, programming, and testing. The specification document outlines in detail what the software product 
+should do and often includes a project plan, software models, prototyping results, formal specifications, and verification 
+test data. This information acts as a reference-point throughout the rest of software development. If follows, therefore, 
+that if system analysis is not accurately undertaken, the other subsequent software development process activities will 
+be done inaccurately. This can lead to disastrous outcomes, including customer dissatisfaction due to contextually 
+useless software being delivered. Other negative effects occur when the inaccuracy is discovered, and include an increase 
+in time, cost, and effort to produce correct software. The later down in the software development process an issue is 
+found, the more re-work is required, and therefore the more costly it becomes to resolve that issue. For these reasons, 
+system analysis is crucial to the success of any software delivery project.
+
+System analysis is also critical to software maintenance/ evolution. System analysis uncovers what software does and how 
+it should behave. This is important information when maintaining software to make corrections or add functionality. 
+Software evolution includes modifications to software but should not compromise its functionality. Throughout software 
+development, it is likely that those who build the software product will not be the ones to maintain it. It is therefore 
+of paramount importance that a guideline exists for reference, so that the software evolves within the scope of its 
+intended functionality. Without thorough system analysis, there is an increased risk of software becoming obsolete due 
+to an inability to properly maintain the software, caused by a lack of understanding of the system specification.
+
+In conclusion, system analysis is the first step in any software development process, whether sequential or iterative. 
+It involves defining what software should do to be useful in solving an identified problem and its tasks result in a 
+system specification document which feeds into subsequent software development process activities. The strategic position
+of system analysis in the software development process means it can largely affect the success of a software project in 
+terms of usefulness, cost, schedule, and maintenance. If system analysis is done incorrectly, other process activities 
+will suffer, which ultimately leads to customer dissatisfaction and extensive rework. After software is deployed, the 
+system specification document becomes a guide for software maintenance without changing the system’s functionality. When 
+system analysis is completed properly, the software project has the best chance of being undertaken successfully and 
+within given constraints.
+
+LAB EXERCISE: Design a basic system architecture for a food delivery app.
+
+Application Flow
+We are considering here microservices-based architecture. Different services are listed in the architecture diagram
+
+All requests made from a mobile app or UI will go to different services via the API gateway. API gateway will take care of
+load balancing and routing requests to services. This will authenticate and authorize the user and send back the token ID. 
+This token is used for further communication
+Different services like, user registration and management service, order service, payment service will use transactional 
+databases. We will use the Amazon Aurora relational database. This is a highly scalable database service to manage users 
+and concurrent orders etc.
+Information about different restaurants, their menu, price, offers, etc will be stored in JSON document storage in 
+ElasticSearch. We can use a multi-node cluster here. Whenever a customer searches for a menu/cuisines it will be fetched 
+from elastic search. Elastic search provides fast scalable search options
+Once the user selects the dishes and quantity from the restaurant. He will go to the checkout option and then do payment. 
+Different payment gateways and payment options are integration with the system and upon successful payments, the order is 
+successfully placed
+Once the order is placed all the information is sent to the central message Queue like Kafka. The order processing unit 
+reads the order info and then notifies the selected restaurant about the order. At the same time, it searches for available 
+delivery partners to nearby locations to pick up the order. It also gets the information like preparation time from the 
+restaurant and estimated pickup time from the delivery partner based on his location and other details. it will select 
+the best available delivery partner and he is notified about order and restaurant details
+The user gets push notification about the order. The order processing and tracking service will work together and the 
+user can track their order status, live location of the delivery person, etc
+Delivery person pickup order and deliver to customers. Customer is real-time notified with ETA for the order
+
+THEORY EXERCISE: What are the key elements of system design?
+Software Testing
+
+The process of specifying a computer system’s architecture, components, modules, interfaces, and data is known as system
+design. It involves looking at the system’s requirements, determining its assumptions and limitations, and defining its 
+high-level structure and components. The primary elements of system design, including databases, load balancers, and 
+messaging systems, will be discussed in this article. Understanding these components helps the development of scalable, 
+effective, and secure systems.
+
+Table of Content
+
+Load Balancer
+Caching
+Content Delivery Network (CDN)
+API Gateways
+Key-value stores
+Blob storage & Databases
+Rate limiters
+Monitoring System
+Distributes system messaging queue
+Distributed unique id generator
+Distributes search
+Distributed logging services
+Distributes task scheduler
+
+1. Load Balancer
+Incoming requests or workloads are divided across several distinct resources or servers using a load balancer, a component
+of system design. When a system has many servers and has to divide requests evenly among them, or when a system receives 
+a large number of requests and wants to split them up across multiple servers to prevent overloading any one of them, 
+this can be useful.
+
+2. Caching
+A technique for temporarily storing frequently requested data that speeds up its retrieval when needed again called 
+caching. The main database or data source is less burdened when caching is included in system architecture, which 
+enhances performance and efficiency.
+
+3. Content Delivery Network (CDN)
+A Content Delivery Network (CDN) is a network of servers spread across different regions that enables faster delivery of 
+content to users, such as webpages, movies, and photos. A CDN is utilized in most system designs to increase the speed 
+and dependability of content delivery to consumers, particularly when they are dispersed across many geographical 
+locations.
+
+4. API Gateways
+An API Gateway is like a central doorway or “traffic controller” for requests coming into a system. In system design, it 
+acts as a single entry point for clients (such as apps or websites) to access multiple backend services in an organized 
+and secure way.
+
+5. Key-value stores
+One kind of NoSQL database that is meant for storing data as a collection of key-value pairs is called a key-value store. 
+Every piece of data is kept in a key-value store under a distinct key, and the data itself serves as the value. 
+Since key-value stores allow for quick access to data by key, they are typically used to store data that is accessed 
+frequently.
+
+6. Blob storage & Databases
+Blob storage and database systems are two different types of storage systems that can be used to store and manage data.
+
+Large volumes of unstructured data, including documents, photos, videos, and audio files, can be stored in blob storage, 
+sometimes referred to as object storage. In general, blob storage systems are very scalable and capable of managing 
+several requests at once. They are widely used to store frequently accessible material, such user-generated content or 
+media files.
+
+On the other hand, database systems are made to hold structured data that has been arranged in a particular manner. 
+RDBMSs, NoSQL databases, and in-memory databases are among the several kinds of database systems. Database systems are 
+typically used to store data that needs to be queried and accessed in a structured way, such as customer records or 
+financial transactions.
+
+7. Rate limiters
+System design components known as rate limiters are used to restrict the rate at which a system or application responds 
+to requests or carries out specific tasks. This can be helpful in a variety of situations, such as when a system has to 
+guard against receiving too many requests or when a company want to stop a particular user or group of users from 
+submitting excessive requests that can affect the system’s performance.
+
+8. Monitoring System
+A monitoring system is a system design component that is used to collect, analyze, and report on various metrics and 
+performance data related to a system or application. This can be useful in a number of different scenarios, such as when 
+a system needs to track its own performance and availability, or when an organization needs to monitor the performance of 
+its systems and applications to ensure that they are meeting their desired service levels.
+
+9. Distributes system messaging queue
+A distributed system messaging queue is a system that enables the exchange of messages between different nodes in a 
+distributed system. Messaging queues allow nodes to communicate asynchronously, decoupling the sender and receiver of a 
+message and enabling each node to operate independently.
+
+Distributed system messaging queues can be used to enable communication between different components of a distributed 
+system, such as microservices or distributed applications. They can also be used to decouple different parts of the system, 
+allowing each component to operate independently and improving the system’s resilience and scalability.
+
+10. Distributed unique id generator
+A distributed unique ID generator is a system that generates unique identifiers (IDs) that can be used to identify 
+objects or entities in a distributed system. These IDs are typically used to uniquely identify items in a database or 
+to provide a stable identifier for a resource that is accessed over the network.
+
+11. Distributes search
+Distributed search refers to the practice of using multiple nodes or servers to index and search large datasets in a 
+distributed system. Distributed search can be used to improve the performance and scalability of search operations, 
+as it allows for parallel processing of search queries and the distribution of data across multiple nodes.
+
+12. Distributed logging services
+Distributed logging refers to the practice of collecting, storing, and analyzing log data from multiple sources in a 
+distributed system. This can be useful for tracking the health and performance of a distributed system, as well as for 
+debugging issues that may arise.
+
+13. Distributes task scheduler
+A distributed task scheduler is a system that is responsible for scheduling and executing tasks in a distributed system. 
+A task scheduler can be used to automate the execution of tasks at regular intervals, on a specific schedule, or in 
+response to certain events.
+
+LAB EXERCISE: Develop test cases for a simple calculator program.
+
+in this article, we are sharing some test scenarios for a table. The focus here is to cover the different features to be 
+tested instead of the creation of formal test cases, so we will be presenting test scenarios here.
+
+Check if the calculator is a normal calculator or a scientific calculator.
+Verify that all the buttons are present and text written on them is readable.
+Check the arithmetic operations are working fine- +, -, /, *, etc.
+Verify that BODMAS is applied in case of complex queries and that the correct result is returned.
+Verify that the calculator gives the correct result in the case of operations containing decimal numbers.
+Check if the calculator is battery-operated or works on solar power.
+Verify the outer body material of the calculator.
+Verify the spacing between the two buttons, the buttons should not be too closely placed.
+Check the pressure required to press a button, the pressure required should not be too high.
+Verify the number of digits allowed to enter in the calculator for any operation.
+Verify the limit of the response value.
+Verify the functioning of memory functions.
+Check if the calculator allows navigating through previous calculations.
+Verify that hitting ‘C’ cancels any digits or operations added.
+Verify the working of the ON-OFF button in the calculator.
+Check if keeping the calculator unused for a certain period of time, turns it off automatically.
+Verify that on pressing two operators one after the other, the latest one will override the previous operator.
+Verify the state of the calculator when two buttons are pressed simultaneously.
+Verify if the user can delete digits one by one using the backspace key.
+
+
+User Interface Test Cases For Calculator
+Verify the brand name of the calculator.
+Verify whether the brand logo is displayed on the calculator or not.
+Verify the colour of the calculator.
+Verify the shape of the calculator.
+Verify the height of the calculator.
+Verify the length of the calculator.
+Verify the material of the calculator.
+Verify the screen size of the calculator.
+Verify that buttons are properly displayed or not.
+Verify that numbers are properly displayed on buttons or not.
+Verify that arithmetic signs are properly displayed or not.
+Verify that the ON and OFF buttons are properly displayed or not.
+Verify the size of each of the buttons in the calculators.
+Verify the colour of each button of the calculator
+
+THEORY EXERCISE: Why is software testing important?
+Maintenance
+
+1. Helps in saving money
+The testing of software has a wide array of benefits. The cost-effectiveness of the project happens to be one of the top 
+reasons why companies go for software testing Services.
+
+The testing of software comprises of a bunch of projects. In case you find any bug in the early phases, fixing them costs 
+a reduced amount of money.
+
+Hence, it is a prerequisite that you should get the testing done in no time. As you hire quality analysts or testers who 
+have an ample amount of experience and have gone through technical education for the projects, they are the investments 
+and the project is going to reap the benefits.
+
+2. Security
+It is another crucial point why software testing should not be taken into consideration.
+
+It is considered to be the most vulnerable and sensitive part. There are a bunch of situations in which the information 
+and details of the users are stolen and they are used for the benefits.
+
+It is considered to be the reason why people look for the well tested and reliable products.
+
+As a specific product undergoes testing, the user can be ensured that they are going to receive a reliable product. 
+The personal details of the user can be safe. Users can receive products that are free from vulnerability with the aid of 
+software testing.
+
+3.Quality of the product
+For ensuring that the specific product comes to life, it should work in accordance with the following.
+
+Following the needs of the product is a prerequisite as it is helpful in getting the prerequisite results.
+
+Products should be serving the user in one way or the other. It is a must that it is going to bring the value, as per the 
+promise.
+
+Hence, it should function in a complete manner for ensuring an effective customer experience. It is also necessary to 
+check the compatibility of the device.
+
+For instance, in case, you are planning to launch an application, it is a must to check the compatibility of the same in 
+a wide array of operating systems and devices.
+
+4. Satisfaction of the customer
+The primary objective of the owner of the products is offering the best satisfaction of the customers.
+
+The reasons why it is necessary to opt for software testing is due to the fact that it offers the prerequisite and perfect
+user experience.
+
+As you opt for the best project in the saturated project, you will be capable of earning the reputation of reliable 
+clients.
+
+Thus, you are going to reap long-term benefits by opting for software testing. Earning the trust of the client is certainly 
+not an easy task, primarily in case the product is found to be functioning and glitching every time or the other.
+
+You yourself have used a lot of products and you surely had several horrible experiences owing to which you might have 
+deleted the application.
+
+The market is really saturated in the present days.
+
+The first impression is really important and if you fail to give the same, users are going to find another product which 
+will accomplish all the requirements.
+
+5. Enhancing the development process
+With the aid of Quality Assurance, you can find a wide array of scenarios and errors, for the reproduction of the error.
+
+It is really simple and the developers need to fix the same in no time. In addition to this, software testers should be 
+working with the development team parallelly, which is useful in the acceleration of the development procedure.
+
+6. Easy while adding new features
+The more interconnected and older the code, the more difficult it is to change. Tests counteract this calcification 
+tendency by allowing developers to confidently add new features. As a new developer, changing older parts of your 
+codebase can be terrifying, but with tests, you’ll at least know if you’ve broken anything important. This helps in 
+making your software stand ahead in the market, and beat the competition.
+
+7. Determining the performance of the software
+If you find software or application that has low or reduced performance, you will find that it brings your reputation 
+down in the market.
+
+Users are not going to trust any people. There are chances that the reputation of your organization is going to suffer.
+
+In accordance with the experts, it is not that important. However, in case, you introduce any software in the market 
+without software testing and after this, the performance of the software does not meet the expectation or requirements 
+of the clients, convincing people will be a hassle.
+
+Thus, software testing is considered to be an easy option as it helps in the determination of the performance of the 
+software.
+
+Importance of Maintenance Testing
+In software development, test maintenance is critical. It functions similarly to a strong support beam that holds up a 
+building. It is significant because it affects the entire software development process. Let's take a closer look at why 
+having tests in good shape is critical for software project success.
+
+1. Efficiency in Test Creation
+Test maintenance significantly streamlines the process of writing tests. Rather than continuously crafting new tests, 
+test maintenance revolves around the art of refining and nurturing existing ones. This approach reduces the time and 
+effort required to create new tests from scratch, translating into enhanced efficiency in the testing phase.
+
+2. Cost Reduction
+One of the most tangible benefits of test maintenance is the reduction in costs. By leveraging existing tests, the need 
+to invest in the creation of entirely new test cases diminishes. Consequently, financial resources are conserved, 
+which is especially pertinent in the budget-sensitive landscape of software development.
+
+3. Simplification of Testing
+Test maintenance simplifies the testing process itself. Instead of navigating through diverse, uncoordinated tests, a 
+consolidated set of well-maintained tests streamlines the testing procedure. This simplicity fosters better visibility, 
+comprehensibility, and manageability of the testing phase.
+
+4. Continuous Test Quality
+As the tests are refined and updated through maintenance, their quality is consistently upheld. Over time, these tests 
+evolve to encompass edge cases, corner scenarios, and critical functionalities, ensuring that the test suite remains 
+comprehensive and effective in uncovering defects.
+
+5. Enhanced Automation Testing
+Automation testing scripts benefit substantially from diligent test maintenance. With ongoing updates, automation 
+scripts mature to address complex test scenarios. This evolution enhances the automation suite's capability to perform 
+intricate tests, reducing manual intervention and expediting the testing process.
+
+6. Sustainable Test Framework
+Test maintenance fosters the development of a sustainable test framework. By investing in the refinement of existing tests,
+a foundation for future tests is laid. This not only ensures that tests remain adaptable to changing requirements but also
+contributes to a culture of continuous improvement in testing practices.
+
+LAB EXERCISE: Document a real-world case where a software application required critical maintenance.
+
+What is Software Maintenance?
+Software maintenance is a continuous process that occurs throughout the entire life cycle of the software system.
+
+The goal of software maintenance is to keep the software system working correctly, efficiently, and securely, and to 
+ensure that it continues to meet the needs of the users.
+This can include fixing bugs, adding new features, improving performance, or updating the software to work with new 
+hardware or software systems.
+It is also important to consider the cost and effort required for software maintenance when planning and developing a 
+software system.
+It is important to have a well-defined maintenance process in place, which includes testing and validation, version 
+control, and communication with stakeholders.
+It’s important to note that software maintenance can be costly and complex, especially for large and complex systems. 
+Therefore, the cost and effort of maintenance should be taken into account during the planning and development phases of 
+a software project.
+It’s also important to have a clear and well-defined maintenance plan that includes regular maintenance activities, 
+such as testing, backup, and bug fixing.
+
+Several Key Aspects of Software Maintenance
+Bug Fixing: The process of finding and fixing errors and problems in the software.
+Enhancements: The process of adding new features or improving existing features to meet the evolving needs of the users.
+Performance Optimization: The process of improving the speed, efficiency, and reliability of the software.
+Porting and Migration: The process of adapting the software to run on new hardware or software platforms.
+Re-Engineering: The process of improving the design and architecture of the software to make it more maintainable and 
+scalable.
+Documentation: The process of creating, updating, and maintaining the documentation for the software, including user 
+manuals, technical specifications, and design documents.
+
+Need for Maintenance
+Software Maintenance must be performed in order to: 
+
+Correct faults.
+Improve the design.
+Implement enhancements.
+Interface with other systems.
+Accommodate programs so that different hardware, software, system features, and telecommunications facilities can be used.
+Migrate legacy software.
+Retire software.
+Requirement of user changes.
+Run the code fast
+
+THEORY EXERCISE: What types of software maintenance are there?
+Development
+
+The four types are:
+Corrective Software Maintenance
+Preventative Software Maintenance 
+Perfective Software Maintenance
+Adaptive Software Maintenance
+
+Corrective Software Maintenance
+Corrective software maintenance is the typical, classic form of maintenance (for software and anything else for that 
+matter). Corrective software maintenance is necessary when something goes wrong in a piece of software including faults 
+and errors. These can have a widespread impact on the functionality of the software in general and therefore must be 
+addressed as quickly as possible. 
+
+Many times, software vendors can address issues that require corrective maintenance due to bug reports that users send in. 
+If a company can recognize and take care of faults before users discover them, this is an added advantage that will make 
+your company seem more reputable and reliable (no one likes an error message after all).
+
+Preventative Software Maintenance
+Preventative software maintenance is looking into the future so that your software can keep working as desired for as 
+long as possible. 
+
+This includes making necessary changes, upgrades, adaptations and more. Preventative software maintenance may address 
+small issues which at the given time may lack significance but may turn into larger problems in the future. These are 
+called latent faults which need to be detected and corrected to make sure that they won’t turn into effective faults. 
+
+Perfective Software Maintenance
+As with any product on the market, once the software is released to the public, new issues and ideas come to the surface. 
+Users may see the need for new features or requirements that they would like to see in the software to make it the best 
+tool available for their needs. This is when perfective software maintenance comes into play. 
+
+Perfective software maintenance aims to adjust software by adding new features as necessary and removing features that 
+are irrelevant or not effective in the given software. This process keeps software relevant as the market, and user needs, 
+change. 
+
+Adaptive Software Maintenance
+Adaptive software maintenance has to do with the changing technologies as well as policies and rules regarding your 
+software. These include operating system changes, cloud storage, hardware, etc. When these changes are performed, 
+your software must adapt in order to properly meet new requirements and continue to run well.
+
+THEORY EXERCISE: What are the key differences between web and desktop applications?
+27. Web Application
+
+Web Applications
+
+Deployment and up-gradation for a web-based application require deployment on a single set of server machines.
+
+Web applications can be accessed from anywhere, so there is no location constraint.
+
+Web applications are platform-independent, they can work in different types of platforms with the only 
+requirement of a web browser.
+
+Web applications are at higher security risks as they are inherently designed to increase accessibility.
+
+Web applications rely heavily on internet connectivity, for there operation.
+
+Desktop Applications
+
+Deployment and any up-gradation/patch are done on individual client machines separately.
+
+As desktop are confined to a standalone machine, so they can be only accessed from the machines they are deployed in.
+
+Desktop applications need to be developed separately for different platform machines.
+
+Desktop applications, on the other hand, have better authorization and administrators have better control, hence more 
+secure.
+
+Desktop applications don’t require the internet for their operations. Some applications just require internet connectivity
+at the time of updations.
+
+THEORY EXERCISE: What are the advantages of using web applications over desktop applications?
+28. Designing
+
+Web App Advantages
+No Downloading and Installation
+Nowadays, people use several applications that require a lot of space on devices to install packages and store the 
+associated files on disk. But, web applications have eliminated the need to download the installation package and then 
+run it on the system.
+
+To run any web app, the user only needs a browser, and they can easily search for the URL to launch the software. 
+Cloud services integrate with such solutions, saving the client’s storage space and aiding in storing data in a secure 
+environment. Moreover, they utilize fewer resources, making web apps a preferred choice for end-users and organizations.
+
+Cross-Platform Compatibility
+The primary need of any web application is an updated browser and internet access to the machine, leading it to execute 
+user requests on any device, regardless of system specifications. With this, users can effortlessly switch systems without 
+losing the current progress.
+
+For Example, if a person is editing some picture on a web application from a computer system, save it in the drive and 
+close the program. Then, he can easily open the program on his mobile and continue editing from where he left off on the 
+computer.
+
+Self-Updating Solutions
+It’s always time-consuming to download and install updates to continue work. Web Applications free users from this 
+hassle by automatically updating the solution and allowing them to access up-to-date versions without having to reload 
+the web page.
+
+As a result, you can always be assured that you are using the latest, stable, and secure version. Moreover, we patch all 
+loopholes, maintain data confidentiality, and configure the necessary settings to prevent potential cyber-attacks.
+
+Less Load on System
+The browser runs web-based services, which allow users to access them on systems with low RAM and processing power 
+without directly associating with the device. As a result, the user only has to focus on the number of tabs, as more open 
+tabs utilize more resources.
+
+Furthermore, a user must open the necessary tabs and close the rest to execute business operations reliably and seamlessly.
+
+Desktop App Advantages
+Offline Access
+Internet access is not necessary while working with a desktop application, as it is installed in the system, and you are 
+leveraged to access it at any time, making desktop application development a reliable choice. Still, there can be a 
+situation when a person cannot find a stable connection. However, the desktop app will not impact its work, and it will 
+execute all the procedures successfully, providing the required output. Furthermore, once you install the application, 
+you can use it anywhere, making it a convenient option for various scenarios.
+
+More Privacy
+Desktop solutions are considered more precise in terms of data security because they store data on your machine. This 
+means you are authorized to access, read, write, and share the data. In contrast, web-based apps generate cookies and 
+save browser history, which allows companies to display targeted ads.
+
+Moreover, your device will be secure from man-in-the-middle and other threats in offline mode, and auto-downloading of 
+any malware will also be prevented.
+
+Cost-Efficient
+Applications based on Software as a Service are more expensive than desktop solutions, as the vendor must host and 
+maintain it constantly. Also, you have to pay hefty amounts to access the services through a web app. On the other hand, 
+users can freely access most desktop-based applications, and if any of them require a purchase, they can use it for an 
+extended period of time.
+
+In addition, if an enterprise provides its desktop application to its stakeholders, it only has to host a web page with 
+a link, and the company can do it in a small amount. In this way, desktop apps help end-users and organizations save 
+money.
+
+Optimized Performance
+If we compare the web and desktop apps based on speed, desktop applications always will be the dominant technology. It 
+directly links with the device and utilizes all the required resources appropriately. Users do not generally analyze 
+command execution, but it is faster in desktop apps, as low bandwidth doesn’t impact performance.
+
+In addition to this, desktop solutions offer a wide array of features compared to web solutions, as computer systems 
+can handle many threads simultaneously. For instance, you can manually allocate the space to software to maximize its 
+functioning.
+
+THEORY EXERCISE: What role does UI/UX design play in application development?
+
+What is UI design?
+UI design or User Interface design is the process of creating the visual interfaces for a software application. There are
+lots of businesses where a designer will play both parts, but there are also lots of designers who specialize in UI design. 
+UI designers help users to navigate an interface by using visual cues.
+
+What is UX design?
+UX design or User Experience design is the process of creating the experiences or the interactions that a user has with 
+a product. The basic principle of UX design is to keep the needs of the user prior and improve the interaction of the 
+user and the product keeping this in mind.
+
+Importance of UI/UX design in Mobile App Development
+Better User retention: User retention is a very tricky job and is completely independent of how good the codebase is. 
+The user only looks and interacts with the interface not the code. Key to User retention is a good user interface coupled 
+with great user experience. A user will not spend time on an app where text is overflowing and colors are causing eye 
+strain.
+Effective and Enjoyable interaction: UI UX Design is the way through which users can interact with any mobile applications.
+User interface design is aimed at easy enjoyable and effective interactions between the users and the app. The primary 
+goal of application UI principles is to provide the best interaction to the user.
+Turning customers to loyal customers: The whole idea of UX design is to create an application structure that provides 
+the best experience to the users. The aim of application UX principles is to turn customers into loyal customers by 
+providing a positive experience to them. UX is directly or indirectly responsible for a user’s journey through an 
+application which ultimately decides the success of the business.
+Saves resources in longer run: While for a startup, UI/UX looks like the limited money they have. In the longer run, you 
+cannot sustain without a UI/UX team/person in the startup. It becomes impossible to complete with an application that has 
+a far better UI/UX. Investing in UI/UX design is longer term, so instead of getting the UI changed every time a new 
+feature is added, its better to have a UI/UX team that researches and comes up with the features required, design, 
+interface etc.
+Communicate your mission and your product/service: The visual elements along with the copywriting takes the major part of 
+communication for the brand. To communication you mission and your product/service – you will have to do these to things 
+right. Irrespective of what help marketing provides, users have to come to your website/app to buy product/service or 
+know about it. Here good copywriting along with great UI can create a lasting impression in the mind of the user.
+Scaling the application with Mobile UI/UX Design: Mobile development of applications is better known for targeting more 
+customers and getting more eyeballs to your product/service. The mobile approach UI/UX design can help us scale the 
+application to more number of people. UI/UX design concepts like Repetition, Alignment, Contrast, etc. become even more 
+important for the mobile app approach since the size of the screen and the visuals that can fit in are limited.
+UI/UX is not just design, it is much more: UI/UX is conventionally thought of as designing the interface and structure of 
+the application while it is much more than that. The first step of UI/UX is to research about the user need and present 
+it to the business team. interface designer is a small part of UI/UX. Researching about the customers gives valuable 
+insights about the product/service and what things should be improved.
+
+THEORY EXERCISE: What are the differences between native and hybrid mobile apps?
+30. DFD (Data Flow Diagram)
+
+Native Apps
+
+A native app is developed specially for a particular mobile operating system, for example, Java and Kotlin for Android 
+and Swift for iOS. These apps are developed under the mature ecosystem following the technical users and user guideline 
+provided by the OS itself like the swipe gestures or alignments for the Android and iOS. They offer the fastest and the 
+most reliable and responsive experience to the user. a native application can easily access and utilize the built-in 
+capabilities of the user’s smartphone itself, for example, GPS, phonebook or the camera.
+
+Hybrid Apps
+
+Hybrid apps are similar to a website which is designed to appear as an app. They look and function like native apps, but 
+ultimately, they are driven by the company’s website itself for example websites like Facebook or Netflix. Hybrid apps 
+are built using the web language i.e. HTML, CSS and JavaScript, designed in such a way that it loads most of the 
+information on the screen when the user navigates through the application.
+
+                        Native Apps	Hybrid Apps
+
+Development speed	Slow	Fast
+Maintenance cost	High	Low
+Graphical Performance	Very High	Moderate
+Language Used	    Kotlin, java, Swift	HTML, CSS, JavaScript
+Code Portability	Tough	Easy
+
+LAB EXERCISE: Create a DFD for a hospital management system.
+
+THEORY EXERCISE: What is the significance of DFDs in system analysis?
+31. Desktop Application
+
+What is DFD(Data Flow Diagram)?
+
+Data Flow Diagram (DFD) represents the flow of data within information systems. Data Flow Diagrams (DFD) provide a 
+graphical representation of the data flow of a system that can be understood by both technical and non-technical users. 
+The models enable software engineers, customers, and users to work together effectively during the analysis and 
+specification of requirements.
+
+DFD is the abbreviation for Data Flow Diagram. The flow of data in a system or process is represented by a Data Flow 
+Diagram (DFD). It also gives insight into the inputs and outputs of each entity and the process itself. Data Flow 
+Diagram (DFD) does not have a control flow and no loops or decision rules are present. Specific operations, depending on 
+the type of data, can be explained by a flowchart. It is a graphical tool, useful for communicating with users, managers 
+and other personnel. it is useful for analyzing existing as well as proposed systems.
+
+What data is system processes.
+What transformation are performed.
+What data are stored.
+What results are produced , etc.
+Data Flow Diagram can be represented in several ways. The Data Flow Diagram (DFD) belongs to structured-analysis modeling 
+tools. Data Flow diagrams are very popular because they help us to visualize the major steps and data involved in 
+software-system processes.
+
+Types of Data Flow Diagram (DFD)
+
+Logical Data Flow Diagram
+Physical Data Flow Diagram
+
+Rules for Data Flow Diagram (DFD)
+Following are the rules of DFD:
+
+Data can flow from:
+Terminator or External Entity to Process
+Process to Terminator or External Entity
+Process to Data Store
+Data Store to Process
+Process to Process
+Data Cannot Flow From
+Terminator or External Entity to Terminator or External Entity
+Terminator or External Entity to Data Store
+Data Store to Terminator or External Entity
+Data Store to Data Store
+
+Advantages of Data Flow Diagram (DFD)
+It helps us to understand the functioning and the limits of a system.
+It is a graphical representation which is very easy to understand as it helps visualize contents.
+Data Flow Diagram represent detailed and well explained diagram of system components.
+It is used as the part of system documentation file.
+Data Flow Diagrams can be understood by both technical or nontechnical person because they are very easy to understand.
+
+Disadvantages of Data Flow Diagram (DFD)
+At times Data Flow Diagram (DFD) can confuse the programmers regarding the system.
+Data Flow Diagram takes long time to be generated, and many times due to this reasons analysts are denied permission to 
+work on it.
+
+LAB EXERCISE: Build a simple desktop calculator application using a GUI library.
+
+This project is a simple calculator desktop application that allows users to perform basic arithmetic calculations 
+using a graphical user interface (GUI). The application was developed using Python and the tkinter library for the GUI.
+
+Overview
+The Basic Calculator Desktop Application using GUI is a simple yet useful tool that allows users to perform basic 
+arithmetic calculations on their desktop. It features a clean and user-friendly interface with buttons for each arithmetic
+operation, supports decimal point and negative numbers, displays the result of each calculation on the screen, and 
+includes a clear button to reset the calculator.
+
+The application was developed using Python and the tkinter library for the GUI. The code is easy-to-follow and can be 
+modified or extended for more complex operations.
+
+Features
+The Basic Calculator Desktop Application using GUI has the following features:
+
+User-friendly interface with buttons for each arithmetic operation (addition, subtraction, multiplication, and division)
+Supports decimal point and negative numbers
+Displays the result of each calculation on the screen
+Clear button to reset the calculator
+Easy-to-follow code that can be modified or extended for more complex operations
+
+Installation
+To install and run the Basic Calculator Desktop Application using GUI, follow these steps:
+
+Clone or download the project from the GitHub repository
+Install Python and tkinter library (if not already installed)
+Run the calculator.py file to launch the application
+
+Usage
+To use the Basic Calculator Desktop Application using GUI, follow these steps:
+
+Launch the application by running the calculator.py file
+Use the buttons on the GUI to input numbers and arithmetic operations
+Press the "=" button to display the result of the calculation
+Press the "C" button to clear the calculator
+
+THEORY EXERCISE: What are the pros and cons of desktop applications compared to web applications?
+32. Flow Chart
+
+
+What is a Web App or Web Application?
+A web app or web service configures and installs a program on a remote server, allowing users to access its services 
+using a browser and network access. Developers create these applications to run in browsers, eliminating the need for 
+installation on the physical machine.
+
+For Example, end-user access Google Docs from the browser and use it to create files without downloading the software 
+on their device.
+
+What is a Desktop Application?
+A desktop web app is a software program that developers create to run on a computer system, with or without internet 
+access and a browser. To run these solutions, users have to download its packages to install them on the machine.
+For instance, Microsoft Word, Excel, Games, Windows Media Player, and so forth. All these applications require a part of 
+the storage space on primary memory to run.
+
+Web App Advantages
+No Downloading and Installation
+Nowadays, people use several applications that require a lot of space on devices to install packages and store the 
+associated files on disk. But, web applications have eliminated the need to download the installation package and then 
+run it on the system.
+
+Cross-Platform Compatibility
+The primary need of any web application is an updated browser and internet access to the machine, leading it to execute 
+user requests on any device, regardless of system specifications. With this, users can effortlessly switch systems 
+without losing the current progress.
+
+For Example, if a person is editing some picture on a web application from a computer system, save it in the drive and 
+close the program. Then, he can easily open the program on his mobile and continue editing from where he left off on the 
+computer.
+
+Self-Updating Solutions
+It’s always time-consuming to download and install updates to continue work. Web Applications free users from this hassle 
+by automatically updating the solution and allowing them to access up-to-date versions without having to reload the web 
+page.
+
+As a result, you can always be assured that you are using the latest, stable, and secure version. Moreover, we patch all 
+loopholes, maintain data confidentiality, and configure the necessary settings to prevent potential cyber-attacks.
+
+Less Load on System
+The browser runs web-based services, which allow users to access them on systems with low RAM and processing power 
+without directly associating with the device. As a result, the user only has to focus on the number of tabs, as more 
+open tabs utilize more resources.
+
+Furthermore, a user must open the necessary tabs and close the rest to execute business operations reliably and 
+seamlessly.
+
+Web Application Disadvantages
+Requirement of Internet
+Internet access is the basic need to access and utilize the services of a web application. The user can face many 
+difficulties performing the core tasks without a stable and fast connection. Also, unstable access can continuously 
+reload the page, disrupting the concentration and workflow.
+
+But, technology modernization is resolving this issue, and a lot of software is providing offline support. For instance, 
+the client machine will store the data if the connection is lost. Furthermore, the server’s database will automatically 
+update when it reconnects to the internet.
+
+Slow Performance
+The speed of web applications is potentially considered slower when compared to desktop apps because disruptions on the 
+internet can easily affect their functioning. Additionally, if the machine has low processing power, it only allocates a 
+chunk of it to the browser. As a result, the web-based solution will process instructions relaxed and slow-going.
+
+Security Issues
+Every individual and enterprise is worried about their data security due to the rise in cyber-attacks. Storing 
+information on a remote server raises a lot of questions. There can be a security risk if the selected software does 
+not follow the guidelines published by the government and associated regulatory authorities.
+
+Hackers commonly perform man-in-the-middle, XSS, DDoS, and SQL injection attacks on web apps to crash them and breach 
+privacy. Therefore, users must confirm a particular solution’s security standards; otherwise, their data can be easily 
+compromised.
+
+High Subscription Rates
+Numerous types of solutions are available, some of which are free to use, and some are available after paying a fee and 
+registering on the vendor’s platform. Furthermore, you can choose from various monthly, quarterly, and annual packages 
+to expand your budget; however, you must purchase a minimum monthly subscription to complete even a small task. In this 
+way, web apps become a little more expensive than desktop applications.
+
+Desktop App Advantages
+Offline Access
+Internet access is not necessary while working with a desktop application, as it is installed in the system, and you are 
+leveraged to access it at any time, making desktop application development a reliable choice. Still, there can be a 
+situation when a person cannot find a stable connection. However, the desktop app will not impact its work, and it will 
+execute all the procedures successfully, providing the required output. Furthermore, once you install the application, 
+you can use it anywhere, making it a convenient option for various scenarios.
+
+More Privacy
+Desktop solutions are considered more precise in terms of data security because they store data on your machine. 
+This means you are authorized to access, read, write, and share the data. In contrast, web-based apps generate cookies 
+and save browser history, which allows companies to display targeted ads.
+
+Moreover, your device will be secure from man-in-the-middle and other threats in offline mode, and auto-downloading of 
+any malware will also be prevented.
+
+Cost-Efficient
+Applications based on Software as a Service are more expensive than desktop solutions, as the vendor must host and 
+maintain it constantly. Also, you have to pay hefty amounts to access the services through a web app. On the other hand, 
+users can freely access most desktop-based applications, and if any of them require a purchase, they can use it for an 
+extended period of time.
+
+In addition, if an enterprise provides its desktop application to its stakeholders, it only has to host a web page with 
+a link, and the company can do it in a small amount. In this way, desktop apps help end-users and organizations save 
+money.
+
+Optimized Performance
+If we compare the web and desktop apps based on speed, desktop applications always will be the dominant technology. 
+It directly links with the device and utilizes all the required resources appropriately. Users do not generally analyze 
+command execution, but it is faster in desktop apps, as low bandwidth doesn’t impact performance.
+
+In addition to this, desktop solutions offer a wide array of features compared to web solutions, as computer systems 
+can handle many threads simultaneously. For instance, you can manually allocate the space to software to maximize its 
+functioning.
+
+Desktop App Disadvantages
+More Space Utilization
+Desktop development solutions require larger storage space on the machine’s hard disk to deploy its necessary packages 
+and associated files. Also, any new file the user adds is stored on the system, utilizing more space, which loads the 
+system. In addition, the cost of maintenance can be increased if there is insufficient space on the hard disk installed 
+on the device, as the user needs to modify the disk with a larger capacity.
+
+Installation is necessary
+While using a web-based application, a browser and internet access are the only basic requirements. But, to use a desktop 
+app, installing it on the device is a must. For the successful installation, aspects such as Operating system, RAM, 
+processor, GUI, ROM, and many more are analyzed. Therefore, it makes the desktop app a little a bit expensive. Moreover, 
+switching between systems to complete the work is difficult, as it is native to a single OS and can’t be accessed on any 
+other system.
+
+Upgraded Manually
+Downloading a new file whenever an update is available is sometimes hectic work, as you have to wait for its 
+compatibility check, installation, and then reboot the system for successful configuration. In addition, it also 
+consumes more space and processing cores, which can degrade the performance due to a shortage of resources.
+
+LAB EXERCISE: Draw a flowchart representing the logic of a basic online registration system.
+
+THEORY EXERCISE: How do flowcharts help in programming and system design?
+
+What are Flowcharts?
+Flowcharts are the visual representations of an algorithm or a process. Flowcharts use symbols/shapes like arrows, 
+rectangles, and diamonds to properly explain the sequence of steps involved in the algorithm or process. Flowcharts 
+have their use cases in various fields such as software development, business process modeling, and engineering.
+
+Why use Flowcharts?
+Flowcharts are used due to the numerous amount of benefits they provide. Below are some of the important reasons to use 
+flowcharts:
+
+They provide clarity and simplification to the complex processes and algorithms, which in turn helps other people to 
+understand them easily.
+Flowcharts provide a universal visual language that can be understood by anyone across different teams and helps reduce 
+miscommunications.
+They are an optimal solution for documenting standard operating procedures, workflows, or business processes. This makes 
+it easier to train new employees.
+Flowcharts help in increasing the visualization of the problem being solved which enables more informed and data-driven 
+choices.
+
+Types of Flowcharts
+There are many types of flowcharts, each is designed to represent different kinds of processes and information. Some 
+common types of flowcharts are:
+
+Process Flowchart: It represents the sequence of steps in a process. They are frequently used in business process 
+modeling, manufacturing, and project management
+Swimlane Flowchart: It organizes the process into different lanes, each representing a different person or department and 
+is used for illustrating how different teams or departments collaborate within a process
+Workflow Diagram: It represents how tasks, documents, or information move through a system and is commonly used in 
+office processes or software development
+Data Flow Diagram (DFD): It focuses on detailing the inputs, processes, and outputs. Used in system design and analysis 
+to model the flow of data within a system
+Decision Flowchart: It focuses on mapping out decision points within a process and the possible outcomes of each decision. 
+It is used in decision-making scenarios
+
+Advantages of using a Flowchart
+Flowcharts are a better way of communicating the logic of the system.
+Flowcharts act as a guide for blueprint during program designed.
+Flowcharts help in debugging process.
+With the help of flowcharts programs can be easily analyzed.
+They provide better documentation.
+Flowcharts serve as a good proper documentation.
