@@ -1,0 +1,2803 @@
+Module 7) Python – Collections, functions and Modules
+Accessing List
+Theory:
+ Understanding how to create and access elements in a list.
+
+In Python, lists are ordered collections of items that can hold multiple values of different types. You can create, 
+access, and manipulate list elements easily.
+
+1. Creating a List
+You create a list by placing items (elements) inside square brackets [], separated by commas.
+
+python
+my_list = [10, 20, 30, 40, 50]
+2. Accessing List Elements
+You access elements in a list by using indices. The index of the first element in a list is 0, the second is 1, and so on.
+
+python
+# Accessing the first element
+print(my_list[0])  # Output: 10
+
+# Accessing the second element
+print(my_list[1])  # Output: 20
+
+# Accessing the last element
+print(my_list[-1])  # Output: 50 (negative indexing starts from the end)
+3. Slicing a List
+You can access a range of elements (sublist) using slicing. The syntax is list[start:stop], where:
+
+start is the index where the slice begins (inclusive).
+stop is the index where the slice ends (exclusive).
+python
+# Getting the first three elements
+print(my_list[:3])  # Output: [10, 20, 30]
+
+# Getting elements from index 2 to 4
+print(my_list[2:5])  # Output: [30, 40, 50]
+4. Modifying List Elements
+You can change the value of an element by accessing it using its index.
+
+python
+my_list[2] = 100
+print(my_list)  # Output: [10, 20, 100, 40, 50]
+5. Adding Elements to a List
+You can add elements using methods like append(), insert(), or extend().
+
+python
+# Add an element to the end
+my_list.append(60)
+print(my_list)  # Output: [10, 20, 100, 40, 50, 60]
+
+# Insert an element at a specific position
+my_list.insert(2, 25)
+print(my_list)  # Output: [10, 20, 25, 100, 40, 50, 60]
+6. Removing Elements from a List
+You can remove elements using methods like remove(), pop(), or del.
+
+python
+# Remove an element by value
+my_list.remove(100)
+print(my_list)  # Output: [10, 20, 25, 40, 50, 60]
+
+# Remove an element by index
+popped_item = my_list.pop(3)
+print(popped_item)  # Output: 40
+print(my_list)  # Output: [10, 20, 25, 50, 60]
+
+# Delete an element by index
+del my_list[1]
+print(my_list)  # Output: [10, 25, 50, 60]
+7. Looping Through a List
+You can iterate over all elements in a list using a for loop.
+
+python
+for item in my_list:
+    print(item)
+
+ Indexing in lists (positive and negative indexing).
+
+In Python, indexing refers to accessing individual elements of a sequence like lists, strings, or tuples by their position. Lists in Python are ordered collections, and each element is associated with a numerical index.
+
+Positive Indexing
+Positive indexing starts from the left, beginning with 0 for the first element.
+Each subsequent element gets the next integer value. So, for a list of n elements, the indices range from 0 to n-1.
+Example of positive indexing:
+
+python
+my_list = ['a', 'b', 'c', 'd', 'e']
+
+# Accessing elements with positive indices
+print(my_list[0])  # 'a' (First element)
+print(my_list[2])  # 'c' (Third element)
+print(my_list[4])  # 'e' (Fifth element)
+Negative Indexing
+Negative indexing starts from the right, with -1 referring to the last element, -2 referring to the second-last element, 
+and so on.
+This allows you to access elements from the end of the list without needing to know its length.
+Example of negative indexing:
+
+python
+my_list = ['a', 'b', 'c', 'd', 'e']
+
+# Accessing elements with negative indices
+print(my_list[-1])  # 'e' (Last element)
+print(my_list[-3])  # 'c' (Third-to-last element)
+print(my_list[-5])  # 'a' (First element)
+
+ Slicing a list: accessing a range of elements.
+
+In Python, slicing a list allows you to access a specific range of elements from the list. This can be done using the 
+slicing syntax:
+
+python
+list[start:end:step]
+start: The index where the slice starts (inclusive). If not provided, it defaults to 0.
+end: The index where the slice ends (exclusive). If not provided, it defaults to the length of the list.
+step: The step size, or the interval between the elements to be included in the slice. If not provided, it defaults to 1.
+Examples:
+Basic slicing (getting a sublist):
+
+python
+my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+sliced_list = my_list[2:5]
+print(sliced_list)  # Output: [2, 3, 4]
+Here, the list is sliced from index 2 to index 5 (exclusive).
+
+Omitting start and end (getting the entire list):
+
+python
+my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+sliced_list = my_list[:]
+print(sliced_list)  # Output: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+Slicing with step (getting every second element):
+
+python
+my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+sliced_list = my_list[1:8:2]
+print(sliced_list)  # Output: [1, 3, 5, 7]
+Negative indices (starting from the end of the list):
+
+python
+my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+sliced_list = my_list[-5:-2]
+print(sliced_list)  # Output: [5, 6, 7]
+Step with negative indices (reversing a list):
+
+python
+my_list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+sliced_list = my_list[::-1]
+print(sliced_list)  # Output: [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+Lab:
+ Write a Python program to create a list with elements of multiple data types (integers, strings, floats, etc.).
+
+Here’s a simple Python program that creates a list containing elements of multiple data types, such as integers, 
+strings, floats, and even a boolean:
+
+python
+# Creating a list with multiple data types
+my_list = [42, "Hello, world!", 3.14, True, None, 7]
+
+# Printing the list
+print("List with multiple data types:", my_list)
+Explanation:
+42: an integer
+"Hello, world!": a string
+3.14: a float
+True: a boolean
+None: a special type in Python representing a null value
+7: another integer
+
+ Write a Python program to access elements at different index positions.
+
+Here is a Python program to access elements at different index positions in a list:
+
+python
+# Sample list
+my_list = [10, 20, 30, 40, 50, 60]
+
+# Accessing elements at different index positions
+print("Element at index 0:", my_list[0])  # First element
+print("Element at index 2:", my_list[2])  # Third element
+print("Element at index 4:", my_list[4])  # Fifth element
+
+# Accessing elements using negative index
+print("Element at index -1 (last element):", my_list[-1])  # Last element
+print("Element at index -3:", my_list[-3])  # Third last element
+
+# Accessing element at out of range index (will cause IndexError)
+try:
+    print("Element at index 10:", my_list[10])  # Index out of range
+except IndexError as e:
+    print("Error:", e)
+Explanation:
+The program accesses elements from the list my_list at different index positions.
+Positive indices (0, 2, 4) refer to elements from the beginning of the list.
+Negative indices (-1, -3) access elements starting from the end of the list.
+It also includes error handling when trying to access an out-of-range index (index 10 in this case).
+Output:
+perl
+Element at index 0: 10
+Element at index 2: 30
+Element at index 4: 50
+Element at index -1 (last element): 60
+Element at index -3: 40
+Error: list index out of range
+
+Practical Examples:
+1. Write a Python program to create a list of multiple data type elements.
+
+Here is a simple Python program that creates a list containing multiple data type elements:
+
+python
+# Create a list with multiple data types
+my_list = [42, "Hello, world!", 3.14, True, None, [1, 2, 3], {"key": "value"}]
+
+# Print the list
+print("List with multiple data types:")
+print(my_list)
+
+# Print the type of each element in the list
+print("\nTypes of each element in the list:")
+for element in my_list:
+    print(f"{element} is of type {type(element)}")
+Explanation:
+my_list contains elements of different data types:
+42: an integer.
+"Hello, world!": a string.
+3.14: a floating-point number.
+True: a boolean value.
+None: a special Python constant representing null or no value.
+[1, 2, 3]: a list.
+{"key": "value"}: a dictionary.
+The program prints the entire list and also prints the type of each element in the list.
+Example Output:
+python
+List with multiple data types:
+[42, 'Hello, world!', 3.14, True, None, [1, 2, 3], {'key': 'value'}]
+
+Types of each element in the list:
+42 is of type <class 'int'>
+Hello, world! is of type <class 'str'>
+3.14 is of type <class 'float'>
+True is of type <class 'bool'>
+None is of type <class 'NoneType'>
+[1, 2, 3] is of type <class 'list'>
+{'key': 'value'} is of type <class 'dict'>
+
+2. Write a Python program to find the length of a list using the len() function.
+
+Here's a simple Python program to find the length of a list using the len() function:
+
+python
+# Define a list
+my_list = [10, 20, 30, 40, 50]
+
+# Use len() function to find the length of the list
+list_length = len(my_list)
+
+# Print the length
+print("The length of the list is:", list_length)
+Explanation:
+The list my_list is defined with 5 elements.
+The len() function is used to find the number of elements in the list.
+The length is then printed.
+Output:
+csharp
+The length of the list is: 5
+
+2. List Operations
+Theory:
+ Common list operations: concatenation, repetition, membership.
+
+In Python, lists are versatile and support various operations. Below are some common list operations:
+
+1. Concatenation
+Concatenation is the process of combining two or more lists into one.
+
+Using + Operator: The + operator is used to concatenate lists.
+python
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+concatenated_list = list1 + list2
+print(concatenated_list)  # Output: [1, 2, 3, 4, 5, 6]
+2. Repetition
+Repetition allows you to repeat the elements of a list multiple times.
+
+Using * Operator: The * operator repeats a list a specified number of times.
+python
+list1 = [1, 2, 3]
+repeated_list = list1 * 3
+print(repeated_list)  # Output: [1, 2, 3, 1, 2, 3, 1, 2, 3]
+3. Membership
+Membership tests whether an element is present in the list. You can use the in keyword to check if an element exists in 
+the list.
+
+Using in Keyword: It returns True if the element is found in the list, otherwise False.
+python
+list1 = [1, 2, 3, 4, 5]
+print(3 in list1)  # Output: True
+print(6 in list1)  # Output: False
+
+ Understanding list methods like append(), insert(), remove(), pop().
+
+In Python, lists are versatile data structures that support various methods to modify and manage their contents. 
+Here's a breakdown of the common list methods like append(), insert(), remove(), and pop():
+
+1. append()
+Purpose: Adds an element to the end of the list.
+Syntax: list.append(item)
+Example:
+python
+my_list = [1, 2, 3]
+my_list.append(4)
+print(my_list)  # Output: [1, 2, 3, 4]
+Note: This method modifies the list in-place and does not return a new list.
+2. insert()
+Purpose: Inserts an element at a specific position in the list.
+Syntax: list.insert(index, item)
+index: The position where the item should be inserted (zero-based index).
+item: The element to be inserted.
+Example:
+python
+my_list = [1, 2, 3]
+my_list.insert(1, 4)  # Insert 4 at index 1
+print(my_list)  # Output: [1, 4, 2, 3]
+Note: This method also modifies the list in-place and shifts elements to the right to make room for the new element.
+3. remove()
+Purpose: Removes the first occurrence of a specified element from the list.
+Syntax: list.remove(item)
+item: The element to remove.
+Example:
+python
+my_list = [1, 2, 3, 2, 4]
+my_list.remove(2)  # Removes the first occurrence of 2
+print(my_list)  # Output: [1, 3, 2, 4]
+Note: If the item is not found in the list, a ValueError will be raised.
+4. pop()
+Purpose: Removes and returns an element at a specific index. If no index is specified, it removes and returns the 
+last element of the list.
+Syntax: list.pop([index])
+index: The index of the item to remove (optional, defaults to the last item).
+Example:
+python
+my_list = [1, 2, 3, 4]
+popped_item = my_list.pop(2)  # Removes and returns the item at index 2
+print(popped_item)  # Output: 3
+print(my_list)  # Output: [1, 2, 4]
+Note: If the list is empty and pop() is called, an IndexError will occur. If no index is provided, it removes and returns
+the last element.
+
+Lab:
+ Write a Python program to add elements to a list using insert() and append().
+
+Here is a Python program that demonstrates how to add elements to a list using both the insert() and append() methods:
+
+python
+# Create an empty list
+my_list = []
+
+# Using append() to add an element at the end of the list
+my_list.append(10)
+my_list.append(20)
+my_list.append(30)
+
+# Using insert() to add an element at a specific position (index)
+my_list.insert(1, 15)  # Adds 15 at index 1 (second position)
+
+# Printing the updated list
+print("Updated list:", my_list)
+Explanation:
+append(): Adds an element to the end of the list.
+insert(index, element): Adds an element at the specified index in the list. All elements from the specified index are 
+shifted to the right.
+Output:
+less
+Updated list: [10, 15, 20, 30]
+In this example:
+
+The append() method is used to add 10, 20, and 30 to the list.
+The insert() method is used to add 15 at index 1 (second position), pushing the previous elements to the right.
+
+ Write a Python program to remove elements from a list using pop() and remove().
+
+Certainly! Below is a Python program that demonstrates how to remove elements from a list using both the pop() and 
+remove() methods.
+
+python
+# Sample list
+my_list = [10, 20, 30, 40, 50]
+
+# Using pop() - This removes an element by index and returns the removed element
+print("Original list:", my_list)
+
+# Remove the element at index 2 (which is 30)
+removed_element_pop = my_list.pop(2)
+print("List after pop(2):", my_list)
+print("Removed element using pop():", removed_element_pop)
+
+# Using remove() - This removes the first occurrence of a specified value
+# Remove the value 40 from the list
+my_list.remove(40)
+print("List after remove(40):", my_list)
+
+# Handling errors when using remove() if the element does not exist
+try:
+    my_list.remove(100)  # 100 is not in the list, this will raise an error
+except ValueError as e:
+    print(f"Error: {e}")
+Explanation:
+Using pop(index): This removes the element at the specified index and returns the value of the removed element. If no 
+index is provided, it removes the last item by default.
+Using remove(value): This removes the first occurrence of the specified value from the list. If the value is not found, 
+it raises a ValueError.
+Example output:
+css
+Original list: [10, 20, 30, 40, 50]
+List after pop(2): [10, 20, 40, 50]
+Removed element using pop(): 30
+List after remove(40): [10, 20, 50]
+Error: list.remove(x): x not in list
+
+Practical Examples: 3) Write a Python program to update a list using insert() and append().
+
+Here's a Python program that demonstrates how to update a list using the insert() and append() methods:
+
+python
+# Initial list
+my_list = [1, 2, 3, 4, 5]
+print("Original list:", my_list)
+
+# Using append() to add an item at the end of the list
+my_list.append(6)
+print("After append(6):", my_list)
+
+# Using insert() to add an item at a specific position (index 2)
+my_list.insert(2, 'Hello')
+print("After insert(2, 'Hello'):", my_list)
+
+# Using append() to add another item at the end of the list
+my_list.append(7)
+print("After append(7):", my_list)
+
+# Using insert() to add an item at the beginning (index 0)
+my_list.insert(0, 'Start')
+print("After insert(0, 'Start'):", my_list)
+Explanation:
+append(): This method adds an element to the end of the list.
+insert(): This method inserts an element at a specified index. It shifts elements to the right to accommodate the 
+new element.
+Output:
+less
+Original list: [1, 2, 3, 4, 5]
+After append(6): [1, 2, 3, 4, 5, 6]
+After insert(2, 'Hello'): [1, 2, 'Hello', 3, 4, 5, 6]
+After append(7): [1, 2, 'Hello', 3, 4, 5, 6, 7]
+After insert(0, 'Start'): ['Start', 1, 2, 'Hello', 3, 4, 5, 6, 7]
+
+4) Write a Python program to remove elements from a list using pop() and remove().
+
+Here's a Python program that demonstrates how to remove elements from a list using both pop() and remove() methods:
+
+python
+# Define a list
+my_list = [10, 20, 30, 40, 50, 60]
+
+# Remove element using pop() by index
+print("Original list:", my_list)
+
+# Remove element at index 2 using pop()
+removed_element_pop = my_list.pop(2)
+print("List after pop at index 2:", my_list)
+print("Removed element using pop:", removed_element_pop)
+
+# Remove element using remove() by value
+my_list.remove(40)  # Removes the first occurrence of 40
+print("List after remove(40):", my_list)
+
+# Trying to remove an element using pop() with no argument (removes last element)
+removed_element_pop_last = my_list.pop()
+print("List after pop() with no index (last element removed):", my_list)
+print("Removed last element using pop:", removed_element_pop_last)
+
+# Trying to remove a non-existing value using remove() (will cause an error if the element is not found)
+try:
+    my_list.remove(100)  # This will raise an error because 100 is not in the list
+except ValueError as e:
+    print("Error:", e)
+Explanation:
+pop(index): Removes the element at the specified index and returns it. If no index is provided, it removes and returns 
+the last element.
+remove(value): Removes the first occurrence of the specified value. If the value is not found, it raises a ValueError.
+Sample Output:
+perl
+Original list: [10, 20, 30, 40, 50, 60]
+List after pop at index 2: [10, 20, 40, 50, 60]
+Removed element using pop: 30
+List after remove(40): [10, 20, 50, 60]
+List after pop() with no index (last element removed): [10, 20, 50]
+Removed last element using pop: 60
+Error: list.remove(x): x not in list
+
+3. Working with Lists
+Theory:
+ Iterating over a list using loops.
+
+In Python, you can iterate over a list using different types of loops. The most common ones are for loops and while loops. 
+Below are examples of how to use both:
+
+1. Using a for loop
+A for loop is the most common way to iterate over a list in Python. It directly accesses each element of the list one 
+by one.
+
+Example:
+python
+my_list = [1, 2, 3, 4, 5]
+
+# Using a for loop to iterate over the list
+for item in my_list:
+    print(item)
+Output:
+
+1
+2
+3
+4
+5
+2. Using a while loop
+A while loop can also be used to iterate over a list, but you need to manage the index manually.
+
+Example:
+python
+my_list = [1, 2, 3, 4, 5]
+index = 0
+
+# Using a while loop to iterate over the list
+while index < len(my_list):
+    print(my_list[index])
+    index += 1
+Output:
+
+1
+2
+3
+4
+5
+3. Using enumerate() to get both the index and value
+If you need both the index and the value during iteration, you can use the enumerate() function.
+
+Example:
+python
+my_list = ['a', 'b', 'c', 'd']
+
+# Using enumerate to get both index and value
+for index, value in enumerate(my_list):
+    print(f"Index: {index}, Value: {value}")
+Output:
+
+yaml
+Index: 0, Value: a
+Index: 1, Value: b
+Index: 2, Value: c
+Index: 3, Value: d
+These are the common ways to iterate over a list in Python. The for loop is usually the most straightforward and is highly recommended for such tasks.
+
+ Sorting and reversing a list using sort(), sorted(), and reverse().
+
+In Python, you can sort and reverse a list using several methods: sort(), sorted(), and reverse(). Here's how they work:
+
+1. Using sort()
+The sort() method sorts the list in place. This means that the original list is modified, and it doesn't return a new list. By default, it sorts the list in ascending order. You can also pass an optional parameter to reverse the order or use a custom sorting key.
+
+Syntax:
+
+python
+list.sort(reverse=False, key=None)
+reverse=False sorts in ascending order (default), set it to True to sort in descending order.
+key=None can be used to specify a custom sorting function.
+Example:
+
+python
+numbers = [4, 2, 9, 1, 5]
+numbers.sort()  # Sorts in ascending order by default
+print(numbers)  # Output: [1, 2, 4, 5, 9]
+
+numbers.sort(reverse=True)  # Sorts in descending order
+print(numbers)  # Output: [9, 5, 4, 2, 1]
+2. Using sorted()
+The sorted() function returns a new list that is sorted, without modifying the original list. It also accepts the 
+same parameters as sort() for reverse sorting or using a custom key.
+
+Syntax:
+
+python
+sorted_list = sorted(list, reverse=False, key=None)
+Example:
+
+python
+numbers = [4, 2, 9, 1, 5]
+sorted_list = sorted(numbers)  # Returns a new sorted list
+print(sorted_list)  # Output: [1, 2, 4, 5, 9]
+print(numbers)  # Original list is unchanged: [4, 2, 9, 1, 5]
+
+sorted_list_desc = sorted(numbers, reverse=True)  # Sorted in descending order
+print(sorted_list_desc)  # Output: [9, 5, 4, 2, 1]
+3. Using reverse()
+The reverse() method reverses the list in place. Unlike sort() and sorted(), it does not sort the list; it simply 
+reverses the order of elements.
+
+Syntax:
+
+python
+list.reverse()
+Example:
+
+python
+numbers = [4, 2, 9, 1, 5]
+numbers.reverse()  # Reverses the list in place
+print(numbers)  # Output: [5, 1, 9, 2, 4]
+Summary of Differences:
+sort() modifies the original list and sorts it in place.
+sorted() returns a new sorted list without changing the original.
+reverse() only reverses the order of elements in the list, without sorting.
+Combined Example:
+python
+numbers = [4, 2, 9, 1, 5]
+
+# Sort in ascending order
+numbers.sort()
+print("Sorted in ascending:", numbers)
+
+# Reverse the list
+numbers.reverse()
+print("Reversed list:", numbers)
+
+# Sort in descending order
+numbers.sort(reverse=True)
+print("Sorted in descending:", numbers)
+
+# Use sorted() to get a sorted list without modifying the original
+sorted_numbers = sorted(numbers)
+print("New sorted list:", sorted_numbers)
+print("Original list after sorted() is unchanged:", numbers)
+
+ Basic list manipulations: addition, deletion, updating, and slicing.
+
+Here’s a quick overview of basic list manipulations in Python, including addition, deletion, updating, and slicing.
+
+1. Adding elements to a list
+You can add elements to a list using the following methods:
+
+append(): Adds an element to the end of the list.
+insert(): Adds an element at a specific position.
+extend(): Adds multiple elements (from another iterable) to the list.
+python
+# Example list
+my_list = [1, 2, 3]
+
+# append - Add an element to the end
+my_list.append(4)  
+print(my_list)  # Output: [1, 2, 3, 4]
+
+# insert - Add an element at a specific index
+my_list.insert(1, 'a')  
+print(my_list)  # Output: [1, 'a', 2, 3, 4]
+
+# extend - Add multiple elements
+my_list.extend([5, 6])
+print(my_list)  # Output: [1, 'a', 2, 3, 4, 5, 6]
+2. Deleting elements from a list
+You can delete elements using:
+
+remove(): Removes the first occurrence of a specific element.
+pop(): Removes an element at a specific index or from the end of the list.
+del: Deletes elements by index or removes the entire list.
+python
+# Example list
+my_list = [1, 2, 3, 4, 5]
+
+# remove - Remove an element by value
+my_list.remove(3)  
+print(my_list)  # Output: [1, 2, 4, 5]
+
+# pop - Remove an element by index (default is the last element)
+removed_item = my_list.pop(2)  
+print(my_list)  # Output: [1, 2, 5]
+print(removed_item)  # Output: 4
+
+# del - Delete an element by index or the entire list
+del my_list[1]  
+print(my_list)  # Output: [1, 5]
+3. Updating elements in a list
+You can update the value of an element by accessing its index and assigning a new value to it.
+
+python
+# Example list
+my_list = [1, 2, 3, 4, 5]
+
+# Update an element by index
+my_list[1] = 10  
+print(my_list)  # Output: [1, 10, 3, 4, 5]
+4. Slicing a list
+You can slice a list to obtain a portion of it:
+
+list[start:end]: Slices from the start index (inclusive) to the end index (exclusive).
+list[start:end:step]: Slices with a step, skipping elements in the range.
+python
+# Example list
+my_list = [1, 2, 3, 4, 5, 6]
+
+# Slice from index 1 to 4 (exclusive)
+sublist = my_list[1:4]  
+print(sublist)  # Output: [2, 3, 4]
+
+# Slice with a step of 2
+sublist_step = my_list[::2]  
+print(sublist_step)  # Output: [1, 3, 5]
+
+# Slice from index 2 to the end
+sublist_end = my_list[2:]  
+print(sublist_end)  # Output: [3, 4, 5, 6]
+
+# Slice from the beginning to index 4 (exclusive)
+sublist_start = my_list[:4]  
+print(sublist_start)  # Output: [1, 2, 3, 4]
+
+Lab:
+ Write a Python program to iterate over a list using a for loop.
+
+Here's a simple Python program that iterates over a list using a for loop:
+
+python
+# Sample list
+my_list = [10, 20, 30, 40, 50]
+
+# Iterate over the list using a for loop
+for item in my_list:
+    print(item)
+Output:
+Copy code
+10
+20
+30
+40
+50
+In this program:
+
+The for loop iterates over each element in the list my_list.
+The variable item holds each value from the list during the iteration, and print(item) prints each element one by one.
+
+ Write a Python program to sort a list using both sort() and sorted().
+
+Sure! Here's a Python program that demonstrates sorting a list using both sort() and sorted() methods:
+
+python
+# Original list
+my_list = [4, 1, 3, 9, 5, 8]
+
+# Using sort() - modifies the original list in place
+print("Original list:", my_list)
+my_list.sort()
+print("List after sort() (in place):", my_list)
+
+# Using sorted() - returns a new sorted list
+my_list = [4, 1, 3, 9, 5, 8]  # Resetting original list
+sorted_list = sorted(my_list)
+print("List after sorted():", sorted_list)
+
+# Showing that the original list is unchanged with sorted()
+print("Original list after sorted() (unchanged):", my_list)
+Explanation:
+sort() sorts the list in place, meaning it changes the original list.
+sorted() returns a new list that is sorted, leaving the original list unchanged.
+Sample Output:
+less
+Original list: [4, 1, 3, 9, 5, 8]
+List after sort() (in place): [1, 3, 4, 5, 8, 9]
+List after sorted(): [1, 3, 4, 5, 8, 9]
+Original list after sorted() (unchanged): [4, 1, 3, 9, 5, 8]
+
+Practical Examples: 5) Write a Python program to iterate through a list and print each element.
+
+Here's a simple Python program that iterates through a list and prints each element:
+
+python
+# Define a list
+my_list = [1, 2, 3, 4, 5]
+
+# Iterate through the list and print each element
+for element in my_list:
+    print(element)
+output
+1
+2
+3
+4
+5
+This program defines a list my_list containing five integers and uses a for loop to iterate over each element, 
+printing them one by one.
+
+6) Write a Python program to insert elements into an empty list using a for loop and append().
+
+Here's a Python program that demonstrates how to insert elements into an empty list using a for loop and the append() 
+method:
+
+python
+# Initialize an empty list
+my_list = []
+
+# Number of elements to insert
+n = int(input("Enter the number of elements you want to insert: "))
+
+# Using a for loop to insert elements into the list
+for i in range(n):
+    element = input(f"Enter element {i+1}: ")
+    my_list.append(element)
+
+# Print the final list
+print("The final list is:", my_list)
+Explanation:
+An empty list my_list is initialized.
+The program asks the user how many elements they want to insert into the list.
+A for loop runs for the specified number of times (n), and on each iteration, the user is prompted to enter a value.
+The append() method is used to add the entered value to the list.
+Finally, the program prints the complete list.
+
+4. Tuple
+Theory:
+ Introduction to tuples, immutability.
+
+Introduction to Tuples in Python
+A tuple is a built-in data structure in Python that is used to store an ordered collection of items. Tuples are similar 
+to lists, but with one key difference: tuples are immutable, meaning their contents cannot be changed once they are 
+created.
+
+Characteristics of Tuples:
+Ordered: The elements in a tuple have a defined order. The first element has an index of 0, the second one has an index 
+of 1, and so on.
+Immutable: Once a tuple is created, its contents cannot be modified—no items can be added, removed, or changed.
+Can contain different data types: A tuple can store elements of different types, such as integers, strings, lists, etc.
+Hashable: Since tuples are immutable, they can be used as keys in dictionaries or added to sets, unlike lists.
+Indexable and iterable: You can access elements using indices or iterate over them using loops.
+Creating Tuples:
+You can create a tuple by placing elements inside parentheses () and separating them with commas.
+
+python
+# An empty tuple
+empty_tuple = ()
+
+# A tuple with one element
+single_element_tuple = (5,)
+
+# A tuple with multiple elements
+my_tuple = (1, 2, 3, "apple", 4.5)
+
+# Nested tuple
+nested_tuple = (1, (2, 3), "hello")
+Accessing Elements:
+You can access elements of a tuple using indices, similar to lists:
+
+python
+my_tuple = (10, 20, 30)
+
+print(my_tuple[0])  # Output: 10
+print(my_tuple[1])  # Output: 20
+print(my_tuple[2])  # Output: 30
+Slicing Tuples:
+You can slice tuples to extract a subset of elements:
+
+python
+my_tuple = (10, 20, 30, 40, 50)
+
+print(my_tuple[1:4])  # Output: (20, 30, 40)
+Immutability in Python
+Immutability means that an object’s state cannot be modified after it is created. This is a core characteristic of 
+tuples in Python. Once a tuple is created, you cannot change, add, or remove elements from it.
+
+For example, trying to change an element of a tuple will raise an error:
+
+python
+my_tuple = (1, 2, 3)
+
+# Trying to change the second element
+# This will raise an error
+my_tuple[1] = 5
+This results in the error:
+
+php
+TypeError: 'tuple' object does not support item assignment
+However, you can reassign the entire tuple to a new one (which doesn't violate immutability), but you cannot change its 
+elements individually:
+
+python
+# Reassigning a new tuple
+my_tuple = (4, 5, 6)
+Why Immutability Matters
+Performance: Since tuples are immutable, Python can optimize them in terms of memory usage and speed, especially when 
+tuples are used as keys in dictionaries.
+Safety: Immutability ensures that the data inside a tuple cannot be altered by accident, which can lead to fewer bugs in 
+programs.
+Hashability: Immutability allows tuples to be used as keys in dictionaries or stored in sets, unlike lists, which are 
+mutable and cannot be used as keys in dictionaries.
+Practical Uses of Tuples
+Storing fixed data: Tuples are often used to store data that should not change, like configuration settings or coordinates.
+
+Returning multiple values: Functions in Python can return multiple values as a tuple.
+
+Example:
+
+python
+def get_coordinates():
+    return (10, 20)
+
+coords = get_coordinates()
+print(coords)  # Output: (10, 20)
+As dictionary keys: Since tuples are immutable, they can be used as keys in dictionaries.
+
+python
+location = {(0, 0): "Origin", (1, 1): "Point A"}
+print(location[(0, 0)])  # Output: Origin
+
+ Creating and accessing elements in a tuple.
+
+In Python, tuples are ordered, immutable collections of elements. You can create a tuple and access its elements in several ways.
+
+1. Creating a Tuple
+To create a tuple, you use parentheses () and separate the elements with commas. Tuples can contain elements of different 
+data types (like integers, strings, or even other tuples).
+
+python
+# Creating a tuple
+my_tuple = (1, 2, 3, "hello", 4.5)
+
+# Creating an empty tuple
+empty_tuple = ()
+
+# Creating a tuple with one element (note the trailing comma)
+single_element_tuple = (5,)
+2. Accessing Elements in a Tuple
+You access the elements of a tuple by using indexing or slicing. Indexing starts from 0 for the first element.
+
+Accessing with Indexing
+You can access individual elements by their index:
+
+python
+# Accessing elements by index
+first_element = my_tuple[0]      # 1
+second_element = my_tuple[1]     # 2
+last_element = my_tuple[-1]      # 4.5 (negative indexing starts from the end)
+Slicing a Tuple
+You can get a subset (slice) of the tuple using a colon : inside the square brackets.
+
+python
+# Slicing the tuple
+subset = my_tuple[1:4]           # (2, 3, "hello")
+3. Modifying a Tuple
+Tuples are immutable, meaning you can't change, add, or remove elements once they are created. However, you can create a 
+new tuple by concatenating or slicing existing ones.
+
+python
+# Concatenating two tuples
+new_tuple = my_tuple + (6, 7)
+
+# Slicing and creating a new tuple
+modified_tuple = my_tuple[:3] + (100,) + my_tuple[3:]
+4. Other Tuple Operations
+You can also use other operations like checking the length or searching for an element:
+
+python
+# Length of a tuple
+length = len(my_tuple)           # 5
+
+# Check if an element exists in the tuple
+exists = 3 in my_tuple           # True
+
+# Count occurrences of an element
+count = my_tuple.count(2)        # 1
+Summary
+Create a tuple using ().
+Access elements using indexing [index] or slicing [start:end].
+Tuples are immutable, so you can't change their elements after creation.
+
+ Basic operations with tuples: concatenation, repetition, membership.
+
+In Python, tuples are immutable sequences, and you can perform several basic operations with them. Below are examples of 
+some common operations:
+
+1. Concatenation:
+You can concatenate two or more tuples using the + operator.
+
+python
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+
+# Concatenation
+result = tuple1 + tuple2
+print(result)  # Output: (1, 2, 3, 4, 5, 6)
+2. Repetition:
+You can repeat the elements of a tuple using the * operator.
+
+python
+tuple1 = (1, 2, 3)
+
+# Repetition
+result = tuple1 * 3
+print(result)  # Output: (1, 2, 3, 1, 2, 3, 1, 2, 3)
+3. Membership:
+You can check if an element exists in a tuple using the in operator.
+
+python
+tuple1 = (1, 2, 3, 4, 5)
+
+# Membership
+print(3 in tuple1)  # Output: True
+print(6 in tuple1)  # Output: False
+These are the basic operations you can perform with tuples in Python. Since tuples are immutable, you cannot modify 
+their elements after creation, but you can perform the above operations on them.
+
+Lab:
+ Write a Python program to create a tuple with multiple data types.
+
+Here's a simple Python program that creates a tuple with multiple data types:
+
+python
+# Creating a tuple with multiple data types
+my_tuple = (42, "Hello", 3.14, True, ['apple', 'banana'], (1, 2, 3))
+
+# Printing the tuple
+print("Tuple with multiple data types:", my_tuple)
+
+# Accessing elements of the tuple
+print("First element:", my_tuple[0])  # 42
+print("Second element:", my_tuple[1])  # "Hello"
+print("Fifth element (list inside tuple):", my_tuple[4])  # ['apple', 'banana']
+Explanation:
+The tuple my_tuple contains different data types: an integer (42), a string ("Hello"), a float (3.14), a boolean (True), 
+a list (['apple', 'banana']), and another tuple ((1, 2, 3)).
+We print the whole tuple and also access specific elements from it.
+
+ Write a Python program to concatenate two tuples.
+
+Here's a Python program to concatenate two tuples:
+
+python
+# Define two tuples
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+
+# Concatenate the two tuples
+concatenated_tuple = tuple1 + tuple2
+
+# Print the result
+print("Concatenated Tuple:", concatenated_tuple)
+Output:
+python
+Concatenated Tuple: (1, 2, 3, 4, 5, 6)
+This program defines two tuples (tuple1 and tuple2) and then concatenates them using the + operator. The result is stored 
+in concatenated_tuple and printed.
+
+Practical Examples: 7) Write a Python program to convert a list into a tuple. 8) Write a Python program to create a 
+tuple with multiple data types.
+
+Here are two Python programs to meet your requirements:
+
+1) Convert a List into a Tuple
+python
+# Python program to convert a list into a tuple
+
+# Example list
+my_list = [1, 2, 3, 4, 5]
+
+# Convert the list to a tuple
+my_tuple = tuple(my_list)
+
+# Print the tuple
+print("Converted tuple:", my_tuple)
+Output:
+arduino
+Converted tuple: (1, 2, 3, 4, 5)
+2) Create a Tuple with Multiple Data Types
+python
+# Python program to create a tuple with multiple data types
+
+# Example tuple with different data types
+my_tuple = (42, "Hello", 3.14, True, [1, 2, 3])
+
+# Print the tuple
+print("Tuple with multiple data types:", my_tuple)
+Output:
+python
+Tuple with multiple data types: (42, 'Hello', 3.14, True, [1, 2, 3])
+In the second program, the tuple contains an integer, a string, a floating-point number, a boolean, and a list, 
+demonstrating the ability to store multiple data types in a tuple.
+
+
+9) Write a Python program to concatenate two tuples into one.
+
+You can concatenate two tuples in Python using the + operator. Here's a simple Python program to do this:
+
+python
+# Define two tuples
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+
+# Concatenate the tuples
+result_tuple = tuple1 + tuple2
+
+# Print the result
+print("Concatenated Tuple:", result_tuple)
+Explanation:
+tuple1 and tuple2 are two tuples.
+The + operator is used to concatenate them.
+The result is stored in result_tuple and printed.
+Output:
+python
+Concatenated Tuple: (1, 2, 3, 4, 5, 6)
+
+10) Write a Python program to access the value of the first index in a tuple.
+
+You can access the value of the first index in a tuple in Python by using indexing. In Python, indexing starts from 0, 
+so the first index of a tuple is 0.
+
+Here’s an example Python program to access the value of the first index in a tuple:
+
+python
+# Define a tuple
+my_tuple = (10, 20, 30, 40)
+
+# Access the value of the first index
+first_value = my_tuple[0]
+
+# Print the result
+print("The value at the first index is:", first_value)
+Output:
+csharp
+The value at the first index is: 10
+In this example, my_tuple[0] accesses the value at index 0, which is 10. You can replace the values in the tuple with 
+your own.
+
+5. Accessing Tuples
+Theory:
+ Accessing tuple elements using positive and negative indexing.
+
+In Python, you can access elements of a tuple using both positive and negative indexing. Here's how it works:
+
+Positive Indexing
+Starts from the left side of the tuple, with the first element having index 0, the second element having index 1, and 
+so on.
+Negative Indexing
+Starts from the right side of the tuple, with the last element having index -1, the second last element having index -2, 
+and so on.
+Example:
+python
+# Define a tuple
+my_tuple = ('apple', 'banana', 'cherry', 'date', 'elderberry')
+
+# Access elements using positive indexing
+print(my_tuple[0])  # 'apple' (first element)
+print(my_tuple[1])  # 'banana' (second element)
+print(my_tuple[4])  # 'elderberry' (fifth element)
+
+# Access elements using negative indexing
+print(my_tuple[-1])  # 'elderberry' (last element)
+print(my_tuple[-2])  # 'date' (second last element)
+print(my_tuple[-4])  # 'banana' (fourth from last element)
+Output:
+bash
+apple
+banana
+elderberry
+elderberry
+date
+banana
+Explanation:
+With positive indexing, the index starts from 0 on the left and increases to the right.
+With negative indexing, the index starts from -1 for the last element and decreases to the left.
+Both indexing methods allow you to access elements directly from the tuple!
+
+ Slicing a tuple to access ranges of elements.
+
+In Python, slicing is a powerful technique to access a range of elements from a sequence, such as a tuple. 
+The general syntax for slicing is:
+
+python
+tuple[start:stop:step]
+start: The index where the slice begins (inclusive). If omitted, it defaults to the beginning (index 0).
+stop: The index where the slice ends (exclusive). If omitted, it defaults to the end of the tuple.
+step: The step size or interval between elements. If omitted, it defaults to 1.
+Examples:
+1. Slicing a tuple to get a range of elements:
+python
+my_tuple = (10, 20, 30, 40, 50, 60, 70)
+
+# Access elements from index 1 to 4 (index 4 is exclusive)
+result = my_tuple[1:4]
+print(result)  # Output: (20, 30, 40)
+2. Slicing with a step:
+python
+# Access elements with a step of 2 (every second element)
+result = my_tuple[0:6:2]
+print(result)  # Output: (10, 30, 50)
+3. Omitting start or stop:
+When start is omitted, slicing begins from the start of the tuple:
+python
+result = my_tuple[:4]
+print(result)  # Output: (10, 20, 30, 40)
+When stop is omitted, slicing goes until the end of the tuple:
+python
+result = my_tuple[3:]
+print(result)  # Output: (40, 50, 60, 70)
+4. Using negative indices:
+You can also use negative indices to slice from the end of the tuple.
+
+python
+# Access last three elements
+result = my_tuple[-3:]
+print(result)  # Output: (50, 60, 70)
+
+# Access all elements except the last one
+result = my_tuple[:-1]
+print(result)  # Output: (10, 20, 30, 40, 50, 60)
+5. Slicing with a negative step (reverse slicing):
+python
+# Reverse the tuple
+result = my_tuple[::-1]
+print(result)  # Output: (70, 60, 50, 40, 30, 20, 10)
+Summary of Key Points:
+tuple[start:stop] returns a slice from index start to stop-1.
+tuple[start:stop:step] allows you to control the interval between elements.
+Negative indices count from the end of the tuple, starting at -1 for the last element.
+Slicing does not modify the original tuple; it creates a new one.
+Slicing is an efficient and concise way to work with portions of a tuple.
+
+Lab:
+ Write a Python program to access values between index 1 and 5 in a tuple.
+
+To access values between index 1 and 5 in a tuple, you can use Python's slicing feature. In Python, the index starts 
+at 0, and you can slice a tuple using the syntax tuple[start:end], where start is the index of the first item you want 
+to access, and end is the index just beyond the last item you want.
+
+Here's a Python program to access values between index 1 and 5 in a tuple:
+
+python
+# Define a tuple
+my_tuple = (10, 20, 30, 40, 50, 60, 70, 80, 90)
+
+# Access values between index 1 and 5
+sub_tuple = my_tuple[1:6]
+
+# Print the result
+print("Values between index 1 and 5:", sub_tuple)
+Explanation:
+my_tuple[1:6] slices the tuple from index 1 to index 5 (since the end index is exclusive).
+This program will print the elements at index 1, 2, 3, 4, and 5 from the tuple.
+Output:
+sql
+Values between index 1 and 5: (20, 30, 40, 50, 60)
+
+ Write a Python program to access alternate values between index 1 and 5 in a tuple.
+
+To access alternate values between index 1 and 5 in a tuple, you can use Python's slicing feature. Here's a simple Python 
+program that demonstrates how to do this:
+
+python
+# Define a sample tuple
+sample_tuple = (10, 20, 30, 40, 50, 60, 70, 80)
+
+# Access alternate values between index 1 and 5 using slicing
+# slice from index 1 to 5 and take every second element
+result = sample_tuple[1:6:2]
+
+# Print the result
+print(result)
+Explanation:
+sample_tuple[1:6:2] slices the tuple starting from index 1, up to index 5 (inclusive), and retrieves every second element.
+The 1 is the starting index, 6 is the end index (one past index 5), and 2 is the step, meaning it selects every second 
+element in that range.
+Output:
+scss
+(20, 40, 60)
+
+
+Practical Examples: 11) Write a Python program to access values between index 1 and 5 in a tuple.
+
+Here is a Python program that accesses values between index 1 and 5 in a tuple:
+
+python
+# Define a tuple
+my_tuple = (10, 20, 30, 40, 50, 60, 70, 80)
+
+# Access values between index 1 and 5 (index 1 is inclusive and index 5 is exclusive)
+subset_tuple = my_tuple[1:6]
+
+# Print the result
+print("Values between index 1 and 5:", subset_tuple)
+Explanation:
+my_tuple[1:6] slices the tuple from index 1 to index 5 (exclusive). This means the values at indices 1, 2, 3, 4, and 5 
+are included.
+The result is printed as a new tuple containing the desired values.
+
+12) Write a Python program to access the value from the last index in a tuple.
+
+You can access the value from the last index of a tuple in Python by using the negative index -1, which always refers 
+to the last element in the tuple.
+
+Here’s a simple Python program that demonstrates how to access the last element of a tuple:
+
+python
+# Sample tuple
+my_tuple = (10, 20, 30, 40, 50)
+
+# Accessing the last element using negative indexing
+last_element = my_tuple[-1]
+
+# Printing the last element
+print("The last element in the tuple is:", last_element)
+Output:
+python
+The last element in the tuple is: 50
+In this program, my_tuple[-1] retrieves the last element (50) from the tuple my_tuple.
+
+6. Dictionaries
+Theory:
+ Introduction to dictionaries: key-value pairs.
+
+In Python, dictionaries are a built-in data type that store data in key-value pairs. A dictionary allows you to store and 
+retrieve values based on unique keys. It is similar to a real-world dictionary, where you have a word (the key) and 
+its meaning (the value).
+
+Key Concepts of Dictionaries:
+Key-Value Pairs: Each item in a dictionary consists of a key and its associated value. The key must be unique, while 
+values can be of any data type, including numbers, strings, lists, or other dictionaries.
+
+Unordered: Dictionaries do not maintain the order of the items. In Python 3.7 and above, dictionaries preserve the 
+insertion order, but it is not guaranteed in earlier versions.
+
+Mutable: You can modify dictionaries after they are created (i.e., add, update, or remove key-value pairs).
+
+Keys: Keys in a dictionary must be immutable (e.g., strings, numbers, or tuples) but can be of any data type that supports hash-based lookup.
+
+Syntax:
+A dictionary is defined using curly braces {}, with key-value pairs separated by a colon : and each pair separated by 
+commas.
+
+python
+my_dict = {
+    "name": "Alice",   # key is "name", value is "Alice"
+    "age": 25,         # key is "age", value is 25
+    "city": "New York" # key is "city", value is "New York"
+}
+Key Operations with Dictionaries:
+Accessing values: You can access a value by using its corresponding key inside square brackets [].
+
+python
+print(my_dict["name"])  # Output: Alice
+print(my_dict["age"])   # Output: 25
+Adding or updating key-value pairs: You can add a new key-value pair or update the value of an existing key.
+
+python
+my_dict["email"] = "alice@example.com"  # Adds a new key-value pair
+my_dict["age"] = 26                     # Updates the value for the key "age"
+print(my_dict)
+Removing a key-value pair: Use del to remove a key-value pair or use the pop() method.
+
+python
+del my_dict["city"]  # Removes the key "city"
+print(my_dict)
+
+email = my_dict.pop("email")  # Removes and returns the value for "email"
+print(email)  # Output: alice@example.com
+Checking if a key exists: Use the in keyword to check if a key exists in the dictionary.
+
+python
+print("name" in my_dict)  # Output: True
+print("city" in my_dict)  # Output: False
+Dictionary methods: Python dictionaries come with several useful methods:
+
+.keys() – returns a view of all keys.
+.values() – returns a view of all values.
+.items() – returns a view of all key-value pairs as tuples.
+python
+print(my_dict.keys())   # Output: dict_keys(['name', 'age'])
+print(my_dict.values()) # Output: dict_values(['Alice', 26])
+print(my_dict.items())  # Output: dict_items([('name', 'Alice'), ('age', 26)])
+Example: Using a Dictionary
+python
+# Create a dictionary to store information about a book
+book = {
+    "title": "1984",
+    "author": "George Orwell",
+    "year": 1949,
+    "genre": "Dystopian"
+}
+
+# Accessing the values using keys
+print("Book title:", book["title"])
+print("Author:", book["author"])
+
+# Updating the year of publication
+book["year"] = 1950
+print("Updated year:", book["year"])
+
+# Adding a new key-value pair (ISBN)
+book["ISBN"] = "978-0451524935"
+print("Book ISBN:", book["ISBN"])
+
+# Removing the genre key
+del book["genre"]
+print("Updated book details:", book)
+Summary:
+A dictionary in Python stores data as key-value pairs.
+Keys must be unique and immutable, while values can be of any data type.
+Dictionaries allow for fast lookup, addition, and modification of data using keys.
+Useful methods like .keys(), .values(), and .items() allow you to interact with the contents of the dictionary.
+Dictionaries are powerful tools in Python for storing and manipulating data in an organized and efficient way.
+
+ Accessing, adding, updating, and deleting dictionary elements.
+
+In Python, dictionaries are mutable data structures that store key-value pairs. You can perform several operations on 
+dictionaries such as accessing, adding, updating, and deleting elements. Here’s a breakdown of how each operation works:
+
+1. Accessing Dictionary Elements
+To access the value of a dictionary element, you can use the key inside square brackets []. Alternatively, you can use 
+the get() method, which provides a safer way to access values.
+
+Example:
+python
+my_dict = {'apple': 1, 'banana': 2, 'cherry': 3}
+
+# Accessing using the key in square brackets
+print(my_dict['apple'])  # Output: 1
+
+# Accessing using the get() method
+print(my_dict.get('banana'))  # Output: 2
+
+# Accessing a non-existent key using get() (returns None instead of an error)
+print(my_dict.get('grape'))  # Output: None
+2. Adding or Updating Dictionary Elements
+You can add a new key-value pair or update the value of an existing key by simply assigning a value to a key. 
+If the key doesn’t exist, it will be added; if it does exist, its value will be updated.
+
+Example:
+python
+my_dict = {'apple': 1, 'banana': 2}
+
+# Adding a new key-value pair
+my_dict['cherry'] = 3
+print(my_dict)  # Output: {'apple': 1, 'banana': 2, 'cherry': 3}
+
+# Updating the value of an existing key
+my_dict['banana'] = 4
+print(my_dict)  # Output: {'apple': 1, 'banana': 4, 'cherry': 3}
+3. Deleting Dictionary Elements
+You can delete elements from a dictionary using the del statement or the pop() method. The del statement removes 
+the key-value pair completely, while pop() also returns the value associated with the key.
+
+Example:
+python
+my_dict = {'apple': 1, 'banana': 2, 'cherry': 3}
+
+# Deleting a key-value pair using del
+del my_dict['banana']
+print(my_dict)  # Output: {'apple': 1, 'cherry': 3}
+
+# Deleting a key-value pair using pop() and getting the value
+removed_value = my_dict.pop('cherry')
+print(my_dict)  # Output: {'apple': 1}
+print('Removed value:', removed_value)  # Output: Removed value: 3
+
+# Attempting to delete a non-existent key using del will raise a KeyError
+# del my_dict['grape']  # Uncommenting this line will raise KeyError: 'grape'
+Summary of Operations:
+Access: dict[key] or dict.get(key)
+Add/Update: dict[key] = value
+Delete: del dict[key] or dict.pop(key)
+These are the basic operations you can perform on dictionaries in Python.
+
+ Dictionary methods like keys(), values(), and items().
+
+In Python, dictionaries are collections of key-value pairs, and methods like keys(), values(), and items() are frequently 
+used to interact with and retrieve information from them. Here's an explanation of each:
+
+1. keys() Method
+The keys() method returns a view object that displays a list of all the keys in the dictionary.
+
+Syntax:
+python
+dictionary.keys()
+Example:
+python
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+keys = my_dict.keys()
+print(keys)
+Output:
+
+css
+dict_keys(['a', 'b', 'c'])
+Note that the result is a view object that reflects any changes made to the dictionary. If you want to convert it 
+into a list, you can explicitly cast it:
+
+python
+keys_list = list(my_dict.keys())
+2. values() Method
+The values() method returns a view object that shows a list of all the values in the dictionary.
+
+Syntax:
+python
+dictionary.values()
+Example:
+python
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+values = my_dict.values()
+print(values)
+Output:
+
+scss
+dict_values([1, 2, 3])
+Like keys(), the result is a view object. To convert it to a list, use:
+
+python
+values_list = list(my_dict.values())
+3. items() Method
+The items() method returns a view object that displays a list of dictionary's key-value tuple pairs.
+
+Syntax:
+python
+dictionary.items()
+Example:
+python
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+items = my_dict.items()
+print(items)
+Output:
+
+css
+dict_items([('a', 1), ('b', 2), ('c', 3)])
+This method is often used in loops to iterate over both keys and values simultaneously:
+
+python
+for key, value in my_dict.items():
+    print(key, value)
+Output:
+
+css
+a 1
+b 2
+c 3
+Summary
+keys() gives a view of all the dictionary keys.
+values() gives a view of all the dictionary values.
+items() gives a view of all key-value pairs as tuples.
+
+Lab:
+ Write a Python program to create a dictionary with 6 key-value pairs.
+
+Here's a simple Python program that creates a dictionary with 6 key-value pairs:
+
+python
+# Creating a dictionary with 6 key-value pairs
+my_dict = {
+    'name': 'Alice',
+    'age': 25,
+    'city': 'New York',
+    'job': 'Engineer',
+    'hobby': 'Reading',
+    'favorite_color': 'Blue'
+}
+
+# Displaying the dictionary
+print(my_dict)
+In this example:
+
+The dictionary my_dict has 6 key-value pairs.
+Each key is associated with a corresponding value.
+When you run the program, it will display the dictionary with the provided key-value pairs.
+
+ Write a Python program to access values using dictionary keys.
+
+Here is a Python program that demonstrates how to access values from a dictionary using dictionary keys:
+
+python
+# Define a dictionary
+student_info = {
+    "name": "John Doe",
+    "age": 20,
+    "course": "Computer Science",
+    "grades": {"math": 90, "english": 85, "science": 88}
+}
+
+# Access values using dictionary keys
+name = student_info["name"]
+age = student_info["age"]
+course = student_info["course"]
+math_grade = student_info["grades"]["math"]
+
+# Print the accessed values
+print("Student Name:", name)
+print("Age:", age)
+print("Course:", course)
+print("Math Grade:", math_grade)
+Explanation:
+A dictionary student_info is defined with keys like "name", "age", "course", and "grades".
+We access the values of these keys using the syntax dictionary_name[key].
+The nested dictionary grades is accessed by chaining keys like student_info["grades"]["math"].
+Sample Output:
+yaml
+Student Name: John Doe
+Age: 20
+Course: Computer Science
+Math Grade: 90
+This program shows how to retrieve values from both simple and nested dictionaries using their keys.
+
+Practical Examples: 13) Write a Python program to create a dictionary of 6 key-value pairs.
+
+Here's a simple Python program that creates a dictionary with 6 key-value pairs:
+
+python
+# Create a dictionary with 6 key-value pairs
+my_dict = {
+    "name": "John",
+    "age": 25,
+    "city": "New York",
+    "job": "Engineer",
+    "hobby": "Reading",
+    "is_student": False
+}
+
+# Print the dictionary
+print(my_dict)
+In this example:
+
+"name" is mapped to "John",
+"age" is mapped to 25,
+"city" is mapped to "New York",
+"job" is mapped to "Engineer",
+"hobby" is mapped to "Reading",
+"is_student" is mapped to False.
+You can modify the keys and values according to your requirements.
+
+14) Write a Python program to access values using keys from a dictionary.
+
+Here’s a simple Python program that demonstrates how to access values using keys from a dictionary:
+
+python
+# Define a dictionary
+my_dict = {
+    'name': 'Alice',
+    'age': 30,
+    'city': 'New York'
+}
+
+# Access values using keys
+name_value = my_dict['name']
+age_value = my_dict['age']
+city_value = my_dict['city']
+
+# Print the values
+print("Name:", name_value)
+print("Age:", age_value)
+print("City:", city_value)
+Explanation:
+We first create a dictionary my_dict with keys 'name', 'age', and 'city' and their corresponding values.
+To access the values, we simply use the keys inside square brackets, like my_dict['name'], my_dict['age'], etc.
+The program then prints the values associated with each key.
+Sample Output:
+vbnet
+Name: Alice
+Age: 30
+City: New York
+This program demonstrates how to retrieve and print dictionary values using the respective keys.
+
+7. Working with Dictionaries
+Theory:
+ Iterating over a dictionary using loops.
+
+In Python, you can iterate over a dictionary using different types of loops. A dictionary consists of key-value pairs, 
+and there are several ways to loop through these pairs:
+
+1. Iterating over keys
+To iterate over the keys of a dictionary:
+
+python
+my_dict = {'a': 1, 'b': 2, 'c': 3}
+
+for key in my_dict:
+    print(key)
+Output:
+
+css
+a
+b
+c
+You can also explicitly use my_dict.keys() to iterate over the keys:
+
+python
+for key in my_dict.keys():
+    print(key)
+2. Iterating over values
+To iterate over the values of a dictionary:
+
+python
+for value in my_dict.values():
+    print(value)
+Output:
+
+1
+2
+3
+3. Iterating over key-value pairs
+To iterate over both the keys and the corresponding values, you can use the items() method:
+
+python
+for key, value in my_dict.items():
+    print(f"Key: {key}, Value: {value}")
+Output:
+
+yaml
+Key: a, Value: 1
+Key: b, Value: 2
+Key: c, Value: 3
+4. Using a loop with conditions
+You can also combine loops with conditions, for example, to print only values greater than 1:
+
+python
+for key, value in my_dict.items():
+    if value > 1:
+        print(f"Key: {key}, Value: {value}")
+Output:
+
+yaml
+Key: b, Value: 2
+Key: c, Value: 3
+5. Iterating in a specific order (sorted keys)
+You can iterate over the dictionary's keys in a sorted order using sorted():
+
+python
+for key in sorted(my_dict):
+    print(key, my_dict[key])
+Output (sorted by key):
+
+css
+a 1
+b 2
+c 3
+These are the common ways to iterate over a dictionary in Python. You can choose the method based on what you need 
+(keys, values, or both).
+
+ Merging two lists into a dictionary using loops or zip().
+
+To merge two lists into a dictionary in Python, you can use either a loop or the zip() function. Here are both methods:
+
+Method 1: Using a for loop
+python
+# Sample lists
+keys = ['a', 'b', 'c']
+values = [1, 2, 3]
+
+# Initialize an empty dictionary
+merged_dict = {}
+
+# Loop through the lists and add key-value pairs to the dictionary
+for i in range(len(keys)):
+    merged_dict[keys[i]] = values[i]
+
+print(merged_dict)
+Output:
+
+python
+{'a': 1, 'b': 2, 'c': 3}
+Method 2: Using zip()
+python
+# Sample lists
+keys = ['a', 'b', 'c']
+values = [1, 2, 3]
+
+# Use zip() to pair the keys and values and convert it to a dictionary
+merged_dict = dict(zip(keys, values))
+
+print(merged_dict)
+Output:
+
+python
+{'a': 1, 'b': 2, 'c': 3}
+Explanation:
+In Method 1, we manually loop over the indices of the lists and use them to populate the dictionary.
+In Method 2, zip() pairs the elements of both lists together, and dict() converts these pairs into a dictionary. 
+This is a more concise way to achieve the same result.
+
+ Counting occurrences of characters in a string using dictionaries.
+
+To count occurrences of characters in a string using dictionaries in Python, you can follow this approach:
+
+Step-by-Step Process:
+Create an empty dictionary.
+Loop through each character in the string.
+For each character, check if it is already in the dictionary:
+If it is, increment its count.
+If it is not, add the character to the dictionary with a count of 1.
+After the loop, the dictionary will contain the frequency of each character in the string.
+Code Example:
+python
+def count_characters(input_string):
+    # Create an empty dictionary to store character counts
+    char_count = {}
+
+    # Loop through each character in the string
+    for char in input_string:
+        if char in char_count:
+            # If the character is already in the dictionary, increment the count
+            char_count[char] += 1
+        else:
+            # If the character is not in the dictionary, add it with count 1
+            char_count[char] = 1
+
+    return char_count
+
+# Example usage
+input_string = "hello world"
+result = count_characters(input_string)
+print(result)
+Output:
+arduino
+{'h': 1, 'e': 1, 'l': 3, 'o': 2, ' ': 1, 'w': 1, 'r': 1, 'd': 1}
+Explanation:
+The dictionary char_count keeps track of the frequency of each character.
+The string "hello world" is processed character by character.
+For example, 'l' appears 3 times, 'o' appears 2 times, and so on.
+This method works for all types of characters, including spaces, punctuation, and digits.
+
+Lab:
+ Write a Python program to update a value in a dictionary.
+
+Here is an example of a Python program that updates a value in a dictionary:
+
+python
+# Sample dictionary
+my_dict = {
+    "name": "John",
+    "age": 25,
+    "city": "New York"
+}
+
+# Print original dictionary
+print("Original Dictionary:", my_dict)
+
+# Update value of an existing key ('age')
+my_dict["age"] = 26
+
+# Print the updated dictionary
+print("Updated Dictionary:", my_dict)
+Explanation:
+In the program above, a dictionary my_dict is created with keys "name", "age", and "city".
+The program updates the value associated with the key "age" from 25 to 26.
+The updated dictionary is printed to show the change.
+Output:
+css
+Original Dictionary: {'name': 'John', 'age': 25, 'city': 'New York'}
+Updated Dictionary: {'name': 'John', 'age': 26, 'city': 'New York'}
+
+ Write a Python program to merge two lists into one dictionary using a loop.
+
+To merge two lists into a dictionary using a loop in Python, one list can serve as the keys and the other as the values. 
+Here's how you can do that:
+
+python
+# Two sample lists
+keys = ['a', 'b', 'c', 'd']
+values = [1, 2, 3, 4]
+
+# Initialize an empty dictionary
+merged_dict = {}
+
+# Loop through the lists and merge them
+for i in range(len(keys)):
+    merged_dict[keys[i]] = values[i]
+
+# Output the merged dictionary
+print(merged_dict)
+Explanation:
+The keys list contains the keys for the dictionary.
+The values list contains the corresponding values.
+A loop is used to iterate over the indices of the keys list, and for each index, the value from the values list is 
+assigned to the respective key in the dictionary.
+Example Output:
+css
+{'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+Practical Examples: 15) Write a Python program to update a value at a particular key in a dictionary.
+
+Here's a simple Python program to update a value at a particular key in a dictionary:
+
+python
+# Sample dictionary
+my_dict = {'name': 'Alice', 'age': 25, 'city': 'New York'}
+
+# Print original dictionary
+print("Original dictionary:", my_dict)
+
+# Key to update and the new value
+key_to_update = 'age'
+new_value = 30
+
+# Update the value at the particular key
+if key_to_update in my_dict:
+    my_dict[key_to_update] = new_value
+    print(f"Updated dictionary: {my_dict}")
+else:
+    print(f"Key '{key_to_update}' not found in the dictionary.")
+Explanation:
+We start with a sample dictionary my_dict.
+Define the key (key_to_update) whose value you want to update and the new value (new_value).
+Check if the key exists in the dictionary.
+If the key exists, update its value with the new value.
+Print the updated dictionary. If the key is not found, notify the user.
+Output:
+css
+Original dictionary: {'name': 'Alice', 'age': 25, 'city': 'New York'}
+Updated dictionary: {'name': 'Alice', 'age': 30, 'city': 'New York'}
+Let me know if you need further adjustments!
+
+16) Write a Python program to separate keys and values from a dictionary using keys() and values() methods.
+
+Here is a Python program that demonstrates how to separate keys and values from a dictionary using the keys() and values()
+methods:
+
+python
+# Define a dictionary
+my_dict = {
+    'name': 'Alice',
+    'age': 25,
+    'city': 'New York',
+    'profession': 'Engineer'
+}
+
+# Separate keys using keys() method
+keys = my_dict.keys()
+
+# Separate values using values() method
+values = my_dict.values()
+
+# Convert keys and values to lists for display
+keys_list = list(keys)
+values_list = list(values)
+
+# Print the separated keys and values
+print("Keys:", keys_list)
+print("Values:", values_list)
+Explanation:
+my_dict.keys() returns a view object that displays all the keys of the dictionary.
+my_dict.values() returns a view object that displays all the values of the dictionary.
+We convert the views to lists to display them.
+Output:
+sql
+Keys: ['name', 'age', 'city', 'profession']
+Values: ['Alice', 25, 'New York', 'Engineer']
+
+17) Write a Python program to convert two lists into one dictionary using a for loop.
+
+Here's a Python program to convert two lists into one dictionary using a for loop:
+
+python
+# Sample lists
+keys = ['a', 'b', 'c', 'd']
+values = [1, 2, 3, 4]
+
+# Initialize an empty dictionary
+result = {}
+
+# Using a for loop to iterate through both lists
+for i in range(len(keys)):
+    result[keys[i]] = values[i]
+
+# Print the resulting dictionary
+print(result)
+Explanation:
+We have two lists: keys and values.
+We initialize an empty dictionary result.
+We loop through the indices of the keys list using range(len(keys)) and for each index, we assign the corresponding key 
+and value to the dictionary.
+Finally, the program prints the resulting dictionary.
+Output:
+css
+{'a': 1, 'b': 2, 'c': 3, 'd': 4}
+This program works as long as both lists have the same length. If the lists have different lengths, it will only use 
+the length of the shorter list.
+
+18) Write a Python program to count how many times each character appears in a string.
+
+Here is a Python program that counts how many times each character appears in a string:
+
+python
+# Function to count occurrences of each character in a string
+def count_characters(input_string):
+    # Create an empty dictionary to store character counts
+    char_count = {}
+
+    # Loop through each character in the string
+    for char in input_string:
+        if char in char_count:
+            char_count[char] += 1  # Increment count if character exists in dictionary
+        else:
+            char_count[char] = 1  # Initialize count if character does not exist
+
+    # Return the dictionary containing character counts
+    return char_count
+
+# Input string
+input_string = input("Enter a string: ")
+
+# Get the character counts
+character_counts = count_characters(input_string)
+
+# Print the character counts
+print("Character count:")
+for char, count in character_counts.items():
+    print(f"'{char}': {count}")
+How the program works:
+It defines a function count_characters that takes an input string and counts the occurrences of each character.
+It uses a dictionary (char_count) to store characters as keys and their counts as values.
+The program iterates over each character in the string:
+If the character is already in the dictionary, it increments its count.
+If the character is not in the dictionary, it adds it with a count of 1.
+The function then returns the dictionary containing the character counts.
+The program prints out the count for each character in the string.
+Example output:
+For the input string hello world:
+
+c
+Enter a string: hello world
+Character count:
+'h': 1
+'e': 1
+'l': 3
+'o': 2
+' ': 1
+'w': 1
+'r': 1
+'d': 1
+
+8. Functions
+Theory:
+ Defining functions in Python.
+
+In Python, a function is a block of reusable code that performs a specific task. You can define your own functions using
+the def keyword. Functions can take input in the form of parameters (or arguments) and can return output using the return 
+statement.
+
+Syntax for defining a function:
+python
+def function_name(parameters):
+    # code block
+    return value  # Optional return statement
+Steps to define a function:
+def keyword: This marks the start of the function definition.
+Function name: A descriptive name for the function, following naming rules (e.g., lowercase letters, no spaces).
+Parameters (optional): A function can take zero or more parameters inside parentheses. These are values passed into 
+the function to work with.
+Colon (:): Marks the end of the function header.
+Indented code block: This is the function body, which contains the code that runs when the function is called.
+return statement (optional): The function can return a value, which will be the result of the function call.
+Examples:
+1. A simple function with no parameters and no return value:
+python
+def greet():
+    print("Hello, World!")
+
+# Call the function
+greet()  # Output: Hello, World!
+2. A function with parameters:
+python
+def add_numbers(a, b):
+    return a + b
+
+# Call the function with arguments
+result = add_numbers(5, 3)
+print(result)  # Output: 8
+3. A function with a return value:
+python
+def multiply(x, y):
+    return x * y
+
+# Call the function and store the result
+product = multiply(4, 2)
+print(product)  # Output: 8
+4. A function with default parameters:
+python
+def greet(name="Guest"):
+    print(f"Hello, {name}!")
+
+# Call the function with and without passing an argument
+greet()          # Output: Hello, Guest!
+greet("Alice")   # Output: Hello, Alice!
+5. A function with multiple return values:
+python
+def get_coordinates():
+    return 10, 20  # Returns a tuple
+
+# Call the function and unpack the returned tuple
+x, y = get_coordinates()
+print(x, y)  # Output: 10 20
+Key Concepts:
+Parameters: Values you pass to the function.
+Arguments: Actual values supplied to parameters during a function call.
+Return: The output that the function gives after execution.
+Functions are essential in Python to improve code reusability, organization, and modularity.
+
+ Different types of functions: with/without parameters, with/without return values.
+
+In Python, functions can be classified based on the presence of parameters and return values. Below are the different 
+types of functions:
+
+1. Functions with Parameters and Return Values
+These functions take input arguments (parameters) and return a result.
+
+python
+def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result)  # Output: 8
+Parameters: a and b are the parameters.
+Return Value: The function returns the sum of a and b.
+2. Functions with Parameters and Without Return Values
+These functions take input arguments (parameters) but do not return anything. They perform actions but don't provide 
+any output back.
+
+python
+def print_sum(a, b):
+    print(a + b)
+
+print_sum(3, 5)  # Output: 8
+Parameters: a and b.
+No Return Value: The function prints the result but does not return it.
+3. Functions Without Parameters and With Return Values
+These functions do not take any input parameters, but they return a result.
+
+python
+def get_random_number():
+    import random
+    return random.randint(1, 10)
+
+number = get_random_number()
+print(number)  # Output: Random number between 1 and 10
+No Parameters: The function doesn't require any arguments.
+Return Value: The function returns a random number.
+4. Functions Without Parameters and Without Return Values
+These functions neither take any parameters nor return any value. They are typically used to perform an action.
+
+python
+def greet():
+    print("Hello, world!")
+
+greet()  # Output: Hello, world!
+No Parameters: No arguments are passed to the function.
+No Return Value: The function only prints a greeting but doesn't return anything.
+
+ Anonymous functions (lambda functions).
+
+In Python, anonymous functions, also known as lambda functions, are small, unnamed functions defined using the lambda 
+keyword. These functions can have any number of arguments but only one expression. The expression is evaluated and 
+returned when the function is called.
+
+Syntax of a Lambda Function:
+python
+lambda arguments: expression
+lambda: This keyword is used to define a lambda function.
+arguments: The input parameters (can be zero or more).
+expression: A single expression that is evaluated and returned. No statements are allowed.
+Example of a Lambda Function:
+python
+# A simple lambda function that adds two numbers
+add = lambda x, y: x + y
+
+print(add(3, 5))  # Output: 8
+Key Points:
+Single Expression: A lambda function can only have one expression. This expression is automatically returned.
+No Return Statement: Unlike regular functions that use the return keyword, lambda functions do not use return explicitly.
+Used for short-term purposes: Lambda functions are often used in situations where a function is needed temporarily for a 
+short duration (e.g., in map, filter, sorted, etc.).
+Examples of Lambda Functions in Different Scenarios:
+1. With map() Function:
+map() applies a function to all the items in an input list.
+
+python
+numbers = [1, 2, 3, 4]
+squared_numbers = list(map(lambda x: x**2, numbers))
+print(squared_numbers)  # Output: [1, 4, 9, 16]
+2. With filter() Function:
+filter() filters elements based on a condition.
+
+python
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)  # Output: [2, 4, 6]
+3. With sorted() Function:
+sorted() allows sorting based on a custom condition using lambda.
+
+python
+pairs = [(1, 2), (3, 1), (5, 0)]
+sorted_pairs = sorted(pairs, key=lambda x: x[1])
+print(sorted_pairs)  # Output: [(5, 0), (3, 1), (1, 2)]
+Lambda with Default Arguments:
+You can also use default arguments in lambda functions.
+
+python
+# Lambda function with a default value for y
+multiply = lambda x, y=2: x * y
+print(multiply(3))    # Output: 6
+print(multiply(3, 4)) # Output: 12
+
+Lab:
+ Write a Python program to create a function that takes a string as input and prints it.
+
+Here's a simple Python program that defines a function which takes a string as input and prints it:
+
+python
+def print_string(input_string):
+    print(input_string)
+
+# Example usage:
+user_input = input("Enter a string: ")
+print_string(user_input)
+Explanation:
+The function print_string takes one parameter, input_string.
+Inside the function, the print() function is used to display the value of input_string.
+The program then asks the user to enter a string using input().
+The input string is passed to the print_string() function, which prints it.
+
+ Write a Python program to create a calculator using functions.
+
+# This function adds two numbers
+def add(x, y):
+    return x + y
+
+# This function subtracts two numbers
+def subtract(x, y):
+    return x - y
+
+# This function multiplies two numbers
+def multiply(x, y):
+    return x * y
+
+# This function divides two numbers
+def divide(x, y):
+    return x / y
+
+
+print("Select operation.")
+print("1.Add")
+print("2.Subtract")
+print("3.Multiply")
+print("4.Divide")
+
+while True:
+    # take input from the user
+    choice = input("Enter choice(1/2/3/4): ")
+
+    # check if choice is one of the four options
+    if choice in ('1', '2', '3', '4'):
+        try:
+            num1 = float(input("Enter first number: "))
+            num2 = float(input("Enter second number: "))
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+            continue
+
+        if choice == '1':
+            print(num1, "+", num2, "=", add(num1, num2))
+
+        elif choice == '2':
+            print(num1, "-", num2, "=", subtract(num1, num2))
+
+        elif choice == '3':
+            print(num1, "*", num2, "=", multiply(num1, num2))
+
+        elif choice == '4':
+            print(num1, "/", num2, "=", divide(num1, num2))
+        
+        # check if user wants another calculation
+        # break the while loop if answer is no
+        next_calculation = input("Let's do next calculation? (yes/no): ")
+        if next_calculation == "no":
+          break
+    else:
+        print("Invalid Input")
+
+Output
+
+Select operation.
+1.Add
+2.Subtract
+3.Multiply
+4.Divide
+Enter choice(1/2/3/4): 3
+Enter first number: 15
+Enter second number: 14
+15.0 * 14.0 = 210.0
+Let's do next calculation? (yes/no): no
+
+
+Practical Examples: 19) Write a Python program to print a string using a function.
+
+# create string type variables
+
+name = "Python"
+print(name)
+
+message = "I love Python."
+print(message)
+
+Output
+
+Python
+I love Python.
+
+20) Write a Python program to create a parameterized function that takes two arguments and prints their sum.
+
+def add_numbers( a = 7,  b = 8):
+    sum = a + b
+    print('Sum:', sum)
+
+
+# function call with two arguments
+add_numbers(2, 3)
+
+#  function call with one argument
+add_numbers(a = 2)
+
+# function call with no arguments
+add_numbers()
+
+Output
+
+Sum: 5
+Sum: 10
+Sum: 15
+
+21) Write a Python program to create a lambda function with one expression.
+
+Python Lambda Function
+# declare a lambda function
+greet = lambda : print('Hello World')
+
+# call lambda function
+greet()
+
+# Output: Hello World
+
+
+Python lambda Function with an Argument
+example,
+
+# lambda that accepts one argument
+greet_user = lambda name : print('Hey there,', name)
+
+# lambda call
+greet_user('Delilah')
+
+# Output: Hey there, Delilah
+
+22) Write a Python program to create a lambda function with two expressions.
+
+In Python, a lambda function is an anonymous function that can have any number of arguments but only one expression. 
+However, if you need multiple expressions, you can achieve this using a workaround by including them in a tuple or using 
+a sequence of operations. Here's an example of a lambda function with two expressions:
+
+python
+# Lambda function with two expressions
+func = lambda x, y: (x + y, x * y)
+
+# Test the lambda function
+result = func(3, 4)
+print(result)  # Output will be a tuple: (7, 12)
+Explanation:
+The lambda function takes two parameters, x and y.
+The expression (x + y, x * y) creates a tuple with two values: the sum and the product of x and y.
+The result will be a tuple (sum, product) when you call the lambda function with two arguments.
+You can extend this logic with more complex expressions if needed. Let me know if you'd like a different variation or 
+further explanation!
+
+9. Modules
+Theory:
+ Introduction to Python modules and importing modules.
+
+Introduction to Python Modules and Importing Modules
+In Python, modules are simply Python files that contain reusable code such as functions, classes, and variables. 
+These modules help to organize your code, making it more manageable and efficient. You can think of modules as libraries 
+that provide functionality to perform specific tasks.
+
+A Python module is a file with a .py extension that can contain:
+
+Functions
+Classes
+Variables
+Code snippets
+Why Use Modules?
+Code Reusability: With modules, you can write code once and reuse it in multiple programs.
+Organization: Modules allow you to organize code logically by grouping related functions and classes together.
+Namespace Separation: By placing functions and variables in modules, you avoid naming conflicts in your code.
+Creating a Module
+You can create a module by simply writing a Python script (a .py file). For example, create a file called math_utils.py:
+
+python
+# math_utils.py
+
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+This is now a module named math_utils.
+
+Importing Modules
+To use the functions or variables defined in a module, you need to import the module into your script. Python provides 
+several ways to import modules.
+
+Basic Import:
+Use the import keyword followed by the module name.
+
+python
+import math_utils
+
+result = math_utils.add(2, 3)
+print(result)  # Output: 5
+Import Specific Functions or Variables:
+You can import specific functions or variables from a module using the from keyword.
+
+python
+from math_utils import add
+
+result = add(5, 3)
+print(result)  # Output: 8
+Importing with Aliases:
+You can import a module with an alias using the as keyword. This is useful for simplifying long module names.
+
+python
+import math_utils as mu
+
+result = mu.subtract(10, 4)
+print(result)  # Output: 6
+Import All:
+You can import all functions, classes, and variables from a module using the * symbol, though this is not recommended as 
+it can lead to naming conflicts.
+
+python
+from math_utils import *
+
+result = subtract(10, 4)
+print(result)  # Output: 6
+Built-in Python Modules
+Python comes with a standard library that includes many useful modules. For example:
+
+math – Provides mathematical functions like sqrt, sin, cos.
+random – Used to generate random numbers.
+os – Provides functions for interacting with the operating system (e.g., working with files, directories).
+sys – Provides access to system-specific parameters and functions.
+To use any of these modules, you just need to import them:
+
+python
+import math
+print(math.sqrt(16))  # Output: 4.0
+Importing from External Modules
+In addition to Python's built-in modules, you can also install and import third-party modules. The Python Package 
+Index (PyPI) hosts thousands of external libraries. These can be installed using a package manager like pip:
+
+bash
+pip install requests
+Then, you can import and use the library:
+
+python
+import requests
+
+response = requests.get('https://www.example.com')
+print(response.status_code)
+Summary of Common Import Statements
+Statement	Description
+import math	Imports the entire math module.
+from math import sqrt	Imports only the sqrt function from math module.
+import math as m	Imports the math module with the alias m.
+from math import *	Imports everything from the math module.
+
+ Standard library modules: math, random.
+
+In Python, the math and random modules are part of the standard library and are commonly used for mathematical operations 
+and generating random numbers, respectively.
+
+1. math module
+The math module provides functions for mathematical operations. Some of the most commonly used functions and constants 
+in the math module include:
+
+Constants:
+
+math.pi: The mathematical constant π (approximately 3.14159).
+math.e: The mathematical constant e (approximately 2.71828).
+math.tau: The mathematical constant τ (approximately 6.28318), which is equal to 2π.
+math.inf: Represents positive infinity.
+math.nan: Represents "Not a Number".
+Functions:
+
+math.sqrt(x): Returns the square root of x.
+math.pow(x, y): Returns x raised to the power of y (i.e., x**y).
+math.factorial(x): Returns the factorial of x.
+math.fmod(x, y): Returns the remainder when x is divided by y (similar to modulus).
+math.gcd(x, y): Returns the greatest common divisor of x and y.
+math.sin(x), math.cos(x), math.tan(x): Trigonometric functions (expect x to be in radians).
+math.log(x, base): Returns the logarithm of x to the given base (default is the natural logarithm with base e).
+math.exp(x): Returns e raised to the power of x.
+Example Usage:
+
+python
+import math
+
+print(math.pi)            # 3.141592653589793
+print(math.sqrt(16))      # 4.0
+print(math.factorial(5))   # 120
+print(math.log(100, 10))  # 2.0
+2. random module
+The random module implements pseudo-random number generators for various distributions and operations. It's often used in 
+simulations, games, or testing.
+
+Functions:
+
+random.random(): Returns a random float between 0.0 and 1.0.
+random.randint(a, b): Returns a random integer in the range [a, b], inclusive.
+random.choice(sequence): Returns a randomly selected element from the non-empty sequence (like a list or tuple).
+random.shuffle(sequence): Shuffles the elements of the sequence in place.
+random.sample(sequence, k): Returns a list of k unique elements chosen from the sequence.
+random.uniform(a, b): Returns a random float in the range [a, b].
+random.seed(a=None): Initializes the random number generator (useful for reproducibility).
+random.gauss(mu, sigma): Returns a random floating-point number from a Gaussian distribution with mean mu and standard 
+deviation sigma.
+Example Usage:
+
+python
+import random
+
+print(random.random())          # A random float between 0.0 and 1.0
+print(random.randint(1, 10))     # A random integer between 1 and 10
+print(random.choice(['apple', 'banana', 'cherry']))  # Randomly chooses one element
+random_list = [1, 2, 3, 4, 5]
+random.shuffle(random_list)     # Shuffle the list
+print(random_list)
+
+ Creating custom modules.
+
+In Python, you can create custom modules to organize your code into reusable, logical sections. A module is simply a 
+Python file (with a .py extension) that contains Python code, functions, classes, and variables. You can create your own 
+modules and then import them into other Python scripts to reuse their functionality.
+
+Here’s how to create a custom module in Python:
+
+Steps to Create a Custom Python Module
+Create a Python file for the module:
+
+Write the Python code you want to reuse in a .py file. For example, let's create a module mymodule.py.
+Define functions or classes inside the module:
+
+In mymodule.py, define any functions, classes, or variables you want to include in the module.
+python
+# mymodule.py
+
+def greet(name):
+    return f"Hello, {name}!"
+
+def add(a, b):
+    return a + b
+
+class Calculator:
+    def multiply(self, x, y):
+        return x * y
+Use the module in another script:
+
+In a new Python script, you can import the mymodule to access the functions, classes, and variables defined in it.
+python
+# main.py
+
+# Import the custom module
+import mymodule
+
+# Call a function from the custom module
+print(mymodule.greet("Alice"))
+
+# Call another function
+print(mymodule.add(5, 3))
+
+# Create an instance of a class from the custom module
+calc = mymodule.Calculator()
+print(calc.multiply(4, 6))
+Run your script:
+
+When you run main.py, it will import the functions from mymodule.py and execute the code, printing:
+Hello, Alice!
+8
+24
+Organizing Modules in Directories
+If you want to structure your project more effectively, you can organize your modules into directories and use a special 
+file called __init__.py.
+
+Create a directory structure:
+
+css
+myproject/
+├── main.py
+└── mymodule/
+    ├── __init__.py
+    ├── functions.py
+    └── classes.py
+In mymodule/functions.py, define functions:
+
+python
+# mymodule/functions.py
+
+def greet(name):
+    return f"Hello, {name}!"
+In mymodule/classes.py, define classes:
+
+python
+# mymodule/classes.py
+
+class Calculator:
+    def multiply(self, x, y):
+        return x * y
+In mymodule/__init__.py, import the necessary parts to make them accessible:
+
+python
+# mymodule/__init__.py
+from .functions import greet
+from .classes import Calculator
+In main.py, import from the module:
+
+python
+# main.py
+from mymodule import greet, Calculator
+
+print(greet("Bob"))
+calc = Calculator()
+print(calc.multiply(5, 6))
+Understanding __init__.py
+The __init__.py file in a directory tells Python that the directory should be treated as a package. You can use this 
+file to import specific parts of the module or package to make them easier to access.
+If the directory does not have an __init__.py file, it will not be recognized as a package.
+Best Practices for Custom Modules
+Keep modules focused on one task: It's a good idea to design each module around a specific task or feature to ensure 
+it stays manageable and reusable.
+
+Use descriptive names: Give your module files meaningful names that reflect their functionality.
+
+Document your modules: Add docstrings at the beginning of your module or for each function to describe what they do.
+
+Use relative imports: When working with larger packages, it's a good idea to use relative imports inside your package 
+(e.g., from .module import something).
+
+Lab:
+ Write a Python program to import the math module and use functions like sqrt(), ceil(), floor().
+
+Here is a Python program that imports the math module and demonstrates the use of the sqrt(), ceil(), and floor() 
+functions:
+
+python
+import math
+
+# Example value
+number = 16.75
+
+# Calculate the square root of the number
+square_root = math.sqrt(number)
+print(f"Square root of {number} is {square_root}")
+
+# Get the ceiling (round up) of the number
+ceiling_value = math.ceil(number)
+print(f"The ceiling value of {number} is {ceiling_value}")
+
+# Get the floor (round down) of the number
+floor_value = math.floor(number)
+print(f"The floor value of {number} is {floor_value}")
+Explanation:
+math.sqrt(number) is used to find the square root of the number.
+math.ceil(number) returns the smallest integer greater than or equal to the number (rounds up).
+math.floor(number) returns the largest integer less than or equal to the number (rounds down).
+Sample Output:
+csharp
+Square root of 16.75 is 4.093169525018764
+The ceiling value of 16.75 is 17
+The floor value of 16.75 is 16
+
+ Write a Python program to generate random numbers using the random module.
+
+To generate random numbers in Python, you can use the random module. Here is an example program that demonstrates how 
+to generate random numbers:
+
+python
+import random
+
+# Generate a random integer between 1 and 100
+random_integer = random.randint(1, 100)
+print(f"Random Integer: {random_integer}")
+
+# Generate a random floating-point number between 0 and 1
+random_float = random.random()
+print(f"Random Float (between 0 and 1): {random_float}")
+
+# Generate a random floating-point number between 1 and 10
+random_float_range = random.uniform(1, 10)
+print(f"Random Float (between 1 and 10): {random_float_range}")
+
+# Choose a random element from a list
+random_choice = random.choice([10, 20, 30, 40, 50])
+print(f"Random Choice from list: {random_choice}")
+
+# Shuffle a list randomly
+sample_list = [1, 2, 3, 4, 5]
+random.shuffle(sample_list)
+print(f"Shuffled List: {sample_list}")
+
+# Generate a random sample of 3 elements from a list
+random_sample = random.sample([10, 20, 30, 40, 50], 3)
+print(f"Random Sample: {random_sample}")
+Explanation:
+random.randint(a, b): Returns a random integer between a and b, inclusive.
+random.random(): Returns a random float number between 0 and 1.
+random.uniform(a, b): Returns a random floating-point number between a and b.
+random.choice(sequence): Returns a random element from a non-empty sequence (like a list).
+random.shuffle(sequence): Shuffles the elements of a list in place.
+random.sample(population, k): Returns a list of k unique elements chosen from the population sequence.
+
+Practical Examples: 23) Write a Python program to demonstrate the use of functions from the math module.
+
+Here is a Python program demonstrating the use of several functions from the math module:
+
+python
+import math
+
+# 1. Demonstrating the use of math.sqrt() to calculate square root
+num = 16
+sqrt_value = math.sqrt(num)
+print(f"Square root of {num} is {sqrt_value}")
+
+# 2. Demonstrating the use of math.factorial() to calculate factorial
+factorial_value = math.factorial(5)
+print(f"Factorial of 5 is {factorial_value}")
+
+# 3. Demonstrating the use of math.pow() to calculate power
+base = 2
+exponent = 3
+pow_value = math.pow(base, exponent)
+print(f"{base} raised to the power of {exponent} is {pow_value}")
+
+# 4. Demonstrating the use of math.sin() to calculate the sine of an angle (in radians)
+angle_in_radians = math.pi / 2  # 90 degrees in radians
+sin_value = math.sin(angle_in_radians)
+print(f"Sine of {angle_in_radians} radians is {sin_value}")
+
+# 5. Demonstrating the use of math.cos() to calculate the cosine of an angle (in radians)
+angle_in_radians = math.pi  # 180 degrees in radians
+cos_value = math.cos(angle_in_radians)
+print(f"Cosine of {angle_in_radians} radians is {cos_value}")
+
+# 6. Demonstrating the use of math.log() to calculate the natural logarithm
+log_value = math.log(10)  # Natural logarithm of 10
+print(f"Natural logarithm of 10 is {log_value}")
+
+# 7. Demonstrating the use of math.ceil() to get the ceiling of a number
+float_num = 3.7
+ceil_value = math.ceil(float_num)
+print(f"The ceiling of {float_num} is {ceil_value}")
+
+# 8. Demonstrating the use of math.floor() to get the floor of a number
+floor_value = math.floor(float_num)
+print(f"The floor of {float_num} is {floor_value}")
+
+# 9. Demonstrating the use of math.pi (constant value for pi)
+print(f"Value of pi is {math.pi}")
+
+# 10. Demonstrating the use of math.radians() to convert degrees to radians
+angle_in_degrees = 180
+radians_value = math.radians(angle_in_degrees)
+print(f"{angle_in_degrees} degrees is {radians_value} radians")
+Explanation:
+math.sqrt(x): Returns the square root of x.
+math.factorial(x): Returns the factorial of x (only works for integers).
+math.pow(x, y): Returns x raised to the power of y.
+math.sin(x): Returns the sine of x (x is in radians).
+math.cos(x): Returns the cosine of x (x is in radians).
+math.log(x): Returns the natural logarithm (log base e) of x.
+math.ceil(x): Returns the smallest integer greater than or equal to x.
+math.floor(x): Returns the largest integer less than or equal to x.
+math.pi: A constant representing the value of pi (approximately 3.14159).
+math.radians(x): Converts x degrees to radians.
+
+24) Write a Python program to generate random numbers between 1 and 100 using the random module.
+
+Here's a Python program that generates random numbers between 1 and 100 using the random module:
+
+python
+import random
+
+# Generate a random number between 1 and 100
+random_number = random.randint(1, 100)
+
+print(f"Random number between 1 and 100: {random_number}")
+Explanation:
+We use random.randint(1, 100) to generate a random integer between 1 and 100 (inclusive).
+The print statement displays the generated random number.
+
