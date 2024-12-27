@@ -1,0 +1,1036 @@
+Module 15) 
+HTML in Full Stack
+1. HTML Basics
+Theory Assignment
+ Question 1: Define HTML. What is the purpose of HTML in web development?
+
+HTML (HyperText Markup Language) is the standard language used for creating and structuring content on the web. It is a 
+markup language, meaning it uses a system of tags or elements to define different parts of a web page, such as headings, 
+paragraphs, images, links, forms, tables, and more.
+
+Purpose of HTML in Web Development:
+Structure Content: HTML provides the basic structure of web pages, defining how content like text, images, and multimedia 
+is organized and displayed.
+
+Define Layout and Elements: It uses a variety of tags to define the layout and elements of a webpage. Tags like <h1>, 
+<p>, <img>, and <a> represent headings, paragraphs, images, and hyperlinks, respectively.
+
+Provide Semantic Meaning: HTML allows for semantic markup, where elements like <header>, <footer>, <article>, and 
+<section> help define the meaning of content, improving accessibility and SEO (Search Engine Optimization).
+
+Enable Browser Interpretation: Browsers interpret HTML to render a web page visually. Without HTML, browsers would not 
+know how to display or structure the content.
+
+Foundation for Other Web Technologies: HTML works alongside other technologies like CSS (Cascading Style Sheets) for 
+styling and JavaScript for interactivity, allowing for fully functional and visually appealing websites.
+
+In summary, HTML is the backbone of web development, providing the foundational structure for websites and ensuring that 
+browsers can interpret and display content correctly.
+
+ Question 2: Explain the basic structure of an HTML document. Identify the mandatory tags and their purposes.
+
+An HTML document (HyperText Markup Language) consists of a set of nested elements that describe the structure and content 
+of a webpage. The basic structure of an HTML document includes several mandatory tags, which help to define the webpage's 
+layout and elements. Here's an overview of the structure and the mandatory tags:
+
+1. <!DOCTYPE html>
+Purpose: This declaration tells the browser that the document is written in HTML5. It should always be the first line in 
+the document.
+Example:
+html
+<!DOCTYPE html>
+2. <html> Tag
+Purpose: This is the root element of the HTML document that contains all other HTML elements (except DOCTYPE).
+Example:
+html
+<html lang="en">
+3. <head> Tag
+Purpose: The <head> section contains meta-information about the document, such as its title, character encoding, and 
+links to external resources like stylesheets and scripts. While it’s not strictly mandatory in HTML5, it is a good 
+practice to include it for proper webpage rendering.
+Common elements inside <head>:
+<meta>: Specifies metadata such as the character encoding.
+<title>: Defines the title of the webpage, displayed in the browser tab.
+<link>: Links external resources like CSS files.
+<style>: Contains internal CSS.
+<script>: Contains JavaScript or links to external JS files.
+Example:
+html
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+4. <body> Tag
+Purpose: The <body> section contains the visible content of the webpage, such as text, images, links, and other elements 
+that are rendered by the browser.
+Example:
+html
+<body>
+    <h1>Welcome to My Webpage</h1>
+    <p>This is a paragraph of text.</p>
+</body>
+5. Closing </html> Tag
+Purpose: This tag closes the HTML document, indicating the end of the HTML content.
+Example:
+html
+</html>
+Mandatory Tags Summary:
+<!DOCTYPE html>: Declares the document type and version of HTML (HTML5).
+<html>: The root element.
+<head>: Contains metadata about the document (although not strictly mandatory in terms of content, it's essential for 
+proper page structure).
+<title>: Inside the <head> tag, this is required for defining the document’s title.
+<body>: Contains all content that appears on the webpage.
+Example of a Basic HTML Document:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to My Webpage</h1>
+    <p>This is a simple webpage structure example.</p>
+</body>
+</html>
+This structure provides the fundamental elements needed for creating a web page and rendering content correctly in a 
+browser.
+
+ Question 3: What is the difference between block-level elements and inline elements in HTML? Provide examples of each.
+
+In HTML, elements can be categorized as block-level or inline elements, based on how they are rendered on the webpage and 
+how they behave within the document flow. Here's a breakdown of the differences between them:
+
+1. Block-Level Elements
+Definition: Block-level elements take up the full width available (by default), meaning they typically start on a new 
+line and stretch across the width of their parent container.
+Behavior: They create a "block" of content, forcing any following elements to appear on the next line.
+Can contain: Block-level elements can contain other block-level elements as well as inline elements.
+Examples:
+<div>: Defines a division or section in a document.
+<p>: Defines a paragraph.
+<h1>, <h2>, <h3>, etc.: Header tags.
+<ul>, <ol>, <li>: Lists and list items.
+<section>: Represents a generic section of content.
+<article>: Represents a self-contained composition in a document.
+Example:
+
+html
+<div>This is a block-level element</div>
+<p>This is a paragraph, which is also a block-level element.</p>
+2. Inline Elements
+Definition: Inline elements only take up as much width as necessary, meaning they do not start on a new line and flow 
+along with the content around them.
+Behavior: These elements do not cause a line break, and they can sit next to other inline elements.
+Can contain: Inline elements can only contain other inline elements or text (not block-level elements).
+Examples:
+<span>: A generic container for text or inline content.
+<a>: Defines a hyperlink.
+<strong>: Defines text with strong emphasis (usually bold).
+<em>: Defines text with emphasis (usually italic).
+<img>: Embeds an image.
+<b>, <i>, <u>: Formatting text as bold, italic, or underlined.
+Example:
+
+html
+<span>This is an inline element</span>
+<a href="https://example.com">Click here</a>
+Key Differences:
+Layout: Block-level elements create a new "block" and usually take up the full width of their parent, while inline 
+elements only take up as much space as their content and flow inline with surrounding content.
+Containment: Block-level elements can contain both block-level and inline elements, but inline elements can only 
+contain other inline elements or text.
+Example Demonstrating Both:
+html
+<div>
+  <p>This is a block-level element containing <span>inline content</span>.</p>
+</div>
+
+ Question 4: Discuss the role of semantic HTML. Why is it important for accessibility and SEO? Provide examples of 
+semantic elements.
+
+Role of Semantic HTML
+
+Semantic HTML refers to the use of HTML elements that convey meaning about the content they contain. Unlike non-semantic 
+tags, such as <div> and <span>, which do not provide any specific information about the content, semantic HTML tags 
+clearly describe the structure and purpose of the content within a webpage.
+
+Importance of Semantic HTML for Accessibility
+
+Semantic HTML is crucial for accessibility because it helps assistive technologies (such as screen readers) understand 
+the structure and meaning of the content, improving the user experience for people with disabilities. Here's how:
+
+Screen Readers: Semantic elements give screen readers meaningful information about the content they are reading. 
+For example, a screen reader can announce <header>, <footer>, <article>, and <nav> as distinct sections of the page, 
+helping visually impaired users navigate the page more efficiently.
+
+Keyboard Navigation: Semantic elements also support better keyboard navigation. For instance, <button>, <a>, and <form> 
+elements are automatically focusable and can be interacted with using the keyboard, which is vital for users who can't 
+use a mouse.
+
+Improved Context: When screen readers encounter semantic tags, they can interpret the content in a more structured way. 
+For instance, a <header> tag helps define the top section of the page, while <main> indicates the primary content. 
+This helps users understand the layout and flow of the page.
+
+Importance of Semantic HTML for SEO
+
+Search engines like Google value semantic HTML because it helps them understand the context and relevance of the content. 
+Using appropriate semantic tags can improve a webpage's search engine ranking by enhancing the clarity and readability of 
+the content. Here’s how:
+
+Content Relevance: Semantic elements give search engines clear clues about the type of content on a page. For example, 
+content wrapped in <article> is likely to be considered a standalone piece of content, while content in a <section> tag 
+indicates a thematic grouping. This can help search engines categorize content more effectively.
+
+Better Indexing: Search engines can better index and rank pages that are built with semantic HTML because they understand 
+the hierarchy and structure of the page. For instance, using <h1>, <h2>, and other heading tags helps define the page's 
+main topics, aiding in content ranking.
+
+Rich Snippets: Proper use of semantic HTML, particularly when combined with structured data (such as Schema.org), can 
+enable rich snippets in search results, such as reviews, product info, and event details, which can increase visibility 
+and click-through rates.
+
+Examples of Semantic HTML Elements
+
+Here are some common examples of semantic HTML elements:
+
+<header>: Represents the introductory content or navigational links of a webpage. It often includes a logo, site 
+navigation, and other important introductory elements.
+
+html
+<header>
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+<footer>: Represents the footer of the page, typically containing copyright information, contact details, or links to 
+privacy policies and terms of service.
+
+html
+<footer>
+  <p>&copy; 2024 My Website. All rights reserved.</p>
+</footer>
+<nav>: Denotes a section of the page dedicated to navigation links. It helps search engines and screen readers identify 
+where to find important links to other sections or pages.
+
+html
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<article>: Represents independent content that could be distributed and reused. It is commonly used for blog posts, 
+news articles, or product descriptions.
+
+html
+<article>
+  <h2>How to Build Accessible Websites</h2>
+  <p>Building accessible websites is essential for inclusivity...</p>
+</article>
+<section>: Defines a thematic grouping of content. Each section usually contains a heading, and the content within is 
+logically related.
+
+html
+<section>
+  <h2>Our Services</h2>
+  <p>We offer a variety of services to help you succeed...</p>
+</section>
+<aside>: Represents content that is tangentially related to the content around it, often used for sidebars or 
+additional notes.
+
+html
+<aside>
+  <p>Check out our latest blog post on web development!</p>
+</aside>
+<main>: Defines the main content of the page. It is used to group the core content distinct from navigation and side 
+content.
+
+html
+<main>
+  <h1>Welcome to Our Website</h1>
+  <p>We provide web design services that are accessible to all...</p>
+</main>
+<h1>, <h2>, <h3>: These heading elements are used to structure content hierarchically, helping both accessibility tools 
+and search engines understand the content's organization.
+
+html
+<h1>Web Design for Everyone</h1>
+<h2>Why Accessibility Matters</h2>
+<h3>Improving User Experience</h3>
+
+Lab Assignment
+ Task: Create a simple HTML webpage that includes: o A header (<header>), footer (<footer>), main section (<main>), and 
+aside section (<aside>).
+
+Here's a simple HTML webpage structure that includes a header, footer, main section, and aside section:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        main {
+            display: flex;
+            padding: 20px;
+            justify-content: space-between;
+        }
+        aside {
+            width: 25%;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Simple Webpage</h1>
+    </header>
+
+    <main>
+        <div>
+            <h2>Main Content</h2>
+            <p>This is the main content section. You can add more details here.</p>
+        </div>
+
+        <aside>
+            <h2>Sidebar</h2>
+            <p>This is an aside section, often used for related content or advertisements.</p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Simple Webpage. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
+Explanation:
+<header>: Contains the main heading of the webpage.
+<main>: The central content of the page, with the main section and an aside (sidebar).
+<aside>: Used for secondary content, often related but separate from the main content (like a sidebar).
+<footer>: Contains footer information, such as copyright details, and is placed at the bottom of the page.
+The CSS styles make the layout responsive and visually clear, with a fixed footer at the bottom. You can expand the 
+content and adjust styles as needed!
+
+o A paragraph with some basic text.
+
+Sure! Here’s a basic paragraph:
+
+The sun was setting over the horizon, casting a warm golden glow across the landscape. Birds chirped softly in the 
+distance, and a gentle breeze rustled the leaves of the nearby trees. It was a peaceful evening, with nothing to disturb 
+the quiet beauty of nature. As the sky turned shades of pink and orange, the world seemed to slow down, inviting everyone 
+to pause and appreciate the simple moments of life.
+
+o A list (both ordered and unordered).
+
+Here's an explanation of both ordered and unordered lists, along with examples in HTML:
+
+1. Ordered List (Numbered)
+An ordered list is a list where the items are numbered or sequenced. In HTML, it’s created using the <ol> tag, and each 
+item in the list is placed inside <li> (list item) tags.
+
+Example of an Ordered List:
+html
+<ol>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+</ol>
+This will display the list as:
+
+First item
+Second item
+Third item
+2. Unordered List (Bulleted)
+An unordered list is a list where the items are not in any particular order, and it’s typically displayed with bullet 
+points. In HTML, it’s created using the <ul> tag, and each item is placed inside <li> tags.
+
+Example of an Unordered List:
+html
+<ul>
+    <li>First item</li>
+    <li>Second item</li>
+    <li>Third item</li>
+</ul>
+This will display the list as:
+
+First item
+Second item
+Third item
+Summary:
+Ordered List: Items are displayed with numbers or letters (sequential).
+Unordered List: Items are displayed with bullets or symbols (unordered).
+
+o A link that opens in a new tab.
+
+To create a link that opens in a new tab, you can use the following HTML code:
+
+html
+<a href="https://example.com" target="_blank">Click here to visit Example</a>
+The href attribute specifies the URL you want the link to point to.
+The target="_blank" attribute ensures that the link opens in a new tab when clicked.
+Let me know if you need further assistance!
+
+2. HTML Forms
+Theory Assignment
+ Question 1: What are HTML forms used for? Describe the purpose of the input, textarea, select, and button elements.
+
+HTML forms are used to collect and submit data from users to a server for processing. Forms are essential in creating 
+interactive websites where users can input information, such as registration details, search queries, or payment data. 
+HTML forms typically contain various input elements that enable users to provide different types of information.
+
+Here's a breakdown of the key form elements and their purposes:
+
+1. <input> Element
+Purpose: The <input> element is one of the most versatile form elements. It allows users to enter data into a form in 
+various formats.
+Types of <input>:
+Text: Allows the user to enter plain text.
+Password: Hides the text entered (commonly used for passwords).
+Radio: Lets users select one option from a set of choices.
+Checkbox: Allows users to select one or more options from a list.
+Submit: Creates a button that submits the form data.
+Email: Validates input as an email address.
+Number: Accepts numerical input with an optional range of values.
+File: Allows the user to upload files.
+2. <textarea> Element
+Purpose: The <textarea> element is used for multi-line text input. It allows users to type long-form text, such as 
+comments or descriptions, which can span across several lines.
+Usage: Typically used for fields that require larger text inputs, such as messages, feedback, or notes.
+Example:
+html
+<textarea name="comments" rows="4" cols="50"></textarea>
+3. <select> Element
+Purpose: The <select> element creates a dropdown list, allowing users to choose one or more options from a pre-defined 
+set of choices.
+Options: Each option in the list is defined using the <option> element.
+Usage: Commonly used for things like choosing a country, selecting a payment method, or other predefined choices.
+Example:
+html
+<select name="country">
+  <option value="USA">USA</option>
+  <option value="Canada">Canada</option>
+  <option value="UK">UK</option>
+</select>
+4. <button> Element
+Purpose: The <button> element creates a clickable button in a form. It can be used for various actions, such as 
+submitting the form, resetting form fields, or triggering JavaScript actions.
+Types of buttons:
+Submit: The default type when no type is specified; it submits the form.
+Reset: Resets the form fields to their initial values.
+Button: A generic button that can be linked to a custom JavaScript function.
+Example:
+html
+<button type="submit">Submit</button>
+Summary:
+<input>: Allows various types of single-line user inputs like text, passwords, and numbers.
+<textarea>: For multi-line user input, such as longer text or comments.
+<select>: A dropdown list to select a value from a set of options.
+<button>: Creates a button for actions like submitting or resetting the form.
+Each of these elements plays an important role in making forms interactive and enabling the collection of specific user 
+data.
+
+ Question 2: Explain the difference between the GET and POST methods in form submission. When should each be used?
+
+The GET and POST methods are two of the most commonly used HTTP methods for submitting data through forms in web 
+development. They serve different purposes and have distinct characteristics:
+
+1. GET Method:
+Data Submission: When using the GET method, form data is appended to the URL in the form of a query string 
+(i.e., key-value pairs after the ? symbol).
+Visibility: The data is visible in the URL, making it easy to see and bookmark.
+Data Limitations: GET has length limitations due to the URL length restrictions imposed by browsers and web servers, 
+generally around 2000 characters.
+Caching: GET requests can be cached by the browser, as they are considered idempotent (repeated requests should result in 
+the same response).
+Security: GET is less secure because sensitive data, such as passwords, will be visible in the URL. It's not suitable 
+for transmitting sensitive or confidential information.
+Use Case: GET is best suited for retrieving data or sending data that is not sensitive. For example, retrieving search 
+results or filtering options on a page.
+Example:
+
+html
+<form method="GET" action="/search">
+  <input type="text" name="query">
+  <input type="submit" value="Search">
+</form>
+In this case, the form data will be sent in the URL like:
+
+bash
+/search?query=example
+2. POST Method:
+Data Submission: With the POST method, form data is included in the body of the HTTP request, not the URL.
+Visibility: The data is not visible in the URL, making it more secure for sensitive information.
+Data Limitations: POST does not have strict size limits, so it is suitable for transmitting large amounts of data 
+(e.g., file uploads).
+Caching: POST requests are typically not cached by browsers.
+Security: POST is more secure than GET because the data is sent in the request body, rather than being exposed in the URL. However, sensitive data should still be sent over HTTPS.
+Use Case: POST is best suited for sending data to the server, especially when submitting sensitive information, 
+such as login credentials, or when performing actions like creating or updating resources (e.g., submitting a contact 
+form or posting a comment).
+Example:
+
+html
+<form method="POST" action="/submit">
+  <input type="text" name="username">
+  <input type="password" name="password">
+  <input type="submit" value="Login">
+</form>
+In this case, the data is sent in the body of the request and won't be visible in the URL.
+
+When to Use GET vs POST:
+GET:
+
+Use when you need to retrieve or query data.
+Data is not sensitive, as it will be visible in the URL.
+Data size is relatively small.
+The action is idempotent (doesn't change the server's state).
+Example: Searching on a website, filtering a list of items.
+POST:
+
+Use when you need to submit data to the server that might change the server’s state.
+The data includes sensitive information (e.g., passwords, credit card details).
+The data is large (e.g., file uploads).
+Example: User login, form submissions, or any action that modifies data (creating new records, sending emails, etc.).
+Summary:
+GET: Appends data to the URL, suitable for retrieving data and non-sensitive operations.
+POST: Sends data in the request body, ideal for submitting sensitive data or performing actions that change the server 
+state.
+
+ Question 3: What is the purpose of the label element in a form, and how does it improve accessibility?
+
+The <label> element in a form is used to define a label for an input element, such as a text field, checkbox, or 
+radio button. It improves accessibility by associating a descriptive label with a form control, making it easier for 
+users—particularly those with disabilities—to interact with and understand the form.
+
+Purpose of the <label> element:
+Associating Labels with Form Controls: The <label> element provides a visible text description for form controls, 
+helping users understand what information they need to provide.
+
+For example, a label could describe what the user should enter into a text box (e.g., "Name" or "Email").
+Improving Usability: By linking the label directly to the corresponding form control, it makes the form more intuitive 
+and navigable, especially for users using assistive technologies.
+
+How it improves accessibility:
+Screen Reader Support: When a <label> is used correctly, screen readers (used by people with visual impairments) can 
+read aloud the label text when the user focuses on the corresponding form control. This makes it easier for visually 
+impaired users to understand the context of the form fields.
+
+For example, a screen reader will announce "Enter your name" when a user navigates to a name input field.
+Clickable Labels: If the <label> element is associated with a specific input control using the for attribute, 
+clicking on the label text will focus on the input field (even if the user clicks on the label itself, not the input box). This is helpful for users with motor impairments who may have difficulty clicking small input fields.
+
+Keyboard Navigation: Associating labels with inputs can improve keyboard navigation by allowing users to focus on the 
+input fields more efficiently and understand what action is expected of them.
+
+Example of a <label> in use:
+html
+<form>
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username">
+</form>
+In this example:
+
+The for attribute in the <label> is linked to the id of the input element (username), which helps improve the 
+accessibility for users relying on screen readers.
+Clicking on the text "Username:" will focus the cursor in the input field, making the form easier to use.
+By using the <label> element properly, forms become more accessible to a wider range of users, particularly those with 
+visual or motor disabilities, improving the overall user experience and meeting accessibility standards.
+
+Lab Assignment
+ Task: Create a contact form with the following fields: o Full name (text input) o Email (email input) o Phone number 
+(tel input) o Subject (dropdown menu) o Message (textarea) o Submit button
+
+Here's an example of an HTML contact form with the requested fields:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+</head>
+<body>
+    <h2>Contact Us</h2>
+    <form action="/submit" method="POST">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required><br><br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="^[0-9]{10}$" placeholder="1234567890" required><br><br>
+        
+        <label for="subject">Subject:</label>
+        <select id="subject" name="subject" required>
+            <option value="inquiry">Inquiry</option>
+            <option value="feedback">Feedback</option>
+            <option value="support">Support</option>
+            <option value="other">Other</option>
+        </select><br><br>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
+Breakdown of the Form:
+Full Name: A simple text input field.
+Email: An email input field that ensures proper email format.
+Phone Number: A telephone input with a regex pattern to validate a 10-digit phone number.
+Subject: A dropdown menu (<select>) to choose from predefined subjects.
+Message: A textarea where users can type their message.
+Submit Button: A button to submit the form.
+This form uses HTML only and can be integrated into a web page. It doesn't handle the backend logic, so you need a 
+server-side script (e.g., PHP, Node.js, etc.) to process the form data when submitted.
+
+Additional Requirements
+
+o Use appropriate form validation using required, minlength, maxlength, and pattern.
+
+To implement form validation using HTML attributes such as required, minlength, maxlength, and pattern, you can set up a 
+basic form with input fields that use these attributes to enforce various validation rules.
+
+Here’s an example form with these validation attributes:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation Example</title>
+</head>
+<body>
+
+    <h2>Sample Form</h2>
+    
+    <form action="/submit" method="POST">
+        
+        <!-- Name field with required and minlength validation -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required minlength="3" maxlength="50">
+        <small>Required (min 3, max 50 characters)</small>
+        <br><br>
+
+        <!-- Email field with required and pattern validation -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <small>Required (example: user@example.com)</small>
+        <br><br>
+
+        <!-- Phone number field with required and pattern validation -->
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" required pattern="^\+?[0-9]{1,4}?[0-9]{6,}$">
+        <small>Required (example: +1234567890)</small>
+        <br><br>
+
+        <!-- Password field with required, minlength, and maxlength validation -->
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required minlength="8" maxlength="20">
+        <small>Required (min 8, max 20 characters)</small>
+        <br><br>
+
+        <!-- Submit button -->
+        <button type="submit">Submit</button>
+
+    </form>
+
+</body>
+</html>
+Explanation of the Validation Attributes:
+required: This attribute ensures that the input field must be filled out before the form can be submitted. It’s used in 
+all the fields in the example to ensure they are not left empty.
+
+minlength: This attribute specifies the minimum number of characters required for the field. It is used in the "Name" 
+and "Password" fields in the example to enforce a minimum length.
+
+maxlength: This attribute sets the maximum number of characters allowed for the input field. It is used in the "Name" 
+and "Password" fields in this example.
+
+pattern: This attribute defines a regular expression (regex) that the input must match. It is used in the "Email" 
+and "Phone Number" fields to ensure the input matches the correct formats.
+
+How it works:
+Name: The user must enter a name with at least 3 characters and no more than 50 characters.
+Email: The input must follow the general email pattern (e.g., user@example.com).
+Phone Number: The input must follow a simple phone number pattern (e.g., +1234567890).
+Password: The password must be at least 8 characters long and no more than 20 characters long.
+If any of these fields do not meet the validation rules, the form will not submit and the browser will display a message 
+indicating which field needs to be corrected.
+
+o Link form labels with their corresponding inputs using the for attribute.
+
+To link form labels with their corresponding input fields using the for attribute, follow these steps:
+
+The for attribute in the <label> tag should match the id attribute of the corresponding <input> field.
+This association enhances accessibility, as clicking the label will focus on the respective input field.
+Here’s an example of how to do this:
+
+html
+<form>
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username">
+  
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password">
+  
+  <input type="submit" value="Submit">
+</form>
+Explanation:
+The <label for="username"> is associated with the input field <input id="username"> because their for and id values match.
+Similarly, the password field is linked with the label via the for="password" and id="password".
+This makes the form more user-friendly and accessible, especially for users using screen readers.
+
+3. HTML Tables
+Theory Assignment
+ Question 1: Explain the structure of an HTML table and the purpose of each of the following elements: <table>, <tr>, 
+<th>, <td>, and <thead>.
+
+An HTML table is used to display data in a structured way, organized into rows and columns. It is defined using a series 
+of HTML elements that help structure and style the data. Here's an explanation of the key elements used to create an HTML 
+table:
+
+1. <table>
+Purpose: The <table> element defines the entire table structure in HTML.
+Description: It is the container for all the table-related elements. Inside the <table> element, you'll place other 
+elements like <thead>, <tbody>, <tr>, <th>, and <td> to define the actual content of the table.
+html
+<table>
+  <!-- Other table elements go here -->
+</table>
+2. <tr> (Table Row)
+Purpose: The <tr> element defines a row in the table.
+Description: Each <tr> element represents one horizontal row of the table, and inside it, you place table data elements 
+like <th> or <td>. Multiple <tr> elements are used to create multiple rows within the table.
+html
+<tr>
+  <!-- Table data elements like <th> or <td> go here -->
+</tr>
+3. <th> (Table Header)
+Purpose: The <th> element defines a header cell in the table.
+Description: The <th> element is used within a row (<tr>) to define a header. By default, the text in a <th> element is 
+bold and centered. It is often used to label columns or rows, helping to identify the type of data that follows it.
+html
+<tr>
+  <th>Header 1</th>
+  <th>Header 2</th>
+</tr>
+4. <td> (Table Data)
+Purpose: The <td> element defines a data cell in the table.
+Description: The <td> element is used to define a standard data cell that contains the actual content of the table. 
+Each <td> element resides inside a <tr> element, creating the data for that particular row.
+html
+<tr>
+  <td>Data 1</td>
+  <td>Data 2</td>
+</tr>
+5. <thead> (Table Header Group)
+Purpose: The <thead> element groups the header content of a table.
+Description: The <thead> element is used to group header rows (<tr>) that typically contain <th> elements. It helps in 
+structuring the table and is useful for styling or when tables are long enough to require scrolling. It also allows for 
+semantic organization of the table, distinguishing between the table header, body, and footer.
+html
+<table>
+  <thead>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+    </tr>
+  </thead>
+  <!-- Other elements like <tbody> go here -->
+</table>
+Example of an HTML Table Structure:
+html
+<table>
+  <thead>
+    <tr>
+      <th>Header 1</th>
+      <th>Header 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+    </tr>
+    <tr>
+      <td>Data 3</td>
+      <td>Data 4</td>
+    </tr>
+  </tbody>
+</table>
+Summary of Elements:
+<table>: Defines the table structure.
+<tr>: Defines a row within the table.
+<th>: Defines a header cell, typically for column or row headings.
+<td>: Defines a data cell containing the content.
+<thead>: Groups the header rows of a table for semantic structure and styling purposes.
+This structure ensures that data is displayed in an organized, readable way.
+
+ Question 2: What is the difference between colspan and rowspan in tables? Provide examples.
+
+In HTML tables, colspan and rowspan are attributes used in <td> or <th> elements to control the number of columns or rows 
+a cell should span across. Here’s a breakdown of the difference between them:
+
+1. colspan:
+Definition: The colspan attribute specifies the number of columns a cell should span across. It allows a single cell to 
+extend horizontally over multiple columns.
+Usage: The value of colspan determines how many columns a cell will cover. If you set colspan="2", for instance, 
+the cell will cover two columns.
+Example of colspan:
+html
+Copy code
+<table border="1">
+  <tr>
+    <th colspan="2">Header spanning 2 columns</th>
+    <th>Header 3</th>
+  </tr>
+  <tr>
+    <td colspan="2">Cell spanning 2 columns</td>
+    <td>Cell 3</td>
+  </tr>
+</table>
+Explanation:
+
+In the first row, the first header cell spans across two columns.
+In the second row, the first data cell spans across two columns.
+2. rowspan:
+Definition: The rowspan attribute specifies the number of rows a cell should span across. It allows a single cell to 
+extend vertically over multiple rows.
+Usage: The value of rowspan determines how many rows a cell will cover. If you set rowspan="2", for example, the cell 
+will cover two rows.
+Example of rowspan:
+html
+<table border="1">
+  <tr>
+    <th>Header 1</th>
+    <th>Header 2</th>
+    <th>Header 3</th>
+  </tr>
+  <tr>
+    <td rowspan="2">Cell spanning 2 rows</td>
+    <td>Cell 2</td>
+    <td>Cell 3</td>
+  </tr>
+  <tr>
+    <td>Cell 5</td>
+    <td>Cell 6</td>
+  </tr>
+</table>
+Explanation:
+
+In the first column of the first row, the cell spans two rows, extending vertically across the second and third rows.
+Key Differences:
+colspan affects horizontal alignment and defines how many columns the cell spans.
+rowspan affects vertical alignment and defines how many rows the cell spans.
+Summary Table:
+Attribute	Affects	Example	Result
+colspan	Columns	<td colspan="2">Cell</td>	The cell spans across 2 columns
+rowspan	Rows	<td rowspan="2">Cell</td>	The cell spans across 2 rows
+
+ Question 3: Why should tables be used sparingly for layout purposes? What is a better alternative?
+
+Tables should be used sparingly for layout purposes because they are inherently designed for displaying tabular data, 
+not for general page layout. When used for layout, they can lead to several issues:
+
+Accessibility: Screen readers and other assistive technologies are optimized to interpret tables as data structures, not 
+as layout tools. This can confuse users with disabilities when navigating a page.
+
+Maintenance Complexity: Tables used for layout are often difficult to manage and modify, especially as the design becomes 
+more complex. Making changes to one part of the layout may require altering the entire table structure, which can lead to inconsistent designs.
+
+Performance Issues: Tables can be more resource-intensive compared to modern layout techniques, which can affect page load times and overall performance.
+
+Poor Responsiveness: Tables are typically not flexible in terms of responsiveness. As screen sizes change, table-based 
+layouts may not adapt as easily, leading to a poor user experience on mobile devices.
+
+A Better Alternative: CSS Layouts
+A more modern and efficient alternative is to use CSS (Cascading Style Sheets) for layout purposes. Specifically, 
+CSS layout techniques such as Flexbox and CSS Grid provide many advantages:
+
+Flexibility: CSS layouts are much more flexible and can easily adapt to different screen sizes, making them more 
+responsive.
+
+Separation of Structure and Style: CSS allows you to separate the content (HTML) from the presentation (CSS), leading to 
+cleaner, more maintainable code.
+
+Accessibility: Using CSS for layout allows screen readers to properly interpret the content, improving accessibility.
+
+Efficiency: CSS layout techniques are lightweight and more efficient than table-based layouts, improving performance.
+
+Responsiveness: Both Flexbox and CSS Grid are designed to handle complex layouts that adjust automatically based on 
+screen size, making them ideal for modern, mobile-first design.
+
+Lab Assignment
+ Task: Create a product catalog table that includes the following columns: o Product Name o Product Image 
+(use placeholder image URLs) o Price o Description o Availability (in stock, out of stock)
+
+Here’s an example of a product catalog table with the required columns:
+
+Product Name	Product Image	Price	Description	Availability
+Wireless Mouse	
+$25.99	A sleek, ergonomic wireless mouse with a long battery life.	In Stock
+Bluetooth Speaker	
+$49.99	Portable Bluetooth speaker with high-quality sound.	In Stock
+Smartwatch	
+$159.99	A stylish smartwatch with fitness tracking and notifications.	Out of Stock
+Laptop Stand	
+$34.99	Adjustable laptop stand for comfortable working.	In Stock
+USB-C Cable	
+$9.99	High-speed USB-C cable for quick data transfer and charging.	In Stock
+In this table:
+
+Product Name lists the name of the product.
+Product Image uses placeholder image URLs that you can replace with actual images.
+Price shows the cost of the product.
+Description provides a brief description of the product.
+Availability indicates whether the product is in stock or out of stock.
+
+Additional Requirements:
+o Use thead for the table header.
+
+In HTML, the <thead> element is used to group header content in a table. It is typically used to define the table headers, which are usually placed inside a <tr> (table row) element, with each header inside a <th> (table header) element.
+
+Here's an example of how to use <thead> for a table header:
+
+html
+<table border="1">
+  <!-- Table header -->
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>City</th>
+    </tr>
+  </thead>
+
+  <!-- Table body -->
+  <tbody>
+    <tr>
+      <td>John Doe</td>
+      <td>30</td>
+      <td>New York</td>
+    </tr>
+    <tr>
+      <td>Jane Smith</td>
+      <td>25</td>
+      <td>Los Angeles</td>
+    </tr>
+  </tbody>
+</table>
+Explanation:
+<thead>: Contains the header row, which is typically used to describe the columns in the table.
+<th>: Represents the header cells. These are bold and centered by default.
+<tbody>: Contains the body of the table, where the data is displayed.
+In this example, the header row defines the columns "Name," "Age," and "City," while the body rows contain the data for 
+each column.
+
+o Add a border and some basic styling using inline CSS.
+
+To add a border and some basic styling to an HTML element using inline CSS, you can apply the styles directly within the 
+style attribute of the HTML tag. Here's an example:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Element</title>
+</head>
+<body>
+    <div style="border: 2px solid black; padding: 20px; background-color: lightgray; font-family: Arial, sans-serif;">
+        This is a div with a border and basic styling.
+    </div>
+</body>
+</html>
+In this example:
+
+The border property adds a 2-pixel solid black border around the div.
+The padding adds space inside the div.
+The background-color sets the background to light gray.
+The font-family sets the font to Arial, with a fallback to sans-serif.
+
+o Use colspan or rowspan to merge cells where applicable.
+
+In HTML, colspan and rowspan are attributes used in the <td> (table data) or <th> (table header) elements to merge 
+cells across columns or rows, respectively.
+
+colspan
+Purpose: Merges multiple columns into one cell horizontally.
+Usage: Add the colspan attribute to a <td> or <th> element, specifying the number of columns the cell should span.
+rowspan
+Purpose: Merges multiple rows into one cell vertically.
+Usage: Add the rowspan attribute to a <td> or <th> element, specifying the number of rows the cell should span.
+Example Table with colspan and rowspan
+html
+<table border="1">
+  <tr>
+    <th rowspan="2">Header 1</th>
+    <th colspan="2">Header 2 and 3</th>
+  </tr>
+  <tr>
+    <th>Subheader 1</th>
+    <th>Subheader 2</th>
+  </tr>
+  <tr>
+    <td>Row 1, Cell 1</td>
+    <td colspan="2">Row 1, Cell 2 (spanning 2 columns)</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Row 2 and 3, Cell 1 (spanning 2 rows)</td>
+    <td>Row 2, Cell 2</td>
+    <td>Row 2, Cell 3</td>
+  </tr>
+  <tr>
+    <td>Row 3, Cell 2</td>
+    <td>Row 3, Cell 3</td>
+  </tr>
+</table>
+Explanation:
+Row 1, Cell 1: The first cell in the header spans 2 rows using rowspan="2".
+Header 2 and 3: These two cells are combined into one header spanning 2 columns using colspan="2".
+Row 1, Cell 2: This cell spans across 2 columns in row 1 using colspan="2".
+Row 2 and 3, Cell 1: This cell spans 2 rows using rowspan="2".
+These attributes are extremely useful for designing tables that require complex layouts with merged cells.
+
