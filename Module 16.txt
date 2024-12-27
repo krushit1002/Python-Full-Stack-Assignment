@@ -1,0 +1,2820 @@
+Module 16) 
+CSS in Full Stack Course
+CSS Selectors & Styling
+Theory Assignment
+ Question 1: What is a CSS selector? Provide examples of element, class, and ID selectors.
+
+A CSS selector is a pattern used to select and target HTML elements in a document so that you can apply specific styles 
+to them. CSS selectors are used to define which HTML elements should be affected by a particular style rule. 
+The selector is followed by a declaration block, which contains the style rules.
+
+Here are three common types of CSS selectors:
+
+1. Element Selector
+This selector targets HTML elements by their tag name.
+Example:
+css
+p {
+  color: blue;
+}
+Explanation: This rule selects all <p> (paragraph) elements and changes their text color to blue.
+2. Class Selector
+This selector targets HTML elements by their class attribute.
+The class selector is preceded by a dot (.).
+Example:
+css
+.highlight {
+  background-color: yellow;
+}
+Explanation: This rule selects all elements with the class highlight and applies a yellow background color to them.
+3. ID Selector
+This selector targets an HTML element by its ID attribute.
+The ID selector is preceded by a hash (#).
+Example:
+css
+#header {
+  font-size: 24px;
+}
+Explanation: This rule selects the element with the ID header and sets its font size to 24 pixels.
+Summary of Syntax:
+Element Selector: tagName { property: value; }
+Class Selector: .className { property: value; }
+ID Selector: #idName { property: value; }
+Each selector is used to target specific elements in the HTML document, and the styles will only apply to those 
+selected elements.
+
+ Question 2: Explain the concept of CSS specificity. How do conflicts between multiple styles get resolved?
+
+Concept of CSS Specificity
+CSS specificity is a mechanism used by browsers to determine which CSS rule takes precedence when multiple conflicting 
+rules apply to the same element. Specificity is calculated based on the types of selectors used in a CSS rule and is 
+crucial for resolving conflicts between rules.
+
+Specificity is essentially a weight assigned to selectors in CSS, and the higher the specificity of a rule, the more 
+"power" it has in determining the style applied to an element.
+
+Specificity Calculation
+Specificity is usually represented by a four-part value, which is calculated as follows:
+
+Inline styles: Styles applied directly to an element using the style attribute (e.g., <div style="color: red;">) have 
+the highest specificity and are given a value of 1000.
+IDs: An ID selector (e.g., #myElement) has a specificity of 100.
+Classes, pseudo-classes, and attributes: These include class selectors (e.g., .myClass), pseudo-classes 
+(e.g., :hover), and attribute selectors (e.g., [type="text"]). They contribute a specificity value of 10.
+Element selectors and pseudo-elements: These include type selectors (e.g., div, p) and pseudo-elements 
+(e.g., ::before, ::after). They contribute a specificity value of 1.
+For example:
+
+#header (ID selector) has a specificity of 100.
+.nav (Class selector) has a specificity of 10.
+p (Element selector) has a specificity of 1.
+A rule like this:
+
+css
+#header .nav p {
+  color: red;
+}
+Would have a specificity of 100 (ID) + 10 (Class) + 1 (Element) = 111.
+
+Resolving Conflicts Between Multiple Styles
+When multiple CSS rules conflict, the browser will use the specificity values to determine which rule to apply. 
+The rule with the highest specificity wins.
+
+Inline styles will override any other styles because they have the highest specificity (1000).
+
+ID selectors will override class, attribute, and element selectors. So, if two conflicting rules target the same element, 
+the one with the higher specificity (an ID selector over a class or element selector) will take precedence.
+
+Class selectors will override element selectors, but if both a class and an element selector are applied to the same 
+element, the one with the higher specificity (class) wins.
+
+If two rules have the same specificity (e.g., two class selectors), the last rule in the stylesheet will take precedence.
+
+For example:
+
+css
+p {
+  color: blue;
+}
+
+.nav p {
+  color: red;
+}
+The first rule (p { color: blue; }) applies to all <p> tags.
+The second rule (.nav p { color: red; }) targets <p> elements inside .nav elements.
+If both rules are applied to the same element, the second rule (.nav p) will take precedence because it has a higher 
+specificity (a class selector and an element selector vs. just an element selector).
+Important Points to Consider
+Cascade: If two rules have the same specificity, the rule that appears last in the stylesheet (or last in the order of 
+CSS files if multiple are linked) will apply.
+
+Inheritance: Some properties are inherited from parent elements (e.g., color, font-family), so a parent’s styles may 
+affect child elements, but this does not influence the specificity itself.
+
+!important: The !important declaration can override all other rules, regardless of specificity. However, this should be 
+used sparingly as it can make debugging and maintenance difficult.
+
+In summary, CSS specificity helps browsers determine which styles to apply by assigning numerical values based on the 
+types of selectors used. Conflicts are resolved by comparing these specificity values, with more specific rules winning 
+out over less specific ones.
+
+ Question 3: What is the difference between internal, external, and inline CSS? Discuss the advantages and disadvantages 
+of each approach.
+
+CSS (Cascading Style Sheets) can be applied to HTML documents in three different ways: internal CSS, external CSS, and 
+inline CSS. Each approach has its own advantages and disadvantages, which make them more suitable for different use cases.
+
+1. Inline CSS
+Inline CSS is used to apply styles directly to individual HTML elements using the style attribute.
+
+Example:
+html
+<p style="color: blue; font-size: 14px;">This is a blue, 14px text.</p>
+Advantages:
+Quick and easy: Ideal for making small, one-off changes to individual elements without needing to edit the whole document 
+or style sheet.
+Overrides other styles: Inline styles have the highest specificity and will override styles defined in internal or 
+external stylesheets (unless !important is used in those styles).
+Disadvantages:
+Poor maintainability: When many inline styles are used, the HTML document becomes cluttered and difficult to maintain, as 
+the style information is embedded directly in the HTML.
+Not reusable: Inline styles cannot be reused across different elements or pages, leading to repeated code.
+Slower to update: If you need to change a style that applies to multiple elements, you must update each one individually, 
+which can be error-prone and time-consuming.
+2. Internal CSS
+Internal CSS is defined within the <style> tag in the head section of an HTML document. It applies styles to the 
+elements within that specific HTML document.
+
+Example:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal CSS Example</title>
+    <style>
+        p {
+            color: red;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <p>This is a red, 16px text.</p>
+</body>
+</html>
+Advantages:
+Centralized control within a page: Styles are defined in one place, making it easier to update or modify them for the 
+specific page.
+No external dependencies: You don't need to worry about external files or network requests, which can be beneficial 
+for a single-page website or document.
+Better than inline for multiple elements: It allows for styling multiple elements across a page without repeating code.
+Disadvantages:
+Not reusable: Styles are confined to the specific HTML document. If you want to apply the same styles to another page, 
+you'll have to copy the styles over, which can cause redundancy.
+Increases page size: Internal CSS increases the size of the HTML document, which may affect the loading time of the page.
+Not as efficient as external CSS: If many pages have similar styles, internal CSS forces repetition in each HTML 
+document, unlike external CSS which can be shared.
+3. External CSS
+External CSS is stored in separate .css files and linked to an HTML document using the <link> tag in the head section.
+
+Example:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External CSS Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <p>This is styled by external CSS.</p>
+</body>
+</html>
+styles.css file:
+
+css
+p {
+    color: green;
+    font-size: 18px;
+}
+Advantages:
+Reusability: The same external CSS file can be linked to multiple HTML documents, making it easier to maintain consistent 
+styling across an entire website.
+Separation of concerns: Keeps the content (HTML) and presentation (CSS) separate, making the code cleaner and easier to 
+manage.
+Better performance: Once the CSS file is cached by the browser, it doesn’t need to be downloaded again for other pages 
+that link to the same file, which can improve page loading time.
+Easier maintenance: Updating the CSS in one place (the external file) will propagate across all linked HTML pages, 
+making it easier to manage changes globally.
+Disadvantages:
+Requires an additional HTTP request: For the browser to load an external CSS file, it needs to make an additional 
+network request, which may slow down the page load time (though this can be mitigated by caching).
+Complex for small projects: For small websites or one-page websites, creating an external CSS file may be an 
+over-engineered solution.
+Dependency on external file: If the CSS file is missing, mislinked, or there is a problem with the server, it can result 
+in unstyled content.
+Summary Comparison:
+Aspect	Inline CSS	Internal CSS	External CSS
+Where applied	Individual elements (via style attribute)	Entire HTML document (inside <style>)	Linked to the document via <link>
+Reusability	Not reusable	Not reusable	Highly reusable
+Maintainability	Difficult to maintain	Easier than inline, but confined to one page	Easy to maintain across multiple pages
+Performance	Fast for single changes, but can increase page size	Adds size to HTML document	Best for performance with caching
+Best for	Small changes or unique elements	Single-page projects or quick customizations	Large websites, multiple pages, shared styling
+Conclusion:
+Inline CSS is best suited for small, one-off changes.
+Internal CSS works well for styling a single page when the styles won’t be reused elsewhere.
+External CSS is the best approach for large websites, offering reusability, easier maintenance, and better performance 
+with caching.
+Each method has its place depending on the size and structure of the website or web application.
+
+Lab Assignment
+ Task: Style the contact form (created in the HTML Forms lab) using external CSS. The following should be implemented: 
+o Change the background color of the form. 
+o Add padding and margins to form fields. 
+o Style the submit button with a hover effect. 
+o Use class selectors for styling common elements and ID selectors for unique elements.
+
+To style your contact form using external CSS with the specifications you've mentioned, follow these steps:
+
+Step 1: Create your HTML form
+Here’s a simple contact form in HTML:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="styles.css"> <!-- External CSS Link -->
+</head>
+<body>
+  <div id="form-container">
+    <form id="contact-form">
+      <h2>Contact Us</h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" class="form-field" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" class="form-field" required>
+      
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" class="form-field" required></textarea>
+      
+      <button type="submit" id="submit-button">Submit</button>
+    </form>
+  </div>
+</body>
+</html>
+Step 2: Create the external CSS (styles.css)
+Now, let’s create a CSS file (styles.css) to implement the styling based on your requirements.
+
+css
+/* General Styling for the Form */
+#form-container {
+  background-color: #f4f4f9; /* Background color of the form */
+  padding: 20px;
+  width: 50%;
+  margin: 50px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling the Form Title */
+#contact-form h2 {
+  text-align: center;
+  color: #333;
+}
+
+/* Common styles for form fields */
+.form-field {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Ensures padding doesn’t exceed the width */
+}
+
+/* Styling the submit button */
+#submit-button {
+  background-color: #4CAF50; /* Green background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the submit button */
+#submit-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Adding margins to form fields */
+#contact-form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+#contact-form input,
+#contact-form textarea {
+  margin-bottom: 15px;
+}
+Explanation:
+Background color of the form: The form background is set using #form-container { background-color: #f4f4f9; }.
+
+Padding and margins to form fields: The .form-field class applies padding and margin to the input and textarea elements.
+
+Style the submit button with a hover effect: The #submit-button styles the button, and the #submit-button:hover selector 
+changes the button’s background color when hovered.
+
+Using class and ID selectors:
+
+ID selectors (#form-container, #contact-form, #submit-button) are used for unique elements.
+Class selectors (.form-field) are used for styling common elements (form fields).
+Step 3: Preview the Form
+Now, your form will look styled with a clean background, proper padding, and margins for the form fields, plus a hover 
+effect on the submit button.
+
+This approach will achieve the desired result while maintaining a well-organized structure using external CSS.
+
+5. CSS Box Model
+Theory Assignment
+ Question 1: Explain the CSS box model and its components (content, padding, border, margin). How does each affect 
+the size of an element?
+
+The CSS box model is a fundamental concept in web design that dictates how elements are structured and how their sizes 
+are calculated in a web page layout. It consists of four main components: content, padding, border, and margin. 
+These components work together to determine the total space occupied by an element on a page.
+
+Here’s a breakdown of each component and how it affects the size of an element:
+
+Content:
+
+The content is the innermost area of the box, where the actual text, images, or other media appear.
+It defines the size of the element itself (e.g., the width and height of a div, img, or p tag).
+It does not include any space outside of this area (i.e., padding, border, or margin).
+Effect on size: The content size is directly controlled by the element's width and height properties.
+
+Padding:
+
+Padding is the space between the content of the element and its border. It is used to create breathing room around 
+the content.
+Padding is applied on all four sides (top, right, bottom, and left) of the content box.
+Padding does not affect the position of the element, but it increases the total size of the element as it expands 
+the box in all directions.
+Effect on size: Padding increases the total size of the element, added to the content area. For example, if the content 
+area is 100px wide, and you add 10px padding on each side, the total width becomes 120px.
+
+Border:
+
+The border surrounds the padding (if present) and the content. It is a visible line that can have a specific width, 
+style, and color.
+Borders can be applied on all four sides (top, right, bottom, and left) of an element, and they contribute to the 
+overall size of the element.
+Effect on size: Borders increase the total size of an element. For example, if the element's width is 100px, and you 
+add a 2px border on each side, the total width becomes 104px (100px + 2px * 2 borders).
+
+Margin:
+
+Margin is the outermost space that separates an element from other elements on the page. It creates distance between 
+the element and surrounding elements or the edge of the page.
+Margins are not part of the element's box, but they affect the element's positioning on the page.
+Effect on size: Margins do not affect the element's size directly in terms of its box dimensions. They only affect the 
+space around the element, pushing it away from other elements. However, they influence the layout and positioning of 
+the element on the page.
+
+How each component affects the total size of an element:
+The total size of an element is calculated as:
+
+Total width = content width + left padding + right padding + left border + right border
+Total height = content height + top padding + bottom padding + top border + bottom border
+This means that the content's dimensions are modified by the padding and borders, and then the margin creates additional 
+space outside the element without affecting its actual box size.
+
+Example:
+If we have a box with:
+
+width: 100px
+height: 100px
+padding: 10px (all sides)
+border: 2px solid black (all sides)
+margin: 20px (all sides)
+The total dimensions of the element would be:
+
+Total width = 100px (content) + 10px (left padding) + 10px (right padding) + 2px (left border) + 2px (right border) = 124px
+Total height = 100px (content) + 10px (top padding) + 10px (bottom padding) + 2px (top border) + 2px (bottom border) = 124px
+The margin (20px) would push the element away from other elements, but it doesn’t contribute to the element's size.
+
+ Question 2: What is the difference between border-box and content-box box-sizing in CSS? Which is the default?
+
+In CSS, the box-sizing property determines how the dimensions (width and height) of an element are calculated, 
+specifically whether padding and borders are included in those dimensions.
+
+1. content-box (Default)
+This is the default value for the box-sizing property.
+When box-sizing: content-box; is used, the width and height properties apply only to the content of the element, 
+excluding padding, borders, and margins.
+This means the final rendered size of the element will be the width and height of the content plus any padding and 
+borders added outside the content area.
+Example:
+
+css
+div {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+}
+In this case, the total width of the div will be 200px + 20px (left padding) + 20px (right padding) + 5px (left border) + 
+5px (right border) = 250px.
+2. border-box
+When box-sizing: border-box; is used, the width and height properties include padding and border in the element’s total 
+dimensions.
+This means that the element’s width and height are calculated to contain the padding and borders, so the total size 
+remains as specified by the width and height values.
+Example:
+
+css
+div {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  box-sizing: border-box;
+}
+Here, the total width of the div will still be 200px, and the padding and borders will be subtracted from the available 
+space for the content.
+Default Value
+The default value for the box-sizing property is content-box. This means that padding and borders are not included in 
+the element's width and height by default.
+Key Difference:
+content-box: Width and height apply to the content alone, not including padding or borders.
+border-box: Width and height include padding and borders, so the total size of the element is the value set for width and 
+height.
+Using border-box is often preferred for layout purposes because it makes it easier to control element sizes without 
+worrying about extra space being added by padding and borders.
+
+Lab Assignment
+ Task: Create a profile card layout using the box model. The profile card should include: 
+o A profile picture. 
+o The user’s name and bio. 
+o A button to "Follow" the user.
+
+Here’s how you can create a simple profile card layout using the CSS box model. The profile card includes a profile 
+picture, the user's name and bio, and a "Follow" button. We will structure it using HTML and style it with CSS.
+
+HTML
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="profile-card">
+    <img src="profile.jpg" alt="Profile Picture" class="profile-picture">
+    <div class="profile-info">
+      <h2 class="name">John Doe</h2>
+      <p class="bio">Web Developer | Coffee Lover | Traveler</p>
+    </div>
+    <button class="follow-button">Follow</button>
+  </div>
+</body>
+</html>
+CSS (styles.css)
+css
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Profile card styling */
+.profile-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Profile picture styling */
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* User name styling */
+.name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Bio styling */
+.bio {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Follow button styling */
+.follow-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.follow-button:hover {
+  background-color: #0056b3;
+}
+Explanation
+HTML Structure:
+
+The profile card is wrapped inside a div with the class profile-card.
+Inside the card, there is an img element for the profile picture, a div for the user's name and bio, and a button for 
+the "Follow" action.
+CSS Styling:
+
+The profile-card class is styled to create a card-like appearance using background color, border-radius, and box-shadow.
+The profile picture is made circular using border-radius: 50%, and object-fit: cover ensures that the image fills the 
+space appropriately.
+The "Follow" button is styled to have a blue background with white text. On hover, the background color darkens for a 
+visual effect.
+This layout utilizes the box model with padding and margins to control spacing between elements and inside the profile 
+card.
+
+Additional Requirements:
+o Add padding and borders to the elements.
+
+To add padding and borders to HTML elements, you can use CSS (Cascading Style Sheets). Below is an example showing how 
+to add padding and borders to different HTML elements:
+
+Example HTML and CSS:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padding and Borders Example</title>
+    <style>
+        /* Add padding and borders to the elements */
+        
+        /* Example for a div */
+        .box {
+            padding: 20px;             /* Adds space inside the element */
+            border: 2px solid black;   /* Adds a black border with 2px thickness */
+            margin: 10px;              /* Adds space outside the element */
+        }
+
+        /* Example for a paragraph */
+        p {
+            padding: 15px;             /* Adds space inside the paragraph */
+            border: 1px dashed red;    /* Adds a red dashed border */
+            margin: 5px;               /* Adds space outside the paragraph */
+        }
+
+        /* Example for a button */
+        button {
+            padding: 10px 20px;        /* Adds vertical and horizontal padding */
+            border: 3px solid blue;    /* Adds a blue border */
+            background-color: yellow;  /* Sets the background color */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- HTML Elements -->
+    <div class="box">
+        This is a div with padding and a border.
+    </div>
+
+    <p>
+        This is a paragraph with padding and a dashed border.
+    </p>
+
+    <button>
+        This is a button with padding and a border.
+    </button>
+
+</body>
+</html>
+Explanation:
+Padding:
+
+The padding property adds space inside an element, between its content and its border.
+In the example, padding: 20px; adds 20 pixels of space inside the div. Similarly, other elements also have padding with 
+different values.
+Borders:
+
+The border property adds a border around an element.
+In the example, border: 2px solid black; creates a 2px thick solid black border around the div. The paragraph uses a 
+dashed red border, and the button has a 3px solid blue border.
+Margins:
+
+margin adds space outside the element, separating it from other elements. It's optional but helpful for spacing the 
+elements from others.
+You can modify the padding, border style, and margin values to suit your design needs.
+
+o Ensure the layout is clean and centered on the page using CSS margins.
+
+To ensure a clean, centered layout on the page using CSS margins, you can utilize the following approach. Here's a 
+simple guide with code to help achieve a centered layout:
+
+Example HTML and CSS:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Layout</title>
+    <style>
+        /* Reset margin and padding for body */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;  /* Ensure full height for centering */
+            display: flex; /* Flexbox for centering */
+            justify-content: center; /* Horizontal centering */
+            align-items: center; /* Vertical centering */
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container for the centered content */
+        .content {
+            width: 80%;  /* Or a specific width like 600px */
+            max-width: 1200px; /* Optional: for a max width */
+            padding: 20px;
+            box-sizing: border-box;  /* Ensures padding doesn't affect width */
+            background-color: #f0f0f0; /* Background color */
+            text-align: center; /* Optional: Center text */
+            border-radius: 8px;  /* Optional: Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Optional: Box shadow */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to the Centered Page</h1>
+        <p>This content is centered both horizontally and vertically using CSS margins.</p>
+    </div>
+</body>
+</html>
+Explanation:
+CSS Flexbox:
+
+display: flex; on the body or html tag enables Flexbox layout, which is great for centering.
+justify-content: center; centers the content horizontally.
+align-items: center; centers the content vertically.
+body, html settings:
+
+Setting height: 100% ensures that the full viewport height is used for centering.
+Margin and padding are reset to 0 for both body and html to avoid any browser default spacing that might affect the layout.
+Centered .content container:
+
+A specific width or percentage is set to .content to control its size (e.g., width: 80% or a fixed width like 600px).
+max-width: 1200px ensures the content doesn’t get too wide on large screens.
+The container has some padding for space inside, and optional styles like background color, rounded corners, and box 
+shadow.
+This approach uses Flexbox, which is modern and very effective for centering content both horizontally and vertically, 
+making it simpler than traditional methods (like using margin: auto or absolute positioning).
+
+o Use the box-sizing property to demonstrate both content-box and border-box on different elements.
+
+
+To demonstrate how the box-sizing property works with the values content-box and border-box, we can create two different 
+elements: one with box-sizing: content-box (the default value) and another with box-sizing: border-box. I'll walk you 
+through how each box-sizing behavior affects the layout.
+
+1. content-box (default value)
+The content-box value is the default for most elements. The width and height you set will apply to the content only, 
+not including padding or borders.
+For example, if you set a width of 200px and add 20px of padding and 10px of border, the total width of the element will 
+be:
+width = 200px (content) + 20px (left padding) + 20px (right padding) + 10px (border left) + 10px (border right) = 260px
+2. border-box
+The border-box value changes how the width and height are calculated. The width you set will include padding and border, 
+meaning the content area will shrink to accommodate these values.
+So, if you set a width of 200px with 20px padding and 10px border, the total width will be exactly 200px. 
+The content area will shrink to 200px - 20px padding - 20px border, leaving less space for the content.
+Here is an example of how you can demonstrate this behavior in CSS:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Box-Sizing Example</title>
+  <style>
+    .content-box-demo {
+      width: 200px;
+      height: 100px;
+      padding: 20px;
+      border: 10px solid #000;
+      box-sizing: content-box;
+      background-color: lightblue;
+      margin-bottom: 20px;
+    }
+
+    .border-box-demo {
+      width: 200px;
+      height: 100px;
+      padding: 20px;
+      border: 10px solid #000;
+      box-sizing: border-box;
+      background-color: lightgreen;
+    }
+
+    /* Styling to show layout more clearly */
+    .container {
+      display: flex;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="content-box-demo">
+      Content Box
+    </div>
+    <div class="border-box-demo">
+      Border Box
+    </div>
+  </div>
+</body>
+</html>
+Explanation:
+.content-box-demo: This element uses the default box-sizing: content-box. When you apply the width of 200px, the total 
+width of the element becomes 200px + padding + border = 260px.
+
+.border-box-demo: This element uses box-sizing: border-box, meaning the total width is still 200px, and the padding and 
+border are included within that width. The content area will shrink to accommodate the border and padding.
+
+Visualization:
+The first box (lightblue) will be wider because the padding and border are outside the defined width.
+The second box (lightgreen) will maintain its width as 200px, but its content will shrink to fit within this width.
+By comparing these two boxes side by side, you can see how the box-sizing property influences the overall size of an 
+element.
+
+6. CSS Flexbox
+Theory Assignment
+ Question 1: What is CSS Flexbox, and how is it useful for layout design? Explain the terms flex-container and flex-item.
+
+What is CSS Flexbox?
+CSS Flexbox (Flexible Box Layout) is a layout model in CSS that allows you to create responsive, flexible, and dynamic 
+layouts. It provides an easy way to align and distribute space within a container, even when the sizes of the items are 
+unknown or dynamic. Unlike traditional CSS layout methods (like floats or tables), Flexbox enables you to design complex 
+layouts with more control and fewer lines of code. It is particularly useful for creating layouts that need to adapt to 
+different screen sizes and devices.
+
+Flexbox works by defining a flex container and arranging the child elements (flex items) within it. The container's 
+available space is distributed among the items, based on the flex properties you define.
+
+How is Flexbox useful for layout design?
+Flexbox is useful in many ways, particularly for modern web design:
+
+Alignment and Centering: Flexbox makes centering content both vertically and horizontally straightforward, which can be 
+tricky with other layout techniques.
+Responsive Design: Flexbox helps you create responsive layouts that adapt well to different screen sizes. 
+It can dynamically adjust the layout without needing media queries for simple cases.
+Space Distribution: Flexbox allows you to distribute space between items, ensuring that they grow, shrink, or maintain a 
+specific size depending on the available space.
+Ordering and Reordering: Flexbox makes it easy to reorder items without altering the HTML structure, which can be 
+particularly useful in responsive designs.
+Consistent Layouts: It ensures that items remain evenly spaced, or in any other desired configuration, even when their 
+sizes change dynamically.
+Key Terms in Flexbox:
+1. Flex Container
+The flex container is the parent element that holds all the flex items. It defines the flex context for its child elements and controls the layout of those items.
+
+To turn an element into a flex container, you use the display: flex; or display: inline-flex; property.
+
+Example:
+
+css
+.flex-container {
+  display: flex;
+}
+Once an element is defined as a flex container, its immediate children become flex items.
+
+2. Flex Items
+The flex items are the child elements within the flex container. These are the elements that are arranged and aligned 
+according to the flex properties you define.
+
+Flex items can be resized, reordered, aligned, and spaced dynamically within the flex container.
+
+Each flex item can have its own flex properties, like flex-grow, flex-shrink, and flex-basis, to determine how it 
+behaves within the container.
+
+Example of a flex item:
+
+css
+.flex-item {
+  flex: 1;  /* Makes the item flexible, taking up available space */
+}
+Key Flexbox Properties for Containers:
+justify-content: Aligns the flex items horizontally (along the main axis).
+align-items: Aligns the flex items vertically (along the cross axis).
+flex-direction: Defines the direction of the main axis (row or column).
+flex-wrap: Determines if the items should wrap onto multiple lines.
+Key Flexbox Properties for Items:
+flex-grow: Specifies how much a flex item should grow relative to the rest of the items.
+flex-shrink: Specifies how much a flex item should shrink relative to the rest of the items when there is not enough 
+space.
+flex-basis: Defines the initial size of a flex item before the space is distributed.
+Example:
+html
+<div class="flex-container">
+  <div class="flex-item">Item 1</div>
+  <div class="flex-item">Item 2</div>
+  <div class="flex-item">Item 3</div>
+</div>
+
+<style>
+  .flex-container {
+    display: flex;
+    justify-content: space-between;  /* Space items evenly with space between */
+    align-items: center;             /* Center items vertically */
+  }
+
+  .flex-item {
+    flex: 1;  /* Each item will grow equally */
+  }
+</style>
+In this example:
+
+The .flex-container is the parent flex container.
+The .flex-item elements are the flex items inside the container.
+The layout is designed to space the items evenly horizontally and align them in the center vertically.
+In summary, Flexbox is a powerful tool for creating flexible and responsive layouts. By controlling the alignment, 
+distribution, and size of elements within a container, Flexbox offers a straightforward approach to modern web design.
+
+ Question 2: Describe the properties justify-content, align-items, and flex-direction used in Flexbox.
+
+In Flexbox, the following properties control the layout and positioning of items within a container:
+
+1. justify-content
+The justify-content property is used to align the flex items along the main axis (horizontal by default). It controls 
+the distribution of space between and around the flex items.
+
+Values:
+flex-start: Aligns items to the start of the flex container.
+flex-end: Aligns items to the end of the flex container.
+center: Centers items within the flex container.
+space-between: Distributes items with equal space between them, but no space at the start or end.
+space-around: Distributes items with equal space around them, with half the space at the start and end.
+space-evenly: Distributes items with equal space between them, including at the start and end.
+2. align-items
+The align-items property aligns flex items along the cross axis (vertical by default). It controls how the items are 
+positioned relative to each other within the flex container.
+
+Values:
+flex-start: Aligns items to the start of the cross axis.
+flex-end: Aligns items to the end of the cross axis.
+center: Centers items along the cross axis.
+baseline: Aligns items such that their baselines are aligned (typically useful for text).
+stretch: Stretches items to fill the container along the cross axis (default).
+3. flex-direction
+The flex-direction property defines the direction in which the flex container's items are placed in the container. 
+It determines the main axis (and thus the direction of layout).
+
+Values:
+row: Items are arranged horizontally, from left to right (default).
+row-reverse: Items are arranged horizontally, but in reverse order (from right to left).
+column: Items are arranged vertically, from top to bottom.
+column-reverse: Items are arranged vertically, but in reverse order (from bottom to top).
+These properties, when used together, give great control over the layout and alignment of items within a Flexbox 
+container.
+
+Lab Assignment
+ Task: Create a simple webpage layout using Flexbox. The layout should include: 
+o A header. 
+o A sidebar on the left. 
+o A main content area in the center. 
+o A footer.
+
+Here’s a simple webpage layout using Flexbox, with a header, sidebar, main content area, and footer:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Layout</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Setup */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Header */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Main Section (Flexbox Layout) */
+        main {
+            display: flex;
+            flex: 1;
+        }
+
+        /* Sidebar */
+        aside {
+            width: 250px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Main Content Area */
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>My Simple Flexbox Layout</h1>
+    </header>
+
+    <!-- Main Section with Sidebar and Content -->
+    <main>
+        <!-- Sidebar -->
+        <aside>
+            <h3>Sidebar</h3>
+            <p>Links or additional information can go here.</p>
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="content">
+            <h2>Main Content</h2>
+            <p>This is the main content area. You can add text, images, or other elements here.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+
+</body>
+</html>
+Explanation:
+HTML Structure:
+
+The structure is straightforward: a header, a main section containing a sidebar (aside) and a content section, and a 
+footer.
+Flexbox Layout:
+
+The body uses Flexbox with a column direction to stack the header, main, and footer.
+The main section is set to display: flex, creating a horizontal layout for the sidebar and the content.
+The aside (sidebar) has a fixed width, and the .content takes up the remaining space (flex: 1).
+Styling:
+
+Basic styles are applied to give the layout a clean and simple look, with background colors for each section.
+Padding is used inside each section for spacing.
+Box-shadow is added to the sidebar to create a subtle separation from the content.
+Result:
+This layout is responsive and adaptable. As the viewport size changes, the sidebar remains fixed at 250px, while 
+the content area expands or contracts accordingly.
+
+Additional Requirements:
+o Use Flexbox to position and align the elements.
+
+To use Flexbox for positioning and aligning elements, you can apply specific properties to the parent container 
+(the flex container) and its child elements (the flex items). Below is a basic guide on how to use Flexbox:
+
+Step 1: Set the parent container to display: flex;
+This will make the container a flex container, allowing you to position and align its child elements.
+
+css
+.container {
+  display: flex;
+}
+Step 2: Align items within the flex container
+There are several key properties to position and align items within the flex container:
+
+justify-content: Aligns the items along the main axis (horizontal by default).
+flex-start: Aligns items to the start of the container (default).
+center: Centers the items in the container.
+flex-end: Aligns items to the end of the container.
+space-between: Distributes items with space between them.
+space-around: Distributes items with equal space around them.
+space-evenly: Distributes items with equal space between and around them.
+css
+.container {
+  display: flex;
+  justify-content: center; /* Centers items horizontally */
+}
+align-items: Aligns items along the cross axis (vertical by default).
+flex-start: Aligns items to the top of the container.
+center: Centers items vertically.
+flex-end: Aligns items to the bottom of the container.
+stretch: Stretches the items to fill the container (default).
+css
+.container {
+  display: flex;
+  align-items: center; /* Centers items vertically */
+}
+align-self (for individual items): This property allows you to override the align-items setting for specific items.
+css
+.item {
+  align-self: flex-end; /* Aligns this item to the bottom */
+}
+Step 3: Flex Direction
+By default, Flexbox arranges the child elements in a row (horizontally). You can change this to a column (vertically) 
+using the flex-direction property.
+
+row: Align items horizontally (default).
+column: Align items vertically.
+row-reverse: Align items horizontally but in reverse order.
+column-reverse: Align items vertically but in reverse order.
+css
+.container {
+  display: flex;
+  flex-direction: column; /* Items will be stacked vertically */
+}
+Step 4: Wrapping items
+If you want the items to wrap onto the next line when there isn't enough space, you can use the flex-wrap property.
+
+nowrap: Items will stay on one line (default).
+wrap: Items will wrap onto the next line if needed.
+wrap-reverse: Items will wrap onto the next line, but in reverse order.
+css
+.container {
+  display: flex;
+  flex-wrap: wrap; /* Items will wrap onto the next line if necessary */
+}
+Example: Centering items in both directions
+If you want to center your items both horizontally and vertically in a container, you can combine the justify-content 
+and align-items properties.
+
+css
+.container {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  height: 100vh; /* Full viewport height */
+}
+Complete Example
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Example</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: lightgray;
+    }
+
+    .item {
+      padding: 20px;
+      background-color: royalblue;
+      color: white;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+</body>
+</html>
+In this example:
+
+The .container uses Flexbox to center the child .item elements both horizontally and vertically.
+The items are aligned in the center of the viewport with height: 100vh (100% of the viewport height).
+This is a basic example, but Flexbox offers powerful layout features that can be customized further depending on your 
+design needs.
+
+o Apply different justify-content and align-items properties to observe their effects.
+
+The justify-content and align-items properties in CSS are used to control the alignment of items within a flex container. These properties have a significant impact on the layout and positioning of items, and you can experiment with different values to observe their effects.
+
+1. justify-content Property:
+This property is used to align items horizontally within the flex container along the main axis (which is typically the 
+horizontal axis unless you change the flex-direction).
+
+Possible values for justify-content:
+flex-start: Aligns items to the start of the flex container (default).
+flex-end: Aligns items to the end of the flex container.
+center: Centers the items along the main axis.
+space-between: Distributes items evenly, with the first item at the start and the last item at the end.
+space-around: Distributes items evenly with equal space around each item.
+space-evenly: Distributes items evenly with equal space between each item, including between the first and last item.
+2. align-items Property:
+This property is used to align items vertically within the flex container along the cross axis (typically the vertical 
+axis, but it can change with flex-direction).
+
+Possible values for align-items:
+flex-start: Aligns items to the top of the container (default for row direction).
+flex-end: Aligns items to the bottom of the container.
+center: Centers items along the cross axis.
+baseline: Aligns items to their baseline (useful for aligning text).
+stretch: Stretches items to fill the container (default behavior).
+Example:
+Here's an HTML and CSS example that demonstrates different combinations of justify-content and align-items.
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Justify Content and Align Items</title>
+    <style>
+        .container {
+            display: flex;
+            height: 200px;
+            border: 2px solid black;
+            background-color: #f0f0f0;
+        }
+        
+        .item {
+            width: 50px;
+            height: 50px;
+            background-color: #4CAF50;
+            margin: 5px;
+        }
+
+        /* Different justify-content values */
+        .jc-flex-start {
+            justify-content: flex-start;
+        }
+
+        .jc-flex-end {
+            justify-content: flex-end;
+        }
+
+        .jc-center {
+            justify-content: center;
+        }
+
+        .jc-space-between {
+            justify-content: space-between;
+        }
+
+        .jc-space-around {
+            justify-content: space-around;
+        }
+
+        .jc-space-evenly {
+            justify-content: space-evenly;
+        }
+
+        /* Different align-items values */
+        .ai-flex-start {
+            align-items: flex-start;
+        }
+
+        .ai-flex-end {
+            align-items: flex-end;
+        }
+
+        .ai-center {
+            align-items: center;
+        }
+
+        .ai-baseline {
+            align-items: baseline;
+        }
+
+        .ai-stretch {
+            align-items: stretch;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container jc-flex-start ai-flex-start">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="container jc-center ai-center">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="container jc-space-between ai-center">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="container jc-space-around ai-flex-end">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+    <div class="container jc-space-evenly ai-stretch">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+
+</body>
+</html>
+Explanation of the Examples:
+jc-flex-start and ai-flex-start:
+
+Items are aligned to the start of the container both horizontally and vertically.
+jc-center and ai-center:
+
+Items are centered both horizontally and vertically within the container.
+jc-space-between and ai-center:
+
+Items are spaced evenly with space between them along the horizontal axis, while they are vertically centered.
+jc-space-around and ai-flex-end:
+
+Items are spaced evenly with space around them along the horizontal axis, while they are aligned to the bottom of the 
+container.
+jc-space-evenly and ai-stretch:
+
+Items are spaced evenly along the horizontal axis, and stretched to fill the container vertically.
+By experimenting with these combinations, you can observe how each of these properties affects the layout of flex items 
+within the container.
+
+o Ensure the layout is responsive, adjusting for smaller screens.
+
+To ensure that a layout is responsive and adjusts for smaller screens, you'll need to use a combination of 
+CSS techniques, primarily focused on media queries, flexible grid systems, and fluid typography. Here's a basic guide 
+to help you achieve this:
+
+1. Use a Fluid Grid Layout
+Make use of percentages or relative units like em, rem, vw, and vh instead of fixed pixel values. This allows 
+elements to resize based on the viewport width.
+
+Example:
+css
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+This grid-template-columns rule automatically adjusts the number of columns based on the available width, ensuring 
+that each item takes up at least 200px, but can expand as needed.
+2. Use Media Queries
+Media queries allow you to apply different styles based on the screen size. You can use them to adjust the layout, 
+font sizes, and other aspects of the design for various screen sizes.
+
+Example:
+css
+/* Default styles for larger screens */
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Adjust text size */
+  }
+
+  .container {
+    grid-template-columns: 1fr; /* Stack columns on smaller screens */
+  }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+  body {
+    font-size: 12px; /* Reduce text size further */
+  }
+
+  .container {
+    padding: 0.5rem; /* Reduce padding for mobile */
+  }
+}
+For screens smaller than 768px, it switches to a single column layout and reduces font size.
+For screens smaller than 480px, it further reduces font size and adjusts padding for better fit.
+3. Use Flexbox for Layout Adjustments
+Flexbox is another great option for ensuring elements adjust dynamically. It is particularly useful for items 
+that need to align or wrap based on the available space.
+
+Example:
+css
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.item {
+  flex: 1 1 200px; /* Allow items to grow and shrink with a minimum width of 200px */
+}
+With this setup, .item elements will wrap based on the available space, and their size will adjust accordingly.
+4. Use Viewport-Relative Units for Fonts and Elements
+Using units like vw (viewport width) or vh (viewport height) can help elements scale according to the viewport size.
+
+Example:
+css
+h1 {
+  font-size: 5vw; /* Makes the font size responsive to viewport width */
+}
+
+p {
+  font-size: 2.5vw;
+}
+5. Test Responsiveness
+Make sure to test your layout on various screen sizes to ensure it behaves as expected. You can use the browser’s 
+developer tools to simulate different devices (e.g., using Chrome DevTools).
+
+Final Example: A Responsive Layout
+Here's an example combining all these techniques into a simple responsive layout.
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .item {
+      background-color: #fff;
+      padding: 1rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      font-size: 4vw;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 14px;
+      }
+
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 6vw;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        font-size: 12px;
+      }
+
+      .container {
+        padding: 0.5rem;
+      }
+
+      h1 {
+        font-size: 8vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item">
+      <h1>Item 1</h1>
+      <p>Content for item 1</p>
+    </div>
+    <div class="item">
+      <h1>Item 2</h1>
+      <p>Content for item 2</p>
+    </div>
+    <div class="item">
+      <h1>Item 3</h1>
+      <p>Content for item 3</p>
+    </div>
+  </div>
+</body>
+</html>
+Key Points:
+Fluid Grid Layout: Use percentage-based widths or minmax in grid for flexible sizing.
+Media Queries: Define breakpoints for different screen sizes.
+Flexible Box (Flexbox): Apply flexible layouts that adjust based on available space.
+Viewport-Relative Units: Use vw, vh, em, and rem for scaling elements based on the viewport.
+With these techniques, your layout will be able to adjust and remain user-friendly across different screen sizes.
+
+7. CSS Grid
+Theory Assignment
+ Question 1: Explain CSS Grid and how it differs from Flexbox. When would you use Grid over Flexbox?
+
+CSS Grid vs. Flexbox
+What is CSS Grid?
+CSS Grid Layout is a two-dimensional layout system that allows you to design both rows and columns at the same time. 
+It is ideal for creating complex and responsive web layouts where you need to control both the vertical and horizontal 
+positioning of elements.
+
+Key Features of CSS Grid:
+
+Two-dimensional layout: CSS Grid allows you to control both rows and columns, giving you more flexibility to create 
+complex designs.
+Explicit Grid: You define the grid using rows and columns, and then position your items into specific cells or spans 
+across multiple cells.
+Alignment: Grid provides powerful alignment options for placing and adjusting content within the grid cells 
+(e.g., centering items in both directions).
+Layering and overlapping: You can layer items, position them in any cell, and make them overlap, offering advanced 
+control over layout.
+Example:
+
+css
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 100px);
+}
+.item {
+  grid-column: 1 / 3; /* span columns 1 to 3 */
+  grid-row: 1 / 2; /* span row 1 to 2 */
+}
+What is Flexbox?
+Flexbox (Flexible Box Layout) is a one-dimensional layout system that works on either a row or a column, but not both 
+simultaneously. It's ideal for aligning items in a single direction, either horizontally or vertically.
+
+Key Features of Flexbox:
+
+One-dimensional layout: Flexbox focuses on either rows (horizontal) or columns (vertical), but not both at the same time.
+Alignment: Flexbox has powerful alignment features that help distribute space and align items along the main and 
+cross axes.
+Flexibility: Items can grow or shrink to fill available space using flex-grow, flex-shrink, and flex-basis properties.
+Example:
+
+css
+.container {
+  display: flex;
+  justify-content: space-between; /* Align items horizontally */
+}
+.item {
+  flex: 1; /* Items will take equal space */
+}
+Differences Between CSS Grid and Flexbox:
+Feature	CSS Grid	Flexbox
+Layout System	Two-dimensional (both rows and columns)	One-dimensional (either rows or columns)
+Use Case	Best for complex layouts, grids, and large-scale layouts	Best for smaller components and simple layouts
+Item Positioning	Position items in both rows and columns simultaneously	Items are aligned in one direction (row or column)
+Responsiveness	Great for creating large, responsive layouts	Great for adjusting smaller components within a container
+Control	Offers precise control over grid areas, allowing overlap and complex arrangements	Provides flexibility in distributing space in a container
+Alignment	Full control over both horizontal and vertical alignment	Alignment is limited to the axis (main or cross)
+Use Case Example	Creating web layouts, dashboards, and complex grid designs	Creating navigation menus, cards, or aligning items in a row/column
+When to Use Grid Over Flexbox?
+Two-dimensional Layouts: If you're working on a layout where you need to position items both horizontally and vertically 
+(e.g., a magazine-style layout, complex web pages, or dashboards), CSS Grid is more suitable as it handles both axes 
+simultaneously.
+
+Precise Placement: CSS Grid allows for more precise placement of items within a grid container. You can specify the 
+exact position of items within a grid by setting grid lines, making it ideal for complex layouts.
+
+Grid Systems: When designing a system based on grids (such as a photo gallery, e-commerce product listings, or a calendar), 
+CSS Grid is the better choice because it allows you to easily define rows and columns.
+
+Overlapping Elements: If you want to create layouts where elements overlap (e.g., cards on top of each other, floating 
+elements), CSS Grid makes this very easy to achieve.
+
+When to Use Flexbox Over Grid?
+One-Dimensional Layouts: When you need a simple layout with items aligned either horizontally (in a row) or vertically 
+(in a column), Flexbox is ideal. It's easier to use and requires less code when working with simple designs.
+
+Responsive UI Components: For smaller UI components like navigation bars, buttons, or toolbars, Flexbox works well 
+because it is designed to distribute space evenly across items, making it easy to adapt to different screen sizes.
+
+Alignment and Distribution: Flexbox is great for aligning items in a container. If you need to align items horizontally 
+or vertically and don't require the complexity of CSS Grid, Flexbox is a good choice.
+
+ Question 2: Describe the grid-template-columns, grid-template-rows, and grid-gap properties. Provide examples of 
+how to use them.
+
+In CSS Grid Layout, the grid-template-columns, grid-template-rows, and grid-gap properties are used to define and 
+control the structure and spacing of grid items within a grid container.
+
+1. grid-template-columns
+The grid-template-columns property defines the number and size of columns in a grid container. It allows you to 
+specify the width of each column, and you can define multiple values separated by spaces. These values can be set in 
+various units such as pixels (px), percentages (%), fractions (fr), or even the keyword auto.
+
+Example:
+css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr; /* Three columns with fractional widths */
+}
+In this example:
+
+The grid has three columns.
+The first and third columns take up equal fractions of the container (1fr each).
+The second column takes up twice the space of the first and third columns (2fr).
+2. grid-template-rows
+The grid-template-rows property defines the number and size of rows in a grid container, similar to 
+grid-template-columns. You can use different units such as px, em, %, fr, or auto to set row sizes.
+
+Example:
+css
+.container {
+  display: grid;
+  grid-template-rows: 100px auto 200px; /* Three rows with different heights */
+}
+In this example:
+
+The first row has a fixed height of 100px.
+The second row’s height is set to auto, meaning it will adjust to the content’s height.
+The third row has a fixed height of 200px.
+3. grid-gap (or gap)
+The grid-gap (also known as just gap) property controls the spacing between grid items (both rows and columns). 
+You can set the gap for both rows and columns at once or set different values for each axis.
+
+Example:
+css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px;
+  grid-gap: 10px; /* 10px gap between all grid items */
+}
+In this example:
+
+The grid items will be arranged into three equal columns (1fr each).
+There is a 10px gap between each column and row.
+If you want to set different gaps for rows and columns, you can use two values:
+
+css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 100px;
+  grid-gap: 10px 20px; /* 10px gap between rows, 20px between columns */
+}
+In this case:
+
+The gap between rows is 10px.
+The gap between columns is 20px.
+Full Example:
+html
+<div class="container">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+  <div>Item 4</div>
+  <div>Item 5</div>
+</div>
+css
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 100px auto 200px;
+  grid-gap: 15px;
+}
+
+.container div {
+  background-color: lightgray;
+  padding: 20px;
+  border: 1px solid #333;
+}
+In this full example:
+
+The grid has three columns with fractional widths: 1fr, 2fr, and 1fr.
+The rows are defined with heights of 100px, auto, and 200px, respectively.
+A 15px gap is added between both rows and columns.
+Summary:
+grid-template-columns: Defines the column sizes.
+grid-template-rows: Defines the row sizes.
+grid-gap: Sets the space between grid items (both rows and columns).
+
+Lab Assignment
+ Task: Create a 3x3 grid of product cards using CSS Grid. Each card should contain: 
+o A product image. 
+o A product title. 
+o A price.
+
+To create a 3x3 grid of product cards using CSS Grid, you can follow this structure. Each product card will contain a 
+product image, title, and price.
+
+Here’s an example of HTML and CSS code to create a simple layout:
+
+HTML:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards Grid</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Product 1">
+            <h3>Product 1</h3>
+            <p class="price">$19.99</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Product 2">
+            <h3>Product 2</h3>
+            <p class="price">$29.99</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Product 3">
+            <h3>Product 3</h3>
+            <p class="price">$39.99</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Product 4">
+            <h3>Product 4</h3>
+            <p class="price">$49.99</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Product 5">
+            <h3>Product 5</h3>
+            <p class="price">$59.99</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Product 6">
+            <h3>Product 6</h3>
+            <p class="price">$69.99</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Product 7">
+            <h3>Product 7</h3>
+            <p class="price">$79.99</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Product 8">
+            <h3>Product 8</h3>
+            <p class="price">$89.99</p>
+        </div>
+        <div class="product-card">
+            <img src="https://via.placeholder.com/150" alt="Product 9">
+            <h3>Product 9</h3>
+            <p class="price">$99.99</p>
+        </div>
+    </div>
+</body>
+</html>
+CSS (styles.css):
+css
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.product-card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.product-card .price {
+    margin-top: 5px;
+    font-size: 16px;
+    color: #27ae60;
+    font-weight: bold;
+}
+Explanation:
+HTML:
+
+The product-grid class is used for the container that holds all the product cards.
+Each product-card contains an image, title (h3), and price (p with class "price").
+CSS:
+
+The .product-grid uses display: grid and grid-template-columns: repeat(3, 1fr) to create a 3-column layout. The gap: 
+20px ensures that there is space between the cards.
+Each .product-card is styled with padding, background color, border-radius, and box-shadow to make it look like a card.
+The product image is responsive, with a maximum width of 100% to ensure it scales with the card size.
+This will create a responsive 3x3 grid of product cards, and the layout will adjust to different screen sizes.
+
+Additional Requirements:
+o Use grid-template-columns to create the grid layout.
+
+To create a grid layout using grid-template-columns, you define how the columns of the grid should be structured. 
+This CSS property specifies the number of columns and their width in a grid container.
+
+Here's a basic example of how to use grid-template-columns to create a grid layout:
+
+Example: Simple 3-Column Grid
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout Example</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+      gap: 10px; /* Spacing between grid items */
+    }
+    .item {
+      background-color: lightblue;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+  </div>
+
+</body>
+</html>
+Explanation:
+display: grid; turns the parent container (.container) into a grid container.
+grid-template-columns: repeat(3, 1fr); creates a grid with 3 equal-width columns. 1fr means each column takes up 1 
+fraction of the available space.
+gap: 10px; adds spacing between the grid items.
+You can customize the layout further by changing the number of columns, the width of each column, or adding more grid 
+properties like grid-template-rows, grid-gap, etc.
+
+Example with different column widths:
+css
+grid-template-columns: 200px 1fr 2fr;
+This would create three columns:
+
+The first column is 200px wide.
+The second column takes up 1 fraction of the remaining space.
+The third column takes up 2 fractions of the remaining space.
+
+o Use grid-gap to add spacing between the grid items.
+
+To use grid-gap (or its more modern equivalent gap) to add spacing between grid items, you can specify the gap 
+between rows and columns in a CSS Grid layout.
+
+Here's how to use it:
+
+Basic Example:
+css
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Creates 3 equal columns */
+  grid-gap: 20px; /* Adds 20px gap between rows and columns */
+}
+Explanation:
+display: grid; establishes the grid layout on the container.
+grid-template-columns: repeat(3, 1fr); sets up a grid with three equal-width columns.
+grid-gap: 20px; defines a gap of 20px between both rows and columns.
+Modern Version Using gap:
+In more recent versions of CSS, grid-gap is simply replaced by gap (the shorthand for both row-gap and column-gap).
+
+css
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Adds 20px gap between both rows and columns */
+}
+For Different Row and Column Gaps:
+If you want different gaps between rows and columns, you can specify row-gap and column-gap separately:
+
+css
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 20px; /* Gap between rows */
+  column-gap: 15px; /* Gap between columns */
+}
+This approach gives you control over the vertical and horizontal spacing independently.
+
+. o Apply hover effects to each card for better interactivity.
+
+To apply hover effects to each card for better interactivity, you can use CSS to define a visual change when a user 
+hovers over a card. Here's an example of how you can achieve this with simple CSS:
+
+Example HTML Structure:
+html
+<div class="card">
+    <img src="image.jpg" alt="Card Image">
+    <div class="card-content">
+        <h3>Card Title</h3>
+        <p>Card description goes here.</p>
+    </div>
+</div>
+Example CSS for Hover Effect:
+css
+/* Basic styling for the card */
+.card {
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+/* Card content styles */
+.card-content {
+    padding: 15px;
+    background-color: #fff;
+}
+
+/* Hover effect */
+.card:hover {
+    transform: translateY(-10px);  /* Moves the card up */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);  /* Adds a shadow */
+}
+
+/* Optional: Adding a subtle animation to the title */
+.card h3 {
+    transition: color 0.3s ease;
+}
+
+.card:hover h3 {
+    color: #007BFF;  /* Change color on hover */
+}
+Explanation:
+Card Hover Effect:
+The transform: translateY(-10px) moves the card slightly upward when hovered.
+box-shadow adds a shadow effect that makes the card appear elevated.
+Smooth Transitions:
+The transition properties make the hover effect smooth and gradual.
+Title Color Change:
+The color of the card title changes when hovered for a more interactive feel.
+This can be adjusted according to your preferences, such as adding scaling effects, changing background colors, or 
+modifying text styles.
+
+8. Responsive Web Design with Media Queries
+Theory Assignment
+ Question 1: What are media queries in CSS, and why are they important for responsive design?
+
+What are Media Queries in CSS?
+Media queries in CSS are a feature that allows you to apply different styles to a webpage based on the characteristics of 
+the device or screen viewing the page. These characteristics can include the width, height, resolution, orientation, and 
+more.
+
+A basic example of a media query looks like this:
+
+css
+@media (max-width: 768px) {
+  /* Styles for screens that are 768px wide or smaller */
+  body {
+    background-color: lightblue;
+  }
+}
+In this example, the CSS rule for changing the background color to light blue is applied only when the screen's width is 
+768px or smaller.
+
+Why Are Media Queries Important for Responsive Design?
+Responsive design ensures that a website adapts and provides a good user experience on a variety of devices, including 
+desktops, tablets, and smartphones. Media queries play a crucial role in this by enabling designers and developers to 
+tailor the layout and styles of a webpage to different screen sizes and device capabilities.
+
+Key reasons media queries are important:
+
+Adapt to Different Screen Sizes: Media queries allow the layout to adjust based on screen width, ensuring the content is 
+easily readable and accessible on any device, from large desktop monitors to small mobile screens.
+
+Improve User Experience (UX): By using media queries, you can change font sizes, navigation menus, image sizes, and more 
+based on the device. This prevents the need for horizontal scrolling or zooming, providing a seamless experience.
+
+Device-Specific Customization: Media queries can be used to optimize the design for specific devices or screen types, 
+such as:
+
+Mobile-first designs (using queries to apply styles optimized for smaller screens).
+Orientation-based styles (for landscape vs. portrait modes).
+High-resolution screens (using min-resolution or max-resolution to adjust images for devices with high pixel density, 
+like Retina displays).
+Faster Loading Times: With media queries, you can serve optimized images or media content suited to the device, thus 
+improving loading times on slower or less capable devices.
+
+Fluid Layouts: Media queries help in making layouts fluid and flexible, adapting the structure (like grid systems or 
+flexbox) according to available space.
+
+In summary, media queries are essential for creating responsive designs that look good and function well across 
+different devices, improving both accessibility and user engagement.
+
+ Question 2: Write a basic media query that adjusts the font size of a webpage for screens smaller than 600px.
+
+You can use the following basic media query to adjust the font size for screens smaller than 600px:
+
+css
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 14px; /* Adjust the font size as needed */
+    }
+}
+This media query applies styles to the body element when the viewport width is 600px or less. You can change the font-size 
+value to whatever fits your design best.
+
+Lab Assignment
+ Task: Build a responsive webpage that includes: 
+o A navigation bar. 
+o A content section with two columns. 
+o A footer.
+
+To create a responsive webpage that includes a navigation bar, a two-column content section, and a footer, you can use 
+HTML for structure and CSS for styling. Below is an example of how to build this layout.
+
+HTML Structure:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Webpage</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <section class="content">
+      <div class="left-column">
+        <h2>Left Column</h2>
+        <p>This is the left column content. It contains some information or text.</p>
+      </div>
+      <div class="right-column">
+        <h2>Right Column</h2>
+        <p>This is the right column content. It can have images, additional text, or other content.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Your Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+CSS (styles.css):
+css
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Header (Navigation Bar) */
+header {
+  background-color: #333;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Content Section */
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-column, .right-column {
+  width: 48%;
+}
+
+.left-column {
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+.right-column {
+  background-color: #e2e2e2;
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+/* Responsive Design (Mobile) */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-column, .right-column {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+Explanation:
+Navigation Bar:
+
+A simple nav element with an unordered list (ul) to represent the navigation links.
+The links are styled to display horizontally using flexbox.
+Content Section:
+
+The .content class is a flex container that arranges the two columns (.left-column and .right-column) side by side.
+Both columns are given 48% width to leave space between them.
+Footer:
+
+The footer is styled with a background color and positioned at the bottom using position: fixed. It spans the full width 
+of the page.
+Responsive Design:
+
+A media query is used to change the layout for smaller screens (max-width of 768px). When the screen width is less than 
+or equal to 768px, the content columns stack vertically and span 100% width.
+How it Works:
+On larger screens (desktop), the layout has two side-by-side columns with a flexible and centered navigation bar.
+On smaller screens (mobile/tablet), the layout adjusts with the columns stacking on top of each other, making the 
+webpage more readable and navigable.
+Customization:
+You can modify the content in the columns, adjust padding/margins, or change colors to match your site's branding.
+
+Additional Requirements:
+o Use media queries to make the webpage responsive for mobile devices.
+
+To make a webpage responsive for mobile devices using CSS media queries, you need to adjust the layout and styling based 
+on the screen size. Media queries allow you to apply different styles depending on the characteristics of the device, 
+such as its screen width.
+
+Here’s a basic structure to use media queries for a mobile-friendly responsive design:
+
+Step-by-Step Guide to Adding Media Queries
+Start with a mobile-first approach: This means you’ll write your CSS assuming the page is viewed on mobile devices first, 
+then adjust for larger screens using media queries.
+
+Use @media for breakpoints: You’ll define different styles that apply only when the device meets certain criteria 
+(like a certain screen width).
+
+Example Code:
+css
+/* Base styles for mobile devices (default, mobile-first) */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Media Query for devices with a screen width of 600px or larger (e.g., tablets, small desktops) */
+@media (min-width: 600px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+}
+
+/* Media Query for devices with a screen width of 1024px or larger (e.g., large desktops) */
+@media (min-width: 1024px) {
+  .container {
+    width: 70%;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+}
+
+/* Media Query for portrait mobile devices (screen height greater than width) */
+@media (max-width: 480px) {
+  body {
+    background-color: #f4f4f4;
+  }
+
+  .container {
+    width: 100%;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 20px;
+  }
+}
+Explanation of Code:
+Default (Mobile-First) Styles:
+
+The base styles target smaller screens by default.
+For example, the h1 element has a font size of 24px and is centered.
+For Larger Screens (min-width: 600px):
+
+When the screen width is 600px or more, the layout adjusts. The container width becomes 80%, and the font size of h1 
+increases to 32px.
+For Even Larger Screens (min-width: 1024px):
+
+When the screen width is 1024px or larger, typically for desktops, the layout is further refined with a 70% container 
+width and a larger h1 font size of 36px.
+For Small Mobile Screens (max-width: 480px):
+
+This media query targets devices with a screen width of 480px or less (e.g., older phones or portrait mobile views).
+Changes include reducing padding, adjusting font sizes, and changing background colors.
+More Considerations:
+Flexible Units: Use flexible units like %, em, and rem instead of fixed values (like px) to improve scalability across 
+devices.
+Viewport meta tag: Don’t forget to add the viewport meta tag to the HTML head to control the page's dimensions and scaling.
+html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+This will ensure that your page scales properly on mobile devices.
+
+o On smaller screens (below 768px), stack the columns vertically.
+
+To make the columns stack vertically on smaller screens (below 768px), you can use CSS media queries to adjust the 
+layout. Assuming you're using a grid or flexbox layout, here's how you can achieve this:
+
+Using Flexbox:
+css
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between columns as needed */
+}
+
+.column {
+  flex: 1 1 30%; /* Default column width (for larger screens) */
+}
+
+/* Media query for screens smaller than 768px */
+@media screen and (max-width: 768px) {
+  .column {
+    flex: 1 1 100%; /* Make each column take up 100% width on smaller screens */
+  }
+}
+Explanation:
+By default, the .container uses flexbox to arrange the .column elements in a row. The flex: 1 1 30% rule ensures each 
+column takes up 30% of the width (or whatever width you prefer) on larger screens.
+In the media query @media screen and (max-width: 768px), the .column elements are adjusted to flex: 1 1 100%, 
+which makes each column take up the full width (100%) of the container when the screen size is smaller than 768px.
+Using CSS Grid:
+If you're using CSS grid layout, here’s an alternative:
+
+css
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns by default */
+  gap: 20px; /* Adjust the gap between columns as needed */
+}
+
+/* Media query for screens smaller than 768px */
+@media screen and (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr; /* Stack columns vertically by making only 1 column */
+  }
+}
+Explanation:
+The .container is initially set to have 3 equal-width columns with grid-template-columns: repeat(3, 1fr).
+In the media query, grid-template-columns: 1fr stacks the columns vertically, giving each item 100% width of 
+the container on screens smaller than 768px.
+You can adjust the column count and gap to suit your design preferences.
+
+o Adjust the font sizes and padding to improve readability on mobile.
+
+To improve readability on mobile devices, adjusting font sizes and padding is crucial. Here’s a general approach you can 
+follow using CSS:
+
+1. Adjust Font Sizes:
+For mobile devices, you should use relative units like em, rem, or percentages. This ensures the font size adjusts 
+better across different screen sizes.
+
+css
+/* Base font size for larger screens */
+body {
+    font-size: 16px; /* Default font size */
+}
+
+/* Adjust font size for smaller screens */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px; /* Slightly smaller font size for mobile */
+    }
+}
+
+/* Further decrease font size for very small screens */
+@media (max-width: 480px) {
+    body {
+        font-size: 12px; /* Even smaller font size for ultra-mobile screens */
+    }
+}
+
+/* Example for headings */
+h1 {
+    font-size: 2.5rem; /* Base size for larger screens */
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Smaller for mobile screens */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Even smaller on very small screens */
+    }
+}
+2. Adjust Padding:
+Padding can often make content feel cramped on mobile screens. Reducing the padding on mobile can help make content 
+more readable.
+
+css
+/* Base padding for larger screens */
+.container {
+    padding: 20px;
+}
+
+/* Adjust padding for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px; /* Slightly smaller padding for mobile */
+    }
+}
+
+/* Further reduce padding for very small screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px; /* Even smaller padding for ultra-mobile screens */
+    }
+}
+
+/* Adjust padding in other elements (e.g., buttons) */
+button {
+    padding: 12px 20px; /* Base padding for larger screens */
+}
+
+@media (max-width: 768px) {
+    button {
+        padding: 10px 15px; /* Smaller padding for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        padding: 8px 12px; /* Even smaller padding for very small screens */
+    }
+}
+3. Additional Tips:
+Line Height: Increase line-height for better readability.
+
+css
+body {
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    body {
+        line-height: 1.5; /* Slightly smaller line height on mobile */
+    }
+}
+Font Weights and Styles: Use normal or semi-bold weights for body text for better legibility, and avoid thin fonts on 
+mobile screens.
+
+Text Alignment: Ensure text is aligned to improve readability. Center-aligning headings and left-aligning body text is 
+usually a good approach.
+
+By using media queries, you can adjust these values based on screen width and ensure a smooth user experience across 
+devices.
+
+9. Typography and Web Fonts
+Theory Assignment
+ Question 1: Explain the difference between web-safe fonts and custom web fonts. Why might you use a web-safe font 
+over a custom font?
+
+Web-safe fonts and custom web fonts are two types of fonts used in web design, each with distinct characteristics.
+
+Web-safe Fonts:
+Definition: Web-safe fonts are a set of standard fonts that are universally available across most devices, operating 
+systems, and browsers. These fonts are pre-installed on most computers and devices, ensuring that text is displayed 
+consistently for users across the web.
+Examples: Arial, Times New Roman, Courier New, Verdana, Georgia, and Helvetica.
+Advantages:
+Compatibility: Since web-safe fonts are already available on users' systems, there is no need to download additional 
+resources. This ensures fast loading times and consistent rendering across different browsers and devices.
+Performance: Web-safe fonts are quicker to load because they don’t require any external resources to be fetched from a 
+server.
+Consistency: As these fonts are commonly used, they provide a consistent and familiar look to most users across different 
+platforms.
+Custom Web Fonts:
+Definition: Custom web fonts are fonts that are not commonly pre-installed on devices. These fonts are typically added 
+to a website through CSS, by linking to an external service like Google Fonts or Adobe Fonts, or by hosting the font 
+files on the server.
+Examples: Google Fonts (Roboto, Open Sans, etc.), Typekit, and custom-designed fonts.
+Advantages:
+Design Flexibility: Custom web fonts allow for a more unique and branded look. Designers can select or create fonts that 
+align with the specific aesthetic or identity of the website.
+Creativity and Typography Control: Web developers and designers can choose from a wider range of font styles and weights, 
+allowing for more creative freedom and typography control.
+Brand Consistency: Custom fonts can reinforce the brand’s visual identity, making it stand out and remain consistent 
+with other marketing materials.
+Why Might You Use a Web-Safe Font Over a Custom Font?
+Performance Considerations: Web-safe fonts are already present on users' devices, so they don’t require additional time 
+to load. This can be important for improving the website’s speed, especially for users with slower internet connections.
+Compatibility: Web-safe fonts ensure that text is rendered correctly on all browsers and devices, avoiding issues where a 
+custom font may not display properly if it’s not supported or loaded correctly.
+Simplicity: If a website doesn’t require highly stylized fonts, or if the design focuses more on functionality, web-safe 
+fonts might be more appropriate for their simplicity, speed, and wide compatibility.
+No External Requests: Web-safe fonts don’t rely on third-party services (like Google Fonts or Adobe Fonts) or extra file 
+downloads, which can occasionally slow down a page or introduce security concerns.
+In summary, you might choose a web-safe font when speed, performance, and universal compatibility are your main 
+priorities. On the other hand, custom web fonts are useful when you want more design flexibility, brand consistency, or a 
+unique visual identity for your website.
+
+ Question 2: What is the font-family property in CSS? How do you apply a custom Google Font to a webpage?
+
+The font-family Property in CSS:
+The font-family property in CSS is used to define the typeface for the text within an HTML element. It allows you to 
+specify one or more fonts for a page, and if the first font isn't available, the browser will attempt to use the next one, 
+continuing this until it finds a suitable font.
+
+Syntax:
+css
+font-family: "Font Name", generic-font-name;
+"Font Name": The name of a specific font you want to use, such as "Arial", "Times New Roman", or "Roboto".
+generic-font-name: A fallback font family that the browser will use if the specified font is unavailable (e.g., serif, 
+sans-serif, monospace).
+Example:
+css
+body {
+    font-family: "Roboto", "Arial", sans-serif;
+}
+This CSS rule applies the "Roboto" font first. If "Roboto" isn't available, it will fall back to "Arial". If neither is 
+available, the browser will use the generic sans-serif font.
+
+Applying a Custom Google Font to a Webpage:
+To apply a custom Google Font to a webpage, you need to import the font from Google Fonts and then use it in your CSS.
+
+Steps:
+Choose a Font on Google Fonts:
+
+Go to Google Fonts.
+Search for the font you want and select it.
+Embed the Font:
+
+After selecting the font, you'll be given an @import link or <link> tag. If you’re working with an external stylesheet, 
+it's common to use the @import method.
+
+Example for Roboto font:
+
+Using the <link> tag (recommended for most cases):
+
+html
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+Or, using the @import method (if you're adding it to a CSS file):
+css
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+Apply the Font in Your CSS:
+
+After importing the font, you can apply it using the font-family property.
+Example:
+
+css
+body {
+    font-family: 'Roboto', sans-serif;
+}
+Complete Example (HTML and CSS):
+Here’s how you can set up a custom Google Font (Roboto) on your webpage:
+
+HTML (index.html):
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Font Example</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Welcome to My Website!</h1>
+    <p>This is a paragraph using the Roboto font.</p>
+</body>
+</html>
+CSS (styles.css):
+css
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 700;  /* Bold version of the font */
+}
+
+p {
+    font-weight: 400;  /* Regular version of the font */
+}
+This will load the "Roboto" font from Google Fonts and apply it to the body of the webpage, with different weights for 
+headings and paragraphs.
+
+Additional Tips:
+Font Weights: Google Fonts often offer multiple font weights (e.g., 400, 700 for normal and bold). Make sure to import the ones you need to avoid unnecessary loading times.
+Font Display: The display=swap option in the URL ensures the text remains visible while the font is loading.
+
+Lab Assignment
+ Task: Create a blog post layout with the following: 
+o A title, subtitle, and body content. 
+o Use at least two different fonts (one for headings, one for body content). 
+o Style the text to be responsive and easy to read.
+
+Here’s an example of a simple blog post layout in HTML and CSS, which includes a title, subtitle, and body content. 
+The layout uses two different fonts (one for the headings and one for the body text), and the text is styled to be 
+responsive and easy to read:
+
+HTML:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Georgia&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        h1, h2 {
+            font-family: 'Georgia', serif;
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            color: #7f8c8d;
+            margin: 10px 0;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Body Content Styling */
+        .content {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        .content p {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .content {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .content {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Exploring the Wonders of Web Development</h1>
+        <h2>Understanding the Basics of Frontend and Backend</h2>
+        <div class="content">
+            <p>Web development is a constantly evolving field. As technology advances, so do the tools and techniques developers use to build websites. In this blog post, we'll explore the basics of web development, focusing on both frontend and backend development.</p>
+
+            <p>Frontend development is concerned with the part of a website that users interact with directly. This includes everything from the layout and design to how the user navigates and interacts with the site. The main languages used in frontend development are HTML, CSS, and JavaScript.</p>
+
+            <p>On the other hand, backend development focuses on the server-side of things. This involves creating and managing databases, servers, and application logic. Backend developers typically work with languages such as PHP, Python, Ruby, or Node.js.</p>
+
+            <p>The combination of frontend and backend development ensures that a website is both visually appealing and functional. Understanding both aspects of web development can open up many opportunities for aspiring developers.</p>
+        </div>
+    </div>
+</body>
+</html>
+Explanation:
+HTML Structure:
+
+The HTML has a <h1> for the main title, a <h2> for the subtitle, and <p> tags for the paragraphs in the body content.
+The content is wrapped in a <div> with the class container, ensuring proper alignment and spacing.
+CSS Styling:
+
+The Roboto font is used for body content, while Georgia is used for the headings.
+Text styling includes proper font sizes, line heights, and margins for readability.
+The page is responsive, adjusting font sizes for smaller screens (such as tablets and phones), ensuring that the text 
+remains legible.
+Responsive Design:
+
+Two media queries are used to adjust the typography for smaller screen widths (less than 768px for tablets and less than 
+480px for mobile).
+Font sizes are reduced, and margins are adjusted for smaller screens to enhance readability.
+How It Looks:
+On large screens (like desktops), the title and subtitle will be large, with the body text well-spaced and easy to read.
+On smaller screens (tablets and mobiles), the text shrinks slightly, but remains legible, maintaining a good balance 
+between design and readability.
+This approach ensures that the content looks great and is easy to read across devices of all sizes!
+
+Additional Requirements:
+o Use a custom font from Google Fonts.
+
+To use a custom font from Google Fonts on your website, follow these steps:
+
+1. Choose a Font from Google Fonts:
+Go to Google Fonts and select the font you want to use. For this example, let's say you want to use Roboto.
+
+2. Add the Google Fonts Link to Your HTML:
+Once you've selected your font, Google Fonts provides a link that you can add to the <head> section of your HTML file. 
+For Roboto, the link would look like this:
+
+html
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+wght@400;700 specifies the weights you want to use (normal 400 and bold 700). You can customize the list of weights as 
+needed.
+display=swap ensures that the font is swapped for the custom one once it loads, improving page load performance.
+3. Apply the Font in CSS:
+Next, you can use the font in your CSS file or <style> block. Here’s how you can set it to be used throughout your site, 
+for example, in the body tag:
+
+css
+body {
+  font-family: 'Roboto', sans-serif;
+}
+The 'Roboto' font will be applied to all text in the body of the page.
+The sans-serif is a fallback font in case the custom font is not available.
+4. Example HTML Structure:
+Here's a full example of how your HTML file might look:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Font Example</title>
+  <!-- Google Fonts Link -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- External CSS Link or Inline -->
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to My Website</h1>
+  <p>This is an example of using a custom Google Font (Roboto) on your site.</p>
+</body>
+</html>
+5. Save and View:
+Save your HTML file and open it in a browser. You should see that the text is displayed using the Roboto font.
+
+o Adjust line-height, font-size, and spacing for improved readability.
+
+To improve readability, adjusting line-height, font-size, and spacing is essential. Here are general guidelines for each:
+
+Font Size:
+
+Body text: Use 16px to 18px for easy reading.
+Headings: Increase font size in a hierarchical manner. For example:
+H1: 32px to 36px
+H2: 28px to 30px
+H3: 24px to 26px
+Larger font sizes can be used for better legibility, especially for mobile screens.
+Line Height:
+
+For body text, use a line height between 1.4 and 1.6 times the font size. This allows the text to breathe and makes 
+it easier to read.
+Example: If the font size is 16px, a line height of 22px to 26px will improve readability.
+For headings, you can reduce the line height slightly (around 1.2 to 1.3) to keep the text compact and visually appealing.
+Letter Spacing:
+
+For body text, letter-spacing should generally be set to normal or a small positive value (e.g., 0.5px) for clarity.
+For headings, slightly more letter-spacing can be used (e.g., 1px to 2px) to improve emphasis.
+Paragraph Spacing:
+
+Increase the space between paragraphs to around 1.5 times the font size. This creates a clear visual break, making the 
+text less overwhelming.
+Example (CSS):
+css
+body {
+  font-size: 16px;
+  line-height: 1.5; /* 24px for 16px font */
+  letter-spacing: 0.5px;
+}
+
+h1 {
+  font-size: 36px;
+  line-height: 1.3; /* 47px for 36px font */
+  letter-spacing: 1px;
+}
+
+p {
+  margin-bottom: 24px; /* space between paragraphs */
+}
+These adjustments will significantly enhance readability, making the text easier to digest across various screen sizes 
+and devices.
+
