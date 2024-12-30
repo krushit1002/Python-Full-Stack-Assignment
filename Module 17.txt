@@ -1,0 +1,2705 @@
+Module 17) 
+Javascript For Full Stack Assignment
+1. JavaScript Introduction
+Theory Assignment
+ Question 1: What is JavaScript? Explain the role of JavaScript in web development.
+
+What is JavaScript?
+JavaScript is a high-level, dynamic programming language that is primarily used to create interactive and dynamic 
+behavior in web browsers. It is one of the core technologies of the World Wide Web, alongside HTML (HyperText Markup 
+Language) and CSS (Cascading Style Sheets). JavaScript is an event-driven, functional, and imperative language that allows developers to build features such as interactivity, form validation, animations, and data manipulation on web pages. Unlike HTML and CSS, which are used for structure and design, JavaScript is used for functionality.
+
+Role of JavaScript in Web Development
+JavaScript plays a central role in client-side web development (operations performed on the user's browser) but can 
+also be used on the server-side (using environments like Node.js). Here's how it contributes to web development:
+
+Interactivity and User Experience:
+
+JavaScript allows for interactive elements on a web page, such as clickable buttons, dynamic forms, dropdowns, 
+carousels, and modal windows. Without JavaScript, web pages would be static and unable to respond to user actions 
+without refreshing the page.
+Examples: Form validation, interactive maps, image sliders, etc.
+Dynamic Content Updates (AJAX and Fetch API):
+
+JavaScript enables AJAX (Asynchronous JavaScript and XML) and the Fetch API, allowing for asynchronous communication 
+with the server. This means parts of the page can be updated without reloading the entire page, leading to faster and 
+smoother user experiences.
+This capability is crucial for Single Page Applications (SPAs), where the entire website behaves like a single page, 
+and only the necessary content is updated dynamically.
+Manipulating the DOM (Document Object Model):
+
+JavaScript provides the ability to manipulate the DOM, which represents the structure of a web page. Developers can add, 
+remove, or modify HTML elements dynamically, without requiring a page reload.
+Examples: Changing text content, adding new elements, or modifying the structure based on user input.
+Event Handling:
+
+JavaScript is essential for handling events such as mouse clicks, keyboard inputs, page loads, form submissions, etc. 
+These events are used to trigger specific actions or responses on the page.
+Example: Clicking a button could trigger an animation or load new content without refreshing the page.
+Animation and Visual Effects:
+
+JavaScript is used for creating complex animations and transitions that enhance the visual appeal of a web page. 
+While CSS can handle basic animations, JavaScript provides more control over animation sequences, timings, and 
+interactions.
+Example: Animating an image or changing the background color when a user hovers over a button.
+Data Handling and Integration with APIs:
+
+JavaScript is commonly used to retrieve and process data from external sources using APIs (Application Programming 
+Interfaces). For example, websites often display data from weather services, social media platforms, or financial 
+markets using JavaScript to make API calls and display real-time data.
+Example: Showing live data from an API, such as stock prices or weather conditions.
+Server-Side Development (Node.js):
+
+JavaScript is not just for client-side operations. With the rise of Node.js, JavaScript is now widely used for 
+server-side development as well. This enables developers to write both the front-end and back-end of a web application 
+using the same language, simplifying development and enhancing efficiency.
+Frameworks and Libraries:
+
+JavaScript has a wide range of frameworks and libraries, such as React, Angular, Vue.js, and jQuery, which streamline 
+the process of building sophisticated web applications. These tools provide pre-built functions and structures to help 
+developers create feature-rich websites more efficiently.
+
+ Question 2: How is JavaScript different from other programming languages like Python or Java?
+
+JavaScript, Python, and Java are all popular programming languages, but they differ significantly in several key aspects, 
+including their use cases, syntax, execution environment, and paradigms. Here’s a breakdown of how JavaScript differs 
+from Python and Java:
+
+1. Execution Environment
+JavaScript:
+Primarily used for web development. JavaScript is the scripting language of the web, running mainly in web browsers. 
+It enables dynamic and interactive features on websites. JavaScript can also run on the server side (using Node.js).
+Interpreted: JavaScript code is typically interpreted, meaning it is executed directly by the browser or server 
+without the need for a compilation step.
+Python:
+General-purpose language. Python is used for a wide variety of applications, from web development to data analysis, 
+machine learning, automation, and more.
+Interpreted: Python is also an interpreted language and can run in various environments like local machines, servers, 
+and even in web browsers (via frameworks like Brython).
+Java:
+General-purpose language: Java is used for large-scale applications, web development, Android development, and more.
+Compiled: Java is a compiled language. Java code is first compiled into bytecode, which is then run on the Java Virtual 
+Machine (JVM). This allows Java to be platform-independent.
+2. Syntax
+JavaScript:
+
+JavaScript has a flexible and dynamic syntax. It supports both object-oriented and functional programming styles.
+It has weak typing (variables do not need to be declared with a type).
+Example:
+javascript
+let x = 5;
+function add(a, b) { return a + b; }
+Python:
+
+Python's syntax is clean, readable, and uses indentation to define code blocks (instead of braces {}).
+It also uses dynamic typing.
+Example:
+python
+x = 5
+def add(a, b):
+    return a + b
+Java:
+
+Java has a more rigid, formal syntax with strict rules. It is a statically-typed language, which means you must declare 
+variable types explicitly.
+Java uses semicolons (;) to terminate statements and braces ({}) to define code blocks.
+Example:
+java
+int x = 5;
+public int add(int a, int b) {
+    return a + b;
+}
+3. Typing System
+JavaScript:
+Dynamically typed: Variables are not bound to specific data types. For example, a variable can be reassigned to hold a 
+different type of data during runtime.
+Weak typing can sometimes lead to unexpected behavior, like type coercion.
+Python:
+Dynamically typed: Like JavaScript, Python allows variables to change type at runtime.
+Python is strongly typed, which means implicit conversions (type coercion) are less common, and trying to perform 
+operations on incompatible types (like adding a string and integer) will result in an error.
+Java:
+Statically typed: Variable types must be explicitly declared. Once a variable type is set, it cannot change.
+Strongly typed, meaning type mismatches (e.g., trying to assign a string to an integer) will cause compile-time errors.
+4. Use Cases
+JavaScript:
+Primarily used for web development, making web pages interactive (client-side) and handling server-side programming 
+(with Node.js).
+It is essential for building modern web applications (especially with frameworks like React, Angular, and Vue).
+Python:
+Python is used for data science, machine learning, automation, web development (using frameworks like Django and Flask), 
+and much more.
+It's widely appreciated for its ease of use and readability.
+Java:
+Java is heavily used in enterprise applications, Android development, and large-scale systems.
+It is also used in web development (using frameworks like Spring), desktop applications, and embedded systems.
+5. Concurrency/Parallelism
+JavaScript:
+
+Uses an event-driven, non-blocking I/O model. This is achieved through callbacks, Promises, and async/await 
+(introduced in ES6/ES7), which allows for asynchronous behavior.
+JavaScript has a single-threaded runtime in the browser, but it can handle multiple tasks simultaneously by leveraging 
+asynchronous features.
+Python:
+
+Python uses multi-threading and multiprocessing libraries, but due to its Global Interpreter Lock (GIL), 
+Python's standard threading model may not achieve true parallelism. However, it works well for I/O-bound tasks.
+Asynchronous programming is available through the asyncio library, and Python also offers concurrency with tools like 
+threading and multiprocessing.
+Java:
+
+Java has built-in support for multi-threading and parallelism through its Thread class and other concurrency utilities 
+(like ExecutorService).
+It is highly efficient at handling CPU-bound tasks using multiple threads.
+6. Performance
+JavaScript:
+JavaScript tends to be slower than compiled languages like Java, especially in CPU-heavy tasks, due to being interpreted 
+and executed in the browser.
+However, JIT (Just-In-Time) compilation in modern JavaScript engines (like V8) has improved performance significantly.
+Python:
+Python is typically slower than both JavaScript and Java for computation-heavy tasks due to its interpreted nature and 
+dynamic typing.
+However, libraries like NumPy allow Python to perform well in data-heavy applications by using compiled C extensions under 
+the hood.
+Java:
+Java is generally faster than JavaScript and Python because it is compiled into bytecode, which runs on the JVM.
+It also benefits from JIT compilation and optimizations from the JVM, making it suitable for high-performance applications.
+7. Development Speed
+JavaScript:
+JavaScript offers rapid development cycles for web development due to its direct execution in browsers and the 
+availability of modern libraries and frameworks.
+Python:
+Python is known for fast development due to its simple syntax, large standard library, and extensive third-party packages, 
+making it a favorite for startups, data science, and automation.
+Java:
+Java requires more boilerplate code, leading to longer development times compared to Python and JavaScript. However, 
+its strong typing and object-oriented nature offer robustness in large-scale projects.
+
+ Question 3: Discuss the use of <script> tag in HTML. How can you link an external JavaScript file to an HTML document?
+
+The <script> tag in HTML is used to include JavaScript code within an HTML document. JavaScript is a programming language 
+that allows you to create dynamic and interactive content on webpages. The <script> tag can either contain JavaScript 
+code directly within the HTML document or reference an external JavaScript file.
+
+1. Using <script> tag to include JavaScript code directly
+You can write JavaScript code directly inside the <script> tag, typically placed either in the <head> or <body> 
+section of the HTML document.
+
+Example:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Script Tag Example</title>
+    <script>
+        function greet() {
+            alert("Hello, World!");
+        }
+    </script>
+</head>
+<body>
+    <button onclick="greet()">Click Me!</button>
+</body>
+</html>
+In this example, the JavaScript function greet() is defined within the <script> tag in the <head> section. When the 
+user clicks the button, the JavaScript function is triggered, displaying an alert.
+
+2. Linking an external JavaScript file to an HTML document
+Instead of embedding JavaScript directly in the HTML document, it's a best practice to keep JavaScript code in a 
+separate .js file. This helps in maintaining and reusing code, especially for larger projects.
+
+To link an external JavaScript file, use the <script> tag with the src attribute pointing to the path of the JavaScript 
+file. The <script> tag should typically be placed just before the closing </body> tag to ensure that the HTML content is 
+loaded before the JavaScript is executed. This helps in reducing page load times.
+
+Example of linking an external JavaScript file:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>External Script Example</title>
+</head>
+<body>
+    <button onclick="greet()">Click Me!</button>
+
+    <!-- Linking an external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
+In this example, the JavaScript file script.js might contain the following code:
+
+javascript
+function greet() {
+    alert("Hello, World!");
+}
+Key Points:
+The <script> tag can either contain JavaScript code directly or refer to an external JavaScript file using the src 
+attribute.
+It's best practice to link external JavaScript files to keep code organized and reusable.
+The src attribute specifies the path to the JavaScript file. It can be a relative path (e.g., script.js) or an absolute 
+path (e.g., https://example.com/script.js).
+The <script> tag can be placed in the <head> or <body> sections, but it is commonly placed at the bottom of the <body> 
+section to avoid blocking the page rendering.
+
+Lab Assignment
+ Task: o Create a simple HTML page and add a <script> tag within the page.
+
+Sure! Below is an example of a simple HTML page that includes a <script> tag.
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple HTML Page with Script</title>
+</head>
+<body>
+    <h1>Welcome to My Web Page</h1>
+    <p>This is a simple HTML page with a <code>&lt;script&gt;</code> tag.</p>
+
+    <button onclick="displayMessage()">Click Me!</button>
+
+    <script>
+        // This is a simple JavaScript function
+        function displayMessage() {
+            alert("Hello, you clicked the button!");
+        }
+    </script>
+</body>
+</html>
+Explanation:
+The page includes a heading (<h1>) and a paragraph (<p>).
+There's a button that, when clicked, will trigger a JavaScript function.
+The JavaScript code inside the <script> tag is a simple function displayMessage(), which shows an alert with a message 
+when the button is clicked.
+
+o Write JavaScript code to display an alert box with the message "Welcome to JavaScript!" when the page loads.
+
+To display an alert box with the message "Welcome to JavaScript!" when the page loads, you can use the following 
+JavaScript code:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <script type="text/javascript">
+        // JavaScript code to display an alert when the page loads
+        window.onload = function() {
+            alert("Welcome to JavaScript!");
+        };
+    </script>
+</head>
+<body>
+    <h1>Page Loaded</h1>
+</body>
+</html>
+Explanation:
+The window.onload event is used to trigger the alert() function when the page has fully loaded.
+The alert("Welcome to JavaScript!") will show the message "Welcome to JavaScript!" in a pop-up alert box.
+
+2. Variables and Data Types
+Theory Assignment
+ Question 1: What are variables in JavaScript? How do you declare a variable using var, let, and const?
+
+In JavaScript, variables are used to store data values. A variable acts as a container for data, allowing you to refer to 
+that data by a name rather than the data itself. You can store different types of data in variables, such as numbers, 
+strings, arrays, objects, etc.
+
+JavaScript provides three primary ways to declare variables: var, let, and const. The difference between them lies in 
+their scope, hoisting behavior, and whether they can be reassigned.
+
+1. var
+Scope: var declares variables with function scope (or global scope if declared outside a function). This means the 
+variable is available throughout the function in which it is declared, even before the declaration line due to hoisting.
+Hoisting: Variables declared using var are hoisted to the top of their scope but are initialized with undefined until 
+the declaration line is reached.
+Reassignment: A variable declared with var can be reassigned.
+Example:
+
+javascript
+var name = "Alice";
+console.log(name); // Output: Alice
+
+name = "Bob"; // Reassigning the value
+console.log(name); // Output: Bob
+2. let
+Scope: let has block scope, meaning the variable is only accessible within the block (i.e., within a pair of curly 
+braces {}) in which it is declared.
+Hoisting: let variables are also hoisted, but unlike var, they are not initialized until the declaration is reached. 
+Accessing them before declaration results in a ReferenceError.
+Reassignment: A variable declared with let can be reassigned.
+Example:
+
+javascript
+let age = 25;
+console.log(age); // Output: 25
+
+age = 30; // Reassigning the value
+console.log(age); // Output: 30
+3. const
+Scope: const also has block scope, similar to let.
+Hoisting: const variables are hoisted, but they must be initialized at the time of declaration. You cannot declare a 
+const variable without assigning it a value.
+Reassignment: A variable declared with const cannot be reassigned after its initial assignment. However, if the value is 
+an object or array, you can modify the contents of the object/array, but you cannot change the reference (the variable 
+itself).
+Example:
+
+javascript
+const pi = 3.14;
+console.log(pi); // Output: 3.14
+
+// pi = 3.14159; // This would throw an error: TypeError: Assignment to constant variable.
+With an object or array:
+
+javascript
+const person = { name: "John", age: 30 };
+console.log(person.name); // Output: John
+
+person.age = 31; // Modifying the contents is allowed
+console.log(person.age); // Output: 31
+
+// person = {}; // This would throw an error: TypeError: Assignment to constant variable.
+
+ Question 2: Explain the different data types in JavaScript. Provide examples for each.
+
+JavaScript has several built-in data types that define the type of a value, how it behaves, and what operations can be 
+performed on it. The data types in JavaScript can be categorized into primitive types and non-primitive types (also 
+known as reference types). Here's an overview of each:
+
+1. Primitive Data Types
+Primitive types are immutable and are passed by value (a copy of the data is passed when assigned or passed as a 
+function argument). They include:
+
+a. String
+Represents a sequence of characters enclosed in either single quotes ('), double quotes ("), or backticks (`).
+Example:
+javascript
+let name = "John Doe";
+let greeting = 'Hello, world!';
+let phrase = `Welcome to JavaScript`;
+b. Number
+Represents numeric values, both integers and floating-point numbers. JavaScript only has one number type, which is 
+based on 64-bit floating-point format (IEEE 754).
+Example:
+javascript
+let age = 30;        // integer
+let price = 99.99;    // floating-point number
+let negativeNumber = -10;
+c. Boolean
+Represents a logical entity that can have one of two values: true or false.
+Example:
+javascript
+let isActive = true;
+let isOnline = false;
+d. Undefined
+Represents a variable that has been declared but not yet assigned a value. The default value for uninitialized variables 
+is undefined.
+Example:
+javascript
+let notAssigned;
+console.log(notAssigned);  // undefined
+e. Null
+Represents the intentional absence of any object value. It is often used to indicate that a variable should have no 
+value.
+Example:
+javascript
+let person = null;
+f. Symbol (introduced in ECMAScript 6)
+Represents a unique and immutable value, often used as object property keys to avoid name clashes.
+Example:
+javascript
+let symbol1 = Symbol('description');
+let symbol2 = Symbol('description');
+console.log(symbol1 === symbol2);  // false, because each symbol is unique
+g. BigInt (introduced in ECMAScript 2020)
+Represents large integers beyond the range of the Number type (larger than 2^53 - 1).
+Example:
+javascript
+let bigNumber = 1234567890123456789012345678901234567890n;
+2. Non-Primitive Data Types (Reference Types)
+Non-primitive data types are mutable and are passed by reference (a reference to the data is passed when assigned or 
+passed as a function argument). They include:
+
+a. Object
+Represents a collection of key-value pairs (properties and methods). Objects can be used to store multiple values as a 
+single entity.
+Example:
+javascript
+let person = {
+  name: "Alice",
+  age: 25,
+  greet: function() {
+    console.log("Hello, " + this.name);
+  }
+};
+person.greet();  // Hello, Alice
+b. Array
+Represents an ordered collection of values (which can be of any data type). Arrays are indexed by numbers.
+Example:
+javascript
+let fruits = ["apple", "banana", "cherry"];
+console.log(fruits[0]);  // "apple"
+c. Function
+Functions are first-class objects in JavaScript. They can be assigned to variables, passed as arguments, and returned 
+from other functions.
+Example:
+javascript
+function add(a, b) {
+  return a + b;
+}
+console.log(add(2, 3));  // 5
+Summary of JavaScript Data Types
+Data Type	Example	Category
+String	"Hello"	Primitive
+Number	100, 3.14	Primitive
+Boolean	true, false	Primitive
+Undefined	undefined	Primitive
+Null	null	Primitive
+Symbol	Symbol('id')	Primitive
+BigInt	123456789123456789n	Primitive
+Object	{ name: "Alice", age: 25 }	Non-Primitive
+Array	[1, 2, 3]	Non-Primitive
+Function	function() { ... }	
+
+ Question 3: What is the difference between undefined and null in JavaScript?
+
+In JavaScript, undefined and null are both special values, but they represent different concepts:
+
+1. undefined
+Type: undefined is a primitive value and is of type undefined.
+Meaning: It signifies that a variable has been declared, but it has not been assigned any value.
+Common Use Cases:
+A function does not return anything explicitly (i.e., returns undefined by default).
+A variable has been declared but not yet assigned a value.
+Accessing an object property that doesn't exist will return undefined.
+javascript
+let x;
+console.log(x); // undefined, because it has no value assigned
+2. null
+Type: null is also a primitive value but is of type object (this is actually a historical JavaScript bug, and it’s 
+considered a "quirk").
+Meaning: It explicitly represents the intentional absence of any object value or an empty object reference.
+Common Use Cases:
+You can assign null to a variable to explicitly indicate that it should not hold any value or reference.
+It’s commonly used to clear or reset variables, especially objects or arrays.
+javascript
+let y = null;
+console.log(y); // null, explicitly assigned no value
+Key Differences:
+Feature	undefined	null
+Type	undefined	object (quirk in JavaScript)
+Usage	Implicit absence of a value (uninitialized)	Explicit assignment of no value
+Default Value	Default value for uninitialized variables or function return	Manually assigned to a variable to 
+indicate no value
+Example	let a; console.log(a); // undefined	let b = null; console.log(b); // null
+Equality Comparison:
+Loose equality (==): null == undefined is true because both are considered "falsy" values representing the absence of a 
+value.
+Strict equality (===): null === undefined is false because their types are different (null is an object, and undefined is 
+of type undefined).
+Summary:
+undefined is the default value for uninitialized variables or missing function return values.
+null is used to explicitly represent an empty or non-existent object reference.
+
+Lab Assignment
+ Task: o Write a JavaScript program to declare variables for different data types (string, number, boolean, null, and 
+undefined).
+
+Here's a simple JavaScript program that declares variables of different data types including string, number, boolean, 
+null, and undefined:
+
+javascript
+// Declare a string variable
+let name = "John Doe";
+
+// Declare a number variable
+let age = 25;
+
+// Declare a boolean variable
+let isStudent = true;
+
+// Declare a null variable
+let address = null;
+
+// Declare an undefined variable
+let job;
+
+// Display the values of the variables
+console.log("Name:", name); // Output: John Doe
+console.log("Age:", age); // Output: 25
+console.log("Is Student:", isStudent); // Output: true
+console.log("Address:", address); // Output: null
+console.log("Job:", job); // Output: undefined
+Explanation:
+name is a string that holds a sequence of characters.
+age is a number that stores a numeric value.
+isStudent is a boolean representing a true/false value.
+address is assigned null, which represents an intentional absence of any value.
+job is declared but not assigned, making it undefined by default.
+
+o Log the values of the variables and their types to the console using console.log().
+
+To log the values of variables and their types to the console using console.log() in JavaScript, you can use the 
+following approach. This example assumes you have some variables declared in your code, and you want to log both their 
+values and their types.
+
+Here’s an example:
+
+javascript
+// Example variables
+let name = "John";               // String variable
+let age = 30;                    // Number variable
+let isStudent = true;            // Boolean variable
+let user = { name: "Alice", age: 25 }; // Object
+let hobbies = ["reading", "travelling"]; // Array
+
+// Log variables and their types
+console.log("name:", name, "Type:", typeof name);
+console.log("age:", age, "Type:", typeof age);
+console.log("isStudent:", isStudent, "Type:", typeof isStudent);
+console.log("user:", user, "Type:", typeof user);
+console.log("hobbies:", hobbies, "Type:", typeof hobbies);
+Output:
+vbnet
+name: John Type: string
+age: 30 Type: number
+isStudent: true Type: boolean
+user: { name: "Alice", age: 25 } Type: object
+hobbies: ["reading", "travelling"] Type: object
+Explanation:
+console.log(variableName, "Type:", typeof variableName) prints both the value and the type of the variable.
+The typeof operator is used to get the type of the variable.
+For arrays and objects, typeof will return "object". To specifically identify if a value is an array, you could 
+use Array.isArray(value).
+
+3. JavaScript Operators
+Theory Assignment
+ Question 1: What are the different types of operators in JavaScript? Explain with examples. 
+o Arithmetic operators 
+o Assignment operators 
+o Comparison operators 
+o Logical operators
+
+JavaScript provides several types of operators that allow you to perform operations on values. Below are the different 
+types of operators in JavaScript, with examples for each:
+
+1. Arithmetic Operators
+Arithmetic operators are used to perform mathematical operations on numbers.
+
++ (Addition): Adds two values.
+
+javascript
+let sum = 5 + 3;  // 8
+- (Subtraction): Subtracts one value from another.
+
+javascript
+let difference = 5 - 3;  // 2
+* (Multiplication): Multiplies two values.
+
+javascript
+let product = 5 * 3;  // 15
+/ (Division): Divides one value by another.
+
+javascript
+let quotient = 6 / 3;  // 2
+% (Modulo): Returns the remainder of division.
+
+javascript
+let remainder = 5 % 3;  // 2
+++ (Increment): Increases a variable's value by 1.
+
+javascript
+let a = 5;
+a++;  // 6
+-- (Decrement): Decreases a variable's value by 1.
+
+javascript
+let b = 5;
+b--;  // 4
+2. Assignment Operators
+Assignment operators are used to assign values to variables.
+
+= (Assignment): Assigns the value on the right to the variable on the left.
+
+javascript
+let x = 10;  // x is assigned the value 10
++= (Addition Assignment): Adds the right operand to the left operand and assigns the result to the left operand.
+
+javascript
+let y = 5;
+y += 3;  // y becomes 8
+-= (Subtraction Assignment): Subtracts the right operand from the left operand and assigns the result to the left operand.
+
+javascript
+let z = 5;
+z -= 3;  // z becomes 2
+*= (Multiplication Assignment): Multiplies the left operand by the right operand and assigns the result to the left 
+operand.
+
+javascript
+let a = 2;
+a *= 3;  // a becomes 6
+/= (Division Assignment): Divides the left operand by the right operand and assigns the result to the left operand.
+
+javascript
+let b = 6;
+b /= 3;  // b becomes 2
+%= (Modulo Assignment): Takes the modulus of the left operand by the right operand and assigns the result to the 
+left operand.
+
+javascript
+let c = 10;
+c %= 3;  // c becomes 1
+3. Comparison Operators
+Comparison operators are used to compare two values and return a boolean value (true or false).
+
+== (Equal to): Compares if two values are equal (ignores type).
+
+javascript
+console.log(5 == "5");  // true
+=== (Strict Equal to): Compares if two values are equal and of the same type.
+
+javascript
+console.log(5 === "5");  // false
+!= (Not equal to): Compares if two values are not equal (ignores type).
+
+javascript
+console.log(5 != 3);  // true
+!== (Strict Not equal to): Compares if two values are not equal and/or not of the same type.
+
+javascript
+console.log(5 !== "5");  // true
+> (Greater than): Checks if the left value is greater than the right.
+
+javascript
+console.log(5 > 3);  // true
+< (Less than): Checks if the left value is less than the right.
+
+javascript
+console.log(3 < 5);  // true
+>= (Greater than or equal to): Checks if the left value is greater than or equal to the right.
+
+javascript
+console.log(5 >= 5);  // true
+<= (Less than or equal to): Checks if the left value is less than or equal to the right.
+
+javascript
+console.log(3 <= 5);  // true
+4. Logical Operators
+Logical operators are used to perform logical operations on boolean values.
+
+&& (Logical AND): Returns true if both operands are true.
+
+javascript
+console.log(true && false);  // false
+|| (Logical OR): Returns true if at least one of the operands is true.
+
+javascript
+console.log(true || false);  // true
+! (Logical NOT): Reverses the logical state of its operand (i.e., converts true to false, and vice versa).
+
+javascript
+console.log(!true);  // false
+These are the main categories of operators in JavaScript. Each operator has a specific role in the language, 
+allowing you to perform a wide range of operations in your code.
+
+ Question 2: What is the difference between == and === in JavaScript?
+
+In JavaScript, == and === are both comparison operators, but they behave differently in how they compare values:
+
+== (Equality Operator, Loose Comparison):
+
+Compares two values for equality, but performs type coercion if the values are of different types.
+If the values are of different types, JavaScript tries to convert them into a common type before making the comparison.
+This can lead to unexpected results.
+Example:
+
+javascript
+5 == '5';  // true, because '5' is coerced into a number before comparison
+null == undefined;  // true, because null and undefined are considered equal in loose comparison
+0 == false;  // true, because 0 is coerced to false
+=== (Strict Equality Operator, Strict Comparison):
+
+Compares two values without type coercion. Both the values and their types must be the same for the comparison to 
+return true.
+If the values are of different types, the comparison will return false without attempting any conversion.
+Example:
+
+javascript
+5 === '5';  // false, because one is a number and the other is a string
+null === undefined;  // false, because null and undefined are different types
+0 === false;  // false, because one is a number and the other is a boolean
+Key Differences:
+== allows type coercion and compares values after converting them to a common type.
+=== compares both value and type, requiring them to be exactly the same.
+For reliability and predictability in your code, it's generally recommended to use === (strict equality) to avoid 
+unintended behavior caused by type coercion.
+
+Lab Assignment
+ Task: o Create a JavaScript program to perform the following: 
+ Add, subtract, multiply, and divide two numbers using arithmetic operators. 
+ Use comparison operators to check if two numbers are equal and if one number is greater than the other. 
+ Use logical operators to check if both conditions (e.g., a > 10 and b < 5) are true.
+
+Here's a JavaScript program that demonstrates how to perform the requested tasks:
+
+javascript
+// Define two numbers for performing arithmetic operations
+let a = 10;
+let b = 5;
+
+// Perform arithmetic operations
+let sum = a + b;             // Addition
+let difference = a - b;      // Subtraction
+let product = a * b;         // Multiplication
+let quotient = a / b;        // Division
+
+// Output the results of arithmetic operations
+console.log("Addition (a + b): " + sum);
+console.log("Subtraction (a - b): " + difference);
+console.log("Multiplication (a * b): " + product);
+console.log("Division (a / b): " + quotient);
+
+// Use comparison operators to check if the numbers are equal or if one is greater than the other
+let areEqual = a === b;       // Check if a is equal to b
+let isAGreaterThanB = a > b;  // Check if a is greater than b
+
+// Output the results of comparison operations
+console.log("Are a and b equal? " + areEqual);
+console.log("Is a greater than b? " + isAGreaterThanB);
+
+// Use logical operators to check if both conditions are true (example: a > 10 and b < 5)
+let isConditionTrue = (a > 10) && (b < 5);
+
+// Output the result of the logical operation
+console.log("Is (a > 10 and b < 5) true? " + isConditionTrue);
+Explanation:
+Arithmetic Operations:
+
+a + b adds the two numbers.
+a - b subtracts b from a.
+a * b multiplies a by b.
+a / b divides a by b.
+Comparison Operators:
+
+a === b checks if a and b are equal.
+a > b checks if a is greater than b.
+Logical Operators:
+
+(a > 10) && (b < 5) checks if both conditions are true: a is greater than 10 and b is less than 5.
+Sample Output:
+bash
+Addition (a + b): 15
+Subtraction (a - b): 5
+Multiplication (a * b): 50
+Division (a / b): 2
+Are a and b equal? false
+Is a greater than b? true
+Is (a > 10 and b < 5) true? false
+This code demonstrates the use of arithmetic, comparison, and logical operators in JavaScript. You can adjust the values 
+of a and b as needed.
+
+4. Control Flow (If-Else, Switch)
+Theory Assignment
+ Question 1: What is control flow in JavaScript? Explain how if-else statements work with an example.
+
+Control Flow in JavaScript:
+
+Control flow in JavaScript refers to the order in which individual statements, instructions, and functions are executed 
+or evaluated in a script. By default, JavaScript executes the code line by line, but control flow structures like loops, 
+conditionals, and functions allow you to control the order based on certain conditions or repetitions.
+
+If-Else Statements:
+
+The if-else statement is a fundamental control flow structure used to make decisions in JavaScript. It allows you 
+to execute certain blocks of code based on a specified condition. If the condition evaluates to true, the code inside 
+the if block is executed. If the condition evaluates to false, the code inside the else block is executed (if provided).
+
+Syntax:
+javascript
+if (condition) {
+  // Code to run if the condition is true
+} else {
+  // Code to run if the condition is false
+}
+Example of if-else Statement:
+javascript
+let age = 20;
+
+if (age >= 18) {
+  console.log("You are an adult.");
+} else {
+  console.log("You are a minor.");
+}
+Explanation:
+The variable age is set to 20.
+The if condition checks if age is greater than or equal to 18.
+Since 20 >= 18 is true, the block of code inside the if statement executes, printing "You are an adult.".
+If the value of age had been less than 18, the code inside the else block would have executed instead, printing 
+"You are a minor.".
+Example with else-if:
+You can also chain multiple conditions using else-if.
+
+javascript
+let score = 85;
+
+if (score >= 90) {
+  console.log("You got an A!");
+} else if (score >= 80) {
+  console.log("You got a B!");
+} else if (score >= 70) {
+  console.log("You got a C!");
+} else {
+  console.log("You need to improve.");
+}
+Explanation:
+If the score is 85, it will first check if score >= 90 — this is false, so it moves to the next condition.
+The next else if checks if score >= 80, which is true, so "You got a B!" is printed.
+If none of the conditions were true, the code inside the final else block would run.
+In summary, if-else statements in JavaScript help to control the flow of code by allowing different blocks of code to 
+execute based on conditions.
+
+ Question 2: Describe how switch statements work in JavaScript. When should you use a switch statement instead of if-else?
+
+In JavaScript, a switch statement is used to evaluate an expression against multiple possible values (called cases) and 
+execute the corresponding block of code for the first match. The structure is more concise than using multiple if-else 
+statements when you're comparing a single value to several options.
+
+Syntax of a switch statement:
+javascript
+switch (expression) {
+    case value1:
+        // Code to execute if expression === value1
+        break;
+    case value2:
+        // Code to execute if expression === value2
+        break;
+    case value3:
+        // Code to execute if expression === value3
+        break;
+    default:
+        // Code to execute if no cases match
+        break;
+}
+expression: This is the value or variable being evaluated.
+case value: These are the possible values that the expression might match. If a match is found, the corresponding 
+block of code is executed.
+break: This is used to exit the switch statement. Without it, execution will "fall through" to the next case, even if 
+it doesn't match.
+default: This is optional and contains code that executes if no case matches the expression.
+Example:
+javascript
+let fruit = "apple";
+
+switch (fruit) {
+    case "apple":
+        console.log("This is an apple.");
+        break;
+    case "banana":
+        console.log("This is a banana.");
+        break;
+    case "cherry":
+        console.log("This is a cherry.");
+        break;
+    default:
+        console.log("Unknown fruit.");
+}
+Output:
+
+csharp
+This is an apple.
+How Switch Works:
+The expression (fruit in this example) is evaluated.
+Each case checks if its value matches the expression.
+When a match is found (in this case, "apple"), the corresponding block of code is executed.
+If no cases match, the default block is executed (if it exists).
+When to Use switch vs if-else:
+Use switch when:
+
+Multiple discrete values: You need to check a single expression against many different possible values 
+(e.g., checking a day of the week, a menu option, etc.).
+Code readability: It can make the code more readable when dealing with multiple comparisons of a single expression.
+Performance: For a large number of conditions, a switch can sometimes be more efficient than multiple if-else blocks 
+(though this is generally more of a concern with long chains of conditions).
+Use if-else when:
+
+Complex conditions: If you are comparing ranges, conditions that involve logical operators (&&, ||), or multiple 
+expressions, if-else is better.
+Non-exact matches: If you need to compare values that are not direct equality (such as checking if a number is 
+greater than or less than a certain value).
+Multiple expressions: If the decision depends on more than just one variable or expression, if-else is more flexible.
+Example Comparison:
+Switch example (valid only for discrete values):
+
+javascript
+let grade = 85;
+
+switch (true) {
+    case (grade >= 90):
+        console.log("A");
+        break;
+    case (grade >= 80):
+        console.log("B");
+        break;
+    case (grade >= 70):
+        console.log("C");
+        break;
+    default:
+        console.log("F");
+}
+If-else example (can handle complex conditions):
+
+javascript
+let grade = 85;
+
+if (grade >= 90) {
+    console.log("A");
+} else if (grade >= 80) {
+    console.log("B");
+} else if (grade >= 70) {
+    console.log("C");
+} else {
+    console.log("F");
+}
+In summary, switch statements are a great tool for handling multiple discrete options based on a single value, 
+while if-else provides more flexibility for complex or compound conditions.
+
+Lab Assignment
+ Task 1: o Write a JavaScript program to check if a number is positive, negative, or zero using an if-else statement.
+
+Here is a JavaScript program that checks if a number is positive, negative, or zero using an if-else statement:
+
+javascript
+// JavaScript program to check if a number is positive, negative, or zero
+
+// Function to check the number
+function checkNumber(number) {
+    if (number > 0) {
+        console.log("The number is positive.");
+    } else if (number < 0) {
+        console.log("The number is negative.");
+    } else {
+        console.log("The number is zero.");
+    }
+}
+
+// Example usage:
+checkNumber(10);   // The number is positive.
+checkNumber(-5);   // The number is negative.
+checkNumber(0);    // The number is zero.
+How it works:
+The checkNumber function takes a number as an argument.
+The program first checks if the number is greater than 0, which would mean it's positive.
+If it's not positive, it checks if the number is less than 0 (negative).
+If neither condition is true, it assumes the number is 0.
+
+ Task 2: o Create a JavaScript program using a switch statement to display the day of the week based on the user input 
+(e.g., 1 for Monday, 2 for Tuesday, etc.).
+
+You can create a JavaScript program using a switch statement to display the day of the week based on a user input. 
+Here's a simple example of how to implement it:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day of the Week</title>
+    <script>
+        function getDayOfWeek() {
+            // Get the user input (day number)
+            let dayNumber = prompt("Enter a number (1-7) to get the corresponding day of the week:");
+
+            // Convert the input to an integer
+            dayNumber = parseInt(dayNumber);
+
+            // Use a switch statement to display the corresponding day
+            let day;
+            switch (dayNumber) {
+                case 1:
+                    day = "Monday";
+                    break;
+                case 2:
+                    day = "Tuesday";
+                    break;
+                case 3:
+                    day = "Wednesday";
+                    break;
+                case 4:
+                    day = "Thursday";
+                    break;
+                case 5:
+                    day = "Friday";
+                    break;
+                case 6:
+                    day = "Saturday";
+                    break;
+                case 7:
+                    day = "Sunday";
+                    break;
+                default:
+                    day = "Invalid input! Please enter a number between 1 and 7.";
+            }
+
+            // Display the result
+            alert("The day of the week is: " + day);
+        }
+    </script>
+</head>
+<body>
+
+    <h2>Enter a number (1-7) to see the corresponding day of the week:</h2>
+    <button onclick="getDayOfWeek()">Click to Enter</button>
+
+</body>
+</html>
+How it works:
+The user is prompted to enter a number between 1 and 7 (representing the days of the week).
+A switch statement evaluates the input:
+If the number is 1, it returns "Monday".
+If the number is 2, it returns "Tuesday", and so on.
+If the input is anything other than 1 to 7, it returns "Invalid input".
+The result is displayed in an alert box.
+
+5. Loops (For, While, Do-While)
+Theory Assignment
+ Question 1: Explain the different types of loops in JavaScript (for, while, do-while). Provide a basic example of each.
+
+In JavaScript, loops are used to repeat a block of code multiple times until a certain condition is met. The three main 
+types of loops are for, while, and do-while. Here's an explanation of each, along with a basic example:
+
+1. for loop
+The for loop is the most commonly used loop in JavaScript. It allows you to specify the initialization, condition, and 
+increment/decrement in a single line.
+
+Syntax:
+javascript
+for (initialization; condition; increment/decrement) {
+  // code to be executed
+}
+Initialization: Used to define and initialize the loop variable (executed once before the loop starts).
+Condition: Specifies the condition that must be true for the loop to continue. If the condition is false, the loop will 
+stop.
+Increment/Decrement: Updates the loop variable (can be incremented or decremented after each iteration).
+Example:
+javascript
+// Print numbers from 1 to 5
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+2. while loop
+The while loop is used when you want to repeat a block of code as long as a condition is true. The condition is checked 
+before the execution of each iteration.
+
+Syntax:
+javascript
+while (condition) {
+  // code to be executed
+}
+Condition: The loop will continue as long as this condition evaluates to true.
+Example:
+javascript
+// Print numbers from 1 to 5
+let i = 1;
+while (i <= 5) {
+  console.log(i);
+  i++; // Increment i to avoid an infinite loop
+
+In JavaScript, loops are used to repeat a block of code multiple times until a certain condition is met. The three main types of loops are for, while, and do-while. Here's an explanation of each, along with a basic example:
+
+ Question 2: What is the difference between a while loop and a do-while loop?
+
+The primary difference between a while loop and a do-while loop lies in when the condition is checked and whether 
+the loop body will execute at least once.
+
+1. While Loop:
+The condition is checked before the loop body is executed.
+If the condition is false at the beginning, the loop body will not execute at all.
+Syntax:
+c
+while (condition) {
+    // loop body
+}
+2. Do-While Loop:
+The condition is checked after the loop body has executed.
+The loop body will always execute at least once, even if the condition is false.
+Syntax:
+c
+do {
+    // loop body
+} while (condition);
+Key Differences:
+Aspect	While Loop	Do-While Loop
+Condition Check	Before executing the loop body	After executing the loop body
+Minimum Iterations	0 iterations (if the condition is false)	At least 1 iteration (even if the condition is false)
+Use Case	Used when you want to check the condition before running the loop.	Used when you need to ensure the loop runs at least once, regardless of the condition.
+Example:
+While Loop:
+c
+int i = 0;
+while (i < 5) {
+    printf("%d\n", i);
+    i++;
+}
+// This will print 0, 1, 2, 3, 4
+If i starts at 5, the loop won't run.
+
+Do-While Loop:
+c
+int i = 0;
+do {
+    printf("%d\n", i);
+    i++;
+} while (i < 5);
+// This will print 0, 1, 2, 3, 4
+Even if i starts at 5, the loop will still execute once.
+
+In summary:
+
+While loop: Condition is checked before execution, may not execute at all.
+Do-while loop: Condition is checked after execution, will always execute at least once.
+
+Lab Assignment
+ Task 1: o Write a JavaScript program using a for loop to print numbers from 1 to 10.
+
+Here's a simple JavaScript program using a for loop to print numbers from 1 to 10:
+
+javascript
+for (let i = 1; i <= 10; i++) {
+    console.log(i);
+}
+Explanation:
+let i = 1: Initializes the loop counter variable i to 1.
+i <= 10: The loop will continue as long as i is less than or equal to 10.
+i++: After each iteration, i is incremented by 1.
+console.log(i): Prints the current value of i to the console.
+This program will output the numbers from 1 to 10, each on a new line.
+
+ Task 2:
+o Create a JavaScript program that uses a while loop to sum all even numbers between 1 and 20.
+
+Here is a JavaScript program that uses a while loop to sum all even numbers between 1 and 20:
+
+javascript
+let sum = 0;  // Initialize sum to 0
+let number = 2;  // Start with the first even number (2)
+
+while (number <= 20) {
+    sum += number;  // Add the current even number to the sum
+    number += 2;  // Move to the next even number
+}
+
+console.log("The sum of all even numbers between 1 and 20 is:", sum);
+Explanation:
+We initialize sum to 0 and start number at 2 because the first even number between 1 and 20 is 2.
+The while loop runs as long as number is less than or equal to 20.
+In each iteration, we add the current even number to sum, then increment number by 2 to get to the next even number.
+Finally, we print the sum.
+When you run this program, it will output:
+
+python
+The sum of all even numbers between 1 and 20 is: 110
+
+ Task 3: o Write a do-while loop that continues to ask the user for input until they enter a number greater than 10.
+
+Here is an example of a do-while loop in Java that continues to ask the user for input until they enter a number greater 
+than 10:
+
+java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int number;
+
+        // Do-while loop to ask the user for input until a number greater than 10 is entered
+        do {
+            System.out.print("Enter a number greater than 10: ");
+            number = scanner.nextInt();
+        } while (number <= 10);
+
+        System.out.println("You entered a number greater than 10: " + number);
+    }
+}
+Explanation:
+Scanner is used to take input from the user.
+The do block asks the user to enter a number.
+The while condition checks if the number entered is less than or equal to 10. If true, it will repeat the loop.
+The loop stops once the user enters a number greater than 10.
+This approach ensures that the user is prompted repeatedly until they provide a valid input (greater than 10).
+
+6. Functions
+Theory Assignment
+ Question 1: What are functions in JavaScript? Explain the syntax for declaring and calling a function.
+
+In JavaScript, a function is a block of reusable code designed to perform a particular task. Functions allow you to 
+encapsulate logic so that it can be invoked multiple times, which helps in making the code more modular and easier to 
+maintain.
+
+Functions in JavaScript:
+A function in JavaScript typically performs a task, returns a value, or both. Functions can accept parameters (inputs) 
+and return a result (output).
+
+Syntax for Declaring a Function:
+There are multiple ways to declare a function in JavaScript. Below are the most common methods:
+
+1. Function Declaration (Function Statement)
+A function is declared using the function keyword, followed by the function name, parameters (optional), and the block of 
+code enclosed in curly braces {}.
+
+javascript
+function functionName(parameter1, parameter2) {
+  // Code to execute
+  return result; // Optional return statement
+}
+functionName: The name you give to the function.
+parameter1, parameter2: Optional inputs that the function can use.
+The function body is enclosed in {} and contains the code to be executed.
+Example:
+
+javascript
+function add(a, b) {
+  return a + b;
+}
+This function add takes two parameters (a and b), adds them, and returns the result.
+
+2. Function Expression
+A function can also be defined as an anonymous function assigned to a variable. This is called a function expression.
+
+javascript
+const functionName = function(parameter1, parameter2) {
+  // Code to execute
+  return result; // Optional return statement
+};
+Example:
+
+javascript
+const multiply = function(x, y) {
+  return x * y;
+};
+Here, multiply is a function expression that multiplies two numbers x and y.
+
+3. Arrow Function (ES6)
+Introduced in ECMAScript 6 (ES6), arrow functions provide a shorter syntax for writing functions.
+
+javascript
+const functionName = (parameter1, parameter2) => {
+  // Code to execute
+  return result; // Optional return statement
+};
+Example:
+
+javascript
+const subtract = (a, b) => a - b;
+This is a shorthand for the function that subtracts b from a.
+
+Calling a Function:
+To execute a function, you call it by using its name followed by parentheses. If the function accepts parameters, 
+you pass them inside the parentheses.
+
+Syntax for calling a function:
+
+javascript
+functionName(parameter1, parameter2);
+Example:
+
+javascript
+let result = add(5, 3); // Calls the 'add' function with arguments 5 and 3
+console.log(result); // Outputs 8
+For the function multiply, you would call it as:
+
+javascript
+let product = multiply(4, 2); // Calls the 'multiply' function with arguments 4 and 2
+console.log(product); // Outputs 8
+Summary:
+Function Declaration: Use function keyword to define a function.
+Function Expression: Assign a function to a variable.
+Arrow Functions: A more concise syntax for writing functions (ES6).
+Calling a Function: Use the function name followed by parentheses and pass required parameters.
+By using functions, you can make your JavaScript code more efficient, organized, and reusable.
+
+ Question 2: What is the difference between a function declaration and a function expression?
+
+The difference between a function declaration and a function expression in JavaScript lies in their syntax, how they are 
+defined, and when they are available for use. Here are the key differences:
+
+1. Syntax
+Function Declaration: A function declaration defines a function with the function keyword, followed by the function 
+name and its parameters.
+
+javascript
+function myFunction() {
+  console.log("Hello, world!");
+}
+Function Expression: A function expression defines a function as part of an expression, often assigned to a variable. 
+It can be anonymous or named.
+
+javascript
+const myFunction = function() {
+  console.log("Hello, world!");
+};
+2. Hoisting
+Function Declaration: Function declarations are hoisted, meaning they are available throughout the scope (even before 
+the declaration in the code).
+
+javascript
+myFunction(); // Works because function declarations are hoisted
+
+function myFunction() {
+  console.log("Hello, world!");
+}
+Function Expression: Function expressions are not hoisted in the same way. The function is only available after the 
+expression is evaluated (i.e., after the line where the function is assigned to the variable).
+
+javascript
+myFunction(); // Error: myFunction is not a function yet
+
+const myFunction = function() {
+  console.log("Hello, world!");
+};
+3. Naming
+Function Declaration: The function has a name (e.g., myFunction), and it can be called by its name directly in the 
+scope where it is defined.
+
+Function Expression: The function can be anonymous (without a name) or named. For example:
+
+Anonymous function expression:
+
+javascript
+const myFunction = function() {
+  console.log("Hello, world!");
+};
+Named function expression:
+
+javascript
+const myFunction = function greet() {
+  console.log("Hello, world!");
+};
+4. Usage Context
+Function Declaration: Typically used when you want to define a function that can be called anywhere in the scope.
+
+Function Expression: Typically used when the function is meant to be passed as a value or used within a certain context 
+(like an event handler, or a callback function).
+
+5. Example of Function Expression with Arrow Function
+Arrow functions are a type of function expression:
+
+javascript
+const myFunction = () => {
+  console.log("Hello, world!");
+};
+Summary of Key Differences:
+Aspect	Function Declaration	Function Expression
+Syntax	function name() {}	const name = function() {} or arrow function
+Hoisting	Hoisted and available throughout the scope	Not hoisted (only available after assignment)
+Naming	Has a name	Can be anonymous or named
+Usage	Defined for general use across scope	Typically used for callbacks or anonymous functions
+In short, function declarations are available throughout their scope due to hoisting, while function expressions are only available after they are assigned.
+
+ Question 3: Discuss the concept of parameters and return values in functions.
+
+In programming, functions are blocks of reusable code that perform a specific task. Two important aspects of functions 
+are parameters and return values. Let’s break them down:
+
+Parameters:
+Definition: Parameters are the inputs to a function. When you define a function, you can specify parameters inside the 
+parentheses in the function signature.
+Purpose: They allow you to pass data or values into the function so that the function can use them to perform its task. 
+This makes the function more flexible and reusable because you can call the function with different arguments.
+Example:
+python
+def add_numbers(a, b):
+    return a + b
+In this example, a and b are parameters. When you call add_numbers(3, 5), the values 3 and 5 are passed to the parameters 
+a and b, respectively.
+
+Parameters vs Arguments: Parameters are the names used when defining the function, while arguments are the actual values 
+you pass to the function when calling it.
+python
+add_numbers(3, 5)  # 3 and 5 are the arguments passed to the parameters 'a' and 'b'
+Return Values:
+Definition: A return value is the result or output of a function. It is the value the function produces and sends back to 
+the place where the function was called.
+Purpose: Return values allow you to capture the outcome of a function's task so you can use it later. Without a return 
+value, a function can perform actions but won’t provide any output to the caller.
+Example:
+python
+def multiply(a, b):
+    return a * b
+In this example, return a * b sends the product of a and b back to the caller. When you call multiply(4, 5), it returns 20.
+
+Void Functions: In some languages (like Python), if you don’t include a return statement, the function will return None 
+by default. Such functions are typically used for actions rather than for producing results.
+Example:
+python
+def print_message(message):
+    print(message)
+    # No return statement, so it implicitly returns None
+Returning Multiple Values: A function can also return multiple values using data structures like tuples or lists.
+python
+def divide(a, b):
+    quotient = a // b
+    remainder = a % b
+    return quotient, remainder  # Returns a tuple (quotient, remainder)
+When calling divide(9, 4), it returns (2, 1) as a tuple containing both the quotient and the remainder.
+
+Summary:
+Parameters are placeholders in the function definition that accept values when the function is called.
+Return values are the results or outputs the function sends back to the caller after executing its task.
+These two concepts are essential for writing flexible, reusable, and functional code. They allow functions to interact 
+with other parts of a program, process data, and communicate results effectively.
+
+Lab Assignment
+ Task 1: o Write a function greetUser that accepts a user’s name as a parameter and displays a greeting message 
+(e.g., "Hello, John!").
+
+Here's a simple Python function greetUser that accepts a user's name as a parameter and displays a greeting message:
+
+python
+def greetUser(name):
+    print(f"Hello, {name}!")
+
+# Example usage
+greetUser("John")
+When you run this, it will output:
+
+Hello, John!
+This function uses an f-string to format the greeting message, inserting the user's name into the string. You can call 
+this function with any name as an argument to generate a personalized greeting.
+
+ Task 2: o Create a JavaScript function calculateSum that takes two numbers as parameters, adds them, and returns the 
+result.
+
+Here's a simple JavaScript function called calculateSum that takes two numbers as parameters, adds them, and returns 
+the result:
+
+javascript
+function calculateSum(num1, num2) {
+  return num1 + num2;
+}
+Usage example:
+javascript
+let result = calculateSum(5, 3);
+console.log(result); // Outputs: 8
+In this function:
+
+num1 and num2 are the parameters passed into the function.
+The function adds them together and returns the sum.
+
+7. Arrays
+Theory Assignment
+ Question 1: What is an array in JavaScript? How do you declare and initialize an array?
+
+What is an Array in JavaScript?
+An array in JavaScript is a special variable that can hold multiple values at once. Unlike a regular variable that 
+holds a single value, an array can store a collection of values, which can be of different data types (e.g., numbers, 
+strings, objects). Arrays are used to store ordered lists of data.
+
+How to Declare and Initialize an Array in JavaScript?
+There are two primary ways to declare and initialize an array in JavaScript:
+
+1. Using Array Literal (Most Common Method)
+The array literal syntax is the most commonly used method to create an array. You define the array by enclosing the 
+values inside square brackets ([]).
+
+Example:
+javascript
+// Declaring and initializing an array
+let fruits = ['apple', 'banana', 'cherry'];
+console.log(fruits);  // Output: ["apple", "banana", "cherry"]
+Here, the array fruits contains three string elements: 'apple', 'banana', and 'cherry'.
+
+2. Using the new Array() Constructor
+You can also create an array using the Array constructor, but this is less common than the array literal.
+
+Example:
+javascript
+// Declaring and initializing an array using the Array constructor
+let numbers = new Array(1, 2, 3, 4, 5);
+console.log(numbers);  // Output: [1, 2, 3, 4, 5]
+Alternatively, you can initialize an empty array or an array with a specified length.
+
+Example (Empty Array):
+javascript
+let emptyArray = new Array();  // Empty array
+console.log(emptyArray);  // Output: []
+Example (Array with Specific Length):
+javascript
+let fixedSizeArray = new Array(5);  // Array with 5 empty slots
+console.log(fixedSizeArray);  // Output: [ <5 empty slots> ]
+Summary
+Array Literal Syntax: let arrayName = [element1, element2, ...]; is the most common and preferred way to declare and 
+initialize an array.
+Array Constructor: let arrayName = new Array(element1, element2, ...); is an alternative way, but less common.
+Arrays are dynamic, meaning you can add, remove, or modify elements after declaring them.
+
+ Question 2: Explain the methods push(), pop(), shift(), and unshift() used in arrays.
+
+In JavaScript, arrays have several methods that allow you to manipulate elements by adding or removing them. 
+Here’s an explanation of the methods push(), pop(), shift(), and unshift():
+
+1. push()
+Purpose: Adds one or more elements to the end of an array.
+Return value: The new length of the array after the element(s) are added.
+Example:
+javascript
+let arr = [1, 2, 3];
+arr.push(4);
+console.log(arr); // [1, 2, 3, 4]
+2. pop()
+Purpose: Removes the last element from an array.
+Return value: The element that was removed from the array.
+Example:
+javascript
+let arr = [1, 2, 3];
+let removedElement = arr.pop();
+console.log(arr); // [1, 2]
+console.log(removedElement); // 3
+3. shift()
+Purpose: Removes the first element from an array.
+Return value: The element that was removed.
+Example:
+javascript
+let arr = [1, 2, 3];
+let removedElement = arr.shift();
+console.log(arr); // [2, 3]
+console.log(removedElement); // 1
+4. unshift()
+Purpose: Adds one or more elements to the beginning of an array.
+Return value: The new length of the array after the element(s) are added.
+Example:
+javascript
+let arr = [1, 2, 3];
+arr.unshift(0);
+console.log(arr); // [0, 1, 2, 3]
+Key Differences:
+push() and pop() modify the end of the array.
+shift() and unshift() modify the beginning of the array.
+These methods are useful for working with dynamic lists or queues in JavaScript.
+
+Lab Assignment
+ Task 1: o Declare an array of fruits (["apple", "banana", "cherry"]). 
+Use JavaScript to: 
+ Add a fruit to the end of the array. 
+ Remove the first fruit from the array. 
+ Log the modified array to the console.
+
+Here's the JavaScript code that declares an array of fruits, adds a fruit to the end of the array, removes the first 
+fruit, and logs the modified array to the console:
+
+javascript
+// Declare an array of fruits
+let fruits = ["apple", "banana", "cherry"];
+
+// Add a fruit to the end of the array
+fruits.push("orange");
+
+// Remove the first fruit from the array
+fruits.shift();
+
+// Log the modified array to the console
+console.log(fruits);
+Explanation:
+push("orange"): Adds "orange" to the end of the fruits array.
+shift(): Removes the first item (which is "apple") from the fruits array.
+console.log(fruits): Logs the modified array to the console.
+After running this code, the output in the console will be:
+
+css
+[ 'banana', 'cherry', 'orange' ]
+
+ Task 2: o Write a program to find the sum of all elements in an array of numbers.
+
+Here is a Python program that finds the sum of all elements in an array (list) of numbers:
+
+python
+def sum_of_elements(arr):
+    total = 0
+    for num in arr:
+        total += num
+    return total
+
+# Example usage:
+numbers = [1, 2, 3, 4, 5]
+result = sum_of_elements(numbers)
+print("The sum of all elements in the array is:", result)
+Explanation:
+The sum_of_elements function takes a list arr as input.
+It initializes a variable total to 0.
+Then, it iterates through each element (num) in the list and adds it to the total.
+Finally, it returns the total, which is the sum of all elements in the list.
+You can replace the numbers list with any other list of numbers you want to sum.
+
+8. Objects
+Theory Assignment
+ Question 1: What is an object in JavaScript? How are objects different from arrays?
+
+What is an object in JavaScript?
+An object in JavaScript is a collection of key-value pairs where each key (also called a property) is a string 
+(or Symbol), and the value can be any valid JavaScript value, such as a string, number, array, function, or even another 
+object. Objects are used to store and organize data in a structured way.
+
+Here’s an example of an object in JavaScript:
+
+javascript
+let person = {
+  name: "John",
+  age: 30,
+  isEmployed: true
+};
+In the above example:
+
+name, age, and isEmployed are keys (or properties).
+"John", 30, and true are the corresponding values.
+Key Features of Objects:
+Key-Value Structure: The data is stored as a pair of keys and values.
+Unordered: Objects do not maintain any order of their keys (except for the order of integer keys).
+Flexible Values: The values can be of any data type, including arrays, other objects, and functions.
+How are Objects Different from Arrays?
+Objects and arrays are both used to store collections of data, but they have key differences:
+
+Structure:
+
+Object: Stores data in key-value pairs. Keys are usually strings (or Symbols), and values can be any type.
+Array: Stores data in an ordered list where each element has a numerical index, starting from 0.
+Example:
+
+javascript
+// Object
+let car = {
+  brand: "Toyota",
+  model: "Corolla",
+  year: 2020
+};
+
+// Array
+let colors = ["red", "blue", "green"];
+Order:
+
+Object: Does not guarantee the order of the properties (though modern JavaScript engines do maintain order for string 
+keys in certain cases).
+Array: The order of elements in an array is guaranteed by the index.
+Indexing:
+
+Object: Uses strings (or Symbols) as keys.
+Array: Uses numerical indices, starting from 0.
+Use Cases:
+
+Object: Best used for situations where the data has properties (attributes) that need to be described by names. 
+It is more like a "record" or "dictionary."
+Array: Best used for ordered collections, such as lists or sequences of items.
+Methods and Properties:
+
+Object: Has methods for manipulating key-value pairs, such as Object.keys(), Object.values(), and Object.entries().
+Array: Has methods for manipulating arrays, such as .push(), .pop(), .shift(), .unshift(), .map(), and .forEach().
+Summary:
+Objects store data as key-value pairs, and the keys are strings or Symbols.
+Arrays store data as a list of values, with each value accessible by an index.
+Objects are unordered collections, whereas arrays maintain a specific order based on indices.
+Example Comparison:
+javascript
+// Object
+let car = {
+  brand: "Toyota",
+  model: "Corolla",
+  year: 2020
+};
+
+// Array
+let carArray = ["Toyota", "Corolla", 2020];
+
+// Accessing object properties
+console.log(car.brand); // "Toyota"
+console.log(car["model"]); // "Corolla"
+
+// Accessing array elements
+console.log(carArray[0]); // "Toyota"
+console.log(carArray[1]); // "Corolla"
+In conclusion, while objects are great for representing real-world entities with named properties, arrays are useful 
+when you need to store data in a sequence or list.
+
+ Question 2: Explain how to access and update object properties using dot notation and bracket notation.
+
+In JavaScript, there are two primary ways to access and update the properties of an object: dot notation and bracket 
+notation.
+
+1. Dot Notation:
+Dot notation is the most common and straightforward way to access or modify an object's properties. You use a dot (.) 
+followed by the property name.
+
+Accessing Properties:
+javascript
+const person = {
+  name: "Alice",
+  age: 30,
+  city: "New York"
+};
+
+console.log(person.name); // "Alice"
+console.log(person.age);  // 30
+Updating Properties:
+You can also update the values of properties using dot notation:
+
+javascript
+person.age = 31; // Updates the age to 31
+console.log(person.age);  // 31
+2. Bracket Notation:
+Bracket notation is used when the property name is dynamic (stored in a variable), or if the property name contains 
+spaces or special characters.
+
+Accessing Properties:
+javascript
+Copy code
+const person = {
+  name: "Alice",
+  age: 30,
+  city: "New York"
+};
+
+console.log(person["name"]); // "Alice"
+console.log(person["age"]);  // 30
+You can also use a variable as the property name in bracket notation:
+
+javascript
+let property = "city";
+console.log(person[property]);  // "New York"
+Updating Properties:
+You can update object properties using bracket notation, especially when the property name is dynamic or includes 
+special characters.
+
+javascript
+person["age"] = 32;  // Updates the age to 32
+console.log(person["age"]);  // 32
+Special Cases for Bracket Notation:
+If the property name contains spaces or special characters, you must use bracket notation:
+
+javascript
+const person = {
+  "first name": "Alice",
+  "last name": "Smith"
+};
+
+console.log(person["first name"]);  // "Alice"
+Also useful if the property name is not a valid identifier (like using numbers):
+
+javascript
+const obj = {
+  1: "one",
+  2: "two"
+};
+
+console.log(obj[1]);  // "one"
+Key Differences Between Dot and Bracket Notation:
+Dot notation: Requires the property name to be a valid identifier (e.g., no spaces, no starting with a number).
+Bracket notation: Can access properties with names that are not valid identifiers, including those with spaces or 
+special characters, and it can also use variables to specify property names.
+Example of Both Notations in Action:
+javascript
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  "favorite color": "blue"
+};
+
+// Using dot notation
+console.log(person.firstName);  // "John"
+person.firstName = "Jane";  // Updates the firstName to "Jane"
+
+// Using bracket notation
+console.log(person["favorite color"]);  // "blue"
+person["favorite color"] = "green";  // Updates the favorite color to "green"
+In summary:
+
+Dot notation is the easiest and most commonly used.
+Bracket notation is more flexible, allowing for dynamic access and modifying of properties with unusual names.
+
+Lab Assignment
+ Task: o Create a JavaScript object car with properties brand, model, and year. 
+Use JavaScript to: 
+ Access and print the car’s brand and model. 
+ Update the year property. 
+ Add a new property color to the car object.
+
+Here's a JavaScript code snippet that demonstrates how to create a car object with the properties brand, model, and 
+year, and how to perform the tasks you requested:
+
+javascript
+// Creating a car object with properties brand, model, and year
+let car = {
+  brand: 'Toyota',
+  model: 'Corolla',
+  year: 2020
+};
+
+// Access and print the car's brand and model
+console.log('Brand:', car.brand);
+console.log('Model:', car.model);
+
+// Update the year property
+car.year = 2024;
+console.log('Updated Year:', car.year);
+
+// Add a new property color to the car object
+car.color = 'Red';
+console.log('Car Color:', car.color);
+Explanation:
+Creating the car object: A car object is initialized with properties brand, model, and year.
+Accessing and printing: The car's brand and model are accessed and printed using console.log().
+Updating the year: The year property is updated to 2024.
+Adding a new property: A new property color with the value 'Red' is added to the object.
+This code will print the following output:
+
+yaml
+Brand: Toyota
+Model: Corolla
+Updated Year: 2024
+Car Color: Red
+
+9. JavaScript Events
+Theory Assignment
+ Question 1: What are JavaScript events? Explain the role of event listeners.
+
+JavaScript Events
+In JavaScript, events refer to actions or occurrences that happen in the browser or on a webpage that JavaScript can 
+respond to. These events can be triggered by a user (e.g., clicking a button, typing in a text box) or by the browser 
+(e.g., when a page finishes loading). Events can also occur due to actions such as mouse movements, key presses, or 
+changes to an element's state (like an image being loaded).
+
+Common types of JavaScript events include:
+
+Mouse Events:
+
+click: Fired when the mouse button is clicked on an element.
+dblclick: Fired when the mouse is clicked twice in quick succession.
+mouseover: Fired when the mouse pointer enters an element.
+mouseout: Fired when the mouse pointer leaves an element.
+mousemove: Fired when the mouse moves within an element.
+Keyboard Events:
+
+keydown: Fired when a key is pressed down.
+keyup: Fired when a key is released.
+keypress: Fired when a key is pressed and held down (deprecated in modern browsers).
+Form Events:
+
+submit: Fired when a form is submitted.
+change: Fired when the value of an input element changes.
+focus: Fired when an element gains focus (like when a user clicks into a text field).
+blur: Fired when an element loses focus.
+Window Events:
+
+load: Fired when the page has completely loaded.
+resize: Fired when the window is resized.
+scroll: Fired when the user scrolls through the page.
+Touch Events (for mobile devices):
+
+touchstart: Fired when a touch point is placed on the touch surface.
+touchend: Fired when a touch point is removed.
+touchmove: Fired when a touch point moves along the touch surface.
+Event Listeners
+An event listener is a function in JavaScript that waits for a specific event to occur on a target element and then runs 
+when that event is triggered. The event listener "listens" for an event, such as a button click or mouseover, and once 
+the event occurs, the listener executes a callback function to perform a specific action.
+
+How Event Listeners Work
+To set up an event listener, you typically use the addEventListener() method on a DOM (Document Object Model) element. 
+This method takes two main parameters:
+
+Event Type: A string that specifies the type of event to listen for (e.g., 'click', 'mouseover', 'submit').
+Callback Function: A function that defines what should happen when the event occurs.
+Here’s a basic example:
+
+javascript
+// Select an element by its ID
+const button = document.getElementById('myButton');
+
+// Add an event listener to the button
+button.addEventListener('click', function() {
+  alert('Button clicked!');
+});
+In this example:
+
+The event listener is attached to the button element (myButton).
+The event type is 'click', meaning it will listen for a mouse click.
+The callback function (alert('Button clicked!')) is executed when the button is clicked.
+Key Features of Event Listeners
+Multiple Listeners: You can attach multiple event listeners to the same element for the same or different events.
+javascript
+button.addEventListener('click', function() {
+  console.log('First click handler');
+});
+button.addEventListener('click', function() {
+  console.log('Second click handler');
+});
+Both functions will execute in the order they were added when the event occurs.
+
+Removing Event Listeners: You can remove an event listener using the removeEventListener() method, provided you reference 
+the same function that was used to add it.
+javascript
+function handleClick() {
+  console.log('Button clicked');
+}
+
+button.addEventListener('click', handleClick);
+button.removeEventListener('click', handleClick);
+Event Propagation (Bubbling and Capturing): Events can propagate up or down the DOM tree. By default, events bubble up 
+(from child elements to parent elements), but they can also be captured (from parent to child). You can control this 
+behavior using the third parameter in addEventListener():
+true: Capturing phase.
+false (default): Bubbling phase.
+javascript
+button.addEventListener('click', function(event) {
+  console.log('Button clicked during bubbling');
+}, false);  // Bubbling
+Benefits of Using Event Listeners
+Separation of Concerns: Event listeners help separate HTML structure, CSS styling, and JavaScript behavior. 
+This makes the code more maintainable and easier to manage.
+
+Flexibility: You can attach multiple event listeners to the same element or attach them to different elements. 
+This provides greater flexibility in handling interactions.
+
+Non-Blocking: Event listeners work asynchronously, meaning they won’t block the rest of the code from running. 
+They respond only when the event is triggered.
+
+Dynamic Event Handling: You can dynamically attach or remove event listeners based on certain conditions or states in the 
+application.
+
+Conclusion
+In summary, JavaScript events allow your webpage to respond to user interactions or other browser activities, and event 
+listeners are the mechanism through which JavaScript handles these events. By using event listeners, you can write more 
+dynamic and interactive web pages, responding to clicks, keystrokes, form submissions, and more.
+
+ Question 2: How does the addEventListener() method work in JavaScript? Provide an example.
+
+The addEventListener() method in JavaScript is used to attach an event handler to a specific element. This allows you to 
+specify a function that should be executed when a certain event (like a mouse click, keypress, or any other DOM event) 
+occurs on that element.
+
+Syntax:
+javascript
+element.addEventListener(event, function, useCapture);
+event: A string representing the event type (like "click", "keydown", "mouseover", etc.).
+function: The callback function that will be executed when the event occurs.
+useCapture (optional): A boolean that specifies whether the event should be captured during the capture phase (true) or 
+the bubbling phase (false). By default, this is false, meaning the event will be handled in the bubbling phase.
+Example:
+Here's a simple example that uses addEventListener() to handle a click event on a button:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener Example</title>
+</head>
+<body>
+
+    <button id="myButton">Click Me!</button>
+
+    <script>
+        // Get the button element by its ID
+        const button = document.getElementById('myButton');
+        
+        // Define a function that will be triggered when the button is clicked
+        function handleClick() {
+            alert('Button was clicked!');
+        }
+
+        // Attach the click event to the button using addEventListener
+        button.addEventListener('click', handleClick);
+    </script>
+
+</body>
+</html>
+How It Works:
+Get the element: The button element with the ID myButton is selected using document.getElementById().
+Define the event handler: The handleClick function is defined. This function will be executed when the button is clicked.
+Attach the event listener: The addEventListener() method is called on the button element, specifying that when the "click" event occurs, the handleClick function should run.
+Now, when the user clicks the "Click Me!" button, an alert box will pop up with the message "Button was clicked!".
+
+Key Points:
+addEventListener() can be used for many different events, such as click, mouseover, keydown, etc.
+You can add multiple event listeners to the same element for different events or even the same event.
+The event listener can be removed later using removeEventListener() if needed.
+
+Lab Assignment
+ Task: o Create a simple webpage with a button that, when clicked, displays an alert saying "Button clicked!" using 
+JavaScript event listeners.
+
+Here's a simple HTML webpage with a button that triggers a JavaScript event listener to show an alert when clicked:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Click Alert</title>
+</head>
+<body>
+    <button id="alertButton">Click me!</button>
+
+    <script>
+        // Get the button element by its ID
+        const button = document.getElementById('alertButton');
+
+        // Add an event listener for the 'click' event
+        button.addEventListener('click', function() {
+            // Display an alert when the button is clicked
+            alert('Button clicked!');
+        });
+    </script>
+</body>
+</html>
+Explanation:
+The HTML contains a button with the text "Click me!" and an ID of alertButton.
+The JavaScript code selects the button by its ID using getElementById.
+An event listener is attached to the button using addEventListener. When the button is clicked, the event listener 
+triggers a function that shows the alert "Button clicked!".
+To use it, simply copy and paste this code into an .html file and open it in a web browser. When you click the button, 
+the alert will appear.
+
+10. DOM Manipulation
+Theory Assignment
+ Question 1: What is the DOM (Document Object Model) in JavaScript? How does JavaScript interact with the DOM?
+
+What is the DOM (Document Object Model)?
+The Document Object Model (DOM) is an interface that browsers provide for web pages. It represents the structure of a 
+web document (HTML or XML) as a tree of objects, where each node corresponds to a part of the document (such as elements, 
+attributes, text, etc.). Essentially, the DOM allows programming languages like JavaScript to interact with the content 
+and structure of a web page dynamically.
+
+The DOM treats the document as a hierarchical tree structure:
+
+Document: The root node representing the entire page.
+Elements: Each HTML element (like <div>, <p>, etc.) is represented as a node in the DOM tree.
+Text: The textual content within elements is also treated as nodes.
+Attributes: HTML attributes (such as class, id, src, etc.) are represented as nodes.
+Example of a DOM Tree:
+html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Example</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Welcome to the DOM!</h1>
+      <p>This is a simple example.</p>
+    </div>
+  </body>
+</html>
+The DOM representation of the HTML document above would be a tree with nodes like:
+
+Document
+html
+head
+title
+body
+div
+h1
+p
+How does JavaScript interact with the DOM?
+JavaScript interacts with the DOM to manipulate the content, structure, and style of a web page dynamically. 
+Through the DOM, JavaScript can:
+
+Access elements: Retrieve elements by their ID, class, tag name, or CSS selector.
+Modify elements: Change the content or structure (e.g., add or remove elements, change text or HTML content).
+Manipulate styles: Alter the appearance of elements (e.g., modify CSS properties).
+Respond to events: Handle user interactions such as clicks, key presses, or mouse movements.
+Methods of Interaction:
+Here are the key ways JavaScript interacts with the DOM:
+
+1. Accessing Elements:
+JavaScript provides several methods to access DOM elements:
+
+getElementById(): Selects an element by its unique ID.
+getElementsByClassName(): Selects elements by their class.
+getElementsByTagName(): Selects elements by their tag name.
+querySelector(): Selects the first matching element using a CSS selector.
+querySelectorAll(): Selects all matching elements.
+Example:
+
+javascript
+let title = document.getElementById('title'); // Gets the element with the ID 'title'
+2. Modifying Elements:
+JavaScript can modify the content or attributes of DOM elements:
+
+innerHTML: Gets or sets the HTML content of an element.
+textContent: Gets or sets the text content of an element.
+setAttribute(): Sets the value of an attribute (like class, id, src).
+style: Directly modifies CSS styles of an element.
+Example:
+
+javascript
+let heading = document.querySelector('h1');
+heading.textContent = 'New Title'; // Changes the text inside the <h1> element
+heading.style.color = 'red'; // Changes the text color to red
+3. Creating and Removing Elements:
+JavaScript can also create new elements and remove existing ones:
+
+createElement(): Creates a new element node.
+appendChild(): Appends a child element to a parent.
+removeChild(): Removes a child element from a parent.
+Example:
+
+javascript
+let newDiv = document.createElement('div');
+newDiv.textContent = 'Hello, World!';
+document.body.appendChild(newDiv); // Adds the new div to the body
+4. Handling Events:
+JavaScript allows interaction with users through events (like clicks, mouse movements, etc.). You can add event 
+listeners to DOM elements using:
+
+addEventListener(): Adds an event listener for specific events (like click, keydown, etc.).
+Example:
+
+javascript
+let button = document.querySelector('button');
+button.addEventListener('click', function() {
+  alert('Button was clicked!');
+});
+Example of JavaScript and DOM Interaction:
+Here's an example that demonstrates interacting with the DOM using JavaScript:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Interaction Example</title>
+</head>
+<body>
+  <h1 id="mainTitle">Welcome to JavaScript DOM!</h1>
+  <button id="changeButton">Change Title</button>
+
+  <script>
+    // Get the button and title elements
+    const button = document.getElementById('changeButton');
+    const title = document.getElementById('mainTitle');
+    
+    // Add event listener to button
+    button.addEventListener('click', function() {
+      title.textContent = 'Title Changed!'; // Change the title text
+      title.style.color = 'blue'; // Change the title color
+    });
+  </script>
+</body>
+</html>
+How It Works:
+When the page loads, the mainTitle and changeButton elements are available in the DOM.
+When the user clicks the button, an event listener is triggered, and the mainTitle element's text and style are changed 
+dynamically.
+
+ Question 2: Explain the methods getElementById(), getElementsByClassName(), and querySelector() used to select 
+elements from the DOM.
+
+In JavaScript, the Document Object Model (DOM) provides methods to interact with and manipulate elements on a web page. 
+The methods getElementById(), getElementsByClassName(), and querySelector() are commonly used to select elements from 
+the DOM. Below is an explanation of each of these methods:
+
+1. getElementById()
+Purpose: Selects a single element based on its ID.
+Usage: Since ID is unique within a page, this method returns only the first matching element with that ID.
+Syntax:
+javascript
+const element = document.getElementById('elementId');
+Return value: Returns the single element with the specified ID, or null if no element with the given ID exists.
+Example:
+html
+<div id="header">Welcome to my site</div>
+<script>
+    const header = document.getElementById('header');
+    console.log(header);  // <div id="header">Welcome to my site</div>
+</script>
+2. getElementsByClassName()
+Purpose: Selects all elements with a specific class name.
+Usage: This method returns a live HTMLCollection of all elements with the given class name. The collection is updated 
+automatically when the DOM changes.
+Syntax:
+javascript
+const elements = document.getElementsByClassName('className');
+Return value: Returns a live HTMLCollection of elements with the specified class name. If no matching elements are found, 
+it returns an empty collection.
+Example:
+html
+<div class="card">Card 1</div>
+<div class="card">Card 2</div>
+<script>
+    const cards = document.getElementsByClassName('card');
+    console.log(cards);  // HTMLCollection of 2 elements with class "card"
+</script>
+3. querySelector()
+Purpose: Selects the first element that matches a specified CSS selector.
+Usage: Unlike getElementById() and getElementsByClassName(), querySelector() can select elements using any valid CSS 
+selector, including class, ID, attribute, and even complex selectors like descendant selectors.
+Syntax:
+javascript
+const element = document.querySelector('selector');
+Return value: Returns the first element that matches the specified CSS selector, or null if no element matches.
+Example:
+html
+<div class="container">
+    <p class="intro">Hello!</p>
+    <p class="intro">Welcome</p>
+</div>
+<script>
+    const firstIntro = document.querySelector('.intro');
+    console.log(firstIntro);  // <p class="intro">Hello!</p>
+</script>
+Key Differences:
+getElementById() is limited to selecting an element by its unique ID and returns a single element (or null if not found).
+getElementsByClassName() selects all elements with the given class name and returns a live collection of those elements.
+querySelector() is more flexible as it accepts any CSS selector, allowing you to select elements in a variety of ways 
+(e.g., by class, ID, or more complex structures), but it only returns the first matching element.
+In general, querySelector() is often preferred due to its flexibility and ability to handle complex selectors.
+
+Lab Assignment
+ Task:
+o Create an HTML page with a paragraph (<p>) that displays "Hello, World!".
+
+Here is a simple HTML page with a paragraph that displays "Hello, World!":
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello World Page</title>
+</head>
+<body>
+    <p>Hello, World!</p>
+</body>
+</html>
+You can copy and paste this into an HTML file (e.g., index.html) and open it in a web browser to see the result.
+
+o Use JavaScript to: 
+ Change the text inside the paragraph to "JavaScript is fun!". 
+ Change the color of the paragraph to blue.
+
+To achieve this using JavaScript, you can use the following code. It will change the text inside the paragraph to 
+"JavaScript is fun!" and also change its color to blue.
+
+Here's the code:
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Paragraph</title>
+</head>
+<body>
+
+    <p id="myParagraph">This is a paragraph.</p>
+
+    <script>
+        // Change the text inside the paragraph
+        document.getElementById("myParagraph").innerText = "JavaScript is fun!";
+
+        // Change the color of the paragraph to blue
+        document.getElementById("myParagraph").style.color = "blue";
+    </script>
+
+</body>
+</html>
+Explanation:
+document.getElementById("myParagraph"): This method selects the paragraph element with the ID myParagraph.
+innerText: This property sets the text inside the selected element. It changes the paragraph's text to "JavaScript is 
+fun!".
+style.color: This modifies the style of the paragraph by changing its text color to blue.
+You can copy and paste this code into an HTML file and open it in a browser to see the effect.
+
+11. JavaScript Timing Events (setTimeout, setInterval)
+Theory Assignment
+ Question 1: Explain the setTimeout() and setInterval() functions in JavaScript. How are they used for timing events?
+
+In JavaScript, setTimeout() and setInterval() are functions used to schedule the execution of code after a specified 
+time delay or repeatedly at fixed intervals. They are part of JavaScript's timing events system, which helps control 
+the timing of certain actions or events in your code.
+
+1. setTimeout()
+The setTimeout() function is used to execute a function or a piece of code once after a specified delay (in milliseconds). It takes two arguments:
+
+A callback function (the code to be executed).
+A delay (in milliseconds) that specifies how long to wait before executing the callback.
+Syntax:
+javascript
+setTimeout(callback, delay);
+callback: The function you want to execute after the delay.
+delay: The time in milliseconds to wait before executing the function (1 second = 1000 milliseconds).
+Example:
+javascript
+console.log("Start");
+
+setTimeout(function() {
+    console.log("Executed after 2 seconds");
+}, 2000); // 2000 milliseconds = 2 seconds
+
+console.log("End");
+Output:
+
+sql
+Start
+End
+Executed after 2 seconds
+In this example, "Start" and "End" are logged immediately, and after 2 seconds, the message "Executed after 2 seconds" 
+is logged.
+Returning a Timeout ID:
+setTimeout() returns a timeout ID (a unique identifier for the timeout). This ID can be used to cancel the timeout 
+using clearTimeout().
+
+javascript
+const timeoutId = setTimeout(function() {
+    console.log("This will not be shown");
+}, 3000);
+
+// Cancel the timeout before it executes
+clearTimeout(timeoutId);
+2. setInterval()
+The setInterval() function is used to repeatedly execute a function or piece of code at specified time intervals. 
+It is similar to setTimeout(), but instead of running once, it runs repeatedly at a given interval until it is cleared.
+
+Syntax:
+javascript
+setInterval(callback, interval);
+callback: The function to be executed at each interval.
+interval: The time in milliseconds between each execution.
+Example:
+javascript
+let count = 0;
+
+const intervalId = setInterval(function() {
+    count++;
+    console.log("Count: " + count);
+    
+    if (count === 5) {
+        clearInterval(intervalId); // Stop after 5 counts
+    }
+}, 1000); // 1000 milliseconds = 1 second
+Output:
+
+makefile
+Count: 1
+Count: 2
+Count: 3
+Count: 4
+Count: 5
+In this example, the setInterval() function logs the count every second. After reaching 5, clearInterval(intervalId) 
+stops the interval from running further.
+Returning an Interval ID:
+Just like setTimeout(), setInterval() also returns an interval ID, which can be used to stop the repeated execution 
+using clearInterval().
+
+javascript
+const intervalId = setInterval(function() {
+    console.log("This will be logged every second.");
+}, 1000);
+
+// Stop the interval after 5 seconds
+setTimeout(function() {
+    clearInterval(intervalId);
+}, 5000);
+Key Differences:
+Feature	setTimeout()	setInterval()
+Execution Frequency	Executes once after the delay	Executes repeatedly at the specified interval
+Purpose	Delayed execution of code	Repeated execution of code at fixed intervals
+Return Value	Timeout ID (used with clearTimeout())	Interval ID (used with clearInterval())
+Usage	For a one-time delay before running code	For periodic or recurring tasks
+Common Use Cases:
+setTimeout():
+
+Delaying actions such as showing a message after some time.
+Creating timeouts in UI interactions or animations.
+Deferring code execution until after the current call stack is clear.
+setInterval():
+
+Repeated actions such as polling, animation loops, or updating the UI at regular intervals.
+Periodically checking for data or conditions (e.g., a clock or live data feed).
+By using setTimeout() and setInterval(), you can effectively manage time-related behavior in your JavaScript programs.
+
+ Question 2: Provide an example of how to use setTimeout() to delay an action by 2 seconds.
+
+Here's an example of how to use setTimeout() to delay an action by 2 seconds in JavaScript:
+
+javascript
+setTimeout(function() {
+  console.log("This message is displayed after 2 seconds");
+}, 2000); // 2000 milliseconds = 2 seconds
+Explanation:
+setTimeout() takes two arguments:
+A function (or code block) to execute after the specified delay.
+The delay in milliseconds (2000 ms = 2 seconds).
+In this example, the message "This message is displayed after 2 seconds" will appear in the console after 2 seconds.
+
+Lab Assignment
+ Task 1: o Write a program that changes the background color of a webpage after 5 seconds using setTimeout().
+
+Here's a simple JavaScript program that changes the background color of a webpage after 5 seconds using setTimeout():
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+    <script>
+        // Function to change background color
+        function changeBackgroundColor() {
+            document.body.style.backgroundColor = "lightblue"; // Set the background color
+        }
+
+        // Call the function after 5 seconds
+        setTimeout(changeBackgroundColor, 5000);  // 5000 milliseconds = 5 seconds
+    </script>
+</head>
+<body>
+    <h1>Welcome to the page!</h1>
+    <p>The background will change in 5 seconds.</p>
+</body>
+</html>
+Explanation:
+The setTimeout() function is used to delay the execution of the changeBackgroundColor() function by 5000 milliseconds 
+(5 seconds).
+After 5 seconds, the function is executed, which changes the background color of the webpage to "lightblue".
+You can copy and paste this code into an HTML file, and when you open it in a browser, you will see the background color 
+change after 5 seconds.
+
+ Task 2: o Create a digital clock that updates every second using setInterval().
+
+To create a digital clock that updates every second using setInterval(), you can follow this simple JavaScript and 
+HTML code example. It uses setInterval() to update the time every second, displaying the current time in the 
+format "HH:MM:SS".
+
+Here's how you can implement it:
+
+HTML & JavaScript Code:
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #333;
+            color: white;
+        }
+        #clock {
+            font-size: 3em;
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="clock">00:00:00</div>
+
+    <script>
+        // Function to update the time every second
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+
+            // Format hours, minutes, and seconds to always have two digits
+            hours = hours < 10 ? '0' + hours : hours;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            // Display the time in the clock div
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Update the clock every second (1000ms)
+        setInterval(updateClock, 1000);
+
+        // Initial call to display time immediately on page load
+        updateClock();
+    </script>
+</body>
+</html>
+Explanation:
+HTML Structure:
+
+There's a div with the ID clock, which will display the current time in a digital format.
+CSS Styling:
+
+The body is styled to center the clock in the middle of the page, with a background color and text color applied for 
+visibility.
+JavaScript Function:
+
+updateClock() fetches the current time using new Date().
+The hours, minutes, and seconds are formatted to always display two digits (e.g., 09 instead of 9).
+The clock is updated every second by calling setInterval(updateClock, 1000), which triggers the updateClock function every 1000 milliseconds (1 second).
+The initial time is displayed immediately when the page loads by calling updateClock() once.
+How It Works:
+When the page loads, the updateClock() function is immediately called to display the time.
+Every second, setInterval() triggers the updateClock() function, updating the clock display in real-time.
+Result:
+You will see a digital clock on your webpage that updates every second, displaying the current time in HH:MM:SS format.
+
+12. JavaScript Error Handling
+Theory Assignment
+ Question 1: What is error handling in JavaScript? Explain the try, catch, and finally blocks with an example.
+
+Error handling in JavaScript is the process of anticipating, detecting, and responding to runtime errors in a way that 
+allows the program to continue executing or at least handle the error gracefully. JavaScript provides mechanisms like try, catch, and finally to handle exceptions.
+
+Key components of error handling in JavaScript:
+try block: The code that may potentially throw an error is wrapped inside a try block. If an error occurs within this 
+block, the control is transferred to the catch block.
+
+catch block: This block is used to handle the error. It executes if an error is thrown in the try block. 
+The error can be captured as an argument in the catch block.
+
+finally block: This block is optional and, if present, always runs regardless of whether an error was thrown or not. 
+It's often used for cleanup tasks like closing a file, releasing resources, or resetting a state.
+
+Syntax:
+javascript
+try {
+  // Code that might throw an error
+} catch (error) {
+  // Code to handle the error
+} finally {
+  // Code that will run regardless of an error
+}
+Example:
+Here’s an example to demonstrate how the try, catch, and finally blocks work in JavaScript:
+
+javascript
+function divide(a, b) {
+  try {
+    // Attempt to divide by b
+    if (b === 0) {
+      throw new Error('Cannot divide by zero!');
+    }
+    let result = a / b;
+    console.log('Result:', result);
+  } catch (error) {
+    // Catch any error and handle it
+    console.error('Error:', error.message);
+  } finally {
+    // Always runs, whether or not an error occurred
+    console.log('Execution completed.');
+  }
+}
+
+// Calling the function with valid input
+divide(10, 2);  // Output: Result: 5  and Execution completed.
+
+// Calling the function with an invalid input (division by zero)
+divide(10, 0);  // Output: Error: Cannot divide by zero! and Execution completed.
+Explanation:
+First Call (divide(10, 2)):
+
+The code inside the try block runs successfully since 2 is not zero.
+It logs the result 5.
+The finally block runs and logs Execution completed.
+Second Call (divide(10, 0)):
+
+When the code tries to divide by zero, the throw statement is triggered, creating a custom error.
+The error is caught by the catch block, and the error message Cannot divide by zero! is logged.
+The finally block runs and logs Execution completed. regardless of the error.
+Key points:
+try block: Wraps the code that could potentially throw an error.
+catch block: Catches the error and allows you to handle it without crashing the program.
+finally block: Always runs after the try and catch blocks, useful for clean-up tasks.
+This structure helps in making your code more robust by handling errors gracefully and preventing unexpected crashes.
+
+ Question 2: Why is error handling important in JavaScript applications?
+
+Error handling is crucial in JavaScript applications for several reasons:
+
+Graceful Degradation: Error handling ensures that your application doesn't break or stop unexpectedly when 
+something goes wrong. Instead of crashing, the application can handle the issue gracefully, providing a better user 
+experience and preventing abrupt failures.
+
+Debugging and Maintenance: Proper error handling provides detailed information about what went wrong (e.g., 
+error messages, stack traces), making it easier to debug and fix issues. Without error handling, 
+it can be difficult to trace and correct bugs, especially in large applications.
+
+Security: Unhandled errors can expose sensitive information about the internal workings of your application (e.g., 
+stack traces, file paths, database queries). By catching errors and handling them properly, you can prevent attackers 
+from exploiting these details.
+
+Predictability and Control: Error handling allows developers to predict and control the flow of execution in the 
+application. It ensures that the program doesn't go into an unpredictable state and allows the application to recover or 
+fallback to a safe state.
+
+Resource Management: Errors, particularly those related to asynchronous operations (e.g., network requests, file system 
+access), can leave resources in an inconsistent state. Proper error handling ensures that resources such as memory, 
+file handles, or database connections are properly released, preventing memory leaks or other resource-related issues.
+
+Improved User Experience: Error handling provides opportunities to display user-friendly messages or fallback actions 
+when an error occurs, guiding the user in a helpful way. For instance, if a network request fails, the user can be 
+informed that the issue is temporary, and retry options might be presented.
+
+Compliance and Reliability: For many applications, especially in business or financial domains, handling errors properly 
+is essential for maintaining compliance with industry standards and regulations. Unchecked errors might cause data 
+integrity problems or fail to meet reliability expectations.
+
+By integrating proper error handling techniques, such as try-catch blocks, custom error messages, and error logging, 
+developers ensure that JavaScript applications are more robust, secure, and reliable.
+
+Lab Assignment
+ Task: o Write a JavaScript program that attempts to divide a number by zero. Use try-catch to handle the error and 
+display an appropriate error message.
+
+Here’s a simple JavaScript program that attempts to divide a number by zero, and handles the error using try-catch:
+
+javascript
+function divideByZero(number) {
+  try {
+    // Attempt to divide by zero
+    if (number === 0) {
+      throw new Error("Cannot divide by zero");
+    } else {
+      let result = 10 / number;
+      console.log("Result: " + result);
+    }
+  } catch (error) {
+    // Handle the error by displaying a custom message
+    console.error("Error: " + error.message);
+  }
+}
+
+// Example usage:
+divideByZero(0);  // This will trigger the error and display the error message
+divideByZero(5);  // This will display the result of the division
+Explanation:
+Function Definition (divideByZero): This function tries to divide the number 10 by the provided input number.
+try Block: It checks if the number is zero. If so, it manually throws an error with a custom message.
+catch Block: If an error is thrown (e.g., when dividing by zero), it catches the error and logs a message to the console.
+Sample Output:
+When you call divideByZero(0), the error message Error: Cannot divide by zero will be logged.
+When you call divideByZero(5), the result Result: 2 will be logged.
+This program demonstrates proper error handling with try-catch in JavaScript.
+
